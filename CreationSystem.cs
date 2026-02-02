@@ -1,0 +1,1134 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using Newtonsoft.Json;
+using UnityEngine;
+using UnhollowerBaseLib;
+using System.Text;
+
+namespace MOD_kqAfiU
+{
+    public class CreationSystem
+    {
+
+        private static string SavePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Mods", "MOD_kqAfiU", "AI_Custom_Items.json");
+
+        // 随机数生成器
+        private static System.Random _rng = new System.Random();
+
+        // 图标映射表 (Key -> 游戏内图标ID列表)
+        public static Dictionary<string, List<int>> IconMapper = new Dictionary<string, List<int>>()
+        {
+            { "Sword", new List<int> { 1001, 5081015, 60101 } }, // 示例ID，可根据需求扩充
+            { "Pill_Red", new List<int> { 1011271, 1011201 } },
+            { "Pill_Blue", new List<int> { 1011301 } },
+            { "Book", new List<int> { 50101, 50102 } },
+            { "Mount", new List<int> { 3021041 } }, // 默认坐骑图标
+            { "Unknown", new List<int> { 5081015 } } // 默认问号/果子
+        };
+
+        /// <summary>
+        /// 初始化系统：在ModMain.OnIntoWorld或Init时调用
+        /// 负责读取本地JSON，恢复所有历史生成的物品定义
+        /// </summary>
+        public static void Init()
+        {
+            try
+            {
+                if (!File.Exists(SavePath)) return;
+
+                string json = File.ReadAllText(SavePath);
+                var savedItems = JsonConvert.DeserializeObject<List<SavedItemData>>(json);
+
+                if (savedItems == null) return;
+
+                Debug.Log($"[CreationSystem] 开始恢复 {savedItems.Count} 个自定义物品...");
+
+                foreach (var item in savedItems)
+                {
+                    // 恢复时，isRestoring = true，只注册定义，不发奖，不重复保存
+                    switch (item.Type)
+                    {
+                        case "Luck":
+                            CreateLuck(item.BaseInfo, item.Effects, item.ExtraInfo, true, item.GeneratedID);
+                            break;
+                        case "Consumer":
+                            CreateConsumer(item.BaseInfo, item.Effects, item.ExtraInfo, true, item.GeneratedID);
+                            break;
+                        case "Equip":
+                            CreateEquip(item.BaseInfo, item.Effects, item.ExtraInfo, true, item.GeneratedID);
+                            break;
+                    }
+                }
+                Debug.Log("[CreationSystem] 自定义物品恢复完成。");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[CreationSystem] 初始化失败: {ex}");
+            }
+        }
+
+        /// <summary>
+        /// 触发造物流程：发送请求 -> 解析JSON -> 分发创建
+        /// </summary>
+        /// <param name="sysPrompt">系统提示词（包含JSON格式要求）</param>
+        /// <param name="userPrompt">用户指令（包含物品名和剧情背景）</param>
+        public static void TriggerCreation(string sysPrompt, string userPrompt)
+        {
+            UITipItem.AddTip("天道正在推演造物...", 3f);
+            Debug.Log("[CreationSystem] 开始请求造物...");
+
+            var request = new LLMDialogueRequest();
+            request.AddSystemMessage(sysPrompt);
+            request.AddUserMessage(userPrompt);
+
+            Tools.SendLLMRequest(request, (response) =>
+            {
+                if (string.IsNullOrEmpty(response) || response.StartsWith("错误"))
+                {
+                    UITipItem.AddTip("造物推演失败：连接中断", 3f);
+                    Debug.LogError($"[CreationSystem] LLM响应错误: {response}");
+                    return;
+                }
+
+                try
+                {
+                    // 1. 清洗字符串
+                    string jsonStr = CleanJsonString(response);
+                    Debug.Log($"[CreationSystem] 清洗后的JSON: {jsonStr}");
+
+                    List<AICreationResponse> dataList = new List<AICreationResponse>();
+
+                    // 2. 智能解析 (兼容 对象{} 和 数组[])
+                    if (jsonStr.StartsWith("["))
+                    {
+                        // 如果是数组，反序列化为 List
+                        var list = JsonConvert.DeserializeObject<List<AICreationResponse>>(jsonStr);
+                        if (list != null) dataList = list;
+                    }
+                    else
+                    {
+                        // 如果是单个对象，反序列化单个并加入 List
+                        var single = JsonConvert.DeserializeObject<AICreationResponse>(jsonStr);
+                        if (single != null) dataList.Add(single);
+                    }
+
+                    if (dataList.Count == 0)
+                    {
+                        Debug.LogError("[CreationSystem] 反序列化后数据为空");
+                        return;
+                    }
+
+                    // 3. 遍历分发 (支持一次性生成多个)
+                    foreach (var item in dataList)
+                    {
+                        // 稍微延迟一点点分发，或者直接全部扔进主线程队列
+                        RunOnMainThread(() => { DispatchCreation(item); });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[CreationSystem] 解析或分发异常: {ex}");
+                    UITipItem.AddTip("造物法则崩坏（解析失败）", 3f);
+                }
+            });
+        }
+
+        private static void DispatchCreation(AICreationResponse data)
+        {
+            if (data.BaseInfo == null)
+            {
+                Debug.LogError("[CreationSystem] BaseInfo 缺失");
+                return;
+            }
+
+            Debug.Log($"[CreationSystem] 正在创建类型: {data.Type}, 名称: {data.BaseInfo.Name}");
+
+            switch (data.Type)
+            {
+                case "Luck":
+                    // 气运需要 ExtraInfo.Duration
+                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Duration = -1 }; // 保底
+                    CreateLuck(data.BaseInfo, data.Effects, data.ExtraInfo);
+                    break;
+
+                case "Consumer":
+                    // 消耗品需要 Worth, RealmReq
+                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Worth = 1000, RealmReq = 1 }; // 保底
+                    CreateConsumer(data.BaseInfo, data.Effects, data.ExtraInfo);
+                    break;
+
+                case "Equip":
+                    // 装备需要 Worth, RealmReq
+                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Worth = 5000, RealmReq = 1 }; // 保底
+                    CreateEquip(data.BaseInfo, data.Effects, data.ExtraInfo);
+                    break;
+
+                default:
+                    Debug.LogWarning($"[CreationSystem] 未知的造物类型: {data.Type}，尝试作为消耗品处理");
+                    CreateConsumer(data.BaseInfo, data.Effects, data.ExtraInfo ?? new CreationExtraInfo());
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 辅助：清洗 AI 返回的字符串，提取 JSON 部分
+        /// </summary>
+        private static string CleanJsonString(string raw)
+        {
+            if (string.IsNullOrEmpty(raw)) return "{}";
+
+            string clean = raw.Trim();
+
+            // 1. 去除 Markdown 代码块标记 ```json ... ```
+            if (clean.StartsWith("```"))
+            {
+                int firstNewline = clean.IndexOf('\n');
+                if (firstNewline > 0) clean = clean.Substring(firstNewline + 1);
+                int lastBackticks = clean.LastIndexOf("```");
+                if (lastBackticks > 0) clean = clean.Substring(0, lastBackticks);
+            }
+
+            clean = clean.Trim();
+
+            // 2. 智能定位最外层括号
+            int startArr = clean.IndexOf('[');
+            int startObj = clean.IndexOf('{');
+
+            // 如果找不到任何括号，直接返回原样(等死)或空对象
+            if (startArr == -1 && startObj == -1) return "{}";
+
+            // 判断谁在前面：如果 '[' 存在且比 '{' 靠前，说明是数组
+            bool isArray = (startArr != -1) && (startObj == -1 || startArr < startObj);
+
+            if (isArray)
+            {
+                int endArr = clean.LastIndexOf(']');
+                if (endArr > startArr)
+                {
+                    return clean.Substring(startArr, endArr - startArr + 1);
+                }
+            }
+            else
+            {
+                int endObj = clean.LastIndexOf('}');
+                if (endObj > startObj)
+                {
+                    return clean.Substring(startObj, endObj - startObj + 1);
+                }
+            }
+
+            return clean;
+        }
+
+        // 为了在回调中安全操作Unity API，简单的切换到主线程的 helper (复用 ModMain 的队列机制)
+        private static void RunOnMainThread(Action action)
+        {
+            ModMain.RunOnMainThread(action);
+        }
+        private static string GetRealmName(int gradeId)
+        {
+            switch (gradeId)
+            {
+                case 1: return "炼气境";
+                case 2: return "筑基境";
+                case 3: return "结晶境";
+                case 4: return "金丹境";
+                case 5: return "具灵境";
+                case 6: return "元婴境";
+                case 7: return "化神境";
+                case 8: return "悟道境";
+                case 9: return "羽化境";
+                case 10: return "登仙境";
+                default: return "未知境界";
+            }
+        }
+        public static void StartCreationProcess(List<string> rewardNames, List<MessageItem> dialogueHistory)
+        {
+            // 0. 判空保护
+            if (g.world.playerUnit == null || rewardNames == null || rewardNames.Count == 0) return;
+
+            // 1. 获取玩家基础信息
+            var player = g.world.playerUnit;
+            string playerName = player.data.unitData.propertyData.GetName();
+            int gradeId = player.data.unitData.propertyData.gradeID;
+            string gradeName = GetRealmName(gradeId);
+
+            // 2. 组装对话上下文
+            string storyContext = FormatDialogueHistory(dialogueHistory, playerName);
+
+            // 3. 计算动态数值指导
+            string statGuidelines = GetDynamicStatGuidance(player, gradeId);
+
+            // 4. 组装系统提示词
+            string sysPrompt = BuildSystemPrompt(gradeName, statGuidelines);
+
+            // 5. 组装用户指令 (User Prompt) - [核心修改]
+            // 将列表拼接成 "【物品A】、【物品B】"
+            string namesStr = string.Join("】、【", rewardNames);
+
+            string userPrompt = $"当前情境：{storyContext}\n\n" +
+                                $"请根据上述剧情，为以下 {rewardNames.Count} 个指定名称的物品/气运进行设计：【{namesStr}】。\n" +
+                                $"要求：\n" +
+                                $"1. 输出必须是一个包含 {rewardNames.Count} 个对象的 JSON 数组。\n" +
+                                $"2. 数组中的每个对象必须对应上述一个名称，名称不可修改。\n" +
+                                $"3. 请判断每个物品合理的稀有度（1-6），并从数值指导表中选择属性。";
+
+            // 6. 触发请求
+            TriggerCreation(sysPrompt, userPrompt);
+        }
+
+        private static string BuildSystemPrompt(string playerRealm, string statGuidelines)
+        {
+            return $@"你是一个《鬼谷八荒》的游戏数值策划。你的任务是根据剧情设计合理的奖励物品。
+请严格遵守以下规则：
+
+### 1. 物品类型判断
+请根据奖励名称和剧情判断类型 Type：
+- ""Luck"" (气运): 某种身体状态、顿悟、BUFF。需设定持续时间。
+- ""Consumer"" (丹药/消耗品): 吃了就没的物品。
+- ""Equip"" (装备/坐骑): 实体的法宝、坐骑、书籍等。
+
+### 2. 输出格式 (严格JSON)
+请输出一个 JSON 对象，**或者** 一个包含多个对象的 JSON 数组（如果你想同时发放多个奖励）。
+不要包含Markdown标记。
+
+**单物品示例**:
+{{ ""Type"": ... }}
+
+**多物品示例**:
+[
+  {{ ""Type"": ""Luck"", ... }},
+  {{ ""Type"": ""Equip"", ... }}
+]
+
+**字段结构模板**:
+{{
+  ""Type"": ""Luck"", 
+  ""BaseInfo"": {{
+    ""Name"": ""物品名"",
+    ""Grade"": 4, // 1灰 2绿 3蓝 4紫 5橙 6红
+    ""IconCategory"": ""Sword"", // 可选: Sword, Pill_Red, Pill_Blue, Book, Mount
+    ""Description"": ""若是气运(Luck)，必须包含背景故事+数值效果文本(如：受神力加持，攻击+10%)；若是物品(Consumer/Equip)，只写背景故事，不要写数值。""
+  }},
+  ""Effects"": ""atk_0_10|def_1_20"", // 属性字符串，详见下文
+  ""ExtraInfo"": {{
+    ""Worth"": 5000, // 售价 (气运填0)
+    ""RealmReq"": 1, // 境界需求1-10 (气运填0)
+    ""Duration"": 6 // 气运持续月数 (非气运填0, 永久气运填-1)
+  }}
+}}
+
+### 3. 属性字符串格式 (Effects)
+格式为: `key_type_val`，多个属性用 `|` 分隔。
+- key: 属性代码 (见下表)
+- type: 0 表示百分比加成(%), 1 表示固定数值加成(+)
+- val: 数值 (整数)
+
+**示例**: 
+- ""atk_0_10"": 攻击增加 10%
+- ""def_1_50"": 防御增加 50点
+- ""atk_0_5|def_1_20"": 攻击+5% 且 防御+20点
+
+### 4. 属性代码对照表
+- 攻击: atk | 防御: def | 体力: hpMax | 灵力: mpMax | 念力: spMax
+- 会心: crit | 护心: guard | 寿命: life | 魅力: beauty | 幸运: luck | 声望: reputation
+- 脚力: fsp | 战斗移速: msp
+- 资质类: basSword(剑), basSpear(枪), basBlade(刀), basFist(拳), basPalm(掌), basFinger(指), basFire(火), basWater(水), basThunder(雷), basWind(风), basEarth(土), basWood(木)
+
+### 5. 数值设计指导 (基于玩家当前境界: {playerRealm})
+{statGuidelines}
+
+**特殊规则**:
+- 如果是【期限型气运】(Duration > 0)，上述推荐数值可以翻 3 倍。
+- 请在推荐范围内随机取值，不要总是取整数，保持随机性。
+";
+        }
+
+        private static string GetDynamicStatGuidance(WorldUnitBase player, int gradeId)
+        {
+            var data = player.data.dynUnitData;
+            StringBuilder sb = new StringBuilder();
+
+            // 辅助函数：生成 1-6 级稀有度的范围字符串
+            // scalingType: 1 (1-12% 高加成), 2 (1-6% 低加成)
+            string GenerateRanges(string attrName, float currentVal, int scalingType)
+            {
+                sb.AppendLine($"【{attrName}】参考值 (当前基准: {currentVal:F0}):");
+                for (int i = 1; i <= 6; i++)
+                {
+                    // 比例系数
+                    float minPct = 0, maxPct = 0;
+                    if (scalingType == 1) { minPct = (i * 2 - 1); maxPct = i * 2; } // 1-2%, 3-4%...
+                    else { minPct = i; maxPct = i; } // 1%, 2%...
+
+                    // 计算固定值范围 (type=1)
+                    int minFlat = (int)(currentVal * minPct / 100f);
+                    int maxFlat = (int)(currentVal * maxPct / 100f);
+                    if (minFlat < 1) minFlat = 1;
+                    if (maxFlat < minFlat) maxFlat = minFlat + 1;
+
+                    // 写入一行指导
+                    string color = GetGradeName(i);
+                    sb.AppendLine($"  - {color}色(Lv{i}): 百分比[{minPct}-{maxPct}%] (写 _0_{minPct}-{maxPct}) 或 固定值[{minFlat}-{maxFlat}] (写 _1_{minFlat}-{maxFlat})");
+                }
+                sb.AppendLine();
+                return "";
+            }
+
+            // 1. 高加成组 (1-12%)
+            GenerateRanges("攻击(atk)", data.attack.value, 1);
+            GenerateRanges("防御(def)", data.defense.value, 1);
+            GenerateRanges("体力(hpMax)", data.hpMax.value, 1);
+            GenerateRanges("灵力(mpMax)", data.mpMax.value, 1);
+            GenerateRanges("念力(spMax)", data.spMax.value, 1);
+            GenerateRanges("会心(crit)", data.crit.value, 1);
+            GenerateRanges("护心(guard)", data.guard.value, 1);
+
+            GenerateRanges("剑法(basSword)", data.basisSword.value, 1);
+            GenerateRanges("枪法(basSpear)", data.basisSpear.value, 1);
+            GenerateRanges("刀法(basBlade)", data.basisBlade.value, 1);
+            GenerateRanges("拳法(basFist)", data.basisFist.value, 1);
+            GenerateRanges("掌法(basPalm)", data.basisPalm.value, 1);
+            GenerateRanges("指法(basFinger)", data.basisFinger.value, 1);
+            GenerateRanges("火灵(basFire)", data.basisFire.value, 1);
+            GenerateRanges("水灵(basWater)", data.basisFroze.value, 1);
+            GenerateRanges("雷灵(basThunder)", data.basisThunder.value, 1);
+            GenerateRanges("风灵(basWind)", data.basisWind.value, 1);
+            GenerateRanges("土灵(basEarth)", data.basisEarth.value, 1);
+            GenerateRanges("木灵(basWood)", data.basisWood.value, 1);
+
+            // 2. 低加成组 (1-6%)
+            // 注意：寿命这种属性通常不用百分比，但为了遵循你的公式，这里按玩家最大寿命算
+            GenerateRanges("寿命(life)", 100, 2); // 寿命基数设为100岁比较合理，否则百分比太夸张
+            GenerateRanges("魅力(beauty)", data.beauty.value, 2);
+            GenerateRanges("幸运(luck)", data.luck.value, 2);
+            GenerateRanges("声望(reputation)", data.reputation.value, 2);
+            GenerateRanges("脚力(fsp)", data.footSpeed.value, 2); 
+            GenerateRanges("战斗移速(msp)", data.moveSpeed.value, 2);
+
+            // 3. 价格计算指导
+            sb.AppendLine("【推荐价格 (Worth)】:");
+            for (int i = 1; i <= 6; i++)
+            {
+                int minPrice = gradeId * 250 * i;
+                int maxPrice = gradeId * 1000 * i;
+                sb.AppendLine($"  - {GetGradeName(i)}色(Lv{i}): {minPrice} - {maxPrice} 灵石");
+            }
+
+            return sb.ToString();
+        }
+
+        private static string GetGradeName(int grade)
+        {
+            switch (grade) { case 1: return "灰"; case 2: return "绿"; case 3: return "蓝"; case 4: return "紫"; case 5: return "橙"; case 6: return "红"; default: return "未知"; }
+        }
+
+        private static string FormatDialogueHistory(List<MessageItem> history, string playerName)
+        {
+            if (history == null || history.Count == 0) return "玩家在旅途中偶然触发了一次奇遇。";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("以下是奇遇中发生的对话记录：");
+            foreach (var msg in history)
+            {
+                string role = msg.Role == "user" ? playerName : "NPC";
+                // 截取过长内容防止Prompt溢出
+                string content = msg.Content.Length > 100 ? msg.Content.Substring(0, 100) + "..." : msg.Content;
+                sb.AppendLine($"- {role}: {content}");
+            }
+            return sb.ToString();
+        }
+
+        // ====================================================================
+        // 核心造物函数 (对应三种类型)
+        // ====================================================================
+
+        /// <summary>
+        /// 创建气运 (Luck)
+        /// </summary>
+        public static void CreateLuck(CreationBaseInfo baseInfo, string effectStr, CreationExtraInfo extraInfo, bool isRestoring = false, int fixedId = 0)
+        {
+            try
+            {
+                // 1. 生成或使用固定ID
+                int destinyId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(8000000, 8999999, id => g.conf.roleCreateFeature.GetItem(id) != null);
+                string effectIds = ParseAndRegisterEffects(effectStr);
+
+                // 2. 构建气运数据
+                var newFeature = new ConfRoleCreateFeatureItem();
+
+                // [核心修正] 获取源气运模板 (ID 101)
+                var sourceFate = g.conf.roleCreateFeature.GetItem(101);
+                if (sourceFate != null)
+                {
+                    newFeature.type = sourceFate.type;   // 复制类型 (通常是1-正面)
+                    newFeature.group = sourceFate.group; // 复制分组 (通常是0-不互斥)
+                }
+                else
+                {
+                    newFeature.type = 1;
+                    newFeature.group = 0;
+                }
+
+                // >>> 覆盖自定义字段 <<<
+                newFeature.id = destinyId;
+                newFeature.name = baseInfo.Name;
+                newFeature.tips = baseInfo.Description;
+                newFeature.effect = effectIds;
+                newFeature.level = baseInfo.Grade;
+                newFeature.duration = extraInfo.Duration.ToString(); // int转string
+
+                g.conf.roleCreateFeature._allConfList.Add(newFeature);
+                ForceRegisterItem(g.conf.roleCreateFeature, newFeature, newFeature.id);
+
+                // 3. 新造物逻辑 (保持不变)
+                if (!isRestoring)
+                {
+                    SaveItem(new SavedItemData
+                    {
+                        Type = "Luck",
+                        BaseInfo = baseInfo,
+                        Effects = effectStr,
+                        ExtraInfo = extraInfo,
+                        GeneratedID = destinyId
+                    });
+
+                    GMCmd gMCmd = new GMCmd();
+                    gMCmd.CMDCall($"tianjiaqiyun_player_{destinyId}");
+                    UITipItem.AddTip($"获得气运：{baseInfo.Name}", 3f);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[CreateLuck] 失败: {ex}");
+            }
+        }
+
+        /// <summary>
+        /// 创建消耗品/丹药 (Consumer)
+        /// </summary>
+        public static void CreateConsumer(CreationBaseInfo baseInfo, string effectStr, CreationExtraInfo extraInfo, bool isRestoring = false, int fixedId = 0)
+        {
+            try
+            {
+                // 1. ID与效果
+                int itemId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(9000000, 9499999, id => g.conf.itemProps.GetItem(id) != null);
+                string effectIds = ParseAndRegisterEffects(effectStr);
+                int iconId = GetIconId(baseInfo.IconCategory);
+
+                // 2. 注册 ItemProps (外壳)
+                var newProp = new ConfItemPropsItem();
+                newProp.id = itemId;
+                newProp.name = baseInfo.Name;
+                newProp.desc = baseInfo.Description;
+                newProp.type = 1; // 消耗品
+                newProp.className = 103; // 丹药类
+                newProp.level = baseInfo.Grade;
+                newProp.worth = extraInfo.Worth;
+                newProp.sale = extraInfo.Worth / 2;
+                newProp.icon = iconId.ToString();
+                newProp.drop = 1;
+                newProp.isOverlay = 1;
+
+                g.conf.itemProps._allConfList.Add(newProp);
+                ForceRegisterItem(g.conf.itemProps, newProp, newProp.id);
+
+                // 3. 注册 ItemPill (内核) - [核心修正] 严格复刻模板逻辑
+                var newPill = new ConfItemPillItem();
+
+                // [获取源丹药模板] 使用参考代码中的 1011271
+                var sourcePillData = g.conf.itemPill.GetItem(1011271);
+                if (sourcePillData != null)
+                {
+                    // >>> 复制防崩字段 (Strict Copy) <<<
+                    newPill.basType = sourcePillData.basType;
+                    newPill.cdGroup = sourcePillData.cdGroup;
+                    newPill.operEquip = sourcePillData.operEquip;
+                    newPill.autoUse = sourcePillData.autoUse;
+                    newPill.spCost = sourcePillData.spCost;
+                    newPill.useIgnoreGrade = sourcePillData.useIgnoreGrade;
+                    newPill.applyCD = sourcePillData.applyCD;
+                    newPill.pillType = sourcePillData.pillType;
+                    newPill.fateRandomWeight = sourcePillData.fateRandomWeight;
+                    newPill.carryCount = sourcePillData.carryCount;
+                    newPill.noUseTogether = sourcePillData.noUseTogether;
+                    newPill.cost = sourcePillData.cost;
+                    newPill.battleUIHide = sourcePillData.battleUIHide;
+                    newPill.consume = sourcePillData.consume;
+                }
+                else
+                {
+                    // 保底：万一找不到模板，手动设置一些安全值
+                    Debug.LogWarning("[CreateConsumer] 警告：未找到源丹药 1011271，使用保底值");
+                    newPill.consume = 1;
+                    newPill.operEquip = 1;
+                }
+
+                // >>> 覆盖自定义字段 <<<
+                newPill.id = itemId;
+                newPill.effectValue = effectIds; // 关联生成的属性
+                newPill.effectType = 201;        // 必须是201才能支持多重效果字符串
+                newPill.basRequire = extraInfo.RealmReq; // 境界需求
+                newPill.grade = extraInfo.RealmReq;
+                newPill.operUse = 1; // 确保可使用
+
+                g.conf.itemPill._allConfList.Add(newPill);
+                ForceRegisterItem(g.conf.itemPill, newPill, newPill.id);
+
+                // 4. 新造物逻辑 (保持不变)
+                if (!isRestoring)
+                {
+                    SaveItem(new SavedItemData
+                    {
+                        Type = "Consumer",
+                        BaseInfo = baseInfo,
+                        Effects = effectStr,
+                        ExtraInfo = extraInfo,
+                        GeneratedID = itemId
+                    });
+
+                    // 发放
+                    var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
+                    rewardList.Add(DataProps.PropsData.NewProps(itemId, 1));
+                    g.world.playerUnit.data.RewardPropItem(rewardList, true);
+                    UITipItem.AddTip($"获得造物：{baseInfo.Name}", 3f);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[CreateConsumer] 失败: {ex}");
+            }
+        }
+
+        /// <summary>
+        /// 创建装备/坐骑 (Equip)
+        /// </summary>
+        public static void CreateEquip(CreationBaseInfo baseInfo, string effectStr, CreationExtraInfo extraInfo, bool isRestoring = false, int fixedId = 0)
+        {
+            try
+            {
+                // 1. ID与效果
+                int itemId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(9500000, 9999999, id => g.conf.itemProps.GetItem(id) != null);
+                string effectIds = ParseAndRegisterEffects(effectStr);
+
+                // 2. 选取图标 (默认使用剑)
+                int iconId = GetIconId(baseInfo.IconCategory);
+
+                // 3. 注册 ItemProps (外壳)
+                var newProp = new ConfItemPropsItem();
+                newProp.id = itemId;
+                newProp.name = baseInfo.Name;
+                newProp.desc = baseInfo.Description;
+                newProp.type = 3; // 坐骑大类
+                newProp.className = 302; // 飞剑
+                newProp.level = baseInfo.Grade;
+                newProp.worth = extraInfo.Worth;
+                newProp.sale = extraInfo.Worth / 2;
+                newProp.icon = iconId.ToString();
+                newProp.drop = 1;
+                newProp.isOverlay = 0; // 装备不可堆叠
+
+                g.conf.itemProps._allConfList.Add(newProp);
+                ForceRegisterItem(g.conf.itemProps, newProp, newProp.id);
+
+                // 4. 注册 ItemHorse (坐骑内核)
+                var newHorse = new ConfItemHorseItem();
+                newHorse.id = itemId;
+                newHorse.effectValue = effectIds;
+                newHorse.grade = extraInfo.RealmReq;
+
+                // [核心修正] 严格复刻 ExecuteDemoCreation 的逻辑
+                // 获取源数据 (ID 3021041) 以保持模型和特性与游戏原生一致，防止崩溃
+                var sourceHorseData = g.conf.itemHorse.GetItem(3021041);
+                if (sourceHorseData != null)
+                {
+                    newHorse.model = sourceHorseData.model;      // 复制正确的模型
+                    newHorse.feature = sourceHorseData.feature;  // 复制正确的特性 (防止 "1" 这种空指针崩溃)
+                }
+                else
+                {
+                    // 极低概率保底：如果找不到 3021041，则给个安全值
+                    Debug.LogWarning("[CreateEquip] 警告：未找到源坐骑 3021041，使用默认安全值");
+                    newHorse.model = "dao_12";
+                    newHorse.feature = "0"; // 0 表示无特性，是安全的
+                }
+
+                g.conf.itemHorse._allConfList.Add(newHorse);
+                ForceRegisterItem(g.conf.itemHorse, newHorse, newHorse.id);
+
+                // 5. 新造物逻辑
+                if (!isRestoring)
+                {
+                    SaveItem(new SavedItemData
+                    {
+                        Type = "Equip",
+                        BaseInfo = baseInfo,
+                        Effects = effectStr,
+                        ExtraInfo = extraInfo,
+                        GeneratedID = itemId
+                    });
+
+                    // 发放物品
+                    var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
+                    rewardList.Add(DataProps.PropsData.NewProps(itemId, 1));
+                    g.world.playerUnit.data.RewardPropItem(rewardList, true);
+                    UITipItem.AddTip($"获得神器：{baseInfo.Name}", 3f);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[CreateEquip] 失败: {ex}");
+            }
+        }
+
+        // ====================================================================
+        // 辅助逻辑函数
+        // ====================================================================
+
+        /// <summary>
+        /// 解析效果字符串，注册RoleEffect，返回ID串
+        /// 格式: "atk_0_10|def_1_20"
+        /// </summary>
+        private static string ParseAndRegisterEffects(string effectStr)
+        {
+            if (string.IsNullOrEmpty(effectStr)) return "";
+
+            List<string> registeredIds = new List<string>();
+            string[] parts = effectStr.Split('|');
+
+            foreach (var part in parts)
+            {
+                if (string.IsNullOrWhiteSpace(part)) continue;
+
+                // 即使是恢复模式，我们也每次重新生成Effect ID，
+                // 因为Item定义里只存了Effect ID的引用，只要Item指向新的有效Effect ID即可。
+                // 这样避免了保存庞大的Effect ID映射表。
+                int effectId = GetRandomID(8900000, 8999999, id => g.conf.roleEffect.GetItem(id) != null);
+
+                // 注册 RoleEffect
+                var newEffect = new ConfRoleEffectItem();
+                newEffect.id = effectId;
+                newEffect.effectType = 101; // 通用属性类型
+                newEffect.value = part; // 直接使用 AI 生成的 key_type_val
+
+                g.conf.roleEffect._allConfList.Add(newEffect);
+                ForceRegisterItem(g.conf.roleEffect, newEffect, newEffect.id);
+
+                registeredIds.Add(effectId.ToString());
+            }
+
+            return string.Join("|", registeredIds);
+        }
+
+        /// <summary>
+        /// 强制注册物品到游戏配置字典 (反射)
+        /// </summary>
+        public static void ForceRegisterItem(object confManager, object newItem, int id)
+        {
+            try
+            {
+                var type = confManager.GetType();
+                var prop = type.GetProperty("allConfDic", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
+
+                if (prop != null)
+                {
+                    var dicObj = prop.GetValue(confManager);
+                    if (dicObj != null)
+                    {
+                        var addMethod = dicObj.GetType().GetMethod("Add");
+                        var containsKeyMethod = dicObj.GetType().GetMethod("ContainsKey");
+
+                        if (addMethod != null && containsKeyMethod != null)
+                        {
+                            bool exists = (bool)containsKeyMethod.Invoke(dicObj, new object[] { id });
+                            if (!exists)
+                            {
+                                addMethod.Invoke(dicObj, new object[] { id, newItem });
+                            }
+                            return;
+                        }
+                    }
+                }
+                // Fallback for field access if property fails
+                var field = type.GetField("_allConfDic", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.FlattenHierarchy);
+                if (field != null)
+                {
+                    var dicObj = field.GetValue(confManager);
+                    if (dicObj != null)
+                    {
+                        var addMethod = dicObj.GetType().GetMethod("Add");
+                        if (addMethod != null) addMethod.Invoke(dicObj, new object[] { id, newItem });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning($"[ForceRegister] 注册 ID {id} 异常: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// 生成唯一随机ID
+        /// </summary>
+        private static int GetRandomID(int min, int max, Func<int, bool> checkExists)
+        {
+            int maxAttempts = 1000;
+            for (int i = 0; i < maxAttempts; i++)
+            {
+                int id = _rng.Next(min, max);
+                if (!checkExists(id))
+                {
+                    return id;
+                }
+            }
+            Debug.LogError($"[GetRandomID] 无法在 {min}-{max} 范围内找到空闲ID!");
+            return min; // 失败保底
+        }
+
+        /// <summary>
+        /// 获取图标ID
+        /// </summary>
+        private static int GetIconId(string category)
+        {
+            if (string.IsNullOrEmpty(category) || !IconMapper.ContainsKey(category))
+            {
+                category = "Unknown";
+            }
+            var list = IconMapper[category];
+            return list[_rng.Next(list.Count)];
+        }
+
+        /// <summary>
+        /// 保存新物品到本地JSON
+        /// </summary>
+        private static void SaveItem(SavedItemData data)
+        {
+            try
+            {
+                List<SavedItemData> list = new List<SavedItemData>();
+
+                // 确保目录存在
+                string dir = Path.GetDirectoryName(SavePath);
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+                // 读取旧数据
+                if (File.Exists(SavePath))
+                {
+                    try
+                    {
+                        string oldJson = File.ReadAllText(SavePath);
+                        var oldList = JsonConvert.DeserializeObject<List<SavedItemData>>(oldJson);
+                        if (oldList != null) list = oldList;
+                    }
+                    catch { }
+                }
+
+                // 添加新数据
+                list.Add(data);
+
+                // 写入
+                string newJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                File.WriteAllText(SavePath, newJson);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[SaveItem] 保存失败: {ex}");
+            }
+        }
+        /// <summary>
+        /// 强制注册物品到游戏配置字典的辅助函数
+        /// </summary>
+    
+
+        /// <summary>
+        /// 执行演示用的造物逻辑（包含全能丹、万神飞剑、创世气运）
+        /// 原 ModMain.OnPlayerMove 中的核心逻辑
+        /// </summary>
+        public static void ExecuteDemoCreation()
+        {
+            try
+            {
+                UITipItem.AddTip("正在执行 AI 造物 (V40.0)...", 3f);
+                Debug.Log(">>> [ModMain] 开始 AI 造物流程 (V40.0)");
+
+                // =============================================================
+                // 0. 【定义全属性字典】(集成 V39 最终验证版)
+                // =============================================================
+                var attrDict = new Dictionary<string, string>()
+                {
+                    // --- 核心六维 ---
+                    { "atk", "攻击" }, { "def", "防御" },
+                    { "hpMax", "体力上限" }, { "mpMax", "灵力上限" }, { "spMax", "念力上限" },
+                    
+                    // --- RPG 属性 ---
+                    { "life", "寿命" },
+                    { "beauty", "魅力" },
+                    { "luck", "幸运" },
+                    { "reputation", "声望" },
+                    
+                    // --- 战斗高级属性 ---
+                    { "crit", "会心" },
+                    { "guard", "护心" },
+                    { "fsp", "脚力" },    // 大地图移速
+                    { "msp", "战斗移速" }, 
+
+                    // --- 12种资质 ---
+                    { "basSword", "剑法" }, { "basSpear", "枪法" }, { "basBlade", "刀法" },
+                    { "basFist", "拳法" }, { "basPalm", "掌法" }, { "basFinger", "指法" },
+                    { "basFire", "火灵" }, { "basWater", "水灵" }, { "basThunder", "雷灵" },
+                    { "basWind", "风灵" }, { "basEarth", "土灵" }, { "basWood", "木灵" }
+                };
+
+                // 用于存储所有生成的 RoleEffect ID，最后喂给飞剑
+                List<string> validEffectIds = new List<string>();
+
+                int validCount = 0;
+                int index = 0;
+
+                // 源数据引用
+                var sourcePropPill = g.conf.itemProps.GetItem(1011271);
+                var sourcePillData = g.conf.itemPill.GetItem(1011271);
+                var sourcePropFruit = g.conf.itemProps.GetItem(5081015);
+
+                if (sourcePropPill != null && sourcePillData != null && sourcePropFruit != null)
+                {
+                    // =========================================================
+                    // 步骤 A: 循环注册所有独立的 RoleEffect
+                    // =========================================================
+                    foreach (var kvp in attrDict)
+                    {
+                        string key = kvp.Key;
+
+                        // 智能试毒
+                        string realName = "";
+                        try { realName = g.conf.roleEffect.GetValueName(key); } catch { }
+
+                        if (string.IsNullOrEmpty(realName))
+                        {
+                            Debug.LogError($"[V41过滤] ❌ 剔除无效 Key: '{key}'");
+                            continue;
+                        }
+
+                        int roleEffectId = 8898500 + index; // 独立的 Effect ID
+
+                        // 数值设定
+                        int val = 100;
+                        if (key == "life") val = 120; // 10年
+                        if (key == "beauty" || key == "fsp") val = 500;
+
+                        // 注册独立的 RoleEffect (Type 101)
+                        var effectPill = new ConfRoleEffectItem();
+                        effectPill.id = roleEffectId;
+                        effectPill.value = $"{key}_1_{val}";
+                        effectPill.effectType = 101;
+                        g.conf.roleEffect._allConfList.Add(effectPill);
+                        ForceRegisterItem(g.conf.roleEffect, effectPill, effectPill.id);
+
+                        // 将合法的 ID 加入列表
+                        validEffectIds.Add(roleEffectId.ToString());
+
+                        validCount++;
+                        index++;
+                    }
+
+                    // =========================================================
+                    // 步骤 B: 生成【唯一】一颗全属性丹药
+                    // =========================================================
+                    if (validCount > 0)
+                    {
+                        int pillId = 8888002;
+                        // [核心修改] 将所有 RoleEffect ID 用竖线连接
+                        // 效果：吃一颗药，触发这里面所有的 Effect
+                        string multiPillString = string.Join("|", validEffectIds);
+
+                        // 1. 注册 ItemProps (外壳)
+                        var newProp = new ConfItemPropsItem();
+                        newProp.type = 1;
+                        newProp.className = 103;
+                        newProp.sale = 1000;
+                        newProp.worth = 99999; // 价值连城
+                        newProp.level = 5;
+                        newProp.isOverlay = 1;
+                        newProp.drop = 1;
+                        newProp.dieDrop = sourcePropPill.dieDrop;
+                        newProp.icon = sourcePropFruit.icon;
+
+                        newProp.id = pillId;
+                        newProp.name = "赛博全能丹";
+                        newProp.desc = $"AI生成的终极丹药。\n食用后增加 {validCount} 种属性 (含脚力/魅力/全资质)。";
+
+                        g.conf.itemProps._allConfList.Add(newProp);
+                        ForceRegisterItem(g.conf.itemProps, newProp, newProp.id);
+
+                        // 2. 注册 ItemPill (内核 - 严格复刻 V36/V40 防崩字段)
+                        var newPill = new ConfItemPillItem();
+                        newPill.basType = sourcePillData.basType;
+                        newPill.basRequire = sourcePillData.basRequire;
+                        newPill.cdGroup = sourcePillData.cdGroup;
+                        newPill.grade = sourcePillData.grade;
+                        newPill.operEquip = sourcePillData.operEquip;
+                        newPill.autoUse = sourcePillData.autoUse;
+                        newPill.spCost = sourcePillData.spCost;
+                        newPill.useIgnoreGrade = sourcePillData.useIgnoreGrade;
+                        newPill.applyCD = sourcePillData.applyCD;
+                        newPill.pillType = sourcePillData.pillType;
+                        newPill.fateRandomWeight = sourcePillData.fateRandomWeight;
+                        newPill.carryCount = sourcePillData.carryCount;
+                        newPill.noUseTogether = sourcePillData.noUseTogether;
+                        newPill.cost = sourcePillData.cost;
+                        newPill.battleUIHide = sourcePillData.battleUIHide;
+                        newPill.consume = sourcePillData.consume;
+
+                        newPill.id = pillId;
+                        newPill.operUse = 1;
+                        newPill.effectType = 201;
+                        // [关键] 这里填入 ID 串 (例如 "8898500|8898501|...")
+                        newPill.effectValue = multiPillString;
+
+                        g.conf.itemPill._allConfList.Add(newPill);
+                        ForceRegisterItem(g.conf.itemPill, newPill, newPill.id);
+
+                        // 发放丹药
+                        var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
+                        rewardList.Add(DataProps.PropsData.NewProps(pillId, 5));
+                        g.world.playerUnit.data.RewardPropItem(rewardList, true);
+                        UITipItem.AddTip($"生成全能丹 (含{validCount}种属性)", 3f);
+                    }
+                }
+
+
+                // =============================================================
+                // 2. 【万神飞剑】(使用 ID|ID|ID 形式关联所有效果)
+                // =============================================================
+                if (validCount > 0)
+                {
+                    int mountId = 8888999;
+                    // [核心] 将所有生成的 RoleEffect ID 用竖线连接
+                    // 结果形如: "8898500|8898501|8898502..."
+                    string multiEffectString = string.Join("|", validEffectIds);
+
+                    // 2.1 物品数据 (严格复刻，去除了可能报错的字段)
+                    var sourceHorseProp = g.conf.itemProps.GetItem(3021041);
+                    var sourceHorseData = g.conf.itemHorse.GetItem(3021041);
+
+                    if (sourceHorseProp != null && sourceHorseData != null)
+                    {
+                        // 外壳
+                        var newPropHorse = new ConfItemPropsItem();
+                        newPropHorse.type = sourceHorseProp.type;
+                        newPropHorse.className = sourceHorseProp.className;
+                        newPropHorse.icon = sourceHorseProp.icon;
+                        newPropHorse.level = 1;
+                        newPropHorse.isOverlay = 0;
+                        newPropHorse.drop = 1;
+                        newPropHorse.worth = 99999;
+                        newPropHorse.sale = 5000;
+
+                        newPropHorse.id = mountId;
+                        newPropHorse.name = "万神飞剑 (V40)";
+                        newPropHorse.desc = $"聚合了 {validCount} 种属性的神器。\n包含: 脚力、魅力、全资质等。";
+
+                        g.conf.itemProps._allConfList.Add(newPropHorse);
+                        ForceRegisterItem(g.conf.itemProps, newPropHorse, newPropHorse.id);
+
+                        // 内核 (字段严格依照你的要求)
+                        var newHorseData = new ConfItemHorseItem();
+                        newHorseData.model = sourceHorseData.model;
+                        newHorseData.feature = sourceHorseData.feature; // 关键
+                        newHorseData.grade = sourceHorseData.grade;
+
+                        newHorseData.id = mountId;
+
+                        // [关键] 这里直接填入 ID 串，而不是指向另一个 RoleEffect
+                        // 这完全符合官方 "30210111|30210112" 的格式
+                        newHorseData.effectValue = multiEffectString;
+
+                        g.conf.itemHorse._allConfList.Add(newHorseData);
+                        ForceRegisterItem(g.conf.itemHorse, newHorseData, newHorseData.id);
+
+                        var horseList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
+                        horseList.Add(DataProps.PropsData.NewProps(mountId, 1));
+                        g.world.playerUnit.data.RewardPropItem(horseList, true);
+                        UITipItem.AddTip("获得：万神飞剑 (全效果聚合)", 3f);
+                    }
+
+
+                    // =============================================================
+                    // 3. 【创世气运】(修复被吞部分，同样使用 ID 串)
+                    // =============================================================
+                    var sourceFate = g.conf.roleCreateFeature.GetItem(101);
+                    if (sourceFate != null)
+                    {
+                        var newFeature = new ConfRoleCreateFeatureItem();
+                        newFeature.type = sourceFate.type;
+                        newFeature.level = 1;
+                        newFeature.group = sourceFate.group;
+                        newFeature.duration = sourceFate.duration;
+
+                        newFeature.id = 8888001;
+                        newFeature.name = "AI创世之力";
+
+                        // 气运也支持 "ID|ID" 格式
+                        newFeature.effect = multiEffectString;
+                        newFeature.tips = "汇聚了赛博空间的终极力量，全属性生效。";
+
+                        g.conf.roleCreateFeature._allConfList.Add(newFeature);
+                        ForceRegisterItem(g.conf.roleCreateFeature, newFeature, newFeature.id);
+
+                        try
+                        {
+                            GMCmd gMCmd = new GMCmd();
+                            gMCmd.CMDCall("tianjiaqiyun_player_8888001");
+                            UITipItem.AddTip("获得气运：AI创世之力", 3f);
+                        }
+                        catch { }
+                    }
+                }
+
+                Debug.Log(">>> [ModMain] 造物流程结束 (V40.0)");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[Creation] 造物异常: {ex}");
+                UITipItem.AddTip("造物发生错误", 5f);
+            }
+        }
+    }
+    [Serializable]
+    public class AICreationResponse
+    {
+        public string Type; // "Luck", "Consumer", "Equip"
+        public CreationBaseInfo BaseInfo;
+        public string Effects;
+        public CreationExtraInfo ExtraInfo;
+    }
+    [Serializable]
+    public class SavedItemData
+    {
+        public string Type; // "Luck", "Consumer", "Equip"
+        public CreationBaseInfo BaseInfo;
+        public string Effects; // "atk_0_10|..."
+        public CreationExtraInfo ExtraInfo;
+        public int GeneratedID; // 记录当时生成的 ID，用于恢复
+    }
+
+    [Serializable]
+    public class CreationBaseInfo
+    {
+        public string Name;
+        public int Grade; // 1-6
+        public string IconCategory; // "Sword"
+        public string Description;
+    }
+
+    [Serializable]
+    public class CreationExtraInfo
+    {
+        public int Worth; // 售价
+        public int RealmReq; // 境界要求 1-10
+        public int Duration; // 持续时间 (仅气运)
+    }
+}
