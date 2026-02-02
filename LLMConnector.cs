@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
+using System.IO; // 需要为流式读取添加
+using System.Threading; // 需要为 CancellationToken 添加
 
 namespace MOD_kqAfiU
 {
@@ -33,22 +35,11 @@ namespace MOD_kqAfiU
     {
         public string model;
         public List<Message> messages;
-        public double temperature;
-        public int max_tokens;
-        public int top_k;
-        public double top_p;
-        public double frequency_penalty;
 
-        public LLMRequest(string model, List<Message> messages, double temperature = 1.0, int max_tokens = 1024,
-                 int top_k = 50, double top_p = 0.8, double frequency_penalty = 0.0)
+        public LLMRequest(string model, List<Message> messages)
         {
             this.model = model;
             this.messages = messages;
-            this.temperature = temperature;
-            this.max_tokens = max_tokens;
-            this.top_k = top_k;
-            this.top_p = top_p;
-            this.frequency_penalty = frequency_penalty;
         }
     }
 
@@ -126,6 +117,85 @@ namespace MOD_kqAfiU
             }
             return null;
         }
+
+        public void StreamMessageToLLM(List<Message> messages, CancellationToken cancellationToken, Action<string> onChunkReceived, Action onComplete, Action<string> onError)
+        {
+            ThreadPool.QueueUserWorkItem(async _ =>
+            {
+                try
+                {
+                    // 创建包含 stream: true 的请求对象
+                    var requestData = new
+                    {
+                        model = this.modelName,
+                        messages = messages,
+                        stream = true
+                    };
+
+
+                    var requestJson = JsonConvert.SerializeObject(requestData);
+                    var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+
+                    // 使用 HttpCompletionOption.ResponseHeadersRead 来支持流式读取
+                    var request = new HttpRequestMessage(HttpMethod.Post, this.apiUrl) { Content = content };
+                    var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
+
+                    response.EnsureSuccessStatusCode();
+
+                    using (var stream = await response.Content.ReadAsStreamAsync())
+                    using (var reader = new StreamReader(stream))
+                    {
+                        while (!reader.EndOfStream)
+                        {
+                            // 检查取消请求
+                            if (cancellationToken.IsCancellationRequested)
+                            {
+                                // 在主线程上执行回调，通知任务被取消
+                                ModMain.RunOnMainThread(() => onError?.Invoke("请求被取消。"));
+                                return;
+                            }
+
+                            var line = await reader.ReadLineAsync();
+                            if (string.IsNullOrWhiteSpace(line)) continue;
+
+                            // LLM流式响应通常以 "data: " 开头
+                            if (line.StartsWith("data: "))
+                            {
+                                string jsonData = line.Substring(6);
+                                if (jsonData.Trim() == "[DONE]")
+                                {
+                                    break; // 流结束
+                                }
+
+                                dynamic jsonChunk = JsonConvert.DeserializeObject(jsonData);
+                                if (jsonChunk.choices != null && jsonChunk.choices.Count > 0)
+                                {
+                                    string textChunk = jsonChunk.choices[0].delta.content;
+                                    if (!string.IsNullOrEmpty(textChunk))
+                                    {
+                                        // 将收到的文本块安全地传递回主线程
+                                        ModMain.RunOnMainThread(() => onChunkReceived?.Invoke(textChunk));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // 整个流处理完毕，在主线程上调用完成回调
+                    ModMain.RunOnMainThread(() => onComplete?.Invoke());
+                }
+                catch (OperationCanceledException)
+                {
+                    // 这是由 CancellationToken 触发的正常取消
+                    ModMain.RunOnMainThread(() => onError?.Invoke("请求被用户取消。"));
+                }
+                catch (Exception ex)
+                {
+                    // 其他所有错误
+                    ModMain.RunOnMainThread(() => onError?.Invoke($"连接或解析失败: {ex.Message}"));
+                }
+            });
+        }
+
         // 向LLM发送消息列表
         public Task<string> SendMessageToLLM(List<Message> messages)
         {
@@ -138,40 +208,40 @@ namespace MOD_kqAfiU
                     // 创建请求对象
                     var request = new LLMRequest(
                         modelName,
-                        messages,
-                        ModMain.temperature,
-                        ModMain.max_tokens,
-                        ModMain.top_k,
-                        ModMain.top_p,
-                        ModMain.frequency_penalty
+                        messages
                     );
                     var requestJson = JsonConvert.SerializeObject(request);
+                    string jsonOutput = JsonConvert.SerializeObject(request);
+                    
+                    //Debug.Log($"实际序列化的JSON: {jsonOutput}");
                     var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
 
                     // 发送请求
                     var response = httpClient.PostAsync(apiUrl, content).GetAwaiter().GetResult();
                     var responseJson = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
 
+                    
+
                     ModMain.RunOnMainThread(() =>
                     {
                         dynamic jsonResponse = JsonConvert.DeserializeObject(responseJson);
-
+                        Debug.Log($"实际序列化的JSON: {jsonOutput}");
                         if (jsonResponse == null || jsonResponse.choices == null || jsonResponse.choices.Count == 0 || jsonResponse.choices[0].message == null)
                         {
-                            tcs.SetResult("对不起，我暂时无法回应");
+                            tcs.SetResult($"对不起，我暂时无法回应。请尝试1.如果修改过神识传音配置，请找个NPC点开，点击白色的配置按钮，复制神识配置并保存 2.尝试重新进入存档 3.点开一名NPC，找到白色的配置按钮，检查API配置是否正常");
                             return;
                         }
 
                         string result = jsonResponse.choices[0].message.content.ToString();
                         if (string.IsNullOrEmpty(result))
-                            result = "对不起，我暂时无法回应";
+                            result = $"对不起，我暂时无法回应:{result}";
 
                         tcs.SetResult(result);
                     });
                 }
                 catch
                 {
-                    ModMain.RunOnMainThread(() => tcs.SetResult("对不起，连接失败，请稍后再试"));
+                    ModMain.RunOnMainThread(() => tcs.SetResult("对不起，连接失败，请稍后再试。请尝试1.如果是初次使用mod，请大退游戏一次让mod正常初始化  2.点开一名NPC，找到白色的配置按钮，检查api配置是否正确"));
                 }
             });
 

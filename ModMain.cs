@@ -10,7 +10,9 @@ using UnhollowerRuntimeLib;
 using static SpecialBattle83;
 using System.Web.WebPages;
 using System.Linq;
+using System.Text;
 using static MOD_kqAfiU.Tools;
+using static UIIconTool;
 
 namespace MOD_kqAfiU
 {
@@ -104,8 +106,10 @@ namespace MOD_kqAfiU
         private static HarmonyLib.Harmony harmony;
         private Example example;
         private static ModMain _instance;
-        private static int playerTalk = 437762042;
-        private static int npcTalk = 1461570040;
+        public static int playerTalk = 437762042;
+        private static int pictalk = 705106572;
+        private static int spliceDialogId = 1100709579;
+        public static int npcTalk = 1461570040;
         private static int onlyTalk = -250527135;
         private static int taskID = 988567713;
         private readonly Queue<Action> _mainThreadQueue = new Queue<Action>();
@@ -113,7 +117,8 @@ namespace MOD_kqAfiU
         private bool waitingForLLMResponse = false;
         private bool isFirstDialog = true;
         private bool inOngoingDialog = false;
-        private List<WorldUnitBase> dialogueNpcs = new List<WorldUnitBase>();
+        public static List<WorldUnitBase> dialogueNpcs = new List<WorldUnitBase>();
+        private static Dictionary<string, string> pendingCachedEffects = new Dictionary<string, string>();
 
         // LLM相关参数和状态
         private LLMConnector llmConnector;
@@ -128,20 +133,31 @@ namespace MOD_kqAfiU
         public static float top_p = 0; // 默认为0，将从配置中读取
         public static float frequency_penalty = 0; // 默认为0，将从配置中读取
         private float lastMoveTime = 0f;
-        private string pendingLLMResponse = null;
+        public static string pendingLLMResponse = null;
         private GameObject npcButton1;
         private GameObject configButton1;
+        public static bool hasTriggeredBattleInCurrentAdventure = false;
         public static bool needReview = false;
-        private LLMDialogueRequest currentRequest = null; // 存储当前对话的请求，用于继续对话
+        public static LLMDialogueRequest currentRequest = null; // 存储当前对话的请求，用于继续对话
+        public static bool hasTriggeredDiscussionInCurrentAdventure = false; // 当前奇遇是否已触发论道
+        public static List<string> givenRewardsInCurrentAdventure = new List<string>(); // 当前奇遇已发放的奖励
+        public static bool waitingForShortEventResponse = false;
+        public static string pendingShortEventResponse = null;
 
-        public static float encounterProbability = 0.05f; // 默认值为0.05
-        private float llmRequestStartTime = 0f;
+        public static float encounterProbability = 0.015f; // 默认值为0.015
+        public static float shortEventProbability = 0.015f;
+
+        public static float llmRequestStartTime = 0f;
+
+        public static bool isInBattle = false;
+        public static bool autoColoringEnabled = true;
 
 
 
         private GameObject _currentUIInstance = null;
         private WorldUnitBase _currentNpcForInput = null;
         private bool _inputUIOpened = false;
+        private Action<ETypeData> battleStartCall;
 
 
         [Serializable]
@@ -157,6 +173,7 @@ namespace MOD_kqAfiU
             public string text;
         }
 
+        // 添加处理战斗结束响应的静态方法
 
         public void Init()
         {
@@ -192,21 +209,36 @@ namespace MOD_kqAfiU
                 ModMain.top_p = config.TopP;
                 ModMain.frequency_penalty = config.FrequencyPenalty;
                 ModMain.encounterProbability = config.EncounterProbability;
+                ModMain.shortEventProbability = config.ShortEventProbability;
+                ModMain.autoColoringEnabled = config.AutoColoringEnabled;
             }
 
 
             Tools.Initialize(apiUrl, apiKey, modelName);
+            UIRewardAndShortConfig.isGenerating = false;
+            //DramaPolish.Initialize();
 
-
+            hasTriggeredDiscussionInCurrentAdventure = false;
+            givenRewardsInCurrentAdventure.Clear();
             g.data.dataObj.data.SetString("LLMcontent", "");
+            g.data.dataObj.data.SetString("ShortEventContent", "");
             dialogueNpcs.Clear();
             pendingLLMResponse = null;
             currentRequest = null;
             waitingForLLMResponse = false;
+            isInBattle = false;
             inOngoingDialog = false;
             var moveAction = new UnitActionMovePlayer(Vector2Int.right);
             g.events.On(EGameType.OneUnitCreateOneActionBack(g.world.playerUnit, moveAction.GetIl2CppType()), (Il2CppSystem.Action<ETypeData>)OnPlayerMove);
+            this.battleStartCall = new Action<ETypeData>(this.OnBattleStart);
+            g.events.On(EBattleType.BattleStart, this.battleStartCall, 0, false);
+            
             corUpdate = g.timer.Frame(new Action(OnUpdate), 60, true);
+        }
+
+        public void OnBattleStart(ETypeData e)
+        {
+            isInBattle = true;
         }
 
         public void CloseUIEnd(ETypeData e)
@@ -233,6 +265,7 @@ namespace MOD_kqAfiU
         public void OpenUIEnd(ETypeData e)
         {
             OpenUIEnd openUIEnd = e.Cast<OpenUIEnd>();
+            /*
             if (openUIEnd.uiType.uiName == UIType.DramaDialogue.uiName)
             {
                 UIDramaDialogue dramaUI = g.ui.GetUI<UIDramaDialogue>(UIType.DramaDialogue);
@@ -283,20 +316,15 @@ namespace MOD_kqAfiU
                                         // 关闭对话UI
                                         dramaUI.CloseUI();
 
+
                                         // 获取当前存储的对话内容 - 仅用于参考，不会修改
                                         string currentContent = g.data.dataObj.data.GetString("LLMcontent");
 
-                                        // 重要：不修改inOngoingDialog，保持为true
-                                        // 重要：不清空currentRequest，保持对话历史
-
-                                        // 发送相同的请求以获取新的响应
+                                        // 原来的重新生成逻辑
                                         if (currentRequest != null)
                                         {
-                                            // 确保添加系统提示格式指南
-                                            //Debug.Log("移除assistant前的消息列表:");
-                                           // currentRequest.DebugPrintMessages();
                                             currentRequest.RemoveLatestMessageByRole("assistant");
-                                           // Debug.Log("移除assistant后的消息列表:");
+                                            // Debug.Log("移除assistant后的消息列表:");
                                             //currentRequest.DebugPrintMessages();
 
                                             // 设置等待响应状态
@@ -309,10 +337,6 @@ namespace MOD_kqAfiU
                                                 pendingLLMResponse = response;
                                             });
                                         }
-                                        else
-                                        {
-                                            UITipItem.AddTip("无法重新生成，对话上下文丢失", 1f);
-                                        }
                                     };
                                     regenButton.onClick.AddListener(clickAction);
                                 }
@@ -321,7 +345,8 @@ namespace MOD_kqAfiU
                     }
                 }
             }
-                if (openUIEnd.uiType.uiName == UIType.NPCInfo.uiName)
+            */
+            if (openUIEnd.uiType.uiName == UIType.NPCInfo.uiName)
             {
                 UINPCInfo ui = g.ui.GetUI<UINPCInfo>(UIType.NPCInfo);
                 if (ui != null)
@@ -388,17 +413,73 @@ namespace MOD_kqAfiU
                                             UITipItem.AddTip("附近没有发现可对话的NPC", 1f);
                                             return;
                                         }
+
+                                        // 复用OnPlayerMove的逻辑来抽取事件
+                                        var npcUnitID = randomNpc.data.unitData.unitID;
+                                        var playerRelation = g.world.playerUnit.data.unitData.relationData;
+
+                                        List<string> allAvailableEvents = new List<string>();
+                                        bool hasSpecialRelation = false;
+
+                                        // 先检查特殊关系
+                                        // 检查道侣/配偶关系
+                                        bool isLoverSpouse = playerRelation.lover.Contains(npcUnitID) || playerRelation.married == npcUnitID.ToString();
+                                        if (isLoverSpouse)
+                                        {
+                                            var loverEvents = Tools.GetLoverSpouseEventTypes();
+                                            allAvailableEvents.AddRange(loverEvents);
+                                            hasSpecialRelation = true;
+                                        }
+
+                                        // 检查父母子女关系
+                                        bool isParentChild = playerRelation.parent.Contains(npcUnitID) || playerRelation.children.Contains(npcUnitID) || playerRelation.parentBack.Contains(npcUnitID) || playerRelation.childrenBack.Contains(npcUnitID) || playerRelation.childrenPrivate.Contains(npcUnitID);
+                                        if (isParentChild)
+                                        {
+                                            var parentEvents = Tools.GetParentChildEventTypes();
+                                            allAvailableEvents.AddRange(parentEvents);
+                                            hasSpecialRelation = true;
+                                        }
+
+                                        // 检查师徒关系
+                                        bool isMasterStudent = playerRelation.master.Contains(npcUnitID) || playerRelation.student.Contains(npcUnitID);
+                                        if (isMasterStudent)
+                                        {
+                                            var masterEvents = Tools.GetMasterStudentEventTypes();
+                                            allAvailableEvents.AddRange(masterEvents);
+                                            hasSpecialRelation = true;
+                                        }
+
+                                        // 如果没有特殊关系，才使用通用和异性关系
+                                        if (!hasSpecialRelation)
+                                        {
+                                            // 通用事件
+                                            var generalEvents = Tools.GetGeneralEventTypes();
+                                            allAvailableEvents.AddRange(generalEvents);
+
+                                            // 检查异性关系
+                                            string playerGender = ((int)g.world.playerUnit.data.unitData.propertyData.sex == 1) ? "男" : "女";
+                                            string npcGender = ((int)randomNpc.data.unitData.propertyData.sex == 1) ? "男" : "女";
+                                            bool isOppositeGender = playerGender != npcGender;
+                                            if (isOppositeGender)
+                                            {
+                                                var oppositeEvents = Tools.GetOppositeGenderEventTypes();
+                                                allAvailableEvents.AddRange(oppositeEvents);
+                                            }
+                                        }
+
+                                        // 随机选择一个事件
+                                        System.Random random = new System.Random();
+                                        string selectedEvent = allAvailableEvents[random.Next(allAvailableEvents.Count)];
+
                                         string npcName = randomNpc.data.unitData.propertyData.GetName();
-
-                                        string npcInfo = Prop.GetNPCCompleteInfo(randomNpc, g.world.playerUnit, 10);
-
                                         dialogueNpcs.Add(randomNpc);
                                         waitingForLLMResponse = true;
+                                        hasTriggeredBattleInCurrentAdventure = false;
                                         isFirstDialog = true;
                                         currentRequest = new LLMDialogueRequest();
-                                        currentRequest.AddSystemMessage($"{Tools.GenerateRandomSystemPrompt(randomNpc)}你是{npcName}。");
+                                        currentRequest.AddSystemMessage($"{Tools.GenerateRandomSystemPrompt(randomNpc, selectedEvent)}你是{npcName}。");
                                         currentRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
-                                        currentRequest.AddUserMessage("请给我第一段随机奇遇剧情，必须使用JSON格式返回。");
+                                        currentRequest.AddUserMessage("请给我第一段随机奇遇剧情，必须使用格式化返回。");
                                         UITipItem.AddTip("开始准备奇遇~", 1f);
                                         llmRequestStartTime = Time.time;
                                         Tools.SendLLMRequest(currentRequest, (response) => {
@@ -469,16 +550,23 @@ namespace MOD_kqAfiU
             }
         }
 
+       
+
         public void OnPlayerMove(ETypeData data)
         {
-            
 
+            
 
             if (Time.time - lastMoveTime < 1f)
             {
                 return; // 静默忽略，不显示提示以避免频繁弹窗
             }
             lastMoveTime = Time.time;
+
+            if (isInBattle)
+            {
+                isInBattle = false;
+            }
 
             UIDramaDialogue dramaUI = g.ui.GetUI<UIDramaDialogue>(UIType.DramaDialogue);
 
@@ -499,8 +587,9 @@ namespace MOD_kqAfiU
                     // 使用 Tools 中的函数生成选项
                     var optionsList = Tools.GenerateOptionsFromResponse(formattedResponse, currentRequest);
                     var (options, callbacks) = GenerateDialogueOptions(optionsList, randomNpc);
-                    Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
-                    
+                    //Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
+                    CreateMultiPartDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
+
                     needReview = true;
                 }
                 return;
@@ -511,38 +600,60 @@ namespace MOD_kqAfiU
                 return;
             }
 
-
-            if (string.IsNullOrEmpty(g.data.dataObj.data.GetString("LLMcontent")) && UnityEngine.Random.Range(0f, 1f) > encounterProbability)
+            string shortEventContent = g.data.dataObj.data.GetString("ShortEventContent");
+            if (!string.IsNullOrEmpty(shortEventContent))
             {
-                Debug.Log("skip");
-                return; // 95%的概率直接返回，不触发奇遇
+                // 有短奇遇内容，直接触发
+                ShortEvent.TriggerShortEvent();
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(g.data.dataObj.data.GetString("LLMcontent")))
+            {
+                float randomValue = UnityEngine.Random.Range(0f, 1f);
+                float shortEventProb = shortEventProbability;
+                float totalProb = encounterProbability + shortEventProb;
+
+                if (randomValue > totalProb)
+                {
+                    Debug.Log("skip");
+                    return; // 都不触发
+                }
+
+                if (randomValue <= shortEventProb)
+                {
+                    // 触发短奇遇
+                    if (!waitingForShortEventResponse)
+                    {
+                        ShortEvent.RequestShortEvent();
+                    }
+                    return;
+                }
             }
             // 检查是否已有存储的LLM内容
             string content = g.data.dataObj.data.GetString("LLMcontent");
             if (string.IsNullOrEmpty(content))
             {
-                WorldUnitBase randomNpc = Tools.GetRandomNpc();
+                // 使用新的整合函数，一次性完成事件抽取和NPC选择
+                var (randomNpc, selectedEvent) = Tools.GetRandomNpcWithEvent();
                 if (randomNpc == null)
                 {
                     UITipItem.AddTip("附近没有发现可对话的NPC", 1f);
                     return;
                 }
+
+                // 后续逻辑保持不变
                 string npcName = randomNpc.data.unitData.propertyData.GetName();
-
-                string npcInfo = Prop.GetNPCCompleteInfo(randomNpc, g.world.playerUnit, 10); // 获取10条经历记录
-                //Debug.Log($"{npcInfo}");
-
-
                 dialogueNpcs.Add(randomNpc);
-                // 如果没有内容，需要向LLM请求
                 waitingForLLMResponse = true;
+                hasTriggeredBattleInCurrentAdventure = false;
                 isFirstDialog = true;
-                // 创建LLMDialogueRequest对象
                 currentRequest = new LLMDialogueRequest();
-                currentRequest.AddSystemMessage($"{Tools.GenerateRandomSystemPrompt(randomNpc)}你是{npcName}。");
+                currentRequest.AddSystemMessage($"{Tools.GenerateRandomSystemPrompt(randomNpc, selectedEvent)}你是{npcName}。");
                 currentRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
-                currentRequest.AddUserMessage("请给我第一段随机奇遇剧情，必须使用JSON格式返回。");
-                // 使用现有的SendLLMRequest方法
+                currentRequest.AddUserMessage("请给我第一段随机奇遇剧情，必须使用格式化返回。");
+
                 llmRequestStartTime = Time.time;
                 Tools.SendLLMRequest(currentRequest, (response) => {
                     pendingLLMResponse = response;
@@ -576,10 +687,13 @@ namespace MOD_kqAfiU
                 // 使用Tools中的函数生成选项
                 var optionsList = Tools.GenerateOptionsFromResponse(formattedResponse, currentRequest);
                 var (options, callbacks) = GenerateDialogueOptions(optionsList, randomNpc);
-                Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
+                //Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
+                CreateMultiPartDialogue(npcTalk, dialogText, g.world.playerUnit, randomNpc, options, callbacks);
                 needReview = true;
             }
         }
+
+        
 
         public void Destroy()
         {
@@ -648,7 +762,7 @@ namespace MOD_kqAfiU
             }
         }
         private (Dictionary<int, string>, Dictionary<int, Action>) GenerateDialogueOptions(
-    List<object[]> optionsList, WorldUnitBase npc = null, int startId = 200)
+    List<object[]> optionsList, WorldUnitBase npc = null, int startId = 11451)
         {
             Dictionary<int, string> options = new Dictionary<int, string>();
             Dictionary<int, Action> callbacks = new Dictionary<int, Action>();
@@ -667,7 +781,25 @@ namespace MOD_kqAfiU
                         {
                             string interactionDescription = Tools.GetInteractionDescription(interactionType);
                             if (interactionDescription != null)
-                                optionText = $"{text}（{interactionDescription}）";
+                            {
+                                // 有交互描述，检查是否有奖励来决定颜色
+                                if (option.Length > 4 && option[4] is string rewards && !string.IsNullOrEmpty(rewards))
+                                {
+                                    optionText = $"{text}<color=#FFA500>（{interactionDescription}）</color>";
+                                }
+                                else
+                                {
+                                    optionText = $"{text}（{interactionDescription}）";
+                                }
+                            }
+                            else
+                            {
+                                // 没有交互描述，但有奖励时添加（收下）
+                                if (option.Length > 4 && option[4] is string rewards && !string.IsNullOrEmpty(rewards))
+                                {
+                                    optionText = $"{text}<color=#FFA500>（收下）</color>";
+                                }
+                            }
                         }
                     }
 
@@ -691,8 +823,9 @@ namespace MOD_kqAfiU
                                     dialogueNpcs[0].CreateAction(new UnitActionMoveNPC(g.world.playerUnit.data.unitData.GetPoint()));
                                 }
 
-
-
+                                hasTriggeredDiscussionInCurrentAdventure = false;
+                                givenRewardsInCurrentAdventure.Clear();
+                                hasTriggeredBattleInCurrentAdventure = false;
                                 currentRequest = null;
                                 dialogueNpcs.Clear();
                                 inOngoingDialog = false;
@@ -764,11 +897,12 @@ namespace MOD_kqAfiU
                                     }
 
                                     // 将玩家输入作为 user 消息添加到请求
-                                    currentRequest.AddUserMessage($"{input}\n（必须返回格式化结果！）");
+                                    
                                     currentRequest.RemoveLatestMessageByRole("system");
                                     currentRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
-                                    
-                                    
+                                    currentRequest.AddUserMessage($"{input}\n（必须返回格式化结果！）");
+
+
                                     UITipItem.AddTip("对方思考如何反应中~", 1f);
                                     // 发送给LLM
                                     llmRequestStartTime = Time.time;
@@ -792,18 +926,19 @@ namespace MOD_kqAfiU
                                 string content1 = g.data.dataObj.data.GetString("LLMcontent");
                                 needReview = false;
 
-                                // 声明一个不同名称的变量
+                                // 声明变量
                                 string reactionValue = "";
                                 string rewardsString = null;
                                 if (option.Length > 3 && option[3] is string react)
                                 {
                                     reactionValue = react;
+                                }
 
-                                    // 检查是否是结束交互，并获取奖励
-                                    if (reactionValue == "14" && option.Length > 4 && option[4] is string rewards)
-                                    {
-                                        rewardsString = rewards;
-                                    }
+                                // 检查是否有奖励并发放（无论reactionValue是什么）
+                                if (option.Length > 4 && option[4] is string rewards && !string.IsNullOrEmpty(rewards))
+                                {
+                                    rewardsString = rewards;
+                                    Tools.GiveRewardSingle(rewardsString);
                                 }
 
                                 if (dialogueNpcs.Count > 0 && content1 != "")
@@ -815,14 +950,11 @@ namespace MOD_kqAfiU
                                     // 再添加用户选择的选项作为user消息
                                     if (option[0] is string selectedOption)
                                     {
-                                        // 处理选项文本，移除格式化指令
                                         string cleanOption = selectedOption;
                                         if (cleanOption.Contains("\n（必须返回格式化结果！）"))
                                         {
                                             cleanOption = cleanOption.Replace("\n（必须返回格式化结果！）", "");
                                         }
-
-                                        // 使用清理后的文本添加到聊天记录
                                         AddMessageToChat(dialogueNpcs[0], "user", cleanOption);
                                     }
                                     dialogueNpcs[0].CreateAction(new UnitActionMoveNPC(g.world.playerUnit.data.unitData.GetPoint()));
@@ -831,14 +963,48 @@ namespace MOD_kqAfiU
                                 // 判断是否是结束交互(ID=14)
                                 if (reactionValue == "14")
                                 {
+                                    hasTriggeredDiscussionInCurrentAdventure = false;
+                                    givenRewardsInCurrentAdventure.Clear();
                                     currentRequest = null;
                                     dialogueNpcs.Clear();
                                     inOngoingDialog = false;
                                     pendingLLMResponse = null;
                                     needReview = false;
                                     g.data.dataObj.data.SetString("LLMcontent", "");
-                                    Tools.GiveReward(rewardsString);
+                                    hasTriggeredBattleInCurrentAdventure = false;
                                     return; // 退出回调
+                                }
+
+                                // 如果已经发放了奖励，且不是其他特殊交互，则继续对话流程
+                                if (!string.IsNullOrEmpty(rewardsString) && reactionValue != "15" && reactionValue != "16")
+                                {
+                                    if (option.Length > 2 && option[2] is LLMDialogueRequest)
+                                    {
+                                        var rewardRequest = (LLMDialogueRequest)option[2];
+                                        currentRequest = rewardRequest;
+                                        UITipItem.AddTip("对方思考如何反应中~", 1f);
+                                        llmRequestStartTime = Time.time;
+                                        Tools.SendLLMRequest(rewardRequest, (response) => {
+                                            pendingLLMResponse = response;
+                                        });
+                                    }
+                                    return;
+                                }
+
+                                // 原有的特殊交互逻辑继续...
+                                if (reactionValue == "15" || reactionValue == "16")
+                                {
+                                    // 执行战斗交互，但不发送LLM请求
+                                    if (dialogueNpcs.Count > 0)
+                                    {
+                                        Tools.ExecuteInteraction(dialogueNpcs[0], reactionValue);
+                                    }
+                                    // 保存当前请求对象，战斗结束后使用
+                                    if (option.Length > 2 && option[2] is LLMDialogueRequest battleRequest)
+                                    {
+                                        currentRequest = battleRequest; // 保存到现有变量
+                                    }
+                                    return; // 重要：直接返回，不发送LLM请求
                                 }
 
                                 // 获取对话请求对象
@@ -864,8 +1030,259 @@ namespace MOD_kqAfiU
                     }
                 }
             }
+
+            int regenId = startId + 1000; // 使用一个不冲突的ID
+            options[regenId] = "重新生成";
+            callbacks[regenId] = () => {
+                UITipItem.AddTip("重新生成回应中...", 1f);
+
+                // 不需要手动关闭UI，不需要AddMessageToChat
+
+                if (currentRequest != null)
+                {
+                    // 移除最后的assistant回应，准备重新生成
+                    currentRequest.RemoveLatestMessageByRole("assistant");
+
+                    // 清空之前的响应，重新请求
+                    pendingLLMResponse = null;
+                    llmRequestStartTime = Time.time;
+                    needReview = false;
+
+                    Tools.SendLLMRequest(currentRequest, (response) => {
+                        pendingLLMResponse = response;
+                    });
+                }
+                else
+                {
+                    UITipItem.AddTip("无法重新生成，对话上下文丢失", 1f);
+                }
+            };
+
             return (options, callbacks);
         }
+
+        // 添加到ModMain类中的文本划分方法
+        private static List<string> SplitDialogText(string dialogText, int maxLength = 100)
+        {
+            List<string> textBlocks = new List<string>();
+
+            if (string.IsNullOrEmpty(dialogText))
+            {
+                textBlocks.Add("");
+                return textBlocks;
+            }
+
+            // 如果文本长度小于等于最大长度，直接返回
+            if (dialogText.Length <= maxLength)
+            {
+                textBlocks.Add(dialogText);
+                return textBlocks;
+            }
+
+            // 强断点：句号、感叹号、问号、省略号、后双引号
+            char[] strongBreakers = { '。', '！', '？', '…', '"', '.', '!', '?' };
+
+            string remainingText = dialogText;
+
+            // 检查换行符数量，如果超过5个则按换行符切分
+            int newlineCount = 0;
+            for (int i = 0; i < dialogText.Length; i++)
+            {
+                if (dialogText[i] == '\n')
+                    newlineCount++;
+                else if (dialogText[i] == '\r' && (i + 1 >= dialogText.Length || dialogText[i + 1] != '\n'))
+                    newlineCount++;
+                
+            }
+
+            if (newlineCount > 5)
+            {
+                int currentNewlines = 0;
+                int lastSplitIndex = 0;
+
+                for (int i = 0; i < dialogText.Length; i++)
+                {
+                    bool isNewline = false;
+                    if (dialogText[i] == '\n')
+                        isNewline = true;
+                    else if (dialogText[i] == '\r' && (i + 1 >= dialogText.Length || dialogText[i + 1] != '\n'))
+                        isNewline = true;
+
+                    if (isNewline)
+                    {
+                        currentNewlines++;
+                        if (currentNewlines >= 5)
+                        {
+                            string block = dialogText.Substring(lastSplitIndex, i - lastSplitIndex + 1).Trim();
+                            if (!string.IsNullOrEmpty(block))
+                                textBlocks.Add(block);
+                            lastSplitIndex = i + 1;
+                            currentNewlines = 0;
+                        }
+                    }
+                }
+
+                // 添加剩余部分
+                if (lastSplitIndex < dialogText.Length)
+                {
+                    string remainingBlock = dialogText.Substring(lastSplitIndex).Trim();
+                    if (!string.IsNullOrEmpty(remainingBlock))
+                        textBlocks.Add(remainingBlock);
+                }
+                return textBlocks;
+            }
+
+            while (remainingText.Length > 0)
+            {
+                if (remainingText.Length <= maxLength)
+                {
+                    // 剩余文本长度不超过最大长度，直接添加
+                    textBlocks.Add(remainingText);
+                    break;
+                }
+
+                int bestSplitPoint = -1;
+
+                // 第一优先级：在maxLength范围内寻找强断点
+                for (int i = Math.Min(maxLength, remainingText.Length) - 1; i >= 0; i--)
+                {
+                    if (Array.IndexOf(strongBreakers, remainingText[i]) >= 0 && !IsInsideQuotes(remainingText, i))
+                    {
+                        bestSplitPoint = i + 1; // 包含标点符号
+                        break;
+                    }
+                }
+
+                // 第二优先级：如果maxLength范围内没有强断点，扩展搜索范围
+                if (bestSplitPoint == -1)
+                {
+                    // 向后搜索，最多搜索到maxLength*1.5的位置，寻找强断点
+                    int extendedSearchLimit = Math.Min((int)(maxLength * 1.5), remainingText.Length);
+                    for (int i = maxLength; i < extendedSearchLimit; i++)
+                    {
+                        if (Array.IndexOf(strongBreakers, remainingText[i]) >= 0 && !IsInsideQuotes(remainingText, i))
+                        {
+                            bestSplitPoint = i + 1;
+                            break;
+                        }
+                    }
+                }
+
+                // 第三优先级：如果还是没找到，在maxLength处寻找空格
+                if (bestSplitPoint == -1)
+                {
+                    for (int i = Math.Min(maxLength, remainingText.Length) - 1; i >= maxLength - 20; i--)
+                    {
+                        if (remainingText[i] == ' ' && !IsInsideQuotes(remainingText, i))
+                        {
+                            bestSplitPoint = i + 1;
+                            break;
+                        }
+                    }
+                }
+
+                // 最后选择：如果实在没有合适断点，才在maxLength处强制断开
+                if (bestSplitPoint == -1)
+                {
+                    bestSplitPoint = Math.Min(maxLength, remainingText.Length);
+                }
+
+                // 提取当前块并加入列表
+                string currentBlock = remainingText.Substring(0, bestSplitPoint).Trim();
+                if (!string.IsNullOrEmpty(currentBlock))
+                {
+                    textBlocks.Add(currentBlock);
+                }
+
+                // 更新剩余文本
+                remainingText = remainingText.Substring(bestSplitPoint).Trim();
+            }
+
+            return textBlocks;
+        }
+
+        // 辅助方法：检查指定位置是否在引号或配对符号内部
+        private static bool IsInsideQuotes(string text, int position)
+        {
+            // 只检查最常用的引号，避免特殊字符问题
+            bool insideDoubleQuote = false;
+            bool insideSingleQuote = false;
+            bool insideParentheses = false;
+            bool insideBrackets = false;
+
+            for (int j = 0; j < position && j < text.Length; j++)
+            {
+                char c = text[j];
+
+                // 检查双引号
+                if (c == '"' || c == '\u201C' || c == '\u201D') // " " "
+                {
+                    insideDoubleQuote = !insideDoubleQuote;
+                }
+                // 检查单引号  
+                else if (c == '\'' || c == '\u2018' || c == '\u2019') // ' ' '
+                {
+                    insideSingleQuote = !insideSingleQuote;
+                }
+                // 检查括号
+                else if (c == '(')
+                {
+                    insideParentheses = true;
+                }
+                else if (c == ')')
+                {
+                    insideParentheses = false;
+                }
+                // 检查方括号
+                else if (c == '[')
+                {
+                    insideBrackets = true;
+                }
+                else if (c == ']')
+                {
+                    insideBrackets = false;
+                }
+            }
+
+            return insideDoubleQuote || insideSingleQuote || insideParentheses || insideBrackets;
+        }
+
+
+        // 辅助方法：创建多段对话
+        public static void CreateMultiPartDialogue(int dialogType, string dialogText, WorldUnitBase leftUnit, WorldUnitBase rightUnit, Dictionary<int, string> options, Dictionary<int, Action> callbacks)
+        {
+            List<string> textBlocks = SplitDialogText(dialogText, 250);
+
+
+            // 如果只有一个文本块，直接使用原来的逻辑
+            if (textBlocks.Count <= 1)
+            {
+                Debug.Log("只有一个文本块，使用原始逻辑");
+                Tools.CreateDialogue(dialogType, dialogText, leftUnit, rightUnit, options, callbacks);
+                return;
+            }
+            Debug.Log($"准备进入for循环，textBlocks.Count = {textBlocks.Count}");
+            Debug.Log($"for循环条件：i < {textBlocks.Count - 1}");
+
+            // 创建前面的对话（无按钮）
+            for (int i = 0; i < textBlocks.Count - 1; i++)
+            {
+                Debug.Log($"进入for循环，i = {i}");
+                // 为前面的对话块创建"继续"按钮
+                var continueOptions = new Dictionary<int, string> { { 12999, "继续" } };
+                var continueCallbacks = new Dictionary<int, Action> {
+            { 12999, () => { } }
+        };
+                Tools.CreateDialogue(dialogType, textBlocks[i], leftUnit, rightUnit, continueOptions, continueCallbacks);
+            }
+
+            // 创建最后一个对话（有按钮）
+            Debug.Log($"for循环结束，准备创建最后一个对话框");
+            Debug.Log($"创建最后一个对话框，选项数量: {options?.Count ?? 0}");
+            Debug.Log($"创建最后一个对话框，文本: {textBlocks[textBlocks.Count - 1]}");
+            Tools.CreateDialogue(dialogType, textBlocks[textBlocks.Count - 1], leftUnit, rightUnit, options, callbacks);
+        }
+
         private void OnUpdate()
         {
             lock (_queueLock)
@@ -883,7 +1300,33 @@ namespace MOD_kqAfiU
                     }
                 }
             }
-            if (llmRequestStartTime > 0f && Time.time - llmRequestStartTime > 90f)
+
+            if (isInBattle)
+            {
+                return;
+            }
+
+            if (Battle.HasPendingBattleStart())
+            {
+                Battle.ProcessPendingBattleStart();
+            }
+
+            if (Battle.HasPendingBattleDescription())
+            {
+                Battle.ProcessPendingDescription();
+            }
+
+            if (BattlePVE.HasPendingBattleStart())
+            {
+                BattlePVE.ProcessPendingBattleStart();
+            }
+
+            if (BattlePVE.HasPendingBattleDescription())
+            {
+                BattlePVE.ProcessPendingDescription();
+            }
+
+            if (llmRequestStartTime > 0f && Time.time - llmRequestStartTime > 300f)
             {
                 // 超时处理 - 重置状态
                 UITipItem.AddTip("请求超时，将重置奇遇状态", 1f);
@@ -894,8 +1337,30 @@ namespace MOD_kqAfiU
                 pendingLLMResponse = null;
                 currentRequest = null;
                 dialogueNpcs.Clear();
+                waitingForShortEventResponse = false;
+                pendingShortEventResponse = null;
                 g.data.dataObj.data.SetString("LLMcontent", "");
+                g.data.dataObj.data.SetString("ShortEventContent", "");
                 return;
+            }
+
+            if (pendingShortEventResponse != null)
+            {
+                llmRequestStartTime = 0f;
+
+                if (pendingShortEventResponse.StartsWith("错误："))
+                {
+                    UITipItem.AddTip($"短奇遇生成失败：{pendingShortEventResponse.Substring(3)}", 2f);
+                    waitingForShortEventResponse = false;
+                    pendingShortEventResponse = null;
+                }
+                else
+                {
+                    // 存储短奇遇内容，等待下次移动触发
+                    g.data.dataObj.data.SetString("ShortEventContent", pendingShortEventResponse);
+                    waitingForShortEventResponse = false;
+                    pendingShortEventResponse = null;
+                }
             }
 
             // 处理LLM响应
@@ -963,9 +1428,11 @@ namespace MOD_kqAfiU
                 WorldUnitBase rightUnit = dialogueNpcs.Count > 0 ? dialogueNpcs[0] : null;
 
                 if (rightUnit != null)
-                    Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, rightUnit, options, callbacks);
+                    //Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, rightUnit, options, callbacks);
+                    CreateMultiPartDialogue(npcTalk, dialogText, g.world.playerUnit, rightUnit, options, callbacks);
                 else
-                    Tools.CreateDialogue(onlyTalk, dialogText, g.world.playerUnit, null, options, callbacks);
+                    //Tools.CreateDialogue(onlyTalk, dialogText, g.world.playerUnit, null, options, callbacks);
+                    CreateMultiPartDialogue(onlyTalk, dialogText, g.world.playerUnit, null, options, callbacks);
                 needReview = true;
                 pendingLLMResponse = null;
             }

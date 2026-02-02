@@ -25,9 +25,22 @@ namespace MOD_kqAfiU
         public List<string> EventTypes { get; set; } = new List<string>();
         public List<string> NpcTraits { get; set; } = new List<string>();
         public List<string> CoreConflicts { get; set; } = new List<string>();
+        public List<string> OppositeGenderEventTypes { get; set; } = new List<string>();
+        public List<string> LoverSpouseEventTypes { get; set; } = new List<string>();
+        public List<string> ParentChildEventTypes { get; set; } = new List<string>();
+        public List<string> MasterStudentEventTypes { get; set; } = new List<string>();
         public string PromptPrefix { get; set; } = "";
         public string PromptSuffix { get; set; } = "";
-        public float EncounterProbability { get; set; } = 0.05f;
+        public float EncounterProbability { get; set; } = 0.015f;
+        public float ShortEventProbability { get; set; } = 0.015f; // 默认为普通奇遇的一半
+        public List<string> ShortEventTypes { get; set; } = new List<string>();
+        public string ShortEventPrompt { get; set; } = "";
+        public Dictionary<string, string> PropDict1 { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> PropDict2_10 { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> LuckDict { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> LuckDict2 { get; set; } = new Dictionary<string, string>();
+
+        public bool AutoColoringEnabled { get; set; } = true;
     }
 
     public static class Config
@@ -56,9 +69,20 @@ namespace MOD_kqAfiU
                     EventTypes = new List<string>(),
                     NpcTraits = new List<string>(),
                     CoreConflicts = new List<string>(),
+                    OppositeGenderEventTypes = new List<string>(),
+                    LoverSpouseEventTypes = new List<string>(),
+                    ParentChildEventTypes = new List<string>(),
+                    MasterStudentEventTypes = new List<string>(),
                     PromptPrefix = "",
                     PromptSuffix = "",
-                    EncounterProbability = 0.05f
+                    EncounterProbability = 0.015f,
+                    ShortEventProbability = 0.015f,
+                    ShortEventTypes = new List<string>(),
+                    ShortEventPrompt = "",
+                    PropDict1 = new Dictionary<string, string>(),
+                    PropDict2_10 = new Dictionary<string, string>(),
+                    LuckDict = new Dictionary<string, string>(),
+                    LuckDict2 = new Dictionary<string, string>()
                 };
 
                 bool needUpdate = false;

@@ -158,7 +158,15 @@ namespace MOD_kqAfiU
                 rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
                 rectTransform.pivot = new Vector2(0.5f, 0.5f);
                 rectTransform.anchoredPosition = Vector2.zero;
-                Debug.Log("UI位置设置完成");
+
+                float scale = 1.0f;
+                if (Screen.width > 2560)
+                {
+                    // 当屏幕宽度大于2560时，按比例放大UI
+                    // 例如，3840 (4K) / 2560 = 1.5倍
+                    scale = Screen.width / 2560;
+                }
+                rectTransform.localScale = Vector3.one * scale;
             }
 
             // 输出UI对象的子对象结构，帮助诊断
