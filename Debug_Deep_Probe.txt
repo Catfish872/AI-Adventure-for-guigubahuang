@@ -1,0 +1,137 @@
+========== 深度侦探报告 02/02/2026 11:20:22 ==========
+
+
+========== 目标 1: 延寿丹 (1011271) ==========
+
+>>> [ItemProps (外壳)]
+  Type: ConfItemPropsItem
+  Prop:  name                 = item_name1011271
+  Prop:  type                 = 1
+  Prop:  className            = 103
+  Prop:  hide                 = 0
+  Prop:  playerShow           = 0
+  Prop:  npcShow              = 0
+  Prop:  icon                 = yanshoudan
+  Prop:  level                = 1
+  Prop:  desc                 = item_desc1011271
+  Prop:  isOverlay            = 1
+  Prop:  drop                 = 1
+  Prop:  dieDrop              = 1
+  Prop:  auction              = 0
+  Prop:  sale                 = 200
+  Prop:  worth                = 400
+  Prop:  isMultiDrop          = 1
+  Prop:  id                   = 1011271
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2418715730048
+  Prop:  WasCollected         = False
+
+>>> [ItemPill (内核)]
+  Type: ConfItemPillItem
+  Prop:  effectType           = 201
+  Prop:  operUse              = 1
+  Prop:  operEquip            = 0
+  Prop:  autoUse              = 0
+  Prop:  effectValue          = 1011271
+  Prop:  basType              = 0
+  Prop:  basRequire           = 0
+  Prop:  grade                = 1
+  Prop:  spCost               = 0
+  Prop:  useIgnoreGrade       = 0
+  Prop:  applyCD              = 0
+  Prop:  cdGroup              = 1011271
+  Prop:  pillType             = 0
+  Prop:  fateRandomWeight     = 0
+  Prop:  carryCount           = 5
+  Prop:  noUseTogether        = 0
+  Prop:  cost                 = 0
+  Prop:  battleUIHide         = 0
+  Prop:  consume              = 0
+  Prop:  id                   = 1011271
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2418048155264
+  Prop:  WasCollected         = False
+
+  [分析] effectValue = '1011271'
+
+>>> [关联的 BattleEffect (ID: 1011271)]
+  (对象为空)
+
+
+========== 目标 2: 功能道具 (1082011) ==========
+
+>>> [ItemProps (外壳)]
+  Type: ConfItemPropsItem
+  Prop:  name                 = item_name1082011
+  Prop:  type                 = 6
+  Prop:  className            = 637
+  Prop:  hide                 = 0
+  Prop:  playerShow           = 0
+  Prop:  npcShow              = 0
+  Prop:  icon                 = yinjiyupai
+  Prop:  level                = 6
+  Prop:  desc                 = item_desc1082011
+  Prop:  isOverlay            = 1
+  Prop:  drop                 = 1
+  Prop:  dieDrop              = 0
+  Prop:  auction              = 0
+  Prop:  sale                 = -1
+  Prop:  worth                = 0
+  Prop:  isMultiDrop          = 0
+  Prop:  id                   = 1082011
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2418047956224
+  Prop:  WasCollected         = False
+
+>>> [ItemFunction (内核)]
+  Type: ConfItemFunctionItem
+  Prop:  condition            = 0
+  Prop:  function             = callDrama_2000411
+  Prop:  consume              = 1
+  Prop:  multiUse             = 0
+  Prop:  id                   = 1082011
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2415117436032
+  Prop:  WasCollected         = False
+
+
+========== 目标 3: 灵果 (5081015) ==========
+
+>>> [ItemProps (外壳)]
+  Type: ConfItemPropsItem
+  Prop:  name                 = item_name5081015
+  Prop:  type                 = 5
+  Prop:  className            = 508
+  Prop:  hide                 = 0
+  Prop:  playerShow           = 0
+  Prop:  npcShow              = 0
+  Prop:  icon                 = zangshagu
+  Prop:  level                = 5
+  Prop:  desc                 = item_desc5081015
+  Prop:  isOverlay            = 1
+  Prop:  drop                 = 1
+  Prop:  dieDrop              = 1
+  Prop:  auction              = 1
+  Prop:  sale                 = 800
+  Prop:  worth                = 1600
+  Prop:  isMultiDrop          = 0
+  Prop:  id                   = 5081015
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2418047626880
+  Prop:  WasCollected         = False
+
+>>> [ItemRarityMaterials (内核)]
+  Type: ConfItemRarityMaterialsItem
+  Prop:  effect               = atk_4|def_3|hpMax_79|crit_11|msp_10
+  Prop:  grade                = 2
+  Prop:  hunger               = 50
+  Prop:  id                   = 5081015
+  Prop:  isVariant            = False
+  Prop:  isModExtend          = False
+  Prop:  Pointer              = 2418048555936
+  Prop:  WasCollected         = False

@@ -1,0 +1,72 @@
+========== 连线与造物原型验证报告 02/02/2026 09:29:18 ==========
+
+>>> [A. 坐骑数据链验证]
+样本坐骑ID: 3021011
+effectValue (原始值): 30210111|30210112
+  -> [连线失败] ID 30210111 在 'battleEffect' 中未找到。
+  -> [连线失败] ID 30210112 在 'battleEffect' 中未找到。
+
+>>> [造物测试] 尝试实例化: 坐骑属性对象 (ItemHorse) (ConfItemHorseItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 grade = 888 (OK)
+        写入属性 id = 888 (OK)
+
+>>> [B. 气运数据链验证]
+样本气运ID: 101
+effect (原始值): 1011|1012|1013
+  -> [连线成功] ID 1011 指向 'roleEffect' 表。
+     效果值: die | 类型: 3
+
+>>> [造物测试] 尝试实例化: 气运效果对象 (RoleEffect) (ConfRoleEffectItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 effectType = 888 (OK)
+        写入属性 id = 888 (OK)
+  -> [连线成功] ID 1012 指向 'roleEffect' 表。
+     效果值: hide | 类型: 3
+
+>>> [造物测试] 尝试实例化: 气运效果对象 (RoleEffect) (ConfRoleEffectItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 effectType = 888 (OK)
+        写入属性 id = 888 (OK)
+  -> [连线成功] ID 1013 指向 'roleEffect' 表。
+     效果值: stopRunAI | 类型: 3
+
+>>> [造物测试] 尝试实例化: 气运效果对象 (RoleEffect) (ConfRoleEffectItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 effectType = 888 (OK)
+        写入属性 id = 888 (OK)
+
+>>> [造物测试] 尝试实例化: 气运本体对象 (RoleCreateFeature) (ConfRoleCreateFeatureItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 type = 888 (OK)
+        写入属性 group = 888 (OK)
+        写入属性 level = 888 (OK)
+        写入属性 refreshType = 888 (OK)
+        写入属性 conceal = 888 (OK)
+        写入属性 lockLuck = 888 (OK)
+        写入属性 weight = 888 (OK)
+        写入属性 globalMax = 888 (OK)
+        写入属性 id = 888 (OK)
+
+>>> [造物测试] 尝试实例化: 物品外壳 (ItemProps) (ConfItemPropsItem)
+    [1. 实例化]: 成功!
+    [2. 字段写入测试]:
+        写入属性 type = 888 (OK)
+        写入属性 className = 888 (OK)
+        写入属性 hide = 888 (OK)
+        写入属性 playerShow = 888 (OK)
+        写入属性 npcShow = 888 (OK)
+        写入属性 level = 888 (OK)
+        写入属性 isOverlay = 888 (OK)
+        写入属性 drop = 888 (OK)
+        写入属性 dieDrop = 888 (OK)
+        写入属性 auction = 888 (OK)
+        写入属性 sale = 888 (OK)
+        写入属性 worth = 888 (OK)
+        写入属性 isMultiDrop = 888 (OK)
+        写入属性 id = 888 (OK)

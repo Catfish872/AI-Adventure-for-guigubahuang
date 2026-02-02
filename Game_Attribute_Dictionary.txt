@@ -1,0 +1,724 @@
+========== 鬼谷八荒 造物属性字典 02/02/2026 09:56:13 ==========
+此文件包含 AI 造物所需的所有属性 Key、ID 及含义。
+
+>>> [1. 气运与角色属性字典 (RoleEffect Keys)]
+说明：用于 'ConfRoleEffectItem.value' 字段。格式通常为 key_参数1_参数2
+---------------------------------------------------------------
+Key: intoDungeon     | 出现次数: 348  | 样本: intoDungeon_24172
+Key: fixValue        | 出现次数: 332  | 样本: fixValue_gradeGrowSucceed_30
+Key: randomValue     | 出现次数: 169  | 样本: randomValue_gradeGrowPure_40_69
+Key: beauty          | 出现次数: 150  | 样本: beauty_1_-300
+Key: atk             | 出现次数: 136  | 样本: atk_1_8
+Key: mood            | 出现次数: 136  | 样本: mood_1_20
+Key: hpMax           | 出现次数: 111  | 样本: hpMax_1_100
+Key: luck            | 出现次数: 105  | 样本: luck_1_20
+Key: clearFeature    | 出现次数: 97   | 样本: clearFeature_100_109
+Key: def             | 出现次数: 87   | 样本: def_1_-4
+Key: fsp             | 出现次数: 78   | 样本: fsp_1_100|msp_1_20|energyMax_1_-10
+Key: element         | 出现次数: 73   | 样本: element_elementNames_0_0_50_50_0_0_0_0
+Key: life            | 出现次数: 66   | 样本: life_1_-120
+Key: attrEffect      | 出现次数: 65   | 样本: attrEffect_basWpMax_&8100124_xqzz&_999999999_atk_&8100124_tsgj&
+Key: talent          | 出现次数: 61   | 样本: talent_1_20
+Key: mpMax           | 出现次数: 57   | 样本: mpMax_1_50
+Key: spMax           | 出现次数: 52   | 样本: spMax_1_-80
+Key: mp              | 出现次数: 45   | 样本: mp_1_50
+Key: basMgAll        | 出现次数: 43   | 样本: basMgAll_1_20
+Key: hp              | 出现次数: 39   | 样本: hp_1_100
+Key: msp             | 出现次数: 37   | 样本: msp_1_20
+Key: basFire         | 出现次数: 33   | 样本: basFire_1_25
+Key: changeAbility   | 出现次数: 28   | 样本: changeAbility_1_hp_1_200
+Key: guard           | 出现次数: 27   | 样本: guard_1_10
+Key: attach          | 出现次数: 27   | 样本: attach_ageYear_def_&700044_tsfy&_99999
+Key: energyMax       | 出现次数: 26   | 样本: energyMax_1_-20
+Key: addFeature      | 出现次数: 26   | 样本: addFeature_100_7000531
+Key: crit            | 出现次数: 25   | 样本: crit_1_20
+Key: basFroze        | 出现次数: 25   | 样本: basFroze_1_25
+Key: astrictAttrAdd  | 出现次数: 25   | 样本: astrictAttrAdd_basPil_1_20_50
+Key: openUI          | 出现次数: 25   | 样本: openUI_MartialUpGrade_0_2022081
+Key: standDown       | 出现次数: 24   | 样本: standDown_1_50
+Key: basWpAll        | 出现次数: 24   | 样本: basWpAll_1_18
+Key: basWind         | 出现次数: 24   | 样本: basWind_1_25
+Key: standUp         | 出现次数: 23   | 样本: standUp_1_50
+Key: basThunder      | 出现次数: 23   | 样本: basThunder_1_25
+Key: basEarth        | 出现次数: 23   | 样本: basEarth_1_25
+Key: basWood         | 出现次数: 23   | 样本: basWood_1_25
+Key: basSword        | 出现次数: 20   | 样本: basSword_1_25
+Key: reputation      | 出现次数: 20   | 样本: reputation_1_150
+Key: limitGradeExp   | 出现次数: 20   | 样本: limitGradeExp_1_1
+Key: exp             | 出现次数: 20   | 样本: exp_1_1
+Key: basSpear        | 出现次数: 19   | 样本: basSpear_1_25
+Key: basFist         | 出现次数: 19   | 样本: basFist_1_25
+Key: callDrama       | 出现次数: 19   | 样本: callDrama_6311001_6311004
+Key: basBlade        | 出现次数: 18   | 样本: basBlade_1_25
+Key: monthAttrAdd    | 出现次数: 18   | 样本: monthAttrAdd_mood_-20
+Key: abilityPoint    | 出现次数: 17   | 样本: abilityPoint_1_&700066_tsdd&
+Key: basFinger       | 出现次数: 16   | 样本: basFinger_1_25
+Key: basPil          | 出现次数: 16   | 样本: basPil_1_12
+Key: healthMax       | 出现次数: 16   | 样本: healthMax_1_-20
+Key: item            | 出现次数: 16   | 样本: item_1718_1
+Key: npcCloseStable  | 出现次数: 16   | 样本: npcCloseStable_1_-100_0
+Key: health          | 出现次数: 16   | 样本: health_1_5
+Key: decorateInvalid | 出现次数: 16   | 样本: decorateInvalid_101
+Key: basPalm         | 出现次数: 15   | 样本: basPalm_1_25
+Key: basEqp          | 出现次数: 15   | 样本: basEqp_1_25
+Key: basGeo          | 出现次数: 14   | 样本: basGeo_1_10
+Key: energy          | 出现次数: 13   | 样本: energy_1_15
+Key: immuneFeature   | 出现次数: 12   | 样本: immuneFeature_5011_105
+Key: townBuyDecline  | 出现次数: 11   | 样本: townBuyDecline_0_-10
+Key: moodMax         | 出现次数: 10   | 样本: moodMax_1_-30
+Key: specificNpc     | 出现次数: 10   | 样本: specificNpc
+Key: bannedFunc      | 出现次数: 9    | 样本: bannedFunc_getExp
+Key: meetMonsterProbInArea | 出现次数: 9    | 样本: meetMonsterProbInArea_200_0_2_3
+Key: addNPCLuck      | 出现次数: 9    | 样本: addNPCLuck_0_9300101_&3000111_jqdsj&
+Key: createRoleToUnitAction | 出现次数: 9    | 样本: createRoleToUnitAction_50_1_1
+Key: basSym          | 出现次数: 8    | 样本: basSym_1_60
+Key: giveCloseStable | 出现次数: 8    | 样本: giveCloseStable_1_0_120
+Key: expGrow         | 出现次数: 7    | 样本: expGrow_0_20
+Key: growForbid      | 出现次数: 7    | 样本: growForbid
+Key: pfr             | 出现次数: 7    | 样本: pfr_0_10
+Key: basHerb         | 出现次数: 7    | 样本: basHerb_1_5
+Key: basMine         | 出现次数: 7    | 样本: basMine_1_5
+Key: schoolBuyDecline | 出现次数: 7    | 样本: schoolBuyDecline_0_-20
+Key: hide            | 出现次数: 6    | 样本: hide
+Key: output          | 出现次数: 6    | 样本: output_3_220201
+Key: killReduce      | 出现次数: 6    | 样本: killReduce_5074_1_51001
+Key: statueDiscount  | 出现次数: 6    | 样本: statueDiscount_90
+Key: statueAppear    | 出现次数: 6    | 样本: statueAppear_15
+Key: getGift         | 出现次数: 6    | 样本: getGift_2_905111_905112_905113
+Key: passRoom        | 出现次数: 6    | 样本: passRoom_90612
+Key: doubleReward    | 出现次数: 6    | 样本: doubleReward_5
+Key: escapeCD        | 出现次数: 6    | 样本: escapeCD_0_-25
+Key: escapeLuck      | 出现次数: 6    | 样本: escapeLuck_1_10
+Key: escapeFsp       | 出现次数: 6    | 样本: escapeFsp_0_10
+Key: critV           | 出现次数: 6    | 样本: critV_1_100
+Key: schoolMoneyAdd  | 出现次数: 6    | 样本: schoolMoneyAdd_30
+Key: stopRunAI       | 出现次数: 5    | 样本: stopRunAI
+Key: mfr             | 出现次数: 5    | 样本: mfr_1_&6001_mokang&
+Key: meetMonsterProbGrade | 出现次数: 5    | 样本: meetMonsterProbGrade_2_-75_-100_2_3
+Key: npcConnectLimit | 出现次数: 5    | 样本: npcConnectLimit_0_4_1_3
+Key: fiveFlowerSummon | 出现次数: 5    | 样本: fiveFlowerSummon_1010
+Key: moodUpStable    | 出现次数: 4    | 样本: moodUpStable_0_20
+Key: changeAttrCost  | 出现次数: 4    | 样本: changeAttrCost_8_1_-200
+Key: reward          | 出现次数: 4    | 样本: reward_970009|reward_970010|reward_970011|reward_970012|reward_970013|callDrama_970116
+Key: boutExhausted   | 出现次数: 4    | 样本: boutExhausted_5000_exhaustedLog90010022
+Key: addFairyChicken | 出现次数: 4    | 样本: addFairyChicken_3
+Key: modelBackAnnex  | 出现次数: 4    | 样本: modelBackAnnex_shihunjian1
+Key: energyDownStable | 出现次数: 3    | 样本: energyDownStable_0_-30
+Key: beautyLock      | 出现次数: 3    | 样本: beautyLock_900
+Key: fireLock        | 出现次数: 3    | 样本: fireLock_1
+Key: frozeLock       | 出现次数: 3    | 样本: frozeLock_1
+Key: thunderLock     | 出现次数: 3    | 样本: thunderLock_1
+Key: windLock        | 出现次数: 3    | 样本: windLock_1
+Key: earthLock       | 出现次数: 3    | 样本: earthLock_1
+Key: woodLock        | 出现次数: 3    | 样本: woodLock_1
+Key: monthFunction   | 出现次数: 3    | 样本: monthFunction_addCurAttrPercent_hp_20
+Key: learnSkillCost  | 出现次数: 3    | 样本: learnSkillCost_0_1_&700062_jsts&
+Key: pillFurnace     | 出现次数: 3    | 样本: pillFurnace_700203
+Key: addExp          | 出现次数: 3    | 样本: addExp_1_100_100
+Key: pillLayer       | 出现次数: 3    | 样本: pillLayer_1_&8500101_djsl&
+Key: relationEffect  | 出现次数: 3    | 样本: relationEffect_10_-1_&8500111_djcs&_spMax_&8500111_tsnl&
+Key: roleSight       | 出现次数: 3    | 样本: roleSight_&810101_zjsy&
+Key: mapFoundMaterials | 出现次数: 3    | 样本: mapFoundMaterials_&811107_scgl&_&811107_lqsj&_addGridArrtRange_3_1_1_&811107_zjlq&
+Key: viewItemCount   | 出现次数: 3    | 样本: viewItemCount_&811114_cksl&
+Key: createEventPoint | 出现次数: 3    | 样本: createEventPoint_71040_106_67_0|addTask_2110505
+Key: battleChikenGrow | 出现次数: 3    | 样本: battleChikenGrow_0_10
+Key: immortalLife    | 出现次数: 3    | 样本: immortalLife_1_0
+Key: npcUnitInfoFateIcon | 出现次数: 3    | 样本: npcUnitInfoFateIcon_Tianming-Icon-Shihunjian
+Key: moodDownStable  | 出现次数: 2    | 样本: moodDownStable_0_20
+Key: talentLock      | 出现次数: 2    | 样本: talentLock_20
+Key: swordGrow       | 出现次数: 2    | 样本: swordGrow_0_30
+Key: stepGrow        | 出现次数: 2    | 样本: stepGrow_0_50
+Key: createNpc       | 出现次数: 2    | 样本: createNpc_1001
+Key: immortal        | 出现次数: 2    | 样本: immortal_12
+Key: serendipity     | 出现次数: 2    | 样本: serendipity_60206_losechance64515011_10_147
+Key: escapeSucceed   | 出现次数: 2    | 样本: escapeSucceed_100_0
+Key: bannedItem      | 出现次数: 2    | 样本: bannedItem_pil
+Key: meetMonsterProb | 出现次数: 2    | 样本: meetMonsterProb_&700031_yggl&_fate700031
+Key: learnSkillExp   | 出现次数: 2    | 样本: learnSkillExp_0_&700065_tsjy&
+Key: increaseBasPil  | 出现次数: 2    | 样本: increaseBasPil_&700130_ldzz&
+Key: graveLife       | 出现次数: 2    | 样本: graveLife_0_&700147_jssm&_&700147_cfgl&
+Key: taskReward      | 出现次数: 2    | 样本: taskReward_&700148_jlzj&
+Key: featureTime     | 出现次数: 2    | 样本: featureTime_2_&700150_fmqy&
+Key: intoDungeonOther | 出现次数: 2    | 样本: intoDungeonOther_1_105_81051
+Key: mpRes           | 出现次数: 2    | 样本: mpRes_1_3
+Key: swordLock       | 出现次数: 2    | 样本: swordLock_1
+Key: spearLock       | 出现次数: 2    | 样本: spearLock_1
+Key: sladeLock       | 出现次数: 2    | 样本: sladeLock_1
+Key: fistLock        | 出现次数: 2    | 样本: fistLock_1
+Key: palmLock        | 出现次数: 2    | 样本: palmLock_1
+Key: fingerLock      | 出现次数: 2    | 样本: fingerLock_1
+Key: pillEffectAlter | 出现次数: 2    | 样本: pillEffectAlter_0_&700205_hftl&_hp
+Key: pillBattleEffectTime | 出现次数: 2    | 样本: pillBattleEffectTime_0_&700206_zjsj&
+Key: featureTiming   | 出现次数: 2    | 样本: featureTiming_3_8012001
+Key: guardV          | 出现次数: 2    | 样本: guardV_0_5
+Key: featureClearAll | 出现次数: 2    | 样本: featureClearAll_9300108
+Key: changeFateFeatureLuckCostProp | 出现次数: 2    | 样本: changeFateFeatureLuckCostProp_8104050_700212
+Key: fairyLeagueStoreLayerDiscount | 出现次数: 2    | 样本: fairyLeagueStoreLayerDiscount_1_0_-50
+Key: moneyAdd        | 出现次数: 1    | 样本: moneyAdd_-50
+Key: wantedBySchool  | 出现次数: 1    | 样本: wantedBySchool
+Key: randomArtifactWithSprite | 出现次数: 1    | 样本: randomArtifactWithSprite_3031108_75_1_4_1
+Key: stealAbility    | 出现次数: 1    | 样本: stealAbility_4
+Key: bladeGrow       | 出现次数: 1    | 样本: bladeGrow_0_30
+Key: spearGrow       | 出现次数: 1    | 样本: spearGrow_0_30
+Key: die             | 出现次数: 1    | 样本: die
+Key: fspLock         | 出现次数: 1    | 样本: fspLock_300
+Key: noFax           | 出现次数: 1    | 样本: noFax
+Key: captivity       | 出现次数: 1    | 样本: captivity
+Key: monthLockPoint  | 出现次数: 1    | 样本: monthLockPoint
+Key: npcNotOperation | 出现次数: 1    | 样本: npcNotOperation
+Key: monthLostItem   | 出现次数: 1    | 样本: monthLostItem_100_1_2_10_30
+Key: stealSucceed    | 出现次数: 1    | 样本: stealSucceed_1_100_fate700018
+Key: stealExpose     | 出现次数: 1    | 样本: stealExpose_100_fate700018
+Key: escapeClose     | 出现次数: 1    | 样本: escapeClose_&700021_tsqm&_fate700021
+Key: drillClose      | 出现次数: 1    | 样本: drillClose_&700030_tsqm&_fate700030
+Key: npcCommunicateClose | 出现次数: 1    | 样本: npcCommunicateClose_&700031_jdgl&_&700031_jdqm&_fate7000311
+Key: trainsExp       | 出现次数: 1    | 样本: trainsExp_&700032_tgjy&_fate700032
+Key: trainsGive      | 出现次数: 1    | 样本: trainsGive_fate7000321
+Key: moneyExp        | 出现次数: 1    | 样本: moneyExp_&700045_tsjy&_fate700045
+Key: battleLearnSkill | 出现次数: 1    | 样本: battleLearnSkill_&700047_xxgl&_&700047_nzcd&_fate700047
+Key: talkAnswer      | 出现次数: 1    | 样本: talkAnswer
+Key: trainRestore    | 出现次数: 1    | 样本: trainRestore_&700049_hftl&_&700049_hfll&_&700049_fhnl&_fate700049
+Key: attachAttrByArtifact | 出现次数: 1    | 样本: attachAttrByArtifact_hpMax_0_&700132_tssx&
+Key: drillExp        | 出现次数: 1    | 样本: drillExp_&700145_xdzj&_fate700145
+Key: learnSkillUp    | 出现次数: 1    | 样本: learnSkillUp_&700146_tjjj&_&700146_lqsj&_fate700146
+Key: notTopUpGrade   | 出现次数: 1    | 样本: notTopUpGrade_1
+Key: closeMapUI      | 出现次数: 1    | 样本: closeMapUI
+Key: monthProbableReward | 出现次数: 1    | 样本: monthProbableReward_30_6391903_1_12
+Key: killNpcReward   | 出现次数: 1    | 样本: killNpcReward_0_50_6391904_1_12
+Key: gradeEffect     | 出现次数: 1    | 样本: gradeEffect_0_3_hpMax_&8200118_tstl&
+Key: moneyEffect     | 出现次数: 1    | 样本: moneyEffect_&8200121_xqls&_hpMax_&8200121_tstl&
+Key: killNpcEffect   | 出现次数: 1    | 样本: killNpcEffect_1_&8200122_djcs&_hpMax_&8200122_tstl&
+Key: equipAbility    | 出现次数: 1    | 样本: equipAbility_hpMax_1_&8200124_tstl&
+Key: skillColorEffect | 出现次数: 1    | 样本: skillColorEffect_5_6_&8400116_djcs&_mpMax_&8400116_tsll&
+Key: learnEffect     | 出现次数: 1    | 样本: learnEffect_999999999_mpMax_&8400118_tsll&
+Key: forgetEffect    | 出现次数: 1    | 样本: forgetEffect_&8500109_djcs&_spMax_&8500109_tsnl&
+Key: doubleReduceDaoxin | 出现次数: 1    | 样本: doubleReduceDaoxin_200
+Key: expForbid       | 出现次数: 1    | 样本: expForbid
+Key: changeCloth     | 出现次数: 1    | 样本: changeCloth_18226
+Key: parentBless     | 出现次数: 1    | 样本: parentBless
+Key: revenger        | 出现次数: 1    | 样本: revenger_6_12_70_50_revengerLog9195_revengerHeroLog9195
+Key: viewEnemy       | 出现次数: 1    | 样本: viewEnemy
+Key: pilCount        | 出现次数: 1    | 样本: pilCount_0_&811101_clzj&
+Key: pilEnergy       | 出现次数: 1    | 样本: pilEnergy_0_&811105_jsjl&
+Key: mapSpecialSign  | 出现次数: 1    | 样本: mapSpecialSign_&811111_yxfw&
+Key: roleEffectAdd   | 出现次数: 1    | 样本: roleEffectAdd_100_8111122
+Key: dp              | 出现次数: 1    | 样本: dp_1_&811112_dlhf&
+Key: slayHide        | 出现次数: 1    | 样本: slayHide_&811113_ymgl&_900251
+Key: breakActionGridGetExp | 出现次数: 1    | 样本: breakActionGridGetExp_3000_920131_24
+Key: breakActionGridMine | 出现次数: 1    | 样本: breakActionGridMine_2500_920091_12
+Key: artifactDurabilityBySprite | 出现次数: 1    | 样本: artifactDurabilityBySprite_1007_1_100
+Key: pilProb         | 出现次数: 1    | 样本: pilProb_0_100
+Key: fairyLeagueStoreMoney | 出现次数: 1    | 样本: fairyLeagueStoreMoney_0_-50
+Key: skillPrefixValue | 出现次数: 1    | 样本: skillPrefixValue_0_&30106_hxsj&
+Key: reduceDevilDemonTime | 出现次数: 1    | 样本: reduceDevilDemonTime_0_&7002091_lyhlq&
+Key: replyPotmanHpMax | 出现次数: 1    | 样本: replyPotmanHpMax_0_&7002092_hyhx&_&7002092_mmhf&
+Key: carefreeMan     | 出现次数: 1    | 样本: carefreeMan_100_50_1_8
+Key: heresyDie       | 出现次数: 1    | 样本: heresyDie_101_0
+Key: piscesBless     | 出现次数: 1    | 样本: piscesBless
+Key: aiRunCannotSelect | 出现次数: 1    | 样本: aiRunCannotSelect
+Key: immortalGradeExpLimit | 出现次数: 1    | 样本: immortalGradeExpLimit_grade10LimitExp
+Key: immortalAddSlot | 出现次数: 1    | 样本: immortalAddSlot_2
+Key: getImmortal     | 出现次数: 1    | 样本: getImmortal_0_10017
+Key: basArtAll       | 出现次数: 1    | 样本: basArtAll_1_10
+Key: hpRes           | 出现次数: 1    | 样本: hpRes_0_10
+Key: healthDownStable | 出现次数: 1    | 样本: healthDownStable_0_-10
+Key: energyUpStable  | 出现次数: 1    | 样本: energyUpStable_0_5
+Key: addFeatureByRole | 出现次数: 1    | 样本: addFeatureByRole_9300110_9300109_&3000911_xydsj&
+Key: delPlayerEquiptSkill | 出现次数: 1    | 样本: delPlayerEquiptSkill_1_1
+Key: delNPCEquiptSkill | 出现次数: 1    | 样本: delNPCEquiptSkill_3_3
+Key: learnRandomSkill | 出现次数: 1    | 样本: learnRandomSkill
+Key: disableChangeSkill | 出现次数: 1    | 样本: disableChangeSkill
+Key: dyingUnitHelpPillRate | 出现次数: 1    | 样本: dyingUnitHelpPillRate_10_50
+Key: rollDiceBet     | 出现次数: 1    | 样本: rollDiceBet
+Key: soulDevourSword | 出现次数: 1    | 样本: soulDevourSword
+Key: dyingAddTime    | 出现次数: 1    | 样本: dyingAddTime_6
+Key: yinyangEye      | 出现次数: 1    | 样本: yinyangEye
+Key: sexCharm        | 出现次数: 1    | 样本: sexCharm_999
+Key: backSteal       | 出现次数: 1    | 样本: backSteal_3
+Key: blaming         | 出现次数: 1    | 样本: blaming_1_3
+Key: loverHelper1    | 出现次数: 1    | 样本: loverHelper1_3_60_2
+Key: loverHelper2    | 出现次数: 1    | 样本: loverHelper2_3_60_2
+Key: martialSoul     | 出现次数: 1    | 样本: martialSoul_1_33_0_5_6
+Key: wineSoul        | 出现次数: 1    | 样本: wineSoul_3_0_100
+Key: stealAddIntim   | 出现次数: 1    | 样本: stealAddIntim_12_60_25_-25_1
+Key: noNtrSoul       | 出现次数: 1    | 样本: noNtrSoul
+Key: matchMakerSoul  | 出现次数: 1    | 样本: matchMakerSoul
+Key: matchBreakerSoul | 出现次数: 1    | 样本: matchBreakerSoul
+Key: discoverySoul   | 出现次数: 1    | 样本: discoverySoul
+Key: lingshiSoul     | 出现次数: 1    | 样本: lingshiSoul_400
+Key: auctionUpPriceSoul | 出现次数: 1    | 样本: auctionUpPriceSoul_60_-1
+Key: plunderSoul     | 出现次数: 1    | 样本: plunderSoul_3_1
+Key: captivateSoul   | 出现次数: 1    | 样本: captivateSoul_50_180_1_3
+Key: npcUltimateSoul | 出现次数: 1    | 样本: npcUltimateSoul_75
+Key: footEffect      | 出现次数: 1    | 样本: footEffect_Lianhuashengmie_500
+Key: lotusSword      | 出现次数: 1    | 样本: lotusSword
+Key: stealedAddRate  | 出现次数: 1    | 样本: stealedAddRate_0_50
+Key: nextSpriteLevel | 出现次数: 1    | 样本: nextSpriteLevel_5_6
+Key: refreshCloth    | 出现次数: 1    | 样本: refreshCloth
+Key: roleTrainAddAbilityExp | 出现次数: 1    | 样本: roleTrainAddAbilityExp
+Key: npcRelationTask | 出现次数: 1    | 样本: npcRelationTask_10_1111023_8300001_8300011_4_65
+Key: npcRelationGradeUrge | 出现次数: 1    | 样本: npcRelationGradeUrge_10_12_24_8300021_8300031_4_65
+Key: npcRelationBreakHatred | 出现次数: 1    | 样本: npcRelationBreakHatred_10_9999_8300041_65
+Key: npcRelationAttackEnemy | 出现次数: 1    | 样本: npcRelationAttackEnemy_10_6_12
+Key: npcRelationGradeReward | 出现次数: 1    | 样本: npcRelationGradeReward_10_80000011_7
+Key: npcRelationSkillReward | 出现次数: 1    | 样本: npcRelationSkillReward_10_80000012
+Key: npcRelationLootMarriage | 出现次数: 1    | 样本: npcRelationLootMarriage_5_12_24_8300051_8300061_200_6
+Key: npcRelationStopBattle | 出现次数: 1    | 样本: npcRelationStopBattle_5_10
+Key: npcRelationRefuseMeet | 出现次数: 1    | 样本: npcRelationRefuseMeet_7
+Key: npcRelationAvengeInitiativeMeet | 出现次数: 1    | 样本: npcRelationAvengeInitiativeMeet_7_8300101_300
+Key: npcRelationSchoolSkillSteal | 出现次数: 1    | 样本: npcRelationSchoolSkillSteal_7_4_6_8000003_10_extremeEventLogRoleChat80000011
+Key: npcRelationTeamworkRevenge | 出现次数: 1    | 样本: npcRelationTeamworkRevenge_7_8_16_8300111
+Key: npcRelationRescueBattle | 出现次数: 1    | 样本: npcRelationRescueBattle_7_6_12_8300071_20_6
+Key: npcRelationSurrenderMeet | 出现次数: 1    | 样本: npcRelationSurrenderMeet_8300121
+Key: npcRelationDieDemand | 出现次数: 1    | 样本: npcRelationDieDemand_8300131_20_6_12_extremeEventLogRoleChat80000012
+Key: npcRelationCommand | 出现次数: 1    | 样本: npcRelationCommand_8_9
+Key: townSaleExtra   | 出现次数: 1    | 样本: townSaleExtra_0_50
+
+
+>>> [2. 战斗与装备属性 ID表 (BattleEffectBasePower)]
+说明：用于装备、坐骑、技能的属性定义。ID 即为属性的数字代号。
+---------------------------------------------------------------
+ID     | 描述Key                          | 中文解释 (推测)
+11     | effect_value_desc11            | 伤害威力(火)：{0}
+12     | effect_value_desc12            | 伤害威力(水)：{0}
+13     | effect_value_desc13            | 伤害威力(雷)：{0}
+14     | effect_value_desc14            | 伤害威力(风)：{0}
+15     | effect_value_desc15            | 伤害威力(土)：{0}
+16     | effect_value_desc16            | 伤害威力(木)：{0}
+21     | effect_value_desc21            | 伤害威力(刀)：{0}
+22     | effect_value_desc22            | 伤害威力(枪)：{0}
+23     | effect_value_desc23            | 伤害威力(剑)：{0}
+24     | effect_value_desc24            | 伤害威力(拳)：{0}
+25     | effect_value_desc25            | 伤害威力(掌)：{0}
+26     | effect_value_desc26            | 伤害威力(指)：{0}
+31     | effect_value_desc31            | 每秒伤害威力(火)：{0}
+32     | effect_value_desc32            | 每秒伤害威力(水)：{0}
+33     | effect_value_desc33            | 每秒伤害威力(雷)：{0}
+34     | effect_value_desc34            | 每秒伤害威力(风)：{0}
+35     | effect_value_desc35            | 每秒伤害威力(土)：{0}
+36     | effect_value_desc36            | 每秒伤害威力(木)：{0}
+41     | effect_value_desc41            | 每秒伤害威力(刀)：{0}
+42     | effect_value_desc42            | 每秒伤害威力(枪)：{0}
+43     | effect_value_desc43            | 每秒伤害威力(剑)：{0}
+44     | effect_value_desc44            | 每秒伤害威力(拳)：{0}
+45     | effect_value_desc45            | 每秒伤害威力(掌)：{0}
+46     | effect_value_desc46            | 每秒伤害威力(指)：{0}
+51     | effect_value_desc51            | 伤害值(火)：{0}
+52     | effect_value_desc52            | 伤害值(水)：{0}
+53     | effect_value_desc53            | 伤害值(雷)：{0}
+54     | effect_value_desc54            | 伤害值(风)：{0}
+55     | effect_value_desc55            | 伤害值(土)：{0}
+56     | effect_value_desc56            | 伤害值(木)：{0}
+61     | effect_value_desc61            | 伤害值(刀)：{0}
+62     | effect_value_desc62            | 伤害值(枪)：{0}
+63     | effect_value_desc63            | 伤害值(剑)：{0}
+64     | effect_value_desc64            | 伤害值(拳)：{0}
+65     | effect_value_desc65            | 伤害值(掌)：{0}
+66     | effect_value_desc66            | 伤害值(指)：{0}
+100    | effect_value_desc100           | 每秒伤害：{0}
+101    | effect_value_desc101           | 回复体力：{0}
+102    | effect_value_desc102           | 回复灵力：{0}
+103    | effect_value_desc103           | 消耗当前体力：{0}
+104    | effect_value_desc104           | 消耗当前灵力：{0}
+105    | effect_value_desc105           | 消耗最大体力：{0}
+106    | effect_value_desc106           | 消耗最大灵力：{0}
+107    | effect_value_desc107           | 增加攻击：{0}
+108    | effect_value_desc108           | 增加防御：{0}
+109    | effect_value_desc109           | 增加移动速度：{0}
+110    | effect_value_desc110           | 增加全灵根：{0}
+111    | effect_value_desc111           | 增加火灵根：{0}
+112    | effect_value_desc112           | 增加水灵根：{0}
+113    | effect_value_desc113           | 增加雷灵根：{0}
+114    | effect_value_desc114           | 增加风灵根：{0}
+115    | effect_value_desc115           | 增加土灵根：{0}
+116    | effect_value_desc116           | 增加木灵根：{0}
+120    | effect_value_desc120           | 增加全武器资质：{0}
+121    | effect_value_desc121           | 增加刀法资质：{0}
+122    | effect_value_desc122           | 增加枪法资质：{0}
+123    | effect_value_desc123           | 增加剑法资质：{0}
+124    | effect_value_desc124           | 增加拳法资质：{0}
+125    | effect_value_desc125           | 增加掌法资质：{0}
+126    | effect_value_desc126           | 增加指法资质：{0}
+131    | effect_value_desc131           | 增加物理免伤：{0}
+132    | effect_value_desc132           | 增加属性免伤：{0}
+133    | effect_value_desc133           | 增加会心：{0}
+134    | effect_value_desc134           | 增加护心：{0}
+135    | effect_value_desc135           | 增加暴击倍数：{0}
+136    | effect_value_desc136           | 增加抗暴倍数：{0}
+147    | effect_value_desc147           | 降低攻击：{0}
+148    | effect_value_desc148           | 降低防御：{0}
+149    | effect_value_desc149           | 降低移动速度：{0}
+150    | effect_value_desc150           | 降低全灵根：{0}
+151    | effect_value_desc151           | 降低火灵根：{0}
+152    | effect_value_desc152           | 降低水灵根：{0}
+153    | effect_value_desc153           | 降低雷灵根：{0}
+154    | effect_value_desc154           | 降低风灵根：{0}
+155    | effect_value_desc155           | 降低土灵根：{0}
+156    | effect_value_desc156           | 降低木灵根：{0}
+160    | effect_value_desc160           | 降低全武器资质：{0}
+161    | effect_value_desc161           | 降低刀法资质：{0}
+162    | effect_value_desc162           | 降低枪法资质：{0}
+163    | effect_value_desc163           | 降低剑法资质：{0}
+164    | effect_value_desc164           | 降低拳法资质：{0}
+165    | effect_value_desc165           | 降低掌法资质：{0}
+166    | effect_value_desc166           | 降低指法资质：{0}
+167    | effect_value_desc167           | 降低物理免伤：{0}
+168    | effect_value_desc168           | 降低属性免伤：{0}
+169    | effect_value_desc169           | 降低会心：{0}
+170    | effect_value_desc170           | 降低护心：{0}
+171    | effect_value_desc171           | 降低暴击倍数：{0}
+172    | effect_value_desc172           | 降低抗暴倍数：{0}
+181    | effect_value_desc181           | 伤害百分比(火)：{0}
+182    | effect_value_desc182           | 伤害百分比(水)：{0}
+183    | effect_value_desc183           | 伤害百分比(雷)：{0}
+184    | effect_value_desc184           | 伤害百分比(风)：{0}
+185    | effect_value_desc185           | 伤害百分比(土)：{0}
+186    | effect_value_desc186           | 伤害百分比(木)：{0}
+191    | effect_value_desc191           | 伤害百分比(刀)：{0}
+192    | effect_value_desc192           | 伤害百分比(枪)：{0}
+193    | effect_value_desc193           | 伤害百分比(剑)：{0}
+194    | effect_value_desc194           | 伤害百分比(拳)：{0}
+195    | effect_value_desc195           | 伤害百分比(掌)：{0}
+196    | effect_value_desc196           | 伤害百分比(指)：{0}
+197    | effect_value_desc197           | 额外伤害：{0}
+198    | effect_value_desc198           | 最大叠加：{0}层
+199    | effect_value_desc199           | 身法消耗降低：{0}
+200    | effect_value_desc200           | 伤害威力：{0}
+201    | effect_value_desc201           | 概率：{0}%
+202    | effect_value_desc202           | 冷却减少：{0}秒
+203    | effect_value_desc203           | 降低伤害：{0}
+204    | effect_value_desc204           | 持续时间：{0}秒
+205    | effect_value_desc205           | 叠加层数：{0}
+206    | effect_value_desc206           | 额外伤害：{0}%
+207    | effect_value_desc207           | 斩杀体力上限：{0}
+208    | effect_value_desc208           | 吸血：{0}%
+209    | effect_value_desc209           | 攻击提升：{0}%
+210    | effect_value_desc210           | 防御提升：{0}%
+211    | effect_value_desc211           | 突进距离：{0}
+212    | effect_value_desc212           | 充能层数：{0}
+213    | effect_value_desc213           | 破甲层数：{0}
+214    | effect_value_desc214           | 消耗破势提升的突进距离：{0}
+215    | effect_value_desc215           | 需求流血层数：{0}
+216    | effect_value_desc216           | 每层剑斩增加持续时间：{0}秒
+217    | effect_value_desc217           | 身法冷却减少：{0}秒
+218    | effect_value_desc218           | 斩杀上限提升：{0}%
+219    | effect_value_desc219           | 晕眩概率：{0}%
+220    | effect_value_desc220           | 晕眩时间：{0}秒
+221    | effect_value_desc221           | 叠加护盾值：{0}
+222    | effect_value_desc222           | 护盾值上限：{0}
+223    | effect_value_desc223           | 叠加铜皮概率：{0}%
+224    | effect_value_desc224           | 消耗当前体力：{0}%
+225    | effect_value_desc225           | 每秒回复体力：{0}%
+226    | effect_value_desc226           | 每层剑斩提升范围：{0}
+227    | effect_value_desc227           | 每层剑斩提升伤害：{0}%
+228    | effect_value_desc228           | 每层额外伤害：{0}
+229    | effect_value_desc229           | 固定伤害：{0}
+230    | effect_value_desc230           | 伤害威力奖励：{0}%
+231    | effect_value_desc231           | 每次下降威力：{0}%
+232    | effect_value_desc232           | 损失灵力：{0}
+233    | effect_value_desc233           | 施加封脉概率：{0}%
+234    | effect_value_desc234           | 额外伤害及灵力损失：{0}%
+235    | effect_value_desc235           | 每层开脉增加指影：{0}
+236    | effect_value_desc236           | 每层开脉提升范围：{0}
+237    | effect_value_desc237           | 每层开脉提升伤害：{0}%
+238    | effect_value_desc238           | 每层开脉造成灵力损失：{0}
+239    | effect_value_desc239           | 每层灵虚造成伤害：{0}
+240    | effect_value_desc240           | 每秒伤害威力：{0}
+241    | effect_value_desc241           | 冷却时间减少：{0}%
+242    | effect_value_desc242           | 降低百分比：{0}%
+243    | effect_value_desc243           | 提升移动速度：{0}%
+244    | effect_value_desc244           | 每层燃魂提升的概率：{0}%
+245    | effect_value_desc245           | 移动速度降低：{0}%
+246    | effect_value_desc246           | 攻击速度降低：{0}%
+247    | effect_value_desc247           | 回复间隔：{0}秒
+248    | effect_value_desc248           | 回复灵力值：{0}
+249    | effect_value_desc249           | 技能消耗提升：{0}%
+250    | effect_value_desc250           | 技能威力提升：{0}%
+251    | effect_value_desc251           | 蓄力时间降低：{0}%
+252    | effect_value_desc252           | 冻结概率：{0}%
+253    | effect_value_desc253           | 每层灵涌提升持续时间：{0}秒
+254    | effect_value_desc254           | 吸取灵力比例：{0}%
+255    | effect_value_desc255           | 麻痹概率：{0}%
+256    | effect_value_desc256           | 麻痹时间：{0}秒
+257    | effect_value_desc257           | 雷电打击间隔：{0}秒
+258    | effect_value_desc258           | 每层最低伤害：{0}
+259    | effect_value_desc259           | 每层最高伤害：{0}
+260    | effect_value_desc260           | 秒杀概率：{0}%
+261    | effect_value_desc261           | 对自身伤害比例：{0}%
+262    | effect_value_desc262           | 召唤雷印概率：{0}%
+263    | effect_value_desc263           | 每层减速概率：{0}%
+264    | effect_value_desc264           | 移动速度降低：{0}%
+265    | effect_value_desc265           | 减速持续时间：{0}秒
+266    | effect_value_desc266           | 每层概率：{0}%
+267    | effect_value_desc267           | 旋风威力：{0}
+268    | effect_value_desc268           | 每层提升旋风时间：{0}秒
+269    | effect_value_desc269           | 每层提升持续时间：{0}秒
+270    | effect_value_desc270           | 每层提升风瘴射程：{0}
+271    | effect_value_desc271           | 每层概率提升：{0}%
+272    | effect_value_desc272           | 减免伤害概率：{0}%
+273    | effect_value_desc273           | 每层可减免伤害：{0}%
+274    | effect_value_desc274           | 每层减免伤害上限：{0}
+275    | effect_value_desc275           | 每层增加攻击：{0}%
+276    | effect_value_desc276           | 每层增加体力：{0}%
+277    | effect_value_desc277           | 每层提升伤害：{0}%
+278    | effect_value_desc278           | 移动速度降低：{0}%
+279    | effect_value_desc279           | 减速持续时间：{0}秒
+280    | effect_value_desc280           | 伤害间隔：{0}秒
+281    | effect_value_desc281           | 伤害威力：{0}
+282    | effect_value_desc282           | 移动速度降低：{0}%
+283    | effect_value_desc283           | 召唤概率：{0}%
+284    | effect_value_desc284           | 伤害提升：{0}%
+285    | effect_value_desc285           | 射程提升：{0}%
+286    | effect_value_desc286           | 额外伤害：{0}%
+287    | effect_value_desc287           | 毒刺伤害提升：{0}%
+288    | effect_value_desc288           | 攻击间隔降低：{0}%
+289    | effect_value_desc289           | 每点攻击每秒消化的体力：{0}
+290    | effect_value_desc290           | 腐蚀伤害间隔：{0}秒
+291    | effect_value_desc291           | 毒沼移速降低：{0}%
+292    | effect_value_desc292           | 缠绕概率：{0}%
+293    | effect_value_desc293           | 每点护盾造成伤害：{0}
+294    | effect_value_desc294           | 每层提升伤害：{0}%
+295    | effect_value_desc295           | 被动提升小花妖体力：{0}
+296    | effect_value_desc296           | 被动提升小花妖攻击：{0}
+297    | effect_value_desc297           | 产生花种概率：{0}%
+298    | effect_value_desc298           | 每层概率：{0}%
+299    | effect_value_desc299           | 叠加概率：{0}%
+
+
+>>> [3. 技能参数字段表 (SkillFieldDesc)]
+说明：用于定义技能具体效果的字段名。
+---------------------------------------------------------------
+Field: phycicalDmg          | 描述: 主弹道威力
+Field: phycicalDmg          | 描述: 子弹道威力
+Field: phycicalDmg          | 描述: 弹道威力
+Field: magicDmg             | 描述: 主弹道威力
+Field: magicDmg             | 描述: 子弹道威力
+Field: magicDmg             | 描述: 弹道威力
+Field: chargeValue          | 描述: 命中增加怒气
+Field: shotCD               | 描述: 技能冷却
+Field: capacity             | 描述: 子弹道波数
+Field: range                | 描述: 主弹道射程
+Field: range                | 描述: 子弹道射程
+Field: range                | 描述: 弹道射程
+Field: bulletNum            | 描述: 主弹道数量
+Field: bulletNum            | 描述: 子弹道数量
+Field: bulletNum            | 描述: 弹道数量
+Field: radius               | 描述: 主弹道半径
+Field: radius               | 描述: 子弹道半径
+Field: radius               | 描述: 弹道半径
+Field: plies                | 描述: 持续时间
+Field: duration             | 描述: 间隔时间
+Field: duration             | 描述: 持续时间
+Field: range                | 描述: 闪现距离
+Field: range                | 描述: 冲刺距离
+Field: duration             | 描述: 遁地持续时间
+Field: duration             | 描述: 隐身持续时间
+Field: size                 | 描述: 阵法半径
+Field: duration             | 描述: 阵法持续时间
+Field: number               | 描述: 召唤数量
+Field: duration             | 描述: 召唤物持续时间
+
+
+>>> [4. 丹药与特殊Buff ID表 (BattleBuff / Effect)]
+说明：丹药通常引用这些 ID 来产生持续性效果。
+---------------------------------------------------------------
+ID: 4100001  | Desc: hftl:200 | Name: 小体力丹
+ID: 4100002  | Desc: hftl:500 | Name: 大体力丹
+ID: 4100003  | Desc: hfll:200 | Name: 小灵力丹
+ID: 4100004  | Desc: hfll:500 | Name: 大灵力丹
+ID: 4100005  | Desc: tsgj:200 | Name: 攻击丹
+ID: 4100006  | Desc: tsfy:200 | Name: 防御丹
+ID: 1011161  | Desc: tsgj:&1011161_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011162  | Desc: tsgj:&1011162_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011163  | Desc: tsgj:&1011163_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011164  | Desc: tsgj:&1011164_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011165  | Desc: tsgj:&1011165_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011166  | Desc: tsgj:&1011166_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011171  | Desc: tsgj:&1011171_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011172  | Desc: tsgj:&1011172_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011173  | Desc: tsgj:&1011173_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011174  | Desc: tsgj:&1011174_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011175  | Desc: tsgj:&1011175_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011176  | Desc: tsgj:&1011176_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011181  | Desc: tsgj:&1011181_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011182  | Desc: tsgj:&1011182_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011183  | Desc: tsgj:&1011183_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011184  | Desc: tsgj:&1011184_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011185  | Desc: tsgj:&1011185_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011186  | Desc: tsgj:&1011186_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011191  | Desc: tsgj:&1011191_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011192  | Desc: tsgj:&1011192_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011193  | Desc: tsgj:&1011193_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011194  | Desc: tsgj:&1011194_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011195  | Desc: tsgj:&1011195_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011196  | Desc: tsgj:&1011196_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011201  | Desc: tsgj:&1011201_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011202  | Desc: tsgj:&1011202_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011203  | Desc: tsgj:&1011203_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011204  | Desc: tsgj:&1011204_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011205  | Desc: tsgj:&1011205_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011206  | Desc: tsgj:&1011206_tsgj|cxsj:&1011161_cxsj | Name: 
+ID: 1011211  | Desc: tsfy:&1011211_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011212  | Desc: tsfy:&1011212_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011213  | Desc: tsfy:&1011213_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011214  | Desc: tsfy:&1011214_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011215  | Desc: tsfy:&1011215_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011216  | Desc: tsfy:&1011216_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011221  | Desc: tsfy:&1011221_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011222  | Desc: tsfy:&1011222_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011223  | Desc: tsfy:&1011223_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011224  | Desc: tsfy:&1011224_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011225  | Desc: tsfy:&1011225_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011226  | Desc: tsfy:&1011226_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011231  | Desc: tsfy:&1011231_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011232  | Desc: tsfy:&1011232_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011233  | Desc: tsfy:&1011233_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011234  | Desc: tsfy:&1011234_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011235  | Desc: tsfy:&1011235_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011236  | Desc: tsfy:&1011236_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011241  | Desc: tsfy:&1011241_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011242  | Desc: tsfy:&1011242_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011243  | Desc: tsfy:&1011243_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011244  | Desc: tsfy:&1011244_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011245  | Desc: tsfy:&1011245_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011246  | Desc: tsfy:&1011246_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011251  | Desc: tsfy:&1011251_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011252  | Desc: tsfy:&1011252_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011253  | Desc: tsfy:&1011253_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011254  | Desc: tsfy:&1011254_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011255  | Desc: tsfy:&1011255_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011256  | Desc: tsfy:&1011256_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011261  | Desc: tsfy:&1011261_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011262  | Desc: tsfy:&1011262_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011263  | Desc: tsfy:&1011263_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011264  | Desc: tsfy:&1011264_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011265  | Desc: tsfy:&1011265_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1011266  | Desc: tsfy:&1011266_tsfy|cxsj:&1011161_cxsj | Name: 
+ID: 1041011  | Desc: 0 | Name: 
+ID: 1041012  | Desc: 0 | Name: 
+ID: 1041013  | Desc: 0 | Name: 
+ID: 1041014  | Desc: 0 | Name: 
+ID: 1041015  | Desc: 0 | Name: 
+ID: 1041016  | Desc: 0 | Name: 
+ID: 1041021  | Desc: 0 | Name: 
+ID: 1041022  | Desc: 0 | Name: 
+ID: 1041023  | Desc: 0 | Name: 
+ID: 1041024  | Desc: 0 | Name: 
+ID: 1041025  | Desc: 0 | Name: 
+ID: 1041026  | Desc: 0 | Name: 
+ID: 1041031  | Desc: 0 | Name: 
+ID: 1041032  | Desc: 0 | Name: 
+ID: 1041033  | Desc: 0 | Name: 
+ID: 1041034  | Desc: 0 | Name: 
+ID: 1041035  | Desc: 0 | Name: 
+ID: 1041036  | Desc: 0 | Name: 
+ID: 1041041  | Desc: 0 | Name: 
+ID: 1041042  | Desc: 0 | Name: 
+ID: 1041043  | Desc: 0 | Name: 
+ID: 1041044  | Desc: 0 | Name: 
+ID: 1041045  | Desc: 0 | Name: 
+ID: 1041046  | Desc: 0 | Name: 
+ID: 1041047  | Desc: 0 | Name: 
+ID: 1041048  | Desc: 0 | Name: 
+ID: 1041049  | Desc: 0 | Name: 
+ID: 1041050  | Desc: 0 | Name: 
+ID: 1041051  | Desc: 0 | Name: 
+ID: 1041052  | Desc: 0 | Name: 
+ID: 1041053  | Desc: 0 | Name: 
+ID: 1041054  | Desc: 0 | Name: 
+ID: 1041055  | Desc: 0 | Name: 
+ID: 1041056  | Desc: 0 | Name: 
+ID: 1041057  | Desc: 0 | Name: 
+ID: 1041058  | Desc: 0 | Name: 
+ID: 1041059  | Desc: 0 | Name: 
+ID: 1041060  | Desc: 0 | Name: 
+ID: 1041061  | Desc: 0 | Name: 
+ID: 1041062  | Desc: 0 | Name: 
+ID: 1041063  | Desc: 0 | Name: 
+ID: 1041064  | Desc: 0 | Name: 
+ID: 1041065  | Desc: 0 | Name: 
+ID: 1041066  | Desc: 0 | Name: 
+ID: 1041067  | Desc: 0 | Name: 
+ID: 1041068  | Desc: 0 | Name: 
+ID: 1041069  | Desc: 0 | Name: 
+ID: 1041070  | Desc: 0 | Name: 
+ID: 1041071  | Desc: 0 | Name: 
+ID: 1041072  | Desc: 0 | Name: 
+ID: 1041073  | Desc: 0 | Name: 
+ID: 1041074  | Desc: 0 | Name: 
+ID: 1041075  | Desc: 0 | Name: 
+ID: 1041076  | Desc: 0 | Name: 
+ID: 1041077  | Desc: 0 | Name: 
+ID: 1041078  | Desc: 0 | Name: 
+ID: 1041079  | Desc: 0 | Name: 
+ID: 1041080  | Desc: 0 | Name: 
+ID: 1041081  | Desc: 0 | Name: 
+ID: 1041082  | Desc: 0 | Name: 
+ID: 1041083  | Desc: 0 | Name: 
+ID: 1041084  | Desc: 0 | Name: 
+ID: 1041085  | Desc: 0 | Name: 
+ID: 1041086  | Desc: 0 | Name: 
+ID: 1041087  | Desc: 0 | Name: 
+ID: 1041088  | Desc: 0 | Name: 
+ID: 1041089  | Desc: 0 | Name: 
+ID: 1041090  | Desc: 0 | Name: 
+ID: 1041091  | Desc: 0 | Name: 
+ID: 1041092  | Desc: 0 | Name: 
+ID: 1041093  | Desc: 0 | Name: 
+ID: 1041094  | Desc: 0 | Name: 
+ID: 1041095  | Desc: 0 | Name: 
+ID: 1041096  | Desc: 0 | Name: 
+ID: 1041097  | Desc: 0 | Name: 
+ID: 1041098  | Desc: 0 | Name: 
+ID: 1041099  | Desc: 0 | Name: 
+ID: 1041100  | Desc: 0 | Name: 
+ID: 1041101  | Desc: 0 | Name: 
+ID: 1041102  | Desc: 0 | Name: 
+ID: 1041103  | Desc: 0 | Name: 
+ID: 1041104  | Desc: 0 | Name: 
+ID: 1041105  | Desc: 0 | Name: 
+ID: 1041106  | Desc: 0 | Name: 
+ID: 1041107  | Desc: 0 | Name: 
+ID: 1041108  | Desc: 0 | Name: 
+ID: 1041109  | Desc: 0 | Name: 
+ID: 1041110  | Desc: 0 | Name: 
+ID: 1041111  | Desc: 0 | Name: 
+ID: 1041112  | Desc: 0 | Name: 
+ID: 1041113  | Desc: 0 | Name: 
+ID: 1041114  | Desc: 0 | Name: 
+ID: 1041115  | Desc: 0 | Name: 
+ID: 1041116  | Desc: 0 | Name: 
+ID: 1041117  | Desc: 0 | Name: 
+ID: 1041118  | Desc: 0 | Name: 
+ID: 1041119  | Desc: 0 | Name: 
+ID: 1041120  | Desc: 0 | Name: 
+ID: 1041121  | Desc: 0 | Name: 
+ID: 1041122  | Desc: 0 | Name: 
+ID: 1041123  | Desc: 0 | Name: 
+ID: 1041124  | Desc: 0 | Name: 
+ID: 1041125  | Desc: 0 | Name: 
+ID: 1041126  | Desc: 0 | Name: 
+ID: 1041127  | Desc: 0 | Name: 
+ID: 1041128  | Desc: 0 | Name: 
+ID: 1041129  | Desc: 0 | Name: 
+ID: 1041130  | Desc: 0 | Name: 
+ID: 1041131  | Desc: 0 | Name: 
+ID: 1041132  | Desc: 0 | Name: 
+ID: 1041133  | Desc: 0 | Name: 
+ID: 1041134  | Desc: 0 | Name: 
+ID: 1041135  | Desc: 0 | Name: 
+ID: 1041136  | Desc: 0 | Name: 
+ID: 1041137  | Desc: 0 | Name: 
+ID: 1041138  | Desc: 0 | Name: 
+ID: 1041139  | Desc: 0 | Name: 
+ID: 1041140  | Desc: 0 | Name: 
+ID: 1041141  | Desc: 0 | Name: 
+ID: 1041142  | Desc: 0 | Name: 
+ID: 1041143  | Desc: 0 | Name: 
+ID: 1041144  | Desc: 0 | Name: 
+ID: 1041145  | Desc: 0 | Name: 
+ID: 1041146  | Desc: 0 | Name: 
+ID: 1041147  | Desc: 0 | Name: 
+ID: 1041148  | Desc: 0 | Name: 
+ID: 1041149  | Desc: 0 | Name: 
+ID: 1041150  | Desc: 0 | Name: 

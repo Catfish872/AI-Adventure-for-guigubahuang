@@ -1,0 +1,5081 @@
+========== 游戏配置全局地毯式扫描报告 02/02/2026 08:57:22 ==========
+说明：此报告列出了 g.conf 下所有可能与物品、属性、气运相关的配置表及其数据结构。
+
+配置根类名: ConfMgr
+
+--------------------------------------------------
+[发现表]: modRoleEffectType1   (类型: ConfModRoleEffectType1)
+数据量: 92
+[样本数据结构分析] (ConfModRoleEffectType1Item) :
+    -> attrKey: atk
+    -> attrText: modEffectType1Name_atk
+    -> attrDesc: 0
+    -> types: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533789524928
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: modRoleEffectType2   (类型: ConfModRoleEffectType2)
+数据量: 16
+[样本数据结构分析] (ConfModRoleEffectType2Item) :
+    -> attrKey: moodLock
+    -> attrText: modEffectType2Name_moodLock
+    -> attrDesc: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533789772096
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: modRoleEffectType3   (类型: ConfModRoleEffectType3)
+数据量: 89
+[样本数据结构分析] (ConfModRoleEffectType3Item) :
+    -> key: moneyAdd
+    -> isShow: 1
+    -> roleEffectTypes: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> title: modEffectType3Title_moneyAdd
+    -> value1: Int_-10000_10000
+    -> value2: 0
+    -> value3: 0
+    -> value4: 0
+    -> value5: 0
+    -> value6: 0
+    -> value7: 0
+    -> value8: 0
+    -> value1Name: modEffectType3_moneyAdd_value1Name
+    -> value2Name: 0
+    -> value3Name: 0
+    -> value4Name: 0
+    -> value5Name: 0
+    -> value6Name: 0
+    -> value7Name: 0
+    -> value8Name: 0
+    -> value1Desc: 0
+    -> value2Desc: 0
+    -> value3Desc: 0
+    -> value4Desc: 0
+    -> value5Desc: 0
+    -> value6Desc: 0
+    -> value7Desc: 0
+    -> value8Desc: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790259968
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcFavouriteItem   (类型: ConfNpcFavouriteItem)
+数据量: 10
+[样本数据结构分析] (ConfNpcFavouriteItemItem) :
+    -> key: baseScore
+    -> value: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791395888
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcEquipItem   (类型: ConfNpcEquipItem)
+数据量: 5
+[样本数据结构分析] (ConfNpcEquipItemItem) :
+    -> key: replaceItemRequire
+    -> value: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791456592
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattle   (类型: ConfNpcBattle)
+数据量: 6
+[样本数据结构分析] (ConfNpcBattleItem) :
+    -> key: victoryPara
+    -> value: 20
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791453952
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBuyBook   (类型: ConfNpcBuyBook)
+数据量: 14
+[样本数据结构分析] (ConfNpcBuyBookItem) :
+    -> key: townBuyFailProb
+    -> value: 5
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791453616
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcAddEquipMartialTrain   (类型: ConfNpcAddEquipMartialTrain)
+数据量: 2
+[样本数据结构分析] (ConfNpcAddEquipMartialTrainItem) :
+    -> key: min
+    -> value: 500
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791501072
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcImmortValue   (类型: ConfNpcImmortValue)
+数据量: 2
+[样本数据结构分析] (ConfNpcImmortValueItem) :
+    -> key: immortValuePprobability
+    -> value: 4000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791500928
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcImmortSkill   (类型: ConfNpcImmortSkill)
+数据量: 2
+[样本数据结构分析] (ConfNpcImmortSkillItem) :
+    -> key: immortSkillPprobability
+    -> value: 4000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791500784
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleSkill   (类型: ConfNpcBattleSkill)
+数据量: 318
+[样本数据结构分析] (ConfNpcBattleSkillItem) :
+    -> group: 1001
+    -> skillType: 1
+    -> skillID: 14111
+    -> prefixID: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> necessary: -1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533789771072
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleAI   (类型: ConfNpcBattleAI)
+数据量: 53
+[样本数据结构分析] (ConfNpcBattleAIItem) :
+    -> group: 1001
+    -> trigger: skill_2
+    -> condition: cdOk_2_5000_999999999
+    -> active: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791113920
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleSimSkill   (类型: ConfNpcBattleSimSkill)
+数据量: 300
+[样本数据结构分析] (ConfNpcBattleSimSkillItem) :
+    -> type: 1
+    -> grade: 1
+    -> level: 1
+    -> power: 17
+    -> mpCost: 4
+    -> lowPower: 17
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792611712
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleSimPrefix   (类型: ConfNpcBattleSimPrefix)
+数据量: 300
+[样本数据结构分析] (ConfNpcBattleSimPrefixItem) :
+    -> type: 1
+    -> grade: 1
+    -> level: 1
+    -> power: 0
+    -> lowPower: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790359232
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleSimArtifact   (类型: ConfNpcBattleSimArtifact)
+数据量: 60
+[样本数据结构分析] (ConfNpcBattleSimArtifactItem) :
+    -> grade: 1
+    -> level: 1
+    -> power: 8
+    -> spirit: 10
+    -> spCost: 13
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790945280
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcBattleSimMonster   (类型: ConfNpcBattleSimMonster)
+数据量: 1
+[样本数据结构分析] (ConfNpcBattleSimMonsterItem) :
+    -> power: 200
+    -> id: 7040
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792027872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitAttrBase   (类型: ConfNpcInitAttrBase)
+数据量: 30
+[样本数据结构分析] (ConfNpcInitAttrBaseItem) :
+    -> grade: 1
+    -> phase: 1
+    -> ageMin: 16
+    -> ageMax: 24
+    -> lifeMin: 60
+    -> lifeMax: 100
+    -> reputationMin: 0
+    -> reputationMax: 400
+    -> hpMin: 0
+    -> hpMax: 0
+    -> mpMin: 0
+    -> mpMax: 0
+    -> spMin: 0
+    -> spMax: 0
+    -> atkMin: 0
+    -> atkMax: 0
+    -> defMin: 0
+    -> defMax: 0
+    -> critMin: 0
+    -> critMax: 0
+    -> guardMin: 0
+    -> guardMax: 0
+    -> critVMin: 0
+    -> critVMax: 0
+    -> guardVMin: 0
+    -> guardVMax: 0
+    -> basMin: 0
+    -> basMax: 6
+    -> basReduce: 70
+    -> abilityPointMin: 0
+    -> abilityPointMax: 30
+    -> freeMin: 0
+    -> freeMax: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533296360192
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitAttrTend   (类型: ConfNpcInitAttrTend)
+数据量: 6
+[样本数据结构分析] (ConfNpcInitAttrTendItem) :
+    -> tendBaseProbability: 150
+    -> tendPostProbability: -15
+    -> id: 2
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792040688
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitAttrGrow   (类型: ConfNpcInitAttrGrow)
+数据量: 6
+[样本数据结构分析] (ConfNpcInitAttrGrowItem) :
+    -> age: 500
+    -> ageMaxRate: 80
+    -> reputation: 250
+    -> hp: 150
+    -> mp: 150
+    -> sp: 150
+    -> atk: 150
+    -> def: 150
+    -> crit: 120
+    -> guard: 120
+    -> critV: 150
+    -> guardV: 150
+    -> bas: 150
+    -> abilityPoint: 150
+    -> free: 200
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788265088
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitFeature   (类型: ConfNpcInitFeature)
+数据量: 216
+[样本数据结构分析] (ConfNpcInitFeatureItem) :
+    -> type: 1
+    -> condition: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStringArray]
+    -> forbitStand: 0
+    -> weightBase: 15000
+    -> weightGrade: 1000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791620800
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitSkill   (类型: ConfNpcInitSkill)
+数据量: 60
+[样本数据结构分析] (ConfNpcInitSkillItem) :
+    -> grade: 10
+    -> phase: 3
+    -> skillGrade: 10
+    -> skillLevel: 6
+    -> probability: 500
+    -> probabilityCrazy: 2000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791531456
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcInitItem   (类型: ConfNpcInitItem)
+数据量: 10
+[样本数据结构分析] (ConfNpcInitItemItem) :
+    -> moneyDrop: 210111
+    -> itemDrop: 210121
+    -> dropTimeMin: 1
+    -> dropTimeMax: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792046560
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: npcAttrStable   (类型: ConfNpcAttrStable)
+数据量: 30
+[样本数据结构分析] (ConfNpcAttrStableItem) :
+    -> grade: 1
+    -> phase: 1
+    -> hp: 156
+    -> hpAdd: 100
+    -> mp: 114
+    -> mpAdd: 100
+    -> sp: 114
+    -> spAdd: 100
+    -> moveSpeed: 350
+    -> attack: 11
+    -> defense: 4
+    -> basBlade: 11
+    -> basSpear: 11
+    -> basSword: 11
+    -> basFist: 11
+    -> basPalm: 11
+    -> basFinger: 11
+    -> basisFire: 11
+    -> basisFroze: 11
+    -> basisThunder: 11
+    -> basisWind: 11
+    -> basisEarth: 11
+    -> basisWood: 11
+    -> phycicalFree: 0
+    -> phycicalFreeAdd: 100
+    -> magicFree: 0
+    -> magicFreeAdd: 100
+    -> crit: 12
+    -> guard: 7
+    -> critValue: 105
+    -> guardValue: 5
+    -> abilityPoint: 27
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790069216
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSubMissileTrigger   (类型: ConfBattleSubMissileTrigger)
+数据量: 39
+[样本数据结构分析] (ConfBattleSubMissileTriggerItem) :
+    -> type: 1
+    -> value: 100
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533786450320
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fairyLeagueStoreProp   (类型: ConfFairyLeagueStoreProp)
+数据量: 29
+[样本数据结构分析] (ConfFairyLeagueStorePropItem) :
+    -> type: 1
+    -> price: 50
+    -> num: 10
+    -> layer: 1
+    -> id: 1011154
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788281280
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: clothItem   (类型: ConfClothItem)
+数据量: 295
+[样本数据结构分析] (ConfClothItemItem) :
+    -> clothID: 18001
+    -> sex: 1
+    -> style: 18001
+    -> color: 1
+    -> modelID: 31001
+    -> itemCost: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> weight: 1
+    -> id: 3041001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528280823920
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fairyChickenSkillBase   (类型: ConfFairyChickenSkillBase)
+数据量: 40
+[样本数据结构分析] (ConfFairyChickenSkillBaseItem) :
+    -> skillAnim: 0
+    -> triggerType: 1
+    -> skillType: 0
+    -> missileLevel: 0
+    -> immortCharge: 5
+    -> superCharge: 9
+    -> level: 1
+    -> requirement: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> skillWeight: 100
+    -> createWeight: 100
+    -> extraExpect: 10
+    -> extraExpectSingle: 10
+    -> timeScale: 0
+    -> timeScaleDur: 0
+    -> id: 5661
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533294632224
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: damgeTestGradeAttrbute   (类型: ConfDamgeTestGradeAttrbute)
+数据量: 12
+[样本数据结构分析] (ConfDamgeTestGradeAttrbuteItem) :
+    -> maxHP: 600
+    -> defense: 22
+    -> magicFree: 0
+    -> phycicalFree: 0
+    -> guard: 60
+    -> guardValue: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529008144320
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: wingmanFixValue   (类型: ConfWingmanFixValue)
+数据量: 71
+[样本数据结构分析] (ConfWingmanFixValueItem) :
+    -> icon: liaojicitiao1
+    -> wingManID: 1001
+    -> prefixValue: &30000012_djcs
+    -> prefixValue1: &30000012_djcs
+    -> prefixValue12: &30000012_djcs
+    -> name: liaojicitiaoname100101
+    -> showValue: &30000012_djcs+1&
+    -> showValueFix1: &30000012_djcs+1|+30000012_djcs+2|f0&
+    -> showValueFix2: &30000012_djcs+1|+30000012_djcs+2|+30000012_djcs+3|f0&
+    -> desc: wingmanFixValue100101
+    -> id: 100101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528975570352
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: wingmanEffect   (类型: ConfWingmanEffect)
+数据量: 14
+[样本数据结构分析] (ConfWingmanEffectItem) :
+    -> icon: liaojijichu1
+    -> wingManID: 0
+    -> effectID: 900111
+    -> name: wingmanEffectName100101
+    -> desc: wingmanEffectDesc100101
+    -> id: 100101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532923286464
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleHaloBase   (类型: ConfBattleHaloBase)
+数据量: 777
+[样本数据结构分析] (ConfBattleHaloBaseItem) :
+    -> type: 0
+    -> mainSkill: 0
+    -> classID: 0
+    -> model: Leizhen
+    -> range: 100
+    -> boxType: 1
+    -> block: 0
+    -> ingoreTarget: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> target: 2
+    -> condition: 0
+    -> chase: 0
+    -> includeInvincible: 0
+    -> isDisCheck: 0
+    -> delay: 500
+    -> duration: 10000
+    -> enterEffect: 0
+    -> exitEffect: 0
+    -> clearEffect: 1
+    -> destroyEffect: 0
+    -> clearHalo: 0
+    -> triggerExitEffect: 0
+    -> haloEffectActive: 0
+    -> id: 50001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529008678976
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleHaloAttack   (类型: ConfBattleHaloAttack)
+数据量: 231
+[样本数据结构分析] (ConfBattleHaloAttackItem) :
+    -> boxType: 1
+    -> phycicalDmg: 0
+    -> phycicalType: 0
+    -> magicDmg: 50
+    -> magicType: 1
+    -> attackStartDelay: 0
+    -> attackCount: 1
+    -> attackDelay: 0_300
+    -> phaseDmg: 100
+    -> condition: 0
+    -> haloEffect: 0
+    -> id: 91007
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528984261632
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleHaloSummon   (类型: ConfBattleHaloSummon)
+数据量: 275
+[样本数据结构分析] (ConfBattleHaloSummonItem) :
+    -> unitID: 0
+    -> count: 1
+    -> delay: 1000
+    -> number: 1
+    -> interval: 0
+    -> duration: 1000000
+    -> inheritAttr: 0
+    -> effect: 0
+    -> notCreateEffect: 0
+    -> customDieEffect: 0
+    -> noAvatar: 1
+    -> linkSkill: 0
+    -> clearSkill: 0
+    -> haveSkill: 0
+    -> aiValueID: 0
+    -> id: 1018
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790519728
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleHaloSpecialEffect   (类型: ConfBattleHaloSpecialEffect)
+数据量: 90
+[样本数据结构分析] (ConfBattleHaloSpecialEffectItem) :
+    -> type: 1
+    -> value: 50
+    -> value2: 0
+    -> value3: 0
+    -> value4: 0
+    -> value5: 0
+    -> value6: 0
+    -> id: 100725
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528984607744
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail802   (类型: ConfBattleTrail802)
+数据量: 2
+[样本数据结构分析] (ConfBattleTrail802Item) :
+    -> bulletNum: 36
+    -> shotCD: 0
+    -> angular: 360
+    -> wave: 3
+    -> interval: 300
+    -> id: 802001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528973588480
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail803   (类型: ConfBattleTrail803)
+数据量: 4
+[样本数据结构分析] (ConfBattleTrail803Item) :
+    -> bulletNum: 36
+    -> firstBullet: 4
+    -> id: 803001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533787068480
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail804   (类型: ConfBattleTrail804)
+数据量: 1
+[样本数据结构分析] (ConfBattleTrail804Item) :
+    -> smallModel: LeizhenShandian
+    -> delay: 500
+    -> smallDmgScale: 70
+    -> bulletNum: 18
+    -> interval: 80
+    -> bigModel: LeizhenShandianDa
+    -> bigDmgScale: 30
+    -> id: 804001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528977755984
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail805   (类型: ConfBattleTrail805)
+数据量: 62
+[样本数据结构分析] (ConfBattleTrail805Item) :
+    -> isNearTargetUnitPosi: 1
+    -> range: -1
+    -> isTargetUnitPosi: 0
+    -> isTarget: 0
+    -> isDire: 0
+    -> bulletNum: 1
+    -> interval: 0
+    -> inScreenCheck: 0
+    -> id: 805001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528977755904
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail806   (类型: ConfBattleTrail806)
+数据量: 1
+[样本数据结构分析] (ConfBattleTrail806Item) :
+    -> range: 900
+    -> duration: 3000
+    -> interval: 1000
+    -> bulletNum: 90
+    -> subInterval: 10
+    -> delay: 1000
+    -> secDuration: 3000
+    -> secInterval: 1000
+    -> secBulletNum: 180
+    -> secSubInterval: 5
+    -> id: 806001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788499712
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: herdNpcSkill   (类型: ConfHerdNpcSkill)
+数据量: 84
+[样本数据结构分析] (ConfHerdNpcSkillItem) :
+    -> skillType: 3
+    -> basePhycicalDmg: &7100070_jnwl
+    -> baseMagicDmg: &7100070_jnwl
+    -> cd: 15000
+    -> id: 110076
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528974403136
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: herdWakingAttr   (类型: ConfHerdWakingAttr)
+数据量: 6
+[样本数据结构分析] (ConfHerdWakingAttrItem) :
+    -> hp: 494
+    -> mp: 750
+    -> sp: 750
+    -> hpRestore: 100
+    -> mpRestore: 100
+    -> spRestore: 100
+    -> moveSpeed: 110
+    -> atk: 100
+    -> def: 100
+    -> basBlade: 100
+    -> basSpear: 100
+    -> basSword: 100
+    -> basFist: 100
+    -> basPalm: 100
+    -> basFinger: 100
+    -> basFire: 100
+    -> basFroze: 100
+    -> basThunder: 100
+    -> basWind: 100
+    -> basEarth: 100
+    -> basWood: 100
+    -> pfr: 100
+    -> mfr: 100
+    -> crit: 100
+    -> guard: 100
+    -> critV: 100
+    -> guardV: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788758160
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: herdBattle77Log   (类型: ConfHerdBattle77Log)
+数据量: 4
+[样本数据结构分析] (ConfHerdBattle77LogItem) :
+    -> icon: xinqingdiluo
+    -> type: 1
+    -> desc: herdBattlelog1001
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528976535424
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ghostMountainSalvage   (类型: ConfGhostMountainSalvage)
+数据量: 120
+[样本数据结构分析] (ConfGhostMountainSalvageItem) :
+    -> crystalLv: 1
+    -> targetDungeons: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> injectMaterials: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> failure: 10000
+    -> propGen: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> monstGen: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> chestGen: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStringArray]
+    -> cardStoneGenProbability: 31500
+    -> forceProduce: 0
+    -> dropLv: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528938779632
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ghostMountainBossProduce   (类型: ConfGhostMountainBossProduce)
+数据量: 8
+[样本数据结构分析] (ConfGhostMountainBossProduceItem) :
+    -> crystalCondition: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> targetDungeon: 8002
+    -> monsterID: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> prodRate: 10000
+    -> prodNumMin: 2
+    -> prodNumMax: 2
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955599520
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ghostMountainSalvagePillar   (类型: ConfGhostMountainSalvagePillar)
+数据量: 4
+[样本数据结构分析] (ConfGhostMountainSalvagePillarItem) :
+    -> dungeonID: 8002
+    -> costItemID: 5051018
+    -> battleUnit: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> continueAddBattleEffect: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> assignAddBattleEffect: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> assignCountAlterBattleEffect: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> costItemLevel: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955598880
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleCreateCharacter   (类型: ConfRoleCreateCharacter)
+数据量: 19
+[样本数据结构分析] (ConfRoleCreateCharacterItem) :
+    -> type: 1
+    -> sc5asd_sd34: role_character_name1
+    -> xdash_54sd: role_character_desc1
+    -> xssdf434: 2
+    -> xxcvbgd: 40
+    -> asdxzx: 20
+    -> kjhgg6778: 10
+    -> xcssdsd997: 5
+    -> zzxcas113: 5
+    -> hfasd445: 0
+    -> xxcsasd856: 10
+    -> xxcasd123: 10
+    -> jgas654: 10
+    -> xxcsadg654: 30
+    -> xccsadiu: 2
+    -> ppodxcsd1: 28
+    -> hjk765: 10
+    -> asdasdqwe123: 5
+    -> doctrine: 20
+    -> bgsadgg543: 2
+    -> xcasdzxcasd: 100
+    -> zxcasdasdfsad: 60
+    -> asdsdsd123: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528967349376
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleCreateFeature   (类型: ConfRoleCreateFeature)
+数据量: 1308
+[样本数据结构分析] (ConfRoleCreateFeatureItem) :
+    -> type: 2
+    -> group: 0
+    -> level: -6
+    -> duration: 24
+    -> refreshType: 0
+    -> conceal: 0
+    -> name: role_feature_postnatal_name101
+    -> effect: 1011|1012|1013
+    -> tips: role_feature_postnatal_tips101
+    -> iconAndDesc: 0
+    -> lockLuck: 0
+    -> introduceText: 0
+    -> weight: 0
+    -> globalMax: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955657600
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleCreateSex   (类型: ConfRoleCreateSex)
+数据量: 2
+[样本数据结构分析] (ConfRoleCreateSexItem) :
+    -> sex: role_sex_male
+    -> effect: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533303808912
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleCreateHobby   (类型: ConfRoleCreateHobby)
+数据量: 13
+[样本数据结构分析] (ConfRoleCreateHobbyItem) :
+    -> name: role_hobby_name201
+    -> desc: role_hobby_desc1201
+    -> group: 2
+    -> weight: 1000
+    -> show: 1
+    -> item: 0
+    -> moodAdd: 0
+    -> cd: 0
+    -> id: 201
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955598560
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleDress   (类型: ConfRoleDress)
+数据量: 1451
+[样本数据结构分析] (ConfRoleDressItem) :
+    -> dressID: 101
+    -> sex: 1
+    -> type: bizi
+    -> className: 0
+    -> colorGroup: 10001
+    -> color: ffffff
+    -> name: common_bizi
+    -> flag: 0
+    -> gamerFlag: 0
+    -> flagDesc: 0
+    -> beauty: 80
+    -> active: 1
+    -> weight: 100
+    -> npcGrade: 0
+    -> id: 10001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528950628224
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleDressCombination   (类型: ConfRoleDressCombination)
+数据量: 8
+[样本数据结构分析] (ConfRoleDressCombinationItem) :
+    -> dressID: 58017|58018|58019
+    -> dressID2: 56002
+    -> dressID3: 0
+    -> dressID4: 0
+    -> dressID5: 0
+    -> dressID6: 0
+    -> dressID7: 0
+    -> beauty: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528962869696
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleFace   (类型: ConfRoleFace)
+数据量: 15
+[样本数据结构分析] (ConfRoleFaceItem) :
+    -> key: offsetMouthLevel1
+    -> value: 30
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533304988992
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleLoginTip   (类型: ConfRoleLoginTip)
+数据量: 6
+[样本数据结构分析] (ConfRoleLoginTipItem) :
+    -> icon: gushi
+    -> bg: gushi_5
+    -> tip: login_tip1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528976534976
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: dungeonEffectBase   (类型: ConfDungeonEffectBase)
+数据量: 19
+[样本数据结构分析] (ConfDungeonEffectBaseItem) :
+    -> type: 1001
+    -> id: 762601
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533297383104
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: dungeonEffect1001   (类型: ConfDungeonEffect1001)
+数据量: 227
+[样本数据结构分析] (ConfDungeonEffect1001Item) :
+    -> dungeonID: 7626
+    -> condition: 0
+    -> setNPCA: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> type: 1
+    -> roomIndex: 0
+    -> group: 1
+    -> createMonstBattleFunction: 0
+    -> battleFunctionCondition: 0
+    -> battleFunction: 0
+    -> updateUnitType: 1
+    -> updateUnitValue1: 7626101_1
+    -> updateUnitValue2: 0
+    -> updateUnitValue3: 0
+    -> updateUnitValue4: 0
+    -> updateUnitValue5: 0
+    -> weight: 10000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528972161024
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: dungeonEffect1002   (类型: ConfDungeonEffect1002)
+数据量: 16
+[样本数据结构分析] (ConfDungeonEffect1002Item) :
+    -> roomIndex: 0
+    -> baseAttr: hp_-30|skillDmg_-30
+    -> unitAttr: hp_8|skillDmg_8
+    -> bossAttr: hp_5|skillDmg_5|critV_-50
+    -> id: 762602
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528969254784
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleFunctionList   (类型: ConfBattleFunctionList)
+数据量: 92
+[样本数据结构分析] (ConfBattleFunctionListItem) :
+    -> delay: 0
+    -> function: 0
+    -> battleFunction: 0
+    -> nextID: 1002
+    -> weight: 10000
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528903636624
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleBarrier   (类型: ConfBattleBarrier)
+数据量: 102
+[样本数据结构分析] (ConfBattleBarrierItem) :
+    -> hp: 1
+    -> isThrough: 1
+    -> id: 10001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533294370960
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleBarrierReward   (类型: ConfBattleBarrierReward)
+数据量: 288
+[样本数据结构分析] (ConfBattleBarrierRewardItem) :
+    -> barrierID: 10001
+    -> minLevel: 1
+    -> maxLevel: 10
+    -> rewardID: 6141012
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533294604080
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: artifactSpriteSkill   (类型: ConfArtifactSpriteSkill)
+数据量: 34
+[样本数据结构分析] (ConfArtifactSpriteSkillItem) :
+    -> spriteID: 1001
+    -> skillIndex: 1
+    -> skillID: 91014
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531913741536
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: artifactSpriteEquip   (类型: ConfArtifactSpriteEquip)
+数据量: 4
+[样本数据结构分析] (ConfArtifactSpriteEquipItem) :
+    -> prefixValue: 0
+    -> attrValue: hpMax_0_3|atk_0_3|def_0_3|crit_0_3|critV_0_3|guard_0_3|guardV_0_3
+    -> addArtifactSpriteBattleEffect: 0
+    -> addRoleBattleEffect: 0
+    -> skill: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> skillAnim: UnhollowerBaseLib.Il2CppStringArray
+    -> id: 5321101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528280859264
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: soulDevourSwordEffects   (类型: ConfSoulDevourSwordEffects)
+数据量: 5
+[样本数据结构分析] (ConfSoulDevourSwordEffectsItem) :
+    -> unitEffects: 0
+    -> isHide: 0
+    -> desc: soulDevourSwordAddAtk
+    -> unlockDesc: soulDevourSwordAddAtk
+    -> unlockType: 0
+    -> paramStr: 0
+    -> process: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528859067808
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: townMarketItem   (类型: ConfTownMarketItem)
+数据量: 412
+[样本数据结构分析] (ConfTownMarketItemItem) :
+    -> group: 1
+    -> level: 0
+    -> mainTown: 0
+    -> conflict: -1
+    -> amountMin: 20
+    -> amountMax: 30
+    -> weight: -1
+    -> patch: 0
+    -> id: 1011051
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532928018704
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: townMarketBook   (类型: ConfTownMarketBook)
+数据量: 32
+[样本数据结构分析] (ConfTownMarketBookItem) :
+    -> scale: 1
+    -> layer: 6
+    -> reputation: 600
+    -> grade: 2
+    -> type: marketJueji
+    -> numMin: 4
+    -> numMax: 7
+    -> subID: 2
+    -> outID: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532928137168
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: townBookstore   (类型: ConfTownBookstore)
+数据量: 9
+[样本数据结构分析] (ConfTownBookstoreItem) :
+    -> quantity: 1
+    -> function: addAttr_talent_1_5
+    -> desc: TownBookstore1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528967197120
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonSkillStudy   (类型: ConfPotmonSkillStudy)
+数据量: 1717
+[样本数据结构分析] (ConfPotmonSkillStudyItem) :
+    -> skillID: 2001
+    -> potmonId: 1001
+    -> skillType: 2
+    -> studyGrade: 0
+    -> studyArea: 0
+    -> studyCondition: 0
+    -> studyRate: 0
+    -> weight: 100
+    -> coolGroup: 1
+    -> cool: 2_3
+    -> studyLogKey: studyLogKey1
+    -> battleStudyRate: 0
+    -> battleStudyLogKey: battleStudyLogKey1
+    -> skillGroup: 1
+    -> skillGroupParam: 0
+    -> advanceSkill: 0
+    -> dramaId: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528946299680
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonSkill   (类型: ConfPotmonSkill)
+数据量: 241
+[样本数据结构分析] (ConfPotmonSkillItem) :
+    -> name: potmonSkillLifeName1001
+    -> icon: potmonSkillLife_1001
+    -> desc: potmonSkillLifeDesc1001
+    -> logKey: 0
+    -> setNPC: 0
+    -> group: 0
+    -> dramaId: 0
+    -> roleLogId: 0
+    -> function: 0
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532928166080
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonSkillLife   (类型: ConfPotmonSkillLife)
+数据量: 492
+[样本数据结构分析] (ConfPotmonSkillLifeItem) :
+    -> skillID: 1001
+    -> areaID: 0
+    -> outputPropId: 0
+    -> propCountRate: 0
+    -> martialGrade: 0
+    -> martialColor: 0
+    -> martialBas: 0
+    -> specialSkill: 1
+    -> specialSkillParam: 0
+    -> triggerRate: 0
+    -> triggerCD: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528939466128
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonSkillAid   (类型: ConfPotmonSkillAid)
+数据量: 113
+[样本数据结构分析] (ConfPotmonSkillAidItem) :
+    -> aidSkill: 10001|10002|10004
+    -> triggerRate: 9500
+    -> addRate: 1000
+    -> addCountRate: 0
+    -> fixOutputLevel: 0
+    -> fixMartialColor: 0
+    -> decreaseSkillCD: 1
+    -> id: 100011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532928190256
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonSkillFixOutput   (类型: ConfPotmonSkillFixOutput)
+数据量: 5
+[样本数据结构分析] (ConfPotmonSkillFixOutputItem) :
+    -> fixId: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> id: 7200101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532918872512
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonBattleSkill   (类型: ConfPotmonBattleSkill)
+数据量: 163
+[样本数据结构分析] (ConfPotmonBattleSkillItem) :
+    -> potmonID: 950101
+    -> skillID: 100721
+    -> skillCD: 1000
+    -> converReplace: 0
+    -> useTimes: -1
+    -> score: 40
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529003329536
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonBattle   (类型: ConfPotmonBattle)
+数据量: 10
+[样本数据结构分析] (ConfPotmonBattleItem) :
+    -> stayTime: 12
+    -> cd: 50
+    -> spCost: 12
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531913883152
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonPropertyScale   (类型: ConfPotmonPropertyScale)
+数据量: 48
+[样本数据结构分析] (ConfPotmonPropertyScaleItem) :
+    -> moveSpeed: 350
+    -> hp: 80_120
+    -> mp: 80_120
+    -> sp: 80_120
+    -> hpRestore: 80_120
+    -> mpRestore: 80_120
+    -> spRestore: 80_120
+    -> atk: 80_120
+    -> def: 80_120
+    -> pfr: 80_120
+    -> mfr: 80_120
+    -> crit: 80_120
+    -> guard: 80_120
+    -> critV: 80_120
+    -> guardV: 80_120
+    -> skillDmg: 70
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528939391008
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonConverPropertyScale   (类型: ConfPotmonConverPropertyScale)
+数据量: 21
+[样本数据结构分析] (ConfPotmonConverPropertyScaleItem) :
+    -> hp: 105
+    -> mp: 105
+    -> sp: 105
+    -> atk: 105
+    -> def: 105
+    -> crit: 105
+    -> guard: 105
+    -> critV: 105
+    -> guardV: 105
+    -> bas: 110
+    -> pfr: 105
+    -> mfr: 105
+    -> bas1st: 4
+    -> bas2nd: 15
+    -> bas3rd: 0
+    -> id: 1011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533789851200
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: potmonBattleExp   (类型: ConfPotmonBattleExp)
+数据量: 21
+[样本数据结构分析] (ConfPotmonBattleExpItem) :
+    -> gradeRange: -10
+    -> winExp: 1000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531913880704
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: worldFortuitousEvent2Effect   (类型: ConfWorldFortuitousEvent2Effect)
+数据量: 28
+[样本数据结构分析] (ConfWorldFortuitousEvent2EffectItem) :
+    -> size: 6
+    -> baseDecorateID: 2001|2002|2003|2004|2005|2006|2007|2008|2009|2010|2011|2012
+    -> showDecorateRate: 50
+    -> interval: 6
+    -> decorateID: 2005|2006|2011|2012
+    -> sizeVariation: 1
+    -> sizeMax: 15
+    -> weatherId: 10001
+    -> id: 10
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528939618304
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: worldBlockAttribute   (类型: ConfWorldBlockAttribute)
+数据量: 26
+[样本数据结构分析] (ConfWorldBlockAttributeItem) :
+    -> basGas: 12
+    -> basGeo: 0
+    -> basHerb: 0
+    -> basMine: 0
+    -> aroundGas: 5
+    -> aroundGeo: 0
+    -> aroundHerb: 0
+    -> aroundMine: 0
+    -> restoreMin: -10
+    -> restoreMax: 15
+    -> id: 0
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788499552
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: worldBlockMineBook   (类型: ConfWorldBlockMineBook)
+数据量: 21
+[样本数据结构分析] (ConfWorldBlockMineBookItem) :
+    -> basMine: 20
+    -> condition: isLearnedMineBook_6171102_1
+    -> conceal: 0
+    -> outPut: 0
+    -> terrainID: -1
+    -> item: 5261102
+    -> limitMin: 0
+    -> limitMax: 70
+    -> costDay: 5
+    -> weight1: 0
+    -> weight2: 0
+    -> weight3: 100
+    -> weight4: 100
+    -> weight5: 0
+    -> weight6: 0
+    -> weight7: 0
+    -> weight8: 0
+    -> weight9: 0
+    -> weight10: 0
+    -> weight11: 0
+    -> weight12: 0
+    -> weight13: 0
+    -> id: 6171102
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532914955392
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: weatherEffect   (类型: ConfWeatherEffect)
+数据量: 75
+[样本数据结构分析] (ConfWeatherEffectItem) :
+    -> name: weatherNameTianqiQingtian
+    -> nameOne: weatherNameTianqiQingtianOne
+    -> model: TianqiQingtian
+    -> initialFunction: 0
+    -> continueFunction: 0
+    -> triggerCD: 0
+    -> cdGroup: 101
+    -> duration: 1
+    -> season: 1|2|3|4
+    -> sort: 0
+    -> weight: 1
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528940207392
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAbilitySuitBase   (类型: ConfBattleAbilitySuitBase)
+数据量: 35
+[样本数据结构分析] (ConfBattleAbilitySuitBaseItem) :
+    -> suitName: battleAbility_suitName10000
+    -> suitCall: 0
+    -> suitType: 1
+    -> suitMember: 84001
+    -> suitCondition: skillEquipType_4_0_7_0
+    -> activationClaim1: 0
+    -> suitQualityEffect1: 8001001|8001002
+    -> suitRole1: 0
+    -> suitPrefixValue1: 0
+    -> suitDesc1: battleAbility_suitDesc1_10000
+    -> activationClaim2: 0
+    -> suitQualityEffect2: 0
+    -> suitRole2: 0
+    -> suitPrefixValue2: 0
+    -> suitDesc2: 0
+    -> suit_history: 0
+    -> suit_historyName: 0
+    -> icon: taozhuangxf_1
+    -> id: 10000
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528940250320
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolBattle   (类型: ConfSchoolBattle)
+数据量: 9
+[样本数据结构分析] (ConfSchoolBattleItem) :
+    -> key: schoolBattleDecideValue1
+    -> value: 0.001
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529007982848
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolPillOutput   (类型: ConfSchoolPillOutput)
+数据量: 6
+[样本数据结构分析] (ConfSchoolPillOutputItem) :
+    -> itemID: 1011011
+    -> weightLv1: 100
+    -> weightLv2: 95
+    -> weightLv3: 90
+    -> weightLv4: 85
+    -> weightLv5: 80
+    -> weightLv6: 76
+    -> weightLv7: 72
+    -> weightLv8: 68
+    -> weightLv9: 64
+    -> weightLv10: 60
+    -> weightLv11: 57
+    -> weightLv12: 54
+    -> weightLv13: 51
+    -> weightLv14: 48
+    -> weightLv15: 45
+    -> price: 20
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791509232
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolEquipRoom   (类型: ConfSchoolEquipRoom)
+数据量: 15
+[样本数据结构分析] (ConfSchoolEquipRoomItem) :
+    -> level: 1
+    -> equipOutput: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528988492112
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolLuckyEffect   (类型: ConfSchoolLuckyEffect)
+数据量: 1
+[样本数据结构分析] (ConfSchoolLuckyEffectItem) :
+    -> itemCostID: 10001_100
+    -> cost: 100
+    -> addEffect: 8001|8002|8003
+    -> desc: SchoolLuckyEffectDesc1001
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528951446336
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolFixedEffect   (类型: ConfSchoolFixedEffect)
+数据量: 3
+[样本数据结构分析] (ConfSchoolFixedEffectItem) :
+    -> itemCostID: 10001_100
+    -> cost: 100
+    -> addEffect: 8001|8002
+    -> title: 0
+    -> desc: SchoolLuckyEffectDesc1001
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915380944
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolDragonDoorEffect   (类型: ConfSchoolDragonDoorEffect)
+数据量: 4
+[样本数据结构分析] (ConfSchoolDragonDoorEffectItem) :
+    -> key: playerEffect
+    -> value: 9901136_9901138|99011351_99011352_99011353_99011354_9901138_99011357_99011359_99011360|9901137_99011378_9901138
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529001815712
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolDragonDoorBuff   (类型: ConfSchoolDragonDoorBuff)
+数据量: 15
+[样本数据结构分析] (ConfSchoolDragonDoorBuffItem) :
+    -> effect: 9901102
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528988507712
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolWarBattleInfo   (类型: ConfSchoolWarBattleInfo)
+数据量: 20
+[样本数据结构分析] (ConfSchoolWarBattleInfoItem) :
+    -> key: eyeWinCD
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528978340096
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolWarBossBattleInfo   (类型: ConfSchoolWarBossBattleInfo)
+数据量: 6
+[样本数据结构分析] (ConfSchoolWarBossBattleInfoItem) :
+    -> point: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> monsterID: 7821
+    -> position: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> offset: UnhollowerBaseLib.Il2CppStructArray`1[System.Single]
+    -> toward: UnhollowerBaseLib.Il2CppStructArray`1[System.Single]
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915846112
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolGodBeastFeedProp   (类型: ConfSchoolGodBeastFeedProp)
+数据量: 101
+[样本数据结构分析] (ConfSchoolGodBeastFeedPropItem) :
+    -> propExp: 1
+    -> propHunger: 10
+    -> id: 5021224
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528971597792
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolFate   (类型: ConfSchoolFate)
+数据量: 23
+[样本数据结构分析] (ConfSchoolFateItem) :
+    -> scale: 4
+    -> fateFeature: 700155
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528971820848
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleShot99   (类型: ConfBattleShot99)
+数据量: 144
+[样本数据结构分析] (ConfBattleShot99Item) :
+    -> innerNum: 1
+    -> innerCD: 100
+    -> startPos: 0
+    -> targetPos: 0
+    -> rangeCheck: 0
+    -> id: 99001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528937823104
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleShot98   (类型: ConfBattleShot98)
+数据量: 41
+[样本数据结构分析] (ConfBattleShot98Item) :
+    -> innerCD: &51112_sfjg
+    -> maxTime: &51112_bzsj|+51112_tzsj|f0
+    -> startEffect: 341113
+    -> duringEffect: 3411131
+    -> finallyEffect: 3411134
+    -> removeEffect: 3511129|35111211
+    -> isAutoShot: 0
+    -> id: 98001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532580698560
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleShot97   (类型: ConfBattleShot97)
+数据量: 14
+[样本数据结构分析] (ConfBattleShot97Item) :
+    -> dmgInit: 30
+    -> dmgBonus: 0
+    -> scaleInit: 100
+    -> rangeInit: 30
+    -> validTimeMax: 1500
+    -> limitTime: 10000
+    -> effect: 0
+    -> effectPerfect: 0
+    -> perfectTime: 0
+    -> perfectDesc: 0
+    -> notMoveAuto: 0
+    -> shotPos: 1
+    -> targetPos: 1
+    -> shotEff: 0
+    -> targetEff: 0
+    -> halo: 0
+    -> haloInit: 0
+    -> haloDuration: 0
+    -> rangeCheck: 0
+    -> autoCast: 0
+    -> perfectCast: 0
+    -> sound: 0
+    -> hideUI: 0
+    -> id: 97001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944556896
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleShot96   (类型: ConfBattleShot96)
+数据量: 4
+[样本数据结构分析] (ConfBattleShot96Item) :
+    -> dmgInit: &54112_cssh
+    -> scaleInit: &54112_csbl
+    -> growTime: &54112_czsj
+    -> effect: 344113|3641121|3541124
+    -> halo: 0
+    -> haloInit: 0
+    -> lastTime: &54112_cssj
+    -> removeEffect: 3541122
+    -> follow: 1
+    -> rangeCheck: 0
+    -> lerp: 1
+    -> id: 96001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532580635408
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleMissile   (类型: ConfBattleMissile)
+数据量: 1768
+[样本数据结构分析] (ConfBattleMissileItem) :
+    -> type: 1
+    -> model: Empty
+    -> size: 0
+    -> speed: 0
+    -> range: 99999
+    -> shake: 0
+    -> shotID: 99001
+    -> shotType: 99
+    -> trailID: 10014
+    -> trailType: 10
+    -> lifecycle: 1
+    -> condition: 0
+    -> reflectPower: 0
+    -> throughPower: 0
+    -> resist: 1
+    -> backType: 0
+    -> shakeID: 2
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915781216
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail70   (类型: ConfBattleTrail70)
+数据量: 48
+[样本数据结构分析] (ConfBattleTrail70Item) :
+    -> isRotation: 0
+    -> posi: 0
+    -> isTargetPosi: 0
+    -> interval: 0
+    -> id: 70001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528920693696
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail10   (类型: ConfBattleTrail10)
+数据量: 71
+[样本数据结构分析] (ConfBattleTrail10Item) :
+    -> bulletNum: 1
+    -> bulletDistance: 60
+    -> id: 10001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119390144
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail11   (类型: ConfBattleTrail11)
+数据量: 119
+[样本数据结构分析] (ConfBattleTrail11Item) :
+    -> bulletNum: 3
+    -> bulletDegree: 20
+    -> id: 11001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119410480
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail12   (类型: ConfBattleTrail12)
+数据量: 9
+[样本数据结构分析] (ConfBattleTrail12Item) :
+    -> screwRadius: 0
+    -> angularSpeed: 360
+    -> id: 12001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528962326912
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail13   (类型: ConfBattleTrail13)
+数据量: 15
+[样本数据结构分析] (ConfBattleTrail13Item) :
+    -> bulletNum: 6
+    -> radius: 150
+    -> radiusGrow: 100
+    -> radiusMax: 9999
+    -> angularSpeed: 500
+    -> limitDistance: 0
+    -> id: 13001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944527872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail14   (类型: ConfBattleTrail14)
+数据量: 63
+[样本数据结构分析] (ConfBattleTrail14Item) :
+    -> bulletNum: 2
+    -> bulletDegree: 360
+    -> backConfirm: 0
+    -> stayTime: 0
+    -> changeDirection: 0
+    -> stayOnPlayer: 0
+    -> id: 14001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944526672
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail15   (类型: ConfBattleTrail15)
+数据量: 54
+[样本数据结构分析] (ConfBattleTrail15Item) :
+    -> bulletNum: 3
+    -> degreeRange: 10
+    -> resetNearEnemyDire: 0
+    -> id: 15001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528916118464
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail16   (类型: ConfBattleTrail16)
+数据量: 3
+[样本数据结构分析] (ConfBattleTrail16Item) :
+    -> posiType: 1
+    -> isRotation: 0
+    -> id: 16001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528962332208
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail17   (类型: ConfBattleTrail17)
+数据量: 64
+[样本数据结构分析] (ConfBattleTrail17Item) :
+    -> bulletNum: 10
+    -> chaseActive: 200
+    -> chaseDegree: 270
+    -> bulletDegree: 360
+    -> offsetDis: 0
+    -> maxTargetTime: -1
+    -> stopTarget: 0
+    -> isTargetSelfUnit: 0
+    -> isTargetSummonUnit: 0
+    -> isDelete: 0
+    -> hitRegression: 0
+    -> destroyRegression: 0
+    -> id: 17001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532580634960
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail18   (类型: ConfBattleTrail18)
+数据量: 5
+[样本数据结构分析] (ConfBattleTrail18Item) :
+    -> initDegreeRange: 0
+    -> valueA: 1.4
+    -> valueB: 0.2
+    -> degreeRangeMax: 16
+    -> dereeRangeRecover: 4
+    -> id: 18001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528912363648
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail19   (类型: ConfBattleTrail19)
+数据量: 6
+[样本数据结构分析] (ConfBattleTrail19Item) :
+    -> innerCD: 100
+    -> bulletNum: 10
+    -> id: 19001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119416224
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail21   (类型: ConfBattleTrail21)
+数据量: 7
+[样本数据结构分析] (ConfBattleTrail21Item) :
+    -> bulletNum: 5
+    -> bulletDegree: 100
+    -> bulletDegreeTrend: 80
+    -> id: 21001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528912550080
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail22   (类型: ConfBattleTrail22)
+数据量: 4
+[样本数据结构分析] (ConfBattleTrail22Item) :
+    -> bulletNum: 1
+    -> bulletDegreeTrend: 120
+    -> moveDis: 100
+    -> initMinAngle: 15
+    -> initMaxAngle: 50
+    -> randomMinAngle: -60
+    -> randomMaxAngle: 60
+    -> maxAngleDis: 700
+    -> id: 22001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944605728
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail23   (类型: ConfBattleTrail23)
+数据量: 31
+[样本数据结构分析] (ConfBattleTrail23Item) :
+    -> bulletNum: &13111_ddsl
+    -> radius: &13111_ddpy
+    -> minRadiusDis: 0
+    -> isRadiusFront: 0
+    -> height: 30
+    -> gravity: -150
+    -> delay: 500
+    -> landPos: 0
+    -> landPosValue: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> sound: jineng/qiang/biaoqiangluodi
+    -> endPosiEffect: 0
+    -> endRewardID: 0
+    -> id: 23001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856376528
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail24   (类型: ConfBattleTrail24)
+数据量: 5
+[样本数据结构分析] (ConfBattleTrail24Item) :
+    -> bulletNum: 2
+    -> bulletDegree: 20
+    -> angleTime: 500
+    -> id: 24002
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528912549120
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail25   (类型: ConfBattleTrail25)
+数据量: 4
+[样本数据结构分析] (ConfBattleTrail25Item) :
+    -> bulletNum: 1
+    -> offsetRange: &33111_gjkd
+    -> sceneCentre: 0
+    -> id: 25001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528908975296
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail26   (类型: ConfBattleTrail26)
+数据量: 24
+[样本数据结构分析] (ConfBattleTrail26Item) :
+    -> bulletNum: 1
+    -> offsetRange: 0
+    -> finalRangeLimit: 1
+    -> chase: 0
+    -> id: 26001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528908975040
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail27   (类型: ConfBattleTrail27)
+数据量: 22
+[样本数据结构分析] (ConfBattleTrail27Item) :
+    -> bulletNum: 1
+    -> chase: 0
+    -> id: 27001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119415600
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail28   (类型: ConfBattleTrail28)
+数据量: 18
+[样本数据结构分析] (ConfBattleTrail28Item) :
+    -> bulletNum: &23111_ddsl
+    -> bulletDegree: 10
+    -> bulletInterval: 100
+    -> totalDelay: 200
+    -> sound: jineng/qiang/suiyuqiangfashe
+    -> offset: 0
+    -> target: 0
+    -> id: 28001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856351120
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail29   (类型: ConfBattleTrail29)
+数据量: 3
+[样本数据结构分析] (ConfBattleTrail29Item) :
+    -> popNum: -1
+    -> repeatPop: 0
+    -> firstTarget: 0
+    -> lockTarget: 1
+    -> unitID: 36112
+    -> effectID: 110
+    -> popSelf: 0
+    -> popEffect: 0
+    -> id: 29001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944605344
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail30   (类型: ConfBattleTrail30)
+数据量: 22
+[样本数据结构分析] (ConfBattleTrail30Item) :
+    -> bulletNum: 0
+    -> bulletDistance: 0
+    -> lastType: 0
+    -> startType: 1
+    -> endType: 1
+    -> rangeType: 0
+    -> interval: 200
+    -> costPer: 0
+    -> duringEffect: 3271165
+    -> mulUseSkill: 0
+    -> lerp: 0
+    -> modifyDmg: 1
+    -> minInterval: 0
+    -> id: 30001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856385280
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail31   (类型: ConfBattleTrail31)
+数据量: 8
+[样本数据结构分析] (ConfBattleTrail31Item) :
+    -> bulletNum: 3
+    -> bulletDegree: 30
+    -> shotTime: 300
+    -> id: 31001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119455296
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail32   (类型: ConfBattleTrail32)
+数据量: 12
+[样本数据结构分析] (ConfBattleTrail32Item) :
+    -> lastType: 0
+    -> startType: 1
+    -> endType: 1
+    -> interval: 250
+    -> lerp: 1
+    -> mulUseSkill: 1
+    -> id: 32001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528903693056
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail33   (类型: ConfBattleTrail33)
+数据量: 6
+[样本数据结构分析] (ConfBattleTrail33Item) :
+    -> bulletNum: 1
+    -> popNum: &43113_tycs
+    -> popRange: &43113_tyfw
+    -> repeatPop: &43113_tycf
+    -> lockTarget: 1
+    -> searchRange: 150
+    -> popDelay: 150
+    -> attackBlank: 1
+    -> targetPos: 0
+    -> id: 33001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944605056
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail34   (类型: ConfBattleTrail34)
+数据量: 1
+[样本数据结构分析] (ConfBattleTrail34Item) :
+    -> bulletNum: 3
+    -> radius: 100
+    -> winding: 80
+    -> delay: 0
+    -> landPos: 1
+    -> id: 34001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528977037120
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail35   (类型: ConfBattleTrail35)
+数据量: 6
+[样本数据结构分析] (ConfBattleTrail35Item) :
+    -> bulletNum: 1
+    -> moveType: 1
+    -> interval: 0
+    -> modifyDmg: 1
+    -> id: 35001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904887744
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail36   (类型: ConfBattleTrail36)
+数据量: 16
+[样本数据结构分析] (ConfBattleTrail36Item) :
+    -> bulletNum: 1
+    -> bulletDistance: 50
+    -> targetType: 0
+    -> targetOffsetPosi: 0
+    -> destroyType: 1
+    -> rangeMin: 100
+    -> warnEffect: 0
+    -> warnSize: 0
+    -> id: 36001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856407008
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail37   (类型: ConfBattleTrail37)
+数据量: 7
+[样本数据结构分析] (ConfBattleTrail37Item) :
+    -> stayTime: 5000
+    -> backSound: jineng/zhi/zhi_pugong_back
+    -> backConfirm: 1
+    -> backNum: 0
+    -> id: 37001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904887360
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail38   (类型: ConfBattleTrail38)
+数据量: 1
+[样本数据结构分析] (ConfBattleTrail38Item) :
+    -> id: 38001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529011270240
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail39   (类型: ConfBattleTrail39)
+数据量: 1
+[样本数据结构分析] (ConfBattleTrail39Item) :
+    -> dis: 150
+    -> speed: 100
+    -> id: 39001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528962464096
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail40   (类型: ConfBattleTrail40)
+数据量: 5
+[样本数据结构分析] (ConfBattleTrail40Item) :
+    -> bulletNum: 1
+    -> radius: 20
+    -> delay: 500
+    -> sound: 0
+    -> startPosiEffect: Scenes/yujing_0dian5
+    -> endPosiEffect: Unit/qinyuan_ducibao
+    -> id: 40001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856405728
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail41   (类型: ConfBattleTrail41)
+数据量: 2
+[样本数据结构分析] (ConfBattleTrail41Item) :
+    -> rebounds: 10
+    -> reboundEff: Unit/miemeng_gongji3rebound
+    -> reboundEffDur: 5000
+    -> interval: 0
+    -> id: 41001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904885952
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail901   (类型: ConfBattleTrail901)
+数据量: 9
+[样本数据结构分析] (ConfBattleTrail901Item) :
+    -> degree: 15
+    -> bulletNum: 36
+    -> shotCD: 25
+    -> wave: 1
+    -> interval: 0
+    -> id: 901001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904885824
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail902   (类型: ConfBattleTrail902)
+数据量: 13
+[样本数据结构分析] (ConfBattleTrail902Item) :
+    -> width: 150
+    -> bulletNum: 36
+    -> shotCD: 25
+    -> wave: 1
+    -> interval: 0
+    -> id: 902001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904885120
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail903   (类型: ConfBattleTrail903)
+数据量: 5
+[样本数据结构分析] (ConfBattleTrail903Item) :
+    -> bulletNum: 36
+    -> shotCD: 0
+    -> wave: 3
+    -> interval: 200
+    -> rotateMin: 0
+    -> rotateMax: 0
+    -> id: 903001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856405328
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail904   (类型: ConfBattleTrail904)
+数据量: 2
+[样本数据结构分析] (ConfBattleTrail904Item) :
+    -> screwRadius: 100
+    -> bulletNum: 36
+    -> shotCD: 25
+    -> angularSpeed: 540
+    -> id: 904001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904884288
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail905   (类型: ConfBattleTrail905)
+数据量: 3
+[样本数据结构分析] (ConfBattleTrail905Item) :
+    -> bulletNum: 36
+    -> width: 0
+    -> wave: 6
+    -> interval: 150
+    -> radius: 350
+    -> radiusGrow: 0
+    -> angularSpeed: 500
+    -> id: 905001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904970112
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail906   (类型: ConfBattleTrail906)
+数据量: 14
+[样本数据结构分析] (ConfBattleTrail906Item) :
+    -> bulletNum: 2
+    -> radius: 100
+    -> radiusGrow: 0
+    -> angularSpeed: 360
+    -> radiusMax: -1
+    -> time: -1
+    -> offsetAngle: 0
+    -> id: 906001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944604480
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleTrail907   (类型: ConfBattleTrail907)
+数据量: 5
+[样本数据结构分析] (ConfBattleTrail907Item) :
+    -> type: 0
+    -> bulletNum: &36111_ddsl
+    -> shotCD: 0
+    -> wave: &36111_ddsl|/36111_ddbs|f0
+    -> interval: &36111_ddjg
+    -> center: 1
+    -> shake: 0
+    -> postShake: 0
+    -> radius: 0
+    -> id: 907001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944603136
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAbilityBase   (类型: ConfBattleAbilityBase)
+数据量: 81
+[样本数据结构分析] (ConfBattleAbilityBaseItem) :
+    -> name: ability_name_first9999
+    -> className: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> type: 0
+    -> gradeMin: 0
+    -> gradeMax: 0
+    -> talent: 0
+    -> basType: 0
+    -> basRequire: 0
+    -> abilityPoint: 0
+    -> skillEffect: 0
+    -> growExp: 0
+    -> equipEffect: 0
+    -> desc: 0
+    -> id: 9999
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532580149376
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAbilityCombine   (类型: ConfBattleAbilityCombine)
+数据量: 2741
+[样本数据结构分析] (ConfBattleAbilityCombineItem) :
+    -> type: 1|2|3|4|5|6|7|8
+    -> level: 1|2|3|4|5|6
+    -> className: -1
+    -> rewardGradeID: 90
+    -> itemName: 0
+    -> itemColor: 6
+    -> itemDesc: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856432096
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAIDefaultValue   (类型: ConfBattleAIDefaultValue)
+数据量: 190
+[样本数据结构分析] (ConfBattleAIDefaultValueItem) :
+    -> AlertRange: 0
+    -> WanderMoveDis: 0
+    -> DazeIntervalTime: 0
+    -> DazeDazeCount: 0
+    -> PatrolOffsetPosi: 0
+    -> BattleTriggerNotifyRadius: 0
+    -> ChaseValues: 0
+    -> ChaseRange: 0
+    -> AttackTotalCount: 0
+    -> AttackCount: 0
+    -> AttackMoveDis: 0
+    -> AttackIntervalTime: 0
+    -> AttackCDTime: 0
+    -> AttackOffsetDis: 0
+    -> AttackXDire: 0
+    -> AttackUpdateDire: 1
+    -> isNotUseSkillMovePlayer: 0
+    -> IdleType: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915264608
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAIBossValue   (类型: ConfBattleAIBossValue)
+数据量: 2404
+[样本数据结构分析] (ConfBattleAIBossValueItem) :
+    -> groupID: 88888
+    -> trigger: 0
+    -> condition: 0
+    -> cmd: Stand_10000_10000
+    -> cmdValue: 0
+    -> immortal: 0
+    -> skill: 0
+    -> cycle: 0
+    -> interval: 0
+    -> updateDire: 0
+    -> attackNotSetDire: 0
+    -> next: 88888_10000
+    -> id: 88888
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856415520
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleAIBossValueCrazy   (类型: ConfBattleAIBossValueCrazy)
+数据量: 1108
+[样本数据结构分析] (ConfBattleAIBossValueCrazyItem) :
+    -> groupID: 88888
+    -> trigger: 0
+    -> condition: 0
+    -> cmd: Stand_10000_10000
+    -> cmdValue: 0
+    -> immortal: 0
+    -> skill: 0
+    -> cycle: 0
+    -> interval: 0
+    -> updateDire: 0
+    -> attackNotSetDire: 0
+    -> next: 88888_10000
+    -> id: 88888
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528891162848
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleUnitAttr   (类型: ConfBattleUnitAttr)
+数据量: 3365
+[样本数据结构分析] (ConfBattleUnitAttrItem) :
+    -> name: 0
+    -> baseID: 10
+    -> growPercent: 0
+    -> attrScale: 0
+    -> dropID: 0
+    -> firstReward: 0
+    -> exp: 0
+    -> unitDatas: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStringArray]
+    -> id: 100
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528890436032
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleUnitBase   (类型: ConfBattleUnitBase)
+数据量: 828
+[样本数据结构分析] (ConfBattleUnitBaseItem) :
+    -> model: muzhuang
+    -> type: 2
+    -> className: 0
+    -> isModifSkillDmg: 0
+    -> hp: 5000000
+    -> mp: 2000000
+    -> sp: 0
+    -> hpRestore: 100000000
+    -> mpRestore: 0
+    -> spRestore: 0
+    -> moveSpeed: 0
+    -> nextRoom: 0
+    -> summonDieDestroy: 0
+    -> immortal: 0
+    -> skills: 0
+    -> anims: 0
+    -> effectSuffix: 0
+    -> abilities: 0
+    -> step: 0
+    -> items: 0
+    -> atk: 0
+    -> def: 0
+    -> basBlade: 100
+    -> basSpear: 100
+    -> basSword: 100
+    -> basFist: 100
+    -> basPalm: 100
+    -> basFinger: 100
+    -> basFire: 100
+    -> basFroze: 100
+    -> basThunder: 100
+    -> basWind: 100
+    -> basEarth: 100
+    -> basWood: 100
+    -> pfr: 0
+    -> mfr: 0
+    -> crit: 50
+    -> guard: 999999999
+    -> critV: 80
+    -> guardV: 100
+    -> aiType: 100
+    -> aiValueID: 88888
+    -> id: 10
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533787541984
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleUnitLevel   (类型: ConfBattleUnitLevel)
+数据量: 79
+[样本数据结构分析] (ConfBattleUnitLevelItem) :
+    -> grade: 1
+    -> hp: 3.4
+    -> mp: 1.75
+    -> sp: 1.75
+    -> hpRestore: 0.034
+    -> mpRestore: 0.0175
+    -> spRestore: 0.0175
+    -> moveSpeed: 1
+    -> atk: 0.17
+    -> def: 0.06
+    -> basBlade: 0.11
+    -> basSpear: 0.11
+    -> basSword: 0.11
+    -> basFist: 0.11
+    -> basPalm: 0.11
+    -> basFinger: 0.11
+    -> basFire: 0.11
+    -> basFroze: 0.11
+    -> basThunder: 0.11
+    -> basWind: 0.11
+    -> basEarth: 0.11
+    -> basWood: 0.11
+    -> pfr: 0
+    -> mfr: 0
+    -> crit: 0.23
+    -> guard: 0.14
+    -> critV: 2.1
+    -> guardV: 0.1
+    -> skillDmg: 0.35
+    -> power: 340
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790072576
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleUnitDrop   (类型: ConfBattleUnitDrop)
+数据量: 50
+[样本数据结构分析] (ConfBattleUnitDropItem) :
+    -> dropID: 10001
+    -> grade: 1
+    -> rewards: 510001
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533800107728
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fieldSkillBase   (类型: ConfFieldSkillBase)
+数据量: 10
+[样本数据结构分析] (ConfFieldSkillBaseItem) :
+    -> key: attrParaA
+    -> value: 40
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792271024
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fieldSkillType   (类型: ConfFieldSkillType)
+数据量: 36
+[样本数据结构分析] (ConfFieldSkillTypeItem) :
+    -> basType: 1
+    -> level: 1
+    -> halo: 321001
+    -> desc: fieldSkillDesc11
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904969280
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fieldSkillItem   (类型: ConfFieldSkillItem)
+数据量: 12
+[样本数据结构分析] (ConfFieldSkillItemItem) :
+    -> basType: 1
+    -> dpMax: 30
+    -> chargeTime: 0
+    -> dpCost: 0
+    -> duration: 0
+    -> cd: -10000
+    -> range: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533800062336
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ringBase   (类型: ConfRingBase)
+数据量: 34
+[样本数据结构分析] (ConfRingBaseItem) :
+    -> grade: 1
+    -> capacity: 12
+    -> lockScore: 25
+    -> effectValue: 0
+    -> id: 3011011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528888924352
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillPrefixValue   (类型: ConfBattleSkillPrefixValue)
+数据量: 1657
+[样本数据结构分析] (ConfBattleSkillPrefixValueItem) :
+    -> skillType: 1
+    -> skillID: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> number: 1
+    -> require: 0
+    -> multi: 7
+    -> basRequire: &zizhiAdd_2
+    -> talent: &talentZuoAdd_1
+    -> abilityPoint: 0
+    -> weight1: 30
+    -> weight2: 30
+    -> weight3: 30
+    -> weight4: 30
+    -> weight5: 30
+    -> weight6: 30
+    -> weight7: 30
+    -> weight8: 30
+    -> weight9: 30
+    -> weight10: 30
+    -> weight11: 30
+    -> desc: s_1_0_1
+    -> equipEffect: 0
+    -> skillEffect: 3101
+    -> prefixKey: &s_1_0_1
+    -> selectType: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915693056
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillPrefixName   (类型: ConfBattleSkillPrefixName)
+数据量: 400
+[样本数据结构分析] (ConfBattleSkillPrefixNameItem) :
+    -> index: 1
+    -> text: 飞
+    -> tc: 飛
+    -> en: Hoverer's
+    -> kr: 비
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528902021024
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: skillCombineGrade   (类型: ConfSkillCombineGrade)
+数据量: 15
+[样本数据结构分析] (ConfSkillCombineGradeItem) :
+    -> type: 2
+    -> value: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792269296
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillBase   (类型: ConfBattleSkillBase)
+数据量: 2044
+[样本数据结构分析] (ConfBattleSkillBaseItem) :
+    -> mainSkill: 0
+    -> className: 0
+    -> phycicalDmg: 0
+    -> weaponType: 0
+    -> magicDmg: 100
+    -> magicType: 6
+    -> crit: 0
+    -> chargeValue: 0
+    -> missileID: 0
+    -> shotCD: 0
+    -> skillEffect: 0
+    -> skillDire: 0
+    -> offsetPosi: 0
+    -> shotPos: 0
+    -> loadTime: 0
+    -> skillSub: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528940258432
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillEffect   (类型: ConfBattleSkillEffect)
+数据量: 1497
+[样本数据结构分析] (ConfBattleSkillEffectItem) :
+    -> triggerID: 102
+    -> triggerProb: 20
+    -> delay: 0
+    -> target: 1
+    -> effectID: 3115111
+    -> minCD: 0
+    -> id: 115111
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528884218048
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillSub   (类型: ConfBattleSkillSub)
+数据量: 693
+[样本数据结构分析] (ConfBattleSkillSubItem) :
+    -> triggerID: 4
+    -> triggerProb: 100
+    -> condition: 0
+    -> delay: 0
+    -> createSkillDelay: 0
+    -> skillType: 1
+    -> subSkillID: 20242
+    -> subSkillOffsetPosi: 0
+    -> chaseRotation: 0
+    -> chaseBullet: 0
+    -> destroySubMissile: 0
+    -> subSkillTriggerActivate: 0
+    -> capacity: 1
+    -> destroyMainMissile: 0
+    -> minCD: 0
+    -> id: 202311
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915610752
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: skillEffectDesc   (类型: ConfSkillEffectDesc)
+数据量: 115
+[样本数据结构分析] (ConfSkillEffectDescItem) :
+    -> key: s_huo
+    -> icon: huolinggen
+    -> type: 0
+    -> typeIcon: 0
+    -> value: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528958358304
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillValue   (类型: ConfBattleSkillValue)
+数据量: 12285
+[样本数据结构分析] (ConfBattleSkillValueItem) :
+    -> key: &12111_buffProb
+    -> value1: 0
+    -> value2: 0
+    -> value3: 0
+    -> value4: 0
+    -> value5: 0
+    -> value6: 0
+    -> value7: 0
+    -> value8: 0
+    -> value9: 0
+    -> value10: 0
+    -> valueMon: Disable
+    -> colorBind: 0
+    -> icon: gailv
+    -> valueScale: x1|f0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528856298272
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleValueScale   (类型: ConfBattleValueScale)
+数据量: 240
+[样本数据结构分析] (ConfBattleValueScaleItem) :
+    -> group: 1
+    -> grade: 1
+    -> color: 1
+    -> scale: 85
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963657728
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: skillFieldDesc   (类型: ConfSkillFieldDesc)
+数据量: 29
+[样本数据结构分析] (ConfSkillFieldDescItem) :
+    -> table: 2
+    -> field: phycicalDmg
+    -> situation: 1
+    -> priority: 100
+    -> text: skill_field_phycicalDmg21
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528887427840
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: townAuctionProp   (类型: ConfTownAuctionProp)
+数据量: 60
+[样本数据结构分析] (ConfTownAuctionPropItem) :
+    -> rewardID: 1000101
+    -> scale: 1
+    -> group: 1
+    -> weight: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963786672
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: townAuctionSpecialItem   (类型: ConfTownAuctionSpecialItem)
+数据量: 4
+[样本数据结构分析] (ConfTownAuctionSpecialItemItem) :
+    -> condition: post_1_1|schoolLevel_0_2_2|schoolHeadquarters_0_1_2
+    -> item: 2022071
+    -> failCount: 3
+    -> level: 1
+    -> bidding: 0
+    -> itemPrice: 10000
+    -> monthLogID: drama_monthLog21467
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528912342784
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleEffectTrigger   (类型: ConfBattleEffectTrigger)
+数据量: 20
+[样本数据结构分析] (ConfBattleEffectTriggerItem) :
+    -> type: 101
+    -> value: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963807632
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleEffect   (类型: ConfBattleEffect)
+数据量: 6420
+[样本数据结构分析] (ConfBattleEffectItem) :
+    -> typeID: 3001
+    -> targetID: 1001
+    -> value1: 6
+    -> value2: 0
+    -> value3: 200
+    -> value4: 0
+    -> value5: 0
+    -> value6: 0
+    -> value7: 0
+    -> value8: 0
+    -> overlay: 1
+    -> layCount: -1
+    -> duration: 10
+    -> classID: 0
+    -> effect1: 0
+    -> effect2: 0
+    -> effect3: 0
+    -> effect4: 0
+    -> effect5: 0
+    -> effect6: 0
+    -> icon: 0
+    -> headIcon: 0
+    -> name: effect_name4100001
+    -> desc: 0
+    -> valueDesc: hftl:200
+    -> id: 4100001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532928235152
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleEffectSelection   (类型: ConfBattleEffectSelection)
+数据量: 134
+[样本数据结构分析] (ConfBattleEffectSelectionItem) :
+    -> refrence: 0
+    -> range: 1
+    -> hide: 0
+    -> camp: 1
+    -> include: 1
+    -> ingoreUnitType: 0
+    -> ingoreUnitClassName: 0
+    -> unitType: 0
+    -> unitID: 0
+    -> unitEffect: 0
+    -> effectValue: 0
+    -> unitAttr: 0
+    -> attrType: 0
+    -> attrValue: 0
+    -> rankType: 0
+    -> count: 1
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528937310320
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleEffectClassName   (类型: ConfBattleEffectClassName)
+数据量: 24
+[样本数据结构分析] (ConfBattleEffectClassNameItem) :
+    -> name: effectClassName2101
+    -> id: 2101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792289632
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleEffectBasePower   (类型: ConfBattleEffectBasePower)
+数据量: 204
+[样本数据结构分析] (ConfBattleEffectBasePowerItem) :
+    -> based: 11
+    -> desc: effect_value_desc11
+    -> id: 11
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792308704
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: holyMineFeature   (类型: ConfHolyMineFeature)
+数据量: 10
+[样本数据结构分析] (ConfHolyMineFeatureItem) :
+    -> item: 5011035
+    -> number: 1
+    -> area: 8
+    -> feature: 5064
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528884210688
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: godEyeSkills   (类型: ConfGodEyeSkills)
+数据量: 95
+[样本数据结构分析] (ConfGodEyeSkillsItem) :
+    -> name: GodEyeSkills_name_110076
+    -> desc: GodEyeSkills_desc_110076
+    -> skillID: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> cd: &110076_jnlq
+    -> mpCost: &110076_llxh
+    -> skillEffect: 1100763
+    -> prefixDesc: GodEyeSkills_110076
+    -> bossID: 7091
+    -> id: 110076
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2532915701536
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillAttack   (类型: ConfBattleSkillAttack)
+数据量: 1568
+[样本数据结构分析] (ConfBattleSkillAttackItem) :
+    -> name: skill_name_middle10010
+    -> icon: dao_001
+    -> className: 0
+    -> type: 1
+    -> gradeMin: 0
+    -> gradeMax: 0
+    -> skillID: 10010
+    -> mpCost: 0
+    -> condition: 0
+    -> slowDown: 0
+    -> talent: 20
+    -> growExp: 0
+    -> basType: basSword
+    -> basRequire: 10
+    -> alertID: 0
+    -> animTrigger: 0
+    -> sounds: UnhollowerBaseLib.Il2CppStringArray
+    -> desc: skill_attack_desc10010
+    -> id: 10010
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528857259136
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillLevel   (类型: ConfBattleSkillLevel)
+数据量: 6
+[样本数据结构分析] (ConfBattleSkillLevelItem) :
+    -> grade: 2
+    -> gradeA: 3
+    -> gradeB: 4
+    -> gradeC: 5
+    -> gradeD: 6
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529003331072
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillPrefixLevel   (类型: ConfBattleSkillPrefixLevel)
+数据量: 6
+[样本数据结构分析] (ConfBattleSkillPrefixLevelItem) :
+    -> weight: 9000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963921744
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillLearn   (类型: ConfBattleSkillLearn)
+数据量: 47
+[样本数据结构分析] (ConfBattleSkillLearnItem) :
+    -> key: speedMin
+    -> value: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790264944
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillCost   (类型: ConfBattleSkillCost)
+数据量: 300
+[样本数据结构分析] (ConfBattleSkillCostItem) :
+    -> grade: 1
+    -> level: 1
+    -> type: 1
+    -> money: 50
+    -> days: 15
+    -> talentExp: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528884209280
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillTrain   (类型: ConfBattleSkillTrain)
+数据量: 600
+[样本数据结构分析] (ConfBattleSkillTrainItem) :
+    -> grade: 1
+    -> type: 1
+    -> masteryLevel: 1
+    -> costItem: 5021413
+    -> costNum: 2
+    -> days: 1
+    -> mastery: 20
+    -> talentPara: 500
+    -> forgetMin: 1
+    -> forgetMax: 3
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904265808
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillMastery   (类型: ConfBattleSkillMastery)
+数据量: 12
+[样本数据结构分析] (ConfBattleSkillMasteryItem) :
+    -> name: skill_mastery1
+    -> grade1: 0
+    -> grade2: 0
+    -> grade3: 0
+    -> grade4: 0
+    -> grade5: 0
+    -> grade6: 0
+    -> grade7: 0
+    -> grade8: 0
+    -> grade9: 0
+    -> grade10: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531914175504
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillRealize   (类型: ConfBattleSkillRealize)
+数据量: 3
+[样本数据结构分析] (ConfBattleSkillRealizeItem) :
+    -> key: ceilingRange
+    -> value: 20
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790261632
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillRealizeCost   (类型: ConfBattleSkillRealizeCost)
+数据量: 10
+[样本数据结构分析] (ConfBattleSkillRealizeCostItem) :
+    -> item: 5021462
+    -> num: 10
+    -> money: 60
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963921168
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillFlashCost   (类型: ConfBattleSkillFlashCost)
+数据量: 60
+[样本数据结构分析] (ConfBattleSkillFlashCostItem) :
+    -> grade: 1
+    -> level: 1
+    -> flashCost: 4
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528963920640
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillForget   (类型: ConfBattleSkillForget)
+数据量: 70
+[样本数据结构分析] (ConfBattleSkillForgetItem) :
+    -> grade: 1
+    -> level: 0
+    -> output: 5021463_0_1|5021462_1_3
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790273328
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillCondition   (类型: ConfBattleSkillCondition)
+数据量: 226
+[样本数据结构分析] (ConfBattleSkillConditionItem) :
+    -> condition: lose
+    -> type: hp
+    -> value: &32111_conditionValue
+    -> desc: skillCondition32111
+    -> id: 32111
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528280873664
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillCombine   (类型: ConfBattleSkillCombine)
+数据量: 4144
+[样本数据结构分析] (ConfBattleSkillCombineItem) :
+    -> type: 1|2
+    -> baseID: 0
+    -> level: 1|2|3|4|5|6
+    -> className: 1
+    -> rewardGradeID: 90
+    -> itemName: 0
+    -> itemColor: 6
+    -> itemDesc: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528901264128
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillDifficult   (类型: ConfBattleSkillDifficult)
+数据量: 5
+[样本数据结构分析] (ConfBattleSkillDifficultItem) :
+    -> talent: 0
+    -> desc: skill_difficult1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790309376
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleArtifact   (类型: ConfBattleArtifact)
+数据量: 7
+[样本数据结构分析] (ConfBattleArtifactItem) :
+    -> name: artifact_name70001
+    -> icon: TestArtifact
+    -> level: 1
+    -> skillType: 3
+    -> skillValue: 0
+    -> hpCost: 0
+    -> mpCost: 0
+    -> spCost: 50
+    -> cd: 12000
+    -> desc: artifact_desc70001
+    -> id: 70001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528877796752
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: testAttr   (类型: ConfTestAttr)
+数据量: 99
+[样本数据结构分析] (ConfTestAttrItem) :
+    -> grade: 1
+    -> phase: 1
+    -> hp: 240
+    -> mp: 175
+    -> sp: 175
+    -> moveSpeed: 350
+    -> attack: 17
+    -> defense: 6
+    -> basBlade: 11
+    -> basSpear: 11
+    -> basSword: 11
+    -> basFist: 11
+    -> basPalm: 11
+    -> basFinger: 11
+    -> basisFire: 11
+    -> basisFroze: 11
+    -> basisThunder: 11
+    -> basisWind: 11
+    -> basisEarth: 11
+    -> basisWood: 11
+    -> phycicalFree: 0
+    -> magicFree: 0
+    -> crit: 23
+    -> guard: 14
+    -> critValue: 210
+    -> guardValue: 10
+    -> abilityPoint: 27
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788761904
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: makePillBase   (类型: ConfMakePillBase)
+数据量: 21
+[样本数据结构分析] (ConfMakePillBaseItem) :
+    -> key: formulaDifficultyParaA
+    -> value: -999
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790319024
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: makePillLevel   (类型: ConfMakePillLevel)
+数据量: 7
+[样本数据结构分析] (ConfMakePillLevelItem) :
+    -> weightInit: -2000
+    -> weightPara: 32
+    -> masteryPara: 27
+    -> weightTown: 2
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955661168
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: makePillFormula   (类型: ConfMakePillFormula)
+数据量: 168
+[样本数据结构分析] (ConfMakePillFormulaItem) :
+    -> name: item_name6051011
+    -> grade: 1
+    -> costEnergy: 20
+    -> basPil: 12
+    -> herbalRequier: 5031061
+    -> herbalRequierCount: 50
+    -> huo: 0
+    -> shui: 0
+    -> lei: 150
+    -> feng: 0
+    -> tu: 0
+    -> mu: 250
+    -> yin: 0
+    -> yan: 0
+    -> pillA: 1011056
+    -> pillB: 1011055
+    -> pillC: 1011054
+    -> pillD: 1011053
+    -> pillE: 1011052
+    -> pillF: 1011051
+    -> outputNum: 10
+    -> isExFormula: 0
+    -> outPutCondition: 0
+    -> group: 0
+    -> nextPillFormulaID: 0
+    -> id: 6051011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528890497088
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: makePillFormulaAutoStudy   (类型: ConfMakePillFormulaAutoStudy)
+数据量: 0
+(列表为空或无法访问第一个元素，无法分析结构)
+
+--------------------------------------------------
+[发现表]: makePillFurnace   (类型: ConfMakePillFurnace)
+数据量: 42
+[样本数据结构分析] (ConfMakePillFurnaceItem) :
+    -> name: item_name6061011
+    -> basRequire: 10
+    -> siteNum: 2
+    -> effectValue: 60610111|60610112
+    -> icon: mingwangdanlu
+    -> skills: 0
+    -> id: 6061011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531914174544
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: makePillSkill   (类型: ConfMakePillSkill)
+数据量: 70
+[样本数据结构分析] (ConfMakePillSkillItem) :
+    -> name: makePillName1
+    -> desc: makePillDesc1
+    -> trigger: passive
+    -> effect: mastery_10
+    -> isHide: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533793133344
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: specificBattleSkill   (类型: ConfSpecificBattleSkill)
+数据量: 16
+[样本数据结构分析] (ConfSpecificBattleSkillItem) :
+    -> npcId: 6103
+    -> skillBaseID: 24113
+    -> phycicalDmg: &24113_xjwl
+    -> weaponType: -99
+    -> magicDmg: -99
+    -> magicType: -99
+    -> missileID: 241131
+    -> shotCD: -99
+    -> skillEffect: -99
+    -> offsetPosi: -99
+    -> skillSub: 241131
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528877795968
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: specificSkillAttack   (类型: ConfSpecificSkillAttack)
+数据量: 14
+[样本数据结构分析] (ConfSpecificSkillAttackItem) :
+    -> npcId: 6103
+    -> skillAttackID: 24113
+    -> name: SpecificSkillAttackName24113
+    -> icon: tianlingjianyi
+    -> desc: SpecificSkillAttackDesc24113
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529006376640
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleSkillDao   (类型: ConfBattleSkillDao)
+数据量: 22
+[样本数据结构分析] (ConfBattleSkillDaoItem) :
+    -> key: propGrade1
+    -> value: 2022111
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790378240
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: elderCostItem   (类型: ConfElderCostItem)
+数据量: 8
+[样本数据结构分析] (ConfElderCostItemItem) :
+    -> item: 5021734
+    -> money: 4000
+    -> exp: 200
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955733168
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: lotusSwordEffects   (类型: ConflotusSwordEffects)
+数据量: 4
+[样本数据结构分析] (ConflotusSwordEffectsItem) :
+    -> unitEffects: 280631|280642
+    -> isHide: 0
+    -> desc: lotusSwordEffect1
+    -> unlockDesc: lotusSwordEffect11
+    -> unlockGrade: 2
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529006408240
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleClose   (类型: ConfRoleClose)
+数据量: 11
+[样本数据结构分析] (ConfRoleCloseItem) :
+    -> closeMin: -300
+    -> closeIncrease: 6.25
+    -> closeReduce: 6.25
+    -> hateIncrease: 6.25
+    -> hateReduce: 6.25
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528977215872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleCloseDevelop   (类型: ConfRoleCloseDevelop)
+数据量: 3
+[样本数据结构分析] (ConfRoleCloseDevelopItem) :
+    -> key: developValue
+    -> value: 40
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790422864
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleFunction   (类型: ConfRoleFunction)
+数据量: 17
+[样本数据结构分析] (ConfRoleFunctionItem) :
+    -> name: beibao
+    -> strangerOpen: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790422672
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleViewItem   (类型: ConfRoleViewItem)
+数据量: 2
+[样本数据结构分析] (ConfRoleViewItemItem) :
+    -> key: lockInitScore
+    -> value: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790421760
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleStealItem   (类型: ConfRoleStealItem)
+数据量: 45
+[样本数据结构分析] (ConfRoleStealItemItem) :
+    -> key: succeedClosePara
+    -> value: 3000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790421616
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleEscape   (类型: ConfRoleEscape)
+数据量: 30
+[样本数据结构分析] (ConfRoleEscapeItem) :
+    -> key: escapeSucceedParaA
+    -> value: 150
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790448064
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBattle   (类型: ConfRoleBattle)
+数据量: 71
+[样本数据结构分析] (ConfRoleBattleItem) :
+    -> key: lostItemCountMin
+    -> value: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790446528
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBattleSub   (类型: ConfRoleBattleSub)
+数据量: 6
+[样本数据结构分析] (ConfRoleBattleSubItem) :
+    -> key: abuseDialogueID
+    -> value: 1450001|1450005|1450009|1450013|1450017|1450021|1450025|1450029|1450033|1450037|1450041|1450045|1450049|1450053|1450057|1450061|1450065|1450069|1450073|1450077|1450081|1450085|1450089|1450093|1450097|1450101|1450105|1450109|1450113|1450117|1450121|1450125
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790455008
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleRelease   (类型: ConfRoleRelease)
+数据量: 5
+[样本数据结构分析] (ConfRoleReleaseItem) :
+    -> key: hateReduceMin
+    -> value: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790454672
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleDying   (类型: ConfRoleDying)
+数据量: 10
+[样本数据结构分析] (ConfRoleDyingItem) :
+    -> ghost: 0
+    -> letterID: 1001
+    -> goalID: 201
+    -> matchScore: 3000
+    -> ghostLife: 0
+    -> deadFeatureID: 101
+    -> itemID: 1011721
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944950720
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleKill   (类型: ConfRoleKill)
+数据量: 12
+[样本数据结构分析] (ConfRoleKillItem) :
+    -> key: hateAddKill
+    -> value: 500
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790454336
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleSave   (类型: ConfRoleSave)
+数据量: 9
+[样本数据结构分析] (ConfRoleSaveItem) :
+    -> key: reviveTimeMin
+    -> value: 6
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790502704
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAskfor   (类型: ConfRoleAskfor)
+数据量: 16
+[样本数据结构分析] (ConfRoleAskforItem) :
+    -> key: costEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790502224
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleDrill   (类型: ConfRoleDrill)
+数据量: 18
+[样本数据结构分析] (ConfRoleDrillItem) :
+    -> key: costEnergy
+    -> value: 30
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790501408
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleSeekUpGrade   (类型: ConfRoleSeekUpGrade)
+数据量: 3
+[样本数据结构分析] (ConfRoleSeekUpGradeItem) :
+    -> powerRatio: 0.5
+    -> robCompleterateRate1: 100
+    -> robCompleterateRate2: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955805584
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleHelpSeekProp   (类型: ConfRoleHelpSeekProp)
+数据量: 3
+[样本数据结构分析] (ConfRoleHelpSeekPropItem) :
+    -> powerRatio: 0.5
+    -> robCompleterateRate1: 100
+    -> robCompleterateRate2: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955805344
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleGroupSeekProp   (类型: ConfRoleGroupSeekProp)
+数据量: 48
+[样本数据结构分析] (ConfRoleGroupSeekPropItem) :
+    -> type: 1
+    -> trait: 1
+    -> value: 60
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955805152
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleGroupSeekPropSub   (类型: ConfRoleGroupSeekPropSub)
+数据量: 33
+[样本数据结构分析] (ConfRoleGroupSeekPropSubItem) :
+    -> key: okBaseRate
+    -> value: 40
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790510128
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleConvoy   (类型: ConfRoleConvoy)
+数据量: 10
+[样本数据结构分析] (ConfRoleConvoyItem) :
+    -> key: costEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790508448
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleGive   (类型: ConfRoleGive)
+数据量: 11
+[样本数据结构分析] (ConfRoleGiveItem) :
+    -> key: costEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790507920
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleTeachSkill   (类型: ConfRoleTeachSkill)
+数据量: 4
+[样本数据结构分析] (ConfRoleTeachSkillItem) :
+    -> key: costDay
+    -> value: 15
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790507344
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleRelation   (类型: ConfRoleRelation)
+数据量: 25
+[样本数据结构分析] (ConfRoleRelationItem) :
+    -> group: 1
+    -> type: 5
+    -> gender: 1
+    -> genderShow: 0
+    -> age: 20
+    -> ageShow: 1
+    -> relationRequire: 0
+    -> relation: roleAskRelation1
+    -> icon: jieyifuzi
+    -> addClose: 60
+    -> addCloseFamily: 30
+    -> reduceClose: -30
+    -> askText: dialogRoleAskRelation1
+    -> acceptText: dialogRoleAcceptRelation1
+    -> rejectText: dialogRoleRejectRelation1
+    -> succeedLogA: eventLogRoleRelation21311
+    -> failLogA: eventLogRoleRelation21321
+    -> succeedLogB: eventLogRoleRelation21312
+    -> failLogB: eventLogRoleRelation21322
+    -> bigLogA: bigLogRoleChat10001
+    -> bigLogB: bigLogRoleChat10013
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529006404288
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleMarry   (类型: ConfRoleMarry)
+数据量: 4
+[样本数据结构分析] (ConfRoleMarryItem) :
+    -> key: regretReduceMin
+    -> value: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790568336
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleChat   (类型: ConfRoleChat)
+数据量: 35
+[样本数据结构分析] (ConfRoleChatItem) :
+    -> key: matchScoreParaA
+    -> value: 2600
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790568000
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleTrains   (类型: ConfRoleTrains)
+数据量: 11
+[样本数据结构分析] (ConfRoleTrainsItem) :
+    -> key: expAddPara
+    -> value: 200
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119453232
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAttack   (类型: ConfRoleAttack)
+数据量: 1
+[样本数据结构分析] (ConfRoleAttackItem) :
+    -> key: costEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119452656
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleDiscovery   (类型: ConfRoleDiscovery)
+数据量: 52
+[样本数据结构分析] (ConfRoleDiscoveryItem) :
+    -> key: discovery
+    -> value: 12
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119452560
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleEvent   (类型: ConfRoleEvent)
+数据量: 1
+[样本数据结构分析] (ConfRoleEventItem) :
+    -> range: 1
+    -> npcParaA: 1
+    -> npcParaB: 0
+    -> duration: 12
+    -> relative: abSchool_1
+    -> effect: abClose_0_1_5_10
+    -> goal: 301
+    -> dialogue: roleEventLog39
+    -> id: 39
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529006407920
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleMark   (类型: ConfRoleMark)
+数据量: 10
+[样本数据结构分析] (ConfRoleMarkItem) :
+    -> needSp: 50
+    -> cost: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955802272
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleInvite   (类型: ConfRoleInvite)
+数据量: 8
+[样本数据结构分析] (ConfRoleInviteItem) :
+    -> key: createEventMinDis
+    -> value: 8
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119478432
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: rolePlanReve   (类型: ConfRolePlanReve)
+数据量: 2
+[样本数据结构分析] (ConfRolePlanReveItem) :
+    -> key: reveTimeMin
+    -> value: 3
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119477904
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleStartReve   (类型: ConfRoleStartReve)
+数据量: 1
+[样本数据结构分析] (ConfRoleStartReveItem) :
+    -> key: dramaID
+    -> value: 731101
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119652192
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleThankGiveClothes   (类型: ConfRoleThankGiveClothes)
+数据量: 1
+[样本数据结构分析] (ConfRoleThankGiveClothesItem) :
+    -> key: npcToPlayerDramaID
+    -> value: 6321001
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119651520
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleSchoolRecruit   (类型: ConfRoleSchoolRecruit)
+数据量: 4
+[样本数据结构分析] (ConfRoleSchoolRecruitItem) :
+    -> key: roleRecruitDialogue
+    -> value: 22648
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119651424
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBreedTaoistSeed   (类型: ConfRoleBreedTaoistSeed)
+数据量: 4
+[样本数据结构分析] (ConfRoleBreedTaoistSeedItem) :
+    -> key: breedTaoistSeedCostEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119650416
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAppellationBattle   (类型: ConfRoleAppellationBattle)
+数据量: 1
+[样本数据结构分析] (ConfRoleAppellationBattleItem) :
+    -> key: appellationBattleCostEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119649408
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBattleChicken   (类型: ConfRoleBattleChicken)
+数据量: 6
+[样本数据结构分析] (ConfRoleBattleChickenItem) :
+    -> key: battleChickenCostEnergy
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119649264
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleRollDiceBet   (类型: ConfRoleRollDiceBet)
+数据量: 59
+[样本数据结构分析] (ConfRoleRollDiceBetItem) :
+    -> key: character1Weight
+    -> value: 0_0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528119664528
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAttributeCoefficient   (类型: ConfRoleAttributeCoefficient)
+数据量: 7
+[样本数据结构分析] (ConfRoleAttributeCoefficientItem) :
+    -> key: standardLuck
+    -> value: 80
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120008352
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleInitAttibute   (类型: ConfRoleInitAttibute)
+数据量: 48
+[样本数据结构分析] (ConfRoleInitAttibuteItem) :
+    -> attr: life
+    -> min: 960
+    -> max: 960
+    -> value: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944950080
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleFormulaCoefficient   (类型: ConfBattleFormulaCoefficient)
+数据量: 15
+[样本数据结构分析] (ConfBattleFormulaCoefficientItem) :
+    -> key: critValueRangeMin
+    -> value: 1.25
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120007872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleLimitConst   (类型: ConfBattleLimitConst)
+数据量: 4
+[样本数据结构分析] (ConfBattleLimitConstItem) :
+    -> key: minSkillRange
+    -> value: 150
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120006960
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAttributePower   (类型: ConfRoleAttributePower)
+数据量: 24
+[样本数据结构分析] (ConfRoleAttributePowerItem) :
+    -> key: hpMax
+    -> value1: 1
+    -> value2: 1
+    -> value3: 1
+    -> value4: 1
+    -> value5: 1
+    -> value6: 1
+    -> value7: 1
+    -> value8: 1
+    -> value9: 1
+    -> value10: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2529006407840
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleSkillPower   (类型: ConfRoleSkillPower)
+数据量: 300
+[样本数据结构分析] (ConfRoleSkillPowerItem) :
+    -> skillType: 1
+    -> skillGrade: 1
+    -> skillLevel: 1
+    -> fixedPower: 70
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528955858400
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleItemPower   (类型: ConfRoleItemPower)
+数据量: 60
+[样本数据结构分析] (ConfRoleItemPowerItem) :
+    -> itemGrade: 1
+    -> itemLevel: 1
+    -> fixedPower: 56
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528956075200
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleLogLocal   (类型: ConfRoleLogLocal)
+数据量: -1
+(列表为空或无法访问第一个元素，无法分析结构)
+
+--------------------------------------------------
+[发现表]: roleCall   (类型: ConfRoleCall)
+数据量: 52
+[样本数据结构分析] (ConfRoleCallItem) :
+    -> relation: -1
+    -> condition: 0
+    -> call: RoleCall101
+    -> group: 7
+    -> weight: 1
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944983872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: schoolRoleCall   (类型: ConfSchoolRoleCall)
+数据量: 12
+[样本数据结构分析] (ConfSchoolRoleCallItem) :
+    -> relation: -1
+    -> condition: 0
+    -> call: RoleCall101
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944980544
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleLogBase   (类型: ConfRoleLogBase)
+数据量: 31
+[样本数据结构分析] (ConfRoleLogBaseItem) :
+    -> eventType: 101
+    -> recordType: 1
+    -> eventLog: eventLogTotal10101
+    -> id: 10101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120005664
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleGrade   (类型: ConfRoleGrade)
+数据量: 44
+[样本数据结构分析] (ConfRoleGradeItem) :
+    -> grade: 1
+    -> gradeName: role_grade_name1
+    -> phase: 1
+    -> phaseName: role_grade_phase1
+    -> quality: 0
+    -> qualityName: 0
+    -> exp: 0
+    -> condition: 0
+    -> drama: 0
+    -> lockFeature: 0
+    -> growItemRequire: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> growItemNum: 0
+    -> materialsNum: 0
+    -> fateNum: 0
+    -> growAddLife: 0
+    -> abilityPoint: 0
+    -> atkUp: 0
+    -> defUp: 0
+    -> hpUp: 0
+    -> mpUp: 0
+    -> spUp: 0
+    -> crit: 0
+    -> guard: 0
+    -> critV: 0
+    -> guardV: 0
+    -> pfrUp: 0
+    -> mfrUp: 0
+    -> immortalPoint: 0
+    -> maxLimitCount: 2
+    -> failFeatureProb: 0
+    -> failFeatureID: 0
+    -> dungeonID: 13
+    -> dungeonLevel: 5
+    -> effectShow: 0
+    -> attrDesc: grade_attr_grow_desc1
+    -> funcDesc: grade_func_desc1
+    -> verse: grade_verse_desc1
+    -> growWayDesc: 0
+    -> itemShowA: 0
+    -> itemShowB: 0
+    -> allItemShowA: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533790157744
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleRace   (类型: ConfRoleRace)
+数据量: 2
+[样本数据结构分析] (ConfRoleRaceItem) :
+    -> race: role_race_human
+    -> effect: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120049072
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBeauty   (类型: ConfRoleBeauty)
+数据量: 7
+[样本数据结构分析] (ConfRoleBeautyItem) :
+    -> beauty: -9999
+    -> text: role_beauty_name1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120048928
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleReputation   (类型: ConfRoleReputation)
+数据量: 11
+[样本数据结构分析] (ConfRoleReputationItem) :
+    -> reputation: 0
+    -> text: role_reputation_name1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120048496
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleEffect   (类型: ConfRoleEffect)
+数据量: 3583
+[样本数据结构分析] (ConfRoleEffectItem) :
+    -> effectType: 1
+    -> value: moodUpStable_0_20
+    -> id: 11011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528120047872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleBasisProgressValue   (类型: ConfRoleBasisProgressValue)
+数据量: 71
+[样本数据结构分析] (ConfRoleBasisProgressValueItem) :
+    -> key: standardHP
+    -> value: 250
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919237696
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleStatusColor   (类型: ConfRoleStatusColor)
+数据量: 3
+[样本数据结构分析] (ConfRoleStatusColorItem) :
+    -> value: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904937472
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAttributeLimit   (类型: ConfRoleAttributeLimit)
+数据量: 109
+[样本数据结构分析] (ConfRoleAttributeLimitItem) :
+    -> key: ageMin
+    -> value: 1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919242368
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleAttributeDesc   (类型: ConfRoleAttributeDesc)
+数据量: 44
+[样本数据结构分析] (ConfRoleAttributeDescItem) :
+    -> attribute: life
+    -> icon: shouming
+    -> desc: role_attribute_desc_life
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531918667584
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleMartialGradeGrid   (类型: ConfRoleMartialGradeGrid)
+数据量: 50
+[样本数据结构分析] (ConfRoleMartialGradeGridItem) :
+    -> type: 1
+    -> grade: 1
+    -> grid: 5
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904944784
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleMood   (类型: ConfRoleMood)
+数据量: 3
+[样本数据结构分析] (ConfRoleMoodItem) :
+    -> mood: 50
+    -> prob: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904947344
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleMoodFeature   (类型: ConfRoleMoodFeature)
+数据量: 17
+[样本数据结构分析] (ConfRoleMoodFeatureItem) :
+    -> moodMin: 10
+    -> moodMax: 30
+    -> featureID: 7001
+    -> weight: 50
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904947056
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleHealth   (类型: ConfRoleHealth)
+数据量: 4
+[样本数据结构分析] (ConfRoleHealthItem) :
+    -> health: 50
+    -> hpReduce: 10
+    -> lifeReduce: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904945760
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleHealthReduce   (类型: ConfRoleHealthReduce)
+数据量: 2
+[样本数据结构分析] (ConfRoleHealthReduceItem) :
+    -> key: lostHp
+    -> value: 10
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919281872
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleEnergyReduce   (类型: ConfRoleEnergyReduce)
+数据量: 0
+(列表为空或无法访问第一个元素，无法分析结构)
+
+--------------------------------------------------
+[发现表]: rolePoisonActionType   (类型: ConfRolePoisonActionType)
+数据量: 9
+[样本数据结构分析] (ConfRolePoisonActionTypeItem) :
+    -> actionType: 1
+    -> afterActionType: 2
+    -> afterActionParam: 1_0
+    -> condition: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531918664768
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: rolePoisonAction   (类型: ConfRolePoisonAction)
+数据量: 38
+[样本数据结构分析] (ConfRolePoisonActionItem) :
+    -> actionID: 1
+    -> actionType: 1
+    -> afterActionType: 0
+    -> afterActionParam: 0
+    -> condition: 0
+    -> traits: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> RelationType: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> triggerRate: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> triggerType: 1
+    -> triggerLogKey: triggerLogKey001
+    -> defTriggerLogKey: defTriggerLogKey001
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528877793616
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleRutElixirAction   (类型: ConfRoleRutElixirAction)
+数据量: 16
+[样本数据结构分析] (ConfRoleRutElixirActionItem) :
+    -> group: 6
+    -> conditionID: 0
+    -> actionCondition: 0
+    -> actionFunction: addTargetAttr_0_beauty_1_-50
+    -> playerFunction: addTargetAttr_0_beauty_1_-50
+    -> playerDrama: 6464101
+    -> playerFeederDrama: 0
+    -> log: RutElixirActionLog100101
+    -> monthlog: 0
+    -> triggerCD: 1
+    -> weight: 100
+    -> maxTime: -1
+    -> globalCD: 0
+    -> id: 100101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791683968
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: roleElixirParam   (类型: ConfRoleElixirParam)
+数据量: 4
+[样本数据结构分析] (ConfRoleElixirParamItem) :
+    -> key: hideElixirTrainTime
+    -> value: 30
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919281536
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleStepBase   (类型: ConfBattleStepBase)
+数据量: 15
+[样本数据结构分析] (ConfBattleStepBaseItem) :
+    -> name: stepName1
+    -> icon: tiaozhan
+    -> className: 1|101
+    -> type: 1
+    -> gradeMin: 1
+    -> gradeMax: 10
+    -> value1: &510011_cxsj
+    -> value2: 0
+    -> value3: 0
+    -> equipEffect: 5100111|5100112
+    -> mpCost: &510011_mpCost
+    -> skillEffect: 0
+    -> talent: &talentStepBase
+    -> basType: basBlade
+    -> basRequire: &zizhiBase_3
+    -> growExp: &skillExp_30
+    -> cd: &510011_cd
+    -> desc: stepDesc1
+    -> id: 510011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531918658832
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleStepParameter   (类型: ConfBattleStepParameter)
+数据量: 4
+[样本数据结构分析] (ConfBattleStepParameterItem) :
+    -> key: bTypePushRange
+    -> value: 300
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919281248
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleStepEntry   (类型: ConfBattleStepEntry)
+数据量: 4
+[样本数据结构分析] (ConfBattleStepEntryItem) :
+    -> entry: range
+    -> title: step_entry_title_1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919281008
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: battleStepCombine   (类型: ConfBattleStepCombine)
+数据量: 1052
+[样本数据结构分析] (ConfBattleStepCombineItem) :
+    -> type: 1|2|3|4|5|6|11|12|13|14|15|16
+    -> level: 1|2|3|4|5|6
+    -> className: 1
+    -> rewardGradeID: 90
+    -> itemName: 0
+    -> itemColor: 6
+    -> itemDesc: 0
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944941312
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fateFeature   (类型: ConfFateFeature)
+数据量: 203
+[样本数据结构分析] (ConfFateFeatureItem) :
+    -> condition: 0
+    -> group: 1
+    -> mutexGroup: 0
+    -> weightBase: 100
+    -> weightQuility: 0
+    -> gradeMin: 2
+    -> gradeMax: 10
+    -> picture: yaoshurumen
+    -> desc: fateStoryDesc700001
+    -> id: 700001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528944986384
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fateGradeRequire   (类型: ConfFateGradeRequire)
+数据量: 198
+[样本数据结构分析] (ConfFateGradeRequireItem) :
+    -> desc: item_output_desc1011845
+    -> id: 1011845
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919280672
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: buildingBook   (类型: ConfBuildingBook)
+数据量: 514
+[样本数据结构分析] (ConfBuildingBookItem) :
+    -> initMin: 4000
+    -> initMax: 15000
+    -> randomReduce2: 0
+    -> randomReduce: 4000
+    -> rangeMin: 1250
+    -> rangeMax: 10000
+    -> output: 222301|222302|222303|222304|222305|222306|222311|222312|222313|222314|222315|222316|222401|222401|222401|222401|222401|222401|222401|222401|222401|222401|222401|222401
+    -> outputCrazy: 272301|272302|272303|272304|272305|272306|272311|272312|272313|272314|272315|272316|272401|272401|272401|272401|272401|272401|272401|272401|272401|272401|272401|272401
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919636832
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameItemReward   (类型: ConfGameItemReward)
+数据量: 32101
+[样本数据结构分析] (ConfGameItemRewardItem) :
+    -> rewardID: 16001
+    -> condition: 0
+    -> itemType: 1
+    -> item: 10001
+    -> numMin: 1000
+    -> numMax: 1000
+    -> group: 1
+    -> firstRewardGroup: 0
+    -> layMax: -1
+    -> noLuckAffect: 0
+    -> weight: 20000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919595392
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameItemRewardArtifact   (类型: ConfGameItemRewardArtifact)
+数据量: 273
+[样本数据结构分析] (ConfGameItemRewardArtifactItem) :
+    -> rewardID: 7000001
+    -> condition: area_2_3
+    -> artifactID: 3031101
+    -> grade: 2
+    -> statusPercentMin: 40
+    -> statusPercentMax: 100
+    -> weight: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919841312
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameItemRewardAbilitySuit   (类型: ConfGameItemRewardAbilitySuit)
+数据量: 182
+[样本数据结构分析] (ConfGameItemRewardAbilitySuitItem) :
+    -> rewardID: 900001
+    -> condition: 0
+    -> suitID: 10000
+    -> level: 6
+    -> weight: 100
+    -> rate: 40
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919703296
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameItemRewardNoInfluence   (类型: ConfGameItemRewardNoInfluence)
+数据量: 68
+[样本数据结构分析] (ConfGameItemRewardNoInfluenceItem) :
+    -> id: 210001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533792554816
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameItemCost   (类型: ConfGameItemCost)
+数据量: 237
+[样本数据结构分析] (ConfGameItemCostItem) :
+    -> costID: 6100141
+    -> grade: 0
+    -> item: 10001
+    -> itemType: 1
+    -> num: 1000
+    -> attrType: 0
+    -> attrValue: 0
+    -> forceCost: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531926151808
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemProps   (类型: ConfItemProps)
+数据量: 3308
+[样本数据结构分析] (ConfItemPropsItem) :
+    -> name: item_name10001
+    -> type: 0
+    -> className: 0
+    -> hide: 1
+    -> playerShow: 0
+    -> npcShow: 0
+    -> icon: lingshi
+    -> level: 1
+    -> desc: item_desc10001
+    -> isOverlay: 1
+    -> drop: 1
+    -> dieDrop: 1
+    -> auction: 0
+    -> sale: -1
+    -> worth: 1
+    -> isMultiDrop: 1
+    -> id: 10001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533788940416
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemType   (类型: ConfItemType)
+数据量: 130
+[样本数据结构分析] (ConfItemTypeItem) :
+    -> type: 0
+    -> uiLabel: 0
+    -> name: item_type_name0
+    -> sort: 0
+    -> id: 0
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531926208384
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemTypeFixed   (类型: ConfItemTypeFixed)
+数据量: 104
+[样本数据结构分析] (ConfItemTypeFixedItem) :
+    -> type: 1
+    -> uiLabel: itemType_danyao
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531919870736
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemPill   (类型: ConfItemPill)
+数据量: 1458
+[样本数据结构分析] (ConfItemPillItem) :
+    -> effectType: 101
+    -> operUse: 1
+    -> operEquip: 1
+    -> autoUse: 0
+    -> effectValue: 1011011
+    -> basType: 0
+    -> basRequire: 0
+    -> grade: 1
+    -> spCost: 3
+    -> useIgnoreGrade: 0
+    -> applyCD: 20000
+    -> cdGroup: 1
+    -> pillType: 0
+    -> fateRandomWeight: 0
+    -> carryCount: 5
+    -> noUseTogether: 0
+    -> cost: 0
+    -> battleUIHide: 0
+    -> consume: 0
+    -> id: 1011011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927018112
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemHobby   (类型: ConfItemHobby)
+数据量: 132
+[样本数据结构分析] (ConfItemHobbyItem) :
+    -> effectValue: 61410121|61410122
+    -> hobbyID: 211
+    -> level: 1
+    -> lasting: 1
+    -> id: 6141012
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927043840
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemHerbal   (类型: ConfItemHerbal)
+数据量: 171
+[样本数据结构分析] (ConfItemHerbalItem) :
+    -> effectType: 1
+    -> effectValue: 50317061
+    -> id: 5031706
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927058160
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemPillSpRequire   (类型: ConfItemPillSpRequire)
+数据量: 10
+[样本数据结构分析] (ConfItemPillSpRequireItem) :
+    -> grade: 1
+    -> spRequire: 0
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904992208
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemChestDrops   (类型: ConfItemChestDrops)
+数据量: 6
+[样本数据结构分析] (ConfItemChestDropsItem) :
+    -> dropID: 600001
+    -> itemID: 1011011
+    -> number: 10
+    -> weight: 2000
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528904991392
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemSkill   (类型: ConfItemSkill)
+数据量: 300
+[样本数据结构分析] (ConfItemSkillItem) :
+    -> skillType: 1
+    -> grade: 1
+    -> level: 1
+    -> price: 0
+    -> cost: 50
+    -> auction: 0
+    -> contribution: 5
+    -> worth: 25
+    -> sale: 25
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533793312512
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemLevelDesc   (类型: ConfItemLevelDesc)
+数据量: 6
+[样本数据结构分析] (ConfItemLevelDescItem) :
+    -> desc: itemLevelDesc1
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927508480
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemBook   (类型: ConfItemBook)
+数据量: 37
+[样本数据结构分析] (ConfItemBookItem) :
+    -> type: 1
+    -> desc: item_book_desc_6091013
+    -> title: 0
+    -> id: 6091013
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927481856
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemHorse   (类型: ConfItemHorse)
+数据量: 55
+[样本数据结构分析] (ConfItemHorseItem) :
+    -> effectValue: 30210111|30210112
+    -> feature: 0
+    -> model: zouwu
+    -> mapMoveSounds: zuoqi/zouwuyidong
+    -> desc: item_horse_desc_3021011
+    -> grade: 5
+    -> id: 3021011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531926267936
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemTransfer   (类型: ConfItemTransfer)
+数据量: 6
+[样本数据结构分析] (ConfItemTransferItem) :
+    -> effectType: 1
+    -> area: 1|2|3|4|5|6|7|8|9|10|11|12|13
+    -> id: 6111016
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927508048
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemRarityMaterials   (类型: ConfItemRarityMaterials)
+数据量: 104
+[样本数据结构分析] (ConfItemRarityMaterialsItem) :
+    -> effect: atk_4|def_3|hpMax_79|crit_11|msp_10
+    -> grade: 2
+    -> hunger: 50
+    -> id: 5081015
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927507712
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemTreasureMap   (类型: ConfItemTreasureMap)
+数据量: 17
+[样本数据结构分析] (ConfItemTreasureMapItem) :
+    -> eventID: 4101
+    -> pointType: 1
+    -> pointValues: 180_135_15
+    -> cost: 2_6301015
+    -> id: 6301015
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927479488
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemMapSearch   (类型: ConfItemMapSearch)
+数据量: 5
+[样本数据结构分析] (ConfItemMapSearchItem) :
+    -> areaID: 2|3
+    -> range: 40
+    -> type: 1
+    -> value: 1751|1761|1771|1781|1801|1901|2101|2201|3204|3201|3203
+    -> searchEventID: 0
+    -> id: 6331001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927478400
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemGeomancyNavi   (类型: ConfItemGeomancyNavi)
+数据量: 4
+[样本数据结构分析] (ConfItemGeomancyNaviItem) :
+    -> areaID: 2|3|4
+    -> id: 2824001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927609040
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemFate   (类型: ConfItemFate)
+数据量: 4
+[样本数据结构分析] (ConfItemFateItem) :
+    -> modifyGrade: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> requireGrade: 4
+    -> id: 6381001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927608800
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemTerrain   (类型: ConfItemTerrain)
+数据量: 0
+(列表为空或无法访问第一个元素，无法分析结构)
+
+--------------------------------------------------
+[发现表]: itemCard   (类型: ConfItemCard)
+数据量: 0
+(列表为空或无法访问第一个元素，无法分析结构)
+
+--------------------------------------------------
+[发现表]: itemFunction   (类型: ConfItemFunction)
+数据量: 57
+[样本数据结构分析] (ConfItemFunctionItem) :
+    -> condition: 0
+    -> function: callDrama_2000411
+    -> consume: 1
+    -> multiUse: 0
+    -> id: 1082011
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927613248
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemBattleHelp   (类型: ConfItemBattleHelp)
+数据量: 1
+[样本数据结构分析] (ConfItemBattleHelpItem) :
+    -> npcLuck: 20003
+    -> playerLuck: 20004
+    -> npcSaveHPRate: 30
+    -> npcSaveInterval: 10000
+    -> npcSaveRate: 40
+    -> playerSaveRateAlive: 40
+    -> playerSaveRateDie: 100
+    -> id: 7000154
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528977541888
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemSchoolRelocateFlag   (类型: ConfItemSchoolRelocateFlag)
+数据量: 1
+[样本数据结构分析] (ConfItemSchoolRelocateFlagItem) :
+    -> eventId: 80000
+    -> disTerritoryRange: 7
+    -> disBuildRange: 7
+    -> areaSpacing: 2
+    -> buildDramaId: 1200021
+    -> moveStartDramaId: 1200001
+    -> moveDramaId: 1200011
+    -> maxOffsetX: 7
+    -> maxOffsetY: 7
+    -> id: 7000155
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533791065904
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemChest   (类型: ConfItemChest)
+数据量: 15
+[样本数据结构分析] (ConfItemChestItem) :
+    -> outputID: UnhollowerBaseLib.Il2CppReferenceArray`1[UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]]
+    -> count: 2
+    -> value: 600
+    -> effectLevel: 1
+    -> maxOpenCount: 10
+    -> id: 6440014
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927609600
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: pillSchoolFight   (类型: ConfPillSchoolFight)
+数据量: 19
+[样本数据结构分析] (ConfPillSchoolFightItem) :
+    -> condition: 0
+    -> allyEffect: 1081001
+    -> enemyEffect: 0
+    -> applyCD: 0
+    -> applyGroupCD: 5000
+    -> cdGroup: 1
+    -> heal: 0
+    -> id: 1081001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927578336
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemGloom   (类型: ConfItemGloom)
+数据量: 49
+[样本数据结构分析] (ConfItemGloomItem) :
+    -> condition: isCreateEvent_5301
+    -> function: callDrama_771001
+    -> failFunction: callDrama_2010313
+    -> id: 5350001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927620928
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemImmortalPoint   (类型: ConfItemImmortalPoint)
+数据量: 4
+[样本数据结构分析] (ConfItemImmortalPointItem) :
+    -> id: 5082235
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2533793230432
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemLotusSeed   (类型: ConfItemLotusSeed)
+数据量: 11
+[样本数据结构分析] (ConfItemLotusSeedItem) :
+    -> className: 1001
+    -> useType: 1
+    -> isUse: 1
+    -> addLuck: 0
+    -> effectValue: 0
+    -> isGive: 0
+    -> addProp: 8104301
+    -> weight: 200
+    -> id: 8104201
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927576816
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: itemSoulDevourSword   (类型: ConfItemSoulDevourSword)
+数据量: 3
+[样本数据结构分析] (ConfItemSoulDevourSwordItem) :
+    -> level: 1
+    -> needExp: 0
+    -> id: 8104130
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528905023776
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: taoistHeartEffect   (类型: ConfTaoistHeartEffect)
+数据量: 132
+[样本数据结构分析] (ConfTaoistHeartEffectItem) :
+    -> taoistHeartID: 1001
+    -> level: -3
+    -> maxhpScope: UnhollowerBaseLib.Il2CppStructArray`1[System.Int32]
+    -> feature: 9000005
+    -> feature2: 9001206
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927617664
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: fateFeatureGroup   (类型: ConfFateFeatureGroup)
+数据量: 432
+[样本数据结构分析] (ConfFateFeatureGroupItem) :
+    -> groupID: 1
+    -> fateFeatureID: 700001
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528888955936
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: taoistHeartSkillGroupName   (类型: ConfTaoistHeartSkillGroupName)
+数据量: 18
+[样本数据结构分析] (ConfTaoistHeartSkillGroupNameItem) :
+    -> skillGroupName: SkillGroupName1001
+    -> id: 1001
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927605680
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ruleDungeonEffect   (类型: ConfRuleDungeonEffect)
+数据量: 65
+[样本数据结构分析] (ConfRuleDungeonEffectItem) :
+    -> group: 1
+    -> basType: 1
+    -> item: 5072075
+    -> effect: 0
+    -> haloEffect: 301001
+    -> desc: ruleDesc101
+    -> id: 101
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531927628208
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: ruleDungeonEffectLevel   (类型: ConfRuleDungeonEffectLevel)
+数据量: 4
+[样本数据结构分析] (ConfRuleDungeonEffectLevelItem) :
+    -> basRequire: 0
+    -> addElement: 5
+    -> weight: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2528867267424
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: gameDifficultyValue   (类型: ConfGameDifficultyValue)
+数据量: 5
+[样本数据结构分析] (ConfGameDifficultyValueItem) :
+    -> refillBlockRequire: 100
+    -> blockAttribute: 100
+    -> price: 100
+    -> roleAttr: atk_5|def_2|hpMax_50|mpMax_25|spMax_25
+    -> fishJade: 9
+    -> unitAttr: atk_85|def_85|hp_50|skillDmg_80
+    -> eliteAttr: 0
+    -> bossAttr: 0
+    -> totalPoint: 100
+    -> removeSave: 0
+    -> rebuildTime: 2
+    -> unlock: 0_0
+    -> dropRate: 100
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531929493888
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: soundsEffectPitch   (类型: ConfSoundsEffectPitch)
+数据量: 517
+[样本数据结构分析] (ConfSoundsEffectPitchItem) :
+    -> path: beijizhong
+    -> minPitch: 0.85
+    -> maxPitch: 1.15
+    -> id: 1
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531929481744
+    -> WasCollected: False
+
+--------------------------------------------------
+[发现表]: geomancySkill   (类型: ConfGeomancySkill)
+数据量: 35
+[样本数据结构分析] (ConfGeomancySkillItem) :
+    -> group: 1001
+    -> icon: tishengfanwei
+    -> grade: 1
+    -> basType: basGeo
+    -> basRequire: 5
+    -> area: 0
+    -> type: 1
+    -> effect1: 2
+    -> effect2: 0
+    -> desc: GeomancySkilDesc2011012
+    -> remind: 0
+    -> id: 2011012
+    -> isVariant: False
+    -> isModExtend: False
+    -> Pointer: 2531929509632
+    -> WasCollected: False
