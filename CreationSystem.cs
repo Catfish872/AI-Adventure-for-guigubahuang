@@ -455,7 +455,7 @@ namespace MOD_kqAfiU
             {
                 // 1. 生成或使用固定ID
                 int destinyId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(8000000, 8999999, id => g.conf.roleCreateFeature.GetItem(id) != null);
-                string effectIds = ParseAndRegisterEffects(effectStr);
+                string effectIds = ParseAndRegisterEffects(effectStr, "Luck");
 
                 // 2. 构建气运数据
                 var newFeature = new ConfRoleCreateFeatureItem();
@@ -516,7 +516,7 @@ namespace MOD_kqAfiU
             {
                 // 1. ID与效果
                 int itemId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(9000000, 9499999, id => g.conf.itemProps.GetItem(id) != null);
-                string effectIds = ParseAndRegisterEffects(effectStr);
+                string effectIds = ParseAndRegisterEffects(effectStr, "Consumer");
                 int iconId = GetIconId(baseInfo.IconCategory);
 
                 // 2. 注册 ItemProps (外壳)
@@ -612,7 +612,7 @@ namespace MOD_kqAfiU
             {
                 // 1. ID与效果
                 int itemId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(9500000, 9999999, id => g.conf.itemProps.GetItem(id) != null);
-                string effectIds = ParseAndRegisterEffects(effectStr);
+                string effectIds = ParseAndRegisterEffects(effectStr, "Equip");
 
                 // 2. 选取图标 (默认使用剑)
                 int iconId = GetIconId(baseInfo.IconCategory);
@@ -692,7 +692,7 @@ namespace MOD_kqAfiU
         /// 解析效果字符串，注册RoleEffect，返回ID串
         /// 格式: "atk_0_10|def_1_20"
         /// </summary>
-        private static string ParseAndRegisterEffects(string effectStr)
+        private static string ParseAndRegisterEffects(string effectStr, string creationType)
         {
             if (string.IsNullOrEmpty(effectStr)) return "";
 
@@ -703,16 +703,23 @@ namespace MOD_kqAfiU
             {
                 if (string.IsNullOrWhiteSpace(part)) continue;
 
-                // 即使是恢复模式，我们也每次重新生成Effect ID，
-                // 因为Item定义里只存了Effect ID的引用，只要Item指向新的有效Effect ID即可。
-                // 这样避免了保存庞大的Effect ID映射表。
                 int effectId = GetRandomID(8900000, 8999999, id => g.conf.roleEffect.GetItem(id) != null);
 
-                // 注册 RoleEffect
                 var newEffect = new ConfRoleEffectItem();
                 newEffect.id = effectId;
-                newEffect.effectType = 101; // 通用属性类型
-                newEffect.value = part; // 直接使用 AI 生成的 key_type_val
+
+                // --- 核心修改：气运和装备使用类型 1，丹药使用类型 101 ---
+                if (creationType == "Luck" || creationType == "Equip")
+                {
+                    newEffect.effectType = 1;
+                }
+                else
+                {
+                    newEffect.effectType = 101;
+                }
+                // ---------------------------------------------------
+
+                newEffect.value = part;
 
                 g.conf.roleEffect._allConfList.Add(newEffect);
                 ForceRegisterItem(g.conf.roleEffect, newEffect, newEffect.id);
@@ -721,6 +728,31 @@ namespace MOD_kqAfiU
             }
 
             return string.Join("|", registeredIds);
+        }
+
+        public static void RemoveAllAICustomLuck()
+        {
+            if (g.world.playerUnit == null) return;
+
+            // 收集所有匹配 AI ID 范围的气运 ID
+            var lucksToRemove = new System.Collections.Generic.List<int>();
+            foreach (var luck in g.world.playerUnit.allLuck)
+            {
+                // 逻辑：检查 ID 是否在 AI 生成的范围内
+                if (luck.luckConf.id >= 8000000 && luck.luckConf.id <= 8999999)
+                {
+                    lucksToRemove.Add(luck.luckConf.id);
+                }
+            }
+
+            // 执行移除
+            foreach (int id in lucksToRemove)
+            {
+                g.world.playerUnit.CreateAction(new UnitActionLuckDel(id));
+            }
+
+            Debug.Log($"[CreationSystem] 已尝试移除 {lucksToRemove.Count} 个 AI 气运。");
+            UITipItem.AddTip($"天道肃清：已移除 {lucksToRemove.Count} 个生成气运", 3f);
         }
 
         /// <summary>

@@ -564,7 +564,7 @@ namespace MOD_kqAfiU
         };
 
             // 2. 明确指定要造的物品名称
-            List<string> testRewardName = new List<string> { "风雷穿云剑", "风雷丹" };
+            List<string> testRewardName = new List<string> { "风雷穿云剑", "风雷丹" ,"风雷奇遇"};
 
             // 3. 直接调用造物接口
             CreationSystem.StartCreationProcess(testRewardName, mockHistory);
