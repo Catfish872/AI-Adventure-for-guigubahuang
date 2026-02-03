@@ -187,8 +187,12 @@ namespace MOD_kqAfiU
                         case "Equip":
                             CreateEquip(item.BaseInfo, item.Effects, item.ExtraInfo, true, item.GeneratedID);
                             break;
+                        case "Ring":
+                            CreateRing(item.BaseInfo, item.Effects, item.ExtraInfo, true, item.GeneratedID);
+                            break;
                     }
                 }
+                typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
                 Debug.Log("[CreationSystem] 自定义物品恢复完成。");
             }
             catch (Exception ex)
@@ -270,7 +274,7 @@ namespace MOD_kqAfiU
                         // 【新增】反射清空缓存，确保下一帧Tools能读到新注册的物品
                         typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
                         ModMain.isCreatingItems = false;
-                        UITipItem.AddTip("天道推演完成，机缘已至！", 2f);
+                        //UITipItem.AddTip("天道推演完成，机缘已至！", 2f);
                     });
                 }
                 catch (Exception ex)
@@ -447,8 +451,8 @@ namespace MOD_kqAfiU
 请根据奖励名称和剧情判断类型 Type：
 - ""Luck"" (气运): 某种身体状态、顿悟、BUFF。需设定持续时间。
 - ""Consumer"" (丹药/消耗品): 吃了就没的物品。
-- ""Vehicle"" (载具类): 某种可以骑乘或驾驶的宏大器物（如飞剑、灵兽、云雾、飞舟等）。
-- ""Carried"" (携带类): 某种随身佩戴的精巧饰品（如戒指、护符、玉佩、令牌等）。
+- ""Vehicle"" (载具类装备): 某种可以骑乘或驾驶的宏大器物（如飞剑、灵兽、云雾、飞舟等）。
+- ""Carried"" (携带类装备): 某种随身佩戴的精巧饰品（如戒指、护符、玉佩、令牌等）。
 
 ### 2. 输出格式 (严格JSON)
 请输出一个 JSON 对象，**或者** 一个包含多个对象的 JSON 数组（如果你想同时发放多个奖励）。
@@ -470,7 +474,7 @@ namespace MOD_kqAfiU
     ""Name"": ""物品名"",
     ""Grade"": 4, // 1灰 2绿 3蓝 4紫 5橙 6红
     ""IconCategory"": ""Pill_Red"", // 如果是气运则不需要填写，非气运需选其一: Pill_Red/Blue/Gold/Dark/Fancy, Mount_Sword/Beast/Cloud/Boat/Special, Item_Ring(适合Carried类), Item_Paper, Item_Book, Item_Scroll, Mat_Ore/Plant/Monster/Gem/Treasure
-    ""Description"": ""若是气运(Luck)，必须包含背景故事+数值效果文本(如：受神力加持，攻击+10%)；若是物品，只写背景故事，不要写数值。""
+    ""Description"": ""若是气运(Luck)和携带类装备(Carried)，必须包含背景故事+数值效果文本(如：受神力加持，攻击+10%)；若是物品，只写背景故事，不要写数值。""
   }},
   ""Effects"": ""atk_0_10|def_1_20"", // 属性字符串，详见下文
   ""ExtraInfo"": {{
@@ -491,11 +495,11 @@ namespace MOD_kqAfiU
 - ""storage_1_30"": 背包容量增加 30个 (仅Carried类有效)
 
 ### 4. 属性代码对照表
-- 攻击: atk | 防御: def | 体力: hpMax | 灵力: mpMax | 念力: spMax
+- 攻击: atk | 防御: def | 体力: hpMax | 灵力: mpMax | 念力（sp代表念力，不是精力，不支持对精力属性进行调整）: spMax
 - 会心: crit | 护心: guard | 寿命: life | 魅力: beauty | 幸运: luck | 声望: reputation
 - 脚力: fsp | 战斗移速: msp
 - 储物空间: storage (仅限 Carried 类物品使用，且 type 只能为 1)
-- 资质类: basSword(剑), basSpear(枪), basBlade(刀), basFist(拳), basPalm(掌), basFinger(指), basFire(火), basWater(水), basThunder(雷), basWind(风), basEarth(土), basWood(木)
+- 资质类: basSword(剑), basSpear(枪), basBlade(刀), basFist(拳), basPalm(掌), basFinger(指), basFire(火), basFroze(水), basThunder(雷), basWind(风), basEarth(土), basWood(木)
 
 ### 5. 数值设计指导 (基于玩家当前境界: {playerRealm})
 {statGuidelines}
@@ -548,7 +552,7 @@ namespace MOD_kqAfiU
 
             string[] basNames = new string[] {
                 "剑法(basSword)", "枪法(basSpear)", "刀法(basBlade)", "拳法(basFist)", "掌法(basPalm)", "指法(basFinger)",
-                "火灵(basFire)", "水灵(basWater)", "雷灵(basThunder)", "风灵(basWind)", "土灵(basEarth)", "木灵(basWood)"
+                "火灵(basFire)", "水灵(basFroze)", "雷灵(basThunder)", "风灵(basWind)", "土灵(basEarth)", "木灵(basWood)"
             };
 
             sb.AppendLine("【资质/灵根类 (bas*)】参考值:");
@@ -1244,7 +1248,7 @@ namespace MOD_kqAfiU
                     // --- 12种资质 ---
                     { "basSword", "剑法" }, { "basSpear", "枪法" }, { "basBlade", "刀法" },
                     { "basFist", "拳法" }, { "basPalm", "掌法" }, { "basFinger", "指法" },
-                    { "basFire", "火灵" }, { "basWater", "水灵" }, { "basThunder", "雷灵" },
+                    { "basFire", "火灵" }, { "basFroze", "水灵" }, { "basThunder", "雷灵" },
                     { "basWind", "风灵" }, { "basEarth", "土灵" }, { "basWood", "木灵" }
                 };
 

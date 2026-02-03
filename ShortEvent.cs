@@ -110,7 +110,7 @@ namespace MOD_kqAfiU
 - 无NPC参与，专注环境、物品、突发事件
 - 快节奏，一次选择即结束
 - 重在选择的后果差异和风险收益
-- 获得的物品/效果直接且明确，且必须是上下文中明确出现的物品/效果，禁止想象不存在的物品和效果。
+- 获得的物品/效果直接且明确。建议你根据剧情发展、身份和环境氛围，发挥想象力来设计当前故事的物品、气运或装备。当你觉得没有更好的创意，或上述列表的物品已经十分符合，或需要发放基础资源（如灵石）时，可以从上述列表中选择物品。最好可以通过自主想一些物品，再加上一部分列表中物品的混合形式作为奖励。自行设计的奖励可以是消耗品、装备、气运等等。
 【创作要求】
 1. 开场描述要有画面感，让玩家身临其境，融入修仙世界氛围。但是游戏剧情在此之前就开始了，所以不需要介绍玩家身份。
 2. 提供2-4个明确的选择方向，每个选择风险收益不同,可能有收获，也可能一无所获（get为空代表无论从物质还是精神上都一无所获）
@@ -156,11 +156,13 @@ namespace MOD_kqAfiU
 注意：option3/end3/get3和option4/end4/get4为可选，至少要有2个选项，最多4个选项。如果只有2-3个选项，不要输出空的option4等标签。每个选项的物品/效果禁止重复。
 ";
 
+        // 在 ShortEvent.cs 中
+
         public static void TriggerShortEvent()
         {
             try
             {
-                // 获取存储的短奇遇内容
+                // 1. 获取存储的短奇遇内容
                 string content = g.data.dataObj.data.GetString("ShortEventContent");
                 if (string.IsNullOrEmpty(content))
                 {
@@ -168,10 +170,65 @@ namespace MOD_kqAfiU
                     return;
                 }
 
-                // 解析并创建对话
+                // 2. 解析数据 (复用你现有的 ParseShortEventResponse)
                 var eventResponse = ParseShortEventResponse(content);
+
                 if (eventResponse != null)
                 {
+                    // ==================== 【新增逻辑开始：造物拦截】 ====================
+                    // 只有当当前不在造物时，才进行检查
+                    if (!ModMain.isCreatingItems)
+                    {
+                        // 收集所有涉及的奖励
+                        HashSet<string> allRewards = new HashSet<string>();
+                        StringBuilder contextBuilder = new StringBuilder();
+                        contextBuilder.AppendLine($"事件内容：{eventResponse.content}");
+
+                        if (eventResponse.options != null)
+                        {
+                            int idx = 1;
+                            foreach (var opt in eventResponse.options)
+                            {
+                                contextBuilder.AppendLine($"分支{idx}选择：{opt.text} 结局：{opt.ending}");
+                                if (!string.IsNullOrEmpty(opt.reward))
+                                {
+                                    contextBuilder.AppendLine($"分支{idx}奖励：{opt.reward}");
+                                    var items = opt.reward.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                                    foreach (var item in items)
+                                    {
+                                        allRewards.Add(item.Trim());
+                                    }
+                                }
+                                idx++;
+                            }
+                        }
+
+                        // 筛选未知奖励 (利用 Tools.RewardExists)
+                        var unknownRewards = allRewards
+                            .Where(r => !string.IsNullOrEmpty(r))
+                            .Where(r => !ModMain.givenRewardsInCurrentAdventure.Contains(r))
+                            .Where(r => !Tools.RewardExists(r))
+                            .ToList();
+
+                        // 如果发现未知奖励，启动造物并中断流程
+                        if (unknownRewards.Count > 0)
+                        {
+                            //UITipItem.AddTip($"发现 {unknownRewards.Count} 个未知机缘，天道正在推演...", 3f);
+
+                            // 构造给 AI 的上下文
+                            List<MessageItem> contextMsgs = new List<MessageItem>();
+                            contextMsgs.Add(new MessageItem("user", contextBuilder.ToString()));
+
+                            // 锁定状态并启动造物
+                            ModMain.isCreatingItems = true;
+                            CreationSystem.StartCreationProcess(unknownRewards, contextMsgs);
+
+                            return;
+                        }
+                    }
+                    // ==================== 【新增逻辑结束】 ====================
+
+                    // 3. 正常显示对话 (复用你现有的 CreateShortEventDialogue)
                     CreateShortEventDialogue(eventResponse);
                 }
                 else
@@ -433,7 +490,7 @@ namespace MOD_kqAfiU
                 {
                     rewardsString += $"- {item.Key}: {item.Value}个\n";
                 }
-                rewardsString += "\n请将部分奖励融入到选项结果中，不是每个选项都需要有奖励。";
+                rewardsString += "\n请将你自行设计的不在列表中的奖励（最好有）和来自上述清单的部分奖励融入到选项结果中，不是每个选项都需要有奖励。";
 
                 // 获取玩家信息
                 int playerLogCount = Prop.GetLogCountFromSSCYAI(g.world.playerUnit);

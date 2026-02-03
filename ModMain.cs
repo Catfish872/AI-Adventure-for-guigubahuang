@@ -214,7 +214,7 @@ namespace MOD_kqAfiU
                 ModMain.autoColoringEnabled = config.AutoColoringEnabled;
             }
 
-
+            CreationSystem.Init();
             Tools.Initialize(apiUrl, apiKey, modelName);
             UIRewardAndShortConfig.isGenerating = false;
             //DramaPolish.Initialize();
@@ -400,7 +400,8 @@ namespace MOD_kqAfiU
                                 npcButton.onClick.RemoveAllListeners();
                                 Action clickAction = delegate () {
                                     string content = g.data.dataObj.data.GetString("LLMcontent");
-                                    if (waitingForLLMResponse || inOngoingDialog || !string.IsNullOrEmpty(content))
+                                    string shortContent = g.data.dataObj.data.GetString("ShortEventContent");
+                                    if (waitingForLLMResponse || inOngoingDialog || !string.IsNullOrEmpty(content)|| waitingForShortEventResponse || !string.IsNullOrEmpty(shortContent))
                                     {
                                         UITipItem.AddTip("已有正在进行的奇遇！", 1f);
                                         return;
@@ -553,31 +554,6 @@ namespace MOD_kqAfiU
 
         public void OnPlayerMove(ETypeData data)
         {
-            int testRingId = 8888889;
-            if (g.world.playerUnit.data.unitData.propData.GetPropsNum(testRingId) == 0)
-            {
-                // 1. 定义：白板戒指 + 背包扩容词条
-                var baseInfo = new CreationBaseInfo
-                {
-                    Name = "虚空之戒(修复版)",
-                    Grade = 4,
-                    Description = "修复了注册逻辑，应该能看到名字和属性了。",
-                    IconCategory = "Item_Ring"
-                };
-
-                // 2. 词条：增加50格背包
-                string effects = "atk_1_10|storage_1_500";
-
-                // 3. 生成
-                CreationSystem.CreateRing(baseInfo, effects, new CreationExtraInfo { Worth = 1, RealmReq = 1 }, false, testRingId);
-
-                // 4. 发放
-                var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
-                rewardList.Add(DataProps.PropsData.NewProps(testRingId, 1));
-                g.world.playerUnit.data.RewardPropItem(rewardList);
-
-                UITipItem.AddTip("测试：已发放虚空之戒，请检查属性", 4f);
-            }
 
             if (Time.time - lastMoveTime < 1f)
             {
@@ -617,7 +593,7 @@ namespace MOD_kqAfiU
                 return;
             }
 
-            if (waitingForLLMResponse || inOngoingDialog || isCreatingItems)
+            if (waitingForLLMResponse || inOngoingDialog || isCreatingItems || waitingForShortEventResponse)
             {
                 return;
             }
@@ -1350,7 +1326,6 @@ namespace MOD_kqAfiU
 
             if (llmRequestStartTime > 0f && Time.time - llmRequestStartTime > 300f)
             {
-                // 超时处理 - 重置状态
                 UITipItem.AddTip("请求超时，将重置奇遇状态", 1f);
                 waitingForLLMResponse = false;
                 inOngoingDialog = false;
@@ -1370,6 +1345,8 @@ namespace MOD_kqAfiU
             {
                 llmRequestStartTime = 0f;
 
+                if (isCreatingItems) return;
+
                 if (pendingShortEventResponse.StartsWith("错误："))
                 {
                     UITipItem.AddTip($"短奇遇生成失败：{pendingShortEventResponse.Substring(3)}", 2f);
@@ -1378,17 +1355,59 @@ namespace MOD_kqAfiU
                 }
                 else
                 {
-                    // 存储短奇遇内容，等待下次移动触发
+                    var eventResponse = ShortEvent.ParseShortEventResponse(pendingShortEventResponse);
+                    List<string> unknownRewards = new List<string>();
+                    StringBuilder contextBuilder = new StringBuilder();
+
+                    if (eventResponse != null)
+                    {
+                        contextBuilder.AppendLine($"事件内容：{eventResponse.content}");
+                        if (eventResponse.options != null)
+                        {
+                            foreach (var opt in eventResponse.options)
+                            {
+                                contextBuilder.AppendLine($"选项：{opt.text} 结局：{opt.ending}");
+                                if (!string.IsNullOrEmpty(opt.reward))
+                                {
+                                    contextBuilder.AppendLine($"奖励：{opt.reward}");
+                                    var items = opt.reward.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                                    foreach (var item in items)
+                                    {
+                                        string r = item.Trim();
+                                        if (!Tools.RewardExists(r))
+                                        {
+                                            unknownRewards.Add(r);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (unknownRewards.Count > 0)
+                    {
+                        //UITipItem.AddTip($"发现 {unknownRewards.Count} 个未知机缘，天道正在推演...", 3f);
+                        isCreatingItems = true;
+
+                        List<MessageItem> contextMsgs = new List<MessageItem>();
+                        contextMsgs.Add(new MessageItem("user", contextBuilder.ToString()));
+
+                        CreationSystem.StartCreationProcess(unknownRewards, contextMsgs);
+                        return;
+                    }
+
                     g.data.dataObj.data.SetString("ShortEventContent", pendingShortEventResponse);
                     waitingForShortEventResponse = false;
                     pendingShortEventResponse = null;
                 }
             }
 
-            // 处理LLM响应
             if (pendingLLMResponse != null)
             {
                 llmRequestStartTime = 0f;
+
+                if (isCreatingItems) return;
+
                 string dialogText;
                 FormattedResponse formattedResponse = null;
 
@@ -1398,22 +1417,19 @@ namespace MOD_kqAfiU
                 }
                 else
                 {
-                    // 使用工具方法解析响应
                     formattedResponse = Tools.ParseLLMResponse(pendingLLMResponse, out dialogText);
                 }
-                g.data.dataObj.data.SetString("LLMcontent", pendingLLMResponse); // 存储原始响应
+                g.data.dataObj.data.SetString("LLMcontent", pendingLLMResponse);
+
                 if (isFirstDialog)
                 {
-                    // 第一次对话，存储LLM响应
                     waitingForLLMResponse = false;
                     isFirstDialog = false;
                     UITipItem.AddTip("收到仙人指点，下次移动将触发对话", 1f);
-
                     pendingLLMResponse = null;
                     return;
                 }
 
-                // 非第一次对话，继续原有逻辑
                 var continueRequest = new LLMDialogueRequest();
                 if (currentRequest != null)
                 {
@@ -1421,17 +1437,14 @@ namespace MOD_kqAfiU
                     {
                         continueRequest.Messages.Add(new MessageItem(msg.Role, msg.Content));
                     }
-
-                    // 添加当前回答到对话历史
                     string processedJsonResponse;
-                    Tools.ParseLLMResponse(pendingLLMResponse, out _); 
+                    Tools.ParseLLMResponse(pendingLLMResponse, out _);
                     processedJsonResponse = Tools.GetProcessedJsonString(pendingLLMResponse);
                     continueRequest.AddAssistantMessage(processedJsonResponse);
                     Debug.Log($"{processedJsonResponse}");
                 }
                 else
                 {
-                    // 当currentRequest为null时，创建一个新的请求
                     continueRequest.AddSystemMessage(Tools.GenerateRandomSystemPrompt());
                     currentRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
                     string processedJsonResponse;
@@ -1440,10 +1453,7 @@ namespace MOD_kqAfiU
                     continueRequest.AddAssistantMessage(processedJsonResponse);
                 }
 
-                // 保存当前请求，用于继续对话
                 currentRequest = continueRequest;
-
-                // 使用工具方法生成选项列表
                 var optionsList = Tools.GenerateOptionsFromResponse(formattedResponse, continueRequest);
 
                 if (isCreatingItems) return;
@@ -1452,11 +1462,10 @@ namespace MOD_kqAfiU
                 WorldUnitBase rightUnit = dialogueNpcs.Count > 0 ? dialogueNpcs[0] : null;
 
                 if (rightUnit != null)
-                    //Tools.CreateDialogue(npcTalk, dialogText, g.world.playerUnit, rightUnit, options, callbacks);
                     CreateMultiPartDialogue(npcTalk, dialogText, g.world.playerUnit, rightUnit, options, callbacks);
                 else
-                    //Tools.CreateDialogue(onlyTalk, dialogText, g.world.playerUnit, null, options, callbacks);
                     CreateMultiPartDialogue(onlyTalk, dialogText, g.world.playerUnit, null, options, callbacks);
+
                 needReview = true;
                 pendingLLMResponse = null;
             }
