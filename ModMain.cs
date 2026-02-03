@@ -553,6 +553,31 @@ namespace MOD_kqAfiU
 
         public void OnPlayerMove(ETypeData data)
         {
+            int testRingId = 8888889;
+            if (g.world.playerUnit.data.unitData.propData.GetPropsNum(testRingId) == 0)
+            {
+                // 1. 定义：白板戒指 + 背包扩容词条
+                var baseInfo = new CreationBaseInfo
+                {
+                    Name = "虚空之戒(修复版)",
+                    Grade = 4,
+                    Description = "修复了注册逻辑，应该能看到名字和属性了。",
+                    IconCategory = "Item_Ring"
+                };
+
+                // 2. 词条：增加50格背包
+                string effects = "atk_1_10|storage_1_500";
+
+                // 3. 生成
+                CreationSystem.CreateRing(baseInfo, effects, new CreationExtraInfo { Worth = 1, RealmReq = 1 }, false, testRingId);
+
+                // 4. 发放
+                var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
+                rewardList.Add(DataProps.PropsData.NewProps(testRingId, 1));
+                g.world.playerUnit.data.RewardPropItem(rewardList);
+
+                UITipItem.AddTip("测试：已发放虚空之戒，请检查属性", 4f);
+            }
 
             if (Time.time - lastMoveTime < 1f)
             {

@@ -312,10 +312,16 @@ namespace MOD_kqAfiU
                     CreateConsumer(data.BaseInfo, data.Effects, data.ExtraInfo);
                     break;
 
-                case "Equip":
-                    // 装备需要 Worth, RealmReq
-                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Worth = 5000, RealmReq = 1 }; // 保底
+                case "Vehicle":
+                    // 载具类 (原Equip逻辑: 坐骑/飞剑)
+                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Worth = 5000, RealmReq = 1 };
                     CreateEquip(data.BaseInfo, data.Effects, data.ExtraInfo);
+                    break;
+
+                case "Carried":
+                    // 携带类 (新增逻辑: 戒指/饰品)
+                    if (data.ExtraInfo == null) data.ExtraInfo = new CreationExtraInfo { Worth = 3000, RealmReq = 1 };
+                    CreateRing(data.BaseInfo, data.Effects, data.ExtraInfo);
                     break;
 
                 default:
@@ -441,7 +447,8 @@ namespace MOD_kqAfiU
 请根据奖励名称和剧情判断类型 Type：
 - ""Luck"" (气运): 某种身体状态、顿悟、BUFF。需设定持续时间。
 - ""Consumer"" (丹药/消耗品): 吃了就没的物品。
-- ""Equip"" (装备/坐骑): 实体的法宝、坐骑、书籍等。
+- ""Vehicle"" (载具类): 某种可以骑乘或驾驶的宏大器物（如飞剑、灵兽、云雾、飞舟等）。
+- ""Carried"" (携带类): 某种随身佩戴的精巧饰品（如戒指、护符、玉佩、令牌等）。
 
 ### 2. 输出格式 (严格JSON)
 请输出一个 JSON 对象，**或者** 一个包含多个对象的 JSON 数组（如果你想同时发放多个奖励）。
@@ -453,7 +460,7 @@ namespace MOD_kqAfiU
 **多物品示例**:
 [
   {{ ""Type"": ""Luck"", ... }},
-  {{ ""Type"": ""Equip"", ... }}
+  {{ ""Type"": ""Carried"", ... }}
 ]
 
 **字段结构模板**:
@@ -462,8 +469,8 @@ namespace MOD_kqAfiU
   ""BaseInfo"": {{
     ""Name"": ""物品名"",
     ""Grade"": 4, // 1灰 2绿 3蓝 4紫 5橙 6红
-    ""IconCategory"": ""Pill_Red"", // 如果是气运则不需要填写，如果不是气运则需要选其一 (基于外观): Pill_Red(红丹), Pill_Blue(蓝丹), Pill_Gold(金丹), Pill_Dark(毒/暗丹), Pill_Fancy(七彩/发光丹), Mount_Sword(飞剑), Mount_Beast(灵兽), Mount_Cloud(云), Mount_Boat(舟), Mount_Special(葫芦/异形), Item_Ring(戒指), Item_Paper(符箓/令牌), Item_Book(古籍/书本), Item_Scroll(卷轴/秘籍), Mat_Ore(矿石/金属), Mat_Plant(草药/花果), Mat_Monster(牙骨/皮毛), Mat_Gem(宝玉/珠子), Mat_Treasure(法宝/珍玩)
-    ""Description"": ""若是气运(Luck)，必须包含背景故事+数值效果文本(如：受神力加持，攻击+10%)；若是物品(Consumer/Equip)，只写背景故事，不要写数值。""
+    ""IconCategory"": ""Pill_Red"", // 如果是气运则不需要填写，非气运需选其一: Pill_Red/Blue/Gold/Dark/Fancy, Mount_Sword/Beast/Cloud/Boat/Special, Item_Ring(适合Carried类), Item_Paper, Item_Book, Item_Scroll, Mat_Ore/Plant/Monster/Gem/Treasure
+    ""Description"": ""若是气运(Luck)，必须包含背景故事+数值效果文本(如：受神力加持，攻击+10%)；若是物品，只写背景故事，不要写数值。""
   }},
   ""Effects"": ""atk_0_10|def_1_20"", // 属性字符串，详见下文
   ""ExtraInfo"": {{
@@ -481,13 +488,13 @@ namespace MOD_kqAfiU
 
 **示例**: 
 - ""atk_0_10"": 攻击增加 10%
-- ""def_1_50"": 防御增加 50点
-- ""atk_0_5|def_1_20"": 攻击+5% 且 防御+20点
+- ""storage_1_30"": 背包容量增加 30个 (仅Carried类有效)
 
 ### 4. 属性代码对照表
 - 攻击: atk | 防御: def | 体力: hpMax | 灵力: mpMax | 念力: spMax
 - 会心: crit | 护心: guard | 寿命: life | 魅力: beauty | 幸运: luck | 声望: reputation
 - 脚力: fsp | 战斗移速: msp
+- 储物空间: storage (仅限 Carried 类物品使用，且 type 只能为 1)
 - 资质类: basSword(剑), basSpear(枪), basBlade(刀), basFist(拳), basPalm(掌), basFinger(指), basFire(火), basWater(水), basThunder(雷), basWind(风), basEarth(土), basWood(木)
 
 ### 5. 数值设计指导 (基于玩家当前境界: {playerRealm})
@@ -539,18 +546,44 @@ namespace MOD_kqAfiU
             GenerateRanges("会心(crit)", data.crit.value, 1);
             GenerateRanges("护心(guard)", data.guard.value, 1);
 
-            GenerateRanges("剑法(basSword)", data.basisSword.value, 1);
-            GenerateRanges("枪法(basSpear)", data.basisSpear.value, 1);
-            GenerateRanges("刀法(basBlade)", data.basisBlade.value, 1);
-            GenerateRanges("拳法(basFist)", data.basisFist.value, 1);
-            GenerateRanges("掌法(basPalm)", data.basisPalm.value, 1);
-            GenerateRanges("指法(basFinger)", data.basisFinger.value, 1);
-            GenerateRanges("火灵(basFire)", data.basisFire.value, 1);
-            GenerateRanges("水灵(basWater)", data.basisFroze.value, 1);
-            GenerateRanges("雷灵(basThunder)", data.basisThunder.value, 1);
-            GenerateRanges("风灵(basWind)", data.basisWind.value, 1);
-            GenerateRanges("土灵(basEarth)", data.basisEarth.value, 1);
-            GenerateRanges("木灵(basWood)", data.basisWood.value, 1);
+            string[] basNames = new string[] {
+                "剑法(basSword)", "枪法(basSpear)", "刀法(basBlade)", "拳法(basFist)", "掌法(basPalm)", "指法(basFinger)",
+                "火灵(basFire)", "水灵(basWater)", "雷灵(basThunder)", "风灵(basWind)", "土灵(basEarth)", "木灵(basWood)"
+            };
+
+            sb.AppendLine("【资质/灵根类 (bas*)】参考值:");
+            for (int i = 1; i <= 6; i++)
+            {
+                // 百分比: 1-4, 4-8, 8-12, 12-16, 16-20, 20-24
+                int pMin = (i == 1) ? 1 : (i - 1) * 4;
+                int pMax = i * 4;
+
+                // 固定值: 境界 * 2 * 品级 (浮动范围)
+                int baseFix = gradeId * 2 * i;
+                int fMin = (int)(baseFix * 0.9f); // 0.9 - 1.1 浮动
+                int fMax = (int)(baseFix * 1.1f);
+                if (fMin < 1) fMin = 1;
+                if (fMax <= fMin) fMax = fMin + 1;
+
+                string color = GetGradeName(i);
+                sb.AppendLine($"  - {color}色(Lv{i}): 百分比[{pMin}-{pMax}%] (写 _0_{pMin}-{pMax}) 或 固定值[{fMin}-{fMax}] (写 _1_{fMin}-{fMax})");
+            }
+            sb.AppendLine($"  (适用: {string.Join(", ", basNames)})");
+            sb.AppendLine();
+
+            // [新增] 背包容量指导 (仅 Carried 类)
+            sb.AppendLine("【储物空间 (storage)】参考值 (仅Carried类可用):");
+            for (int i = 1; i <= 6; i++)
+            {
+                // 固定值: 境界 * 10 * 品级
+                int baseCap = gradeId * 10 * i;
+                int cMin = (int)(baseCap * 0.9f);
+                int cMax = (int)(baseCap * 1.1f);
+
+                string color = GetGradeName(i);
+                sb.AppendLine($"  - {color}色(Lv{i}): 容量[{cMin}-{cMax}] (写 storage_1_{cMin}-{cMax})");
+            }
+            sb.AppendLine();
 
             // 2. 低加成组 (1-6%)
             // 注意：寿命这种属性通常不用百分比，但为了遵循你的公式，这里按玩家最大寿命算
@@ -824,6 +857,167 @@ namespace MOD_kqAfiU
             }
         }
 
+
+        public static void CreateRing(CreationBaseInfo baseInfo, string effectStr, CreationExtraInfo extraInfo, bool isRestoring = false, int fixedId = 0)
+        {
+            try
+            {
+                // 1. 生成ID (优先固定ID)
+                int itemId = (fixedId != 0) ? fixedId : GetRandomID(9800000, 9899999, id => g.conf.itemProps.GetItem(id) != null);
+
+                // 2. 翻译官逻辑 (处理 storage)
+                var parts = effectStr.Split('|');
+                var normalEffects = new List<string>();
+                int addedCapacity = 0;
+                foreach (var p in parts)
+                {
+                    if (string.IsNullOrWhiteSpace(p)) continue;
+                    if (p.StartsWith("storage_") || p.StartsWith("capacity_"))
+                    {
+                        var segs = p.Split('_');
+                        if (segs.Length >= 3 && int.TryParse(segs[2], out int val)) addedCapacity += val;
+                    }
+                    else
+                    {
+                        normalEffects.Add(p);
+                    }
+                }
+                string effectIds = ParseAndRegisterEffects(string.Join("|", normalEffects), "Ring");
+
+                // 3. 图标逻辑 (只偷图标字符串，不影响内核)
+                string targetIcon = "3011011"; // 默认保底图标
+
+                // 从 AI 指定的分类中随机找一个物品，把它的图标偷过来
+                string searchCategory = IconMapper.ContainsKey(baseInfo.IconCategory) ? baseInfo.IconCategory : "Item_Ring";
+                if (IconMapper.ContainsKey(searchCategory))
+                {
+                    var list = IconMapper[searchCategory];
+                    if (list != null && list.Count > 0)
+                    {
+                        int randomRefId = list[_rng.Next(list.Count)];
+                        var refProp = g.conf.itemProps.GetItem(randomRefId);
+                        if (refProp != null && !string.IsNullOrEmpty(refProp.icon))
+                        {
+                            targetIcon = refProp.icon; // 拿到图标文件名为止，不用管它是剑还是书
+                        }
+                    }
+                }
+
+                // 4. 注册外壳 (ItemProps)
+                var newProp = new ConfItemPropsItem();
+                // 强制指定为戒指类型，确保显示正确
+                newProp.type = 3;
+                newProp.className = 301;
+                newProp.isOverlay = 0;
+                newProp.dieDrop = 1;
+                newProp.icon = targetIcon; // 应用随机到的图标
+
+                newProp.id = itemId;
+                newProp.name = baseInfo.Name;
+                newProp.desc = baseInfo.Description;
+                newProp.level = baseInfo.Grade;
+                newProp.worth = extraInfo.Worth;
+                newProp.sale = extraInfo.Worth / 2;
+                newProp.drop = 1;
+
+                g.conf.itemProps._allConfList.Add(newProp);
+                ForceRegisterItem(g.conf.itemProps, newProp, newProp.id);
+
+                // ================= 核心：RingBase (JSON手术) =================
+                // 这里的原则是：雷打不动，只用 3011011 做模板
+
+                var ringBaseProp = g.conf.GetType().GetProperty("ringBase", BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
+                object ringMgr = ringBaseProp.GetValue(g.conf);
+
+                MethodInfo getItemMethod = null;
+                Type curType = ringMgr.GetType();
+                while (curType != null)
+                {
+                    getItemMethod = curType.GetMethod("GetItem", BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                    if (getItemMethod != null) break;
+                    curType = curType.BaseType;
+                }
+
+                // 锁定模板为 3011011
+                object sourceRing = getItemMethod.Invoke(ringMgr, new object[] { 3011011 });
+                if (sourceRing == null) throw new Exception("严重错误：核心模板 3011011 缺失");
+
+                // JSON 克隆 & ID 替换
+                string json = JsonConvert.SerializeObject(sourceRing);
+
+                var tSrc = sourceRing.GetType();
+                var fId = tSrc.GetField("id") ?? tSrc.GetField("_id");
+                int srcId = 3011011;
+                if (fId != null) srcId = Convert.ToInt32(fId.GetValue(sourceRing));
+                else { var pId = tSrc.GetProperty("id"); if (pId != null) srcId = Convert.ToInt32(pId.GetValue(sourceRing, null)); }
+
+                json = json.Replace($"\"id\":{srcId}", $"\"id\":{itemId}");
+                json = json.Replace($"\"_id\":{srcId}", $"\"_id\":{itemId}");
+
+                object newRing = JsonConvert.DeserializeObject(json, sourceRing.GetType());
+
+                // 修改属性
+                var t = newRing.GetType();
+                t.GetField("grade")?.SetValue(newRing, extraInfo.RealmReq);
+                t.GetProperty("grade")?.SetValue(newRing, extraInfo.RealmReq, null);
+
+                var fEffect = t.GetField("effectValue");
+                if (fEffect != null) fEffect.SetValue(newRing, effectIds);
+                else t.GetProperty("effectValue")?.SetValue(newRing, effectIds, null);
+
+                // 应用容量修改 (翻译官执行结果)
+                if (addedCapacity > 0)
+                {
+                    var fCap = t.GetField("capacity");
+                    if (fCap != null)
+                    {
+                        int baseCap = Convert.ToInt32(fCap.GetValue(newRing));
+                        fCap.SetValue(newRing, baseCap + addedCapacity);
+                    }
+                    else
+                    {
+                        var pCap = t.GetProperty("capacity");
+                        if (pCap != null)
+                        {
+                            int baseCap = Convert.ToInt32(pCap.GetValue(newRing, null));
+                            pCap.SetValue(newRing, baseCap + addedCapacity, null);
+                        }
+                    }
+                }
+
+                // 注册
+                MethodInfo addItemMethod = null;
+                curType = ringMgr.GetType();
+                while (curType != null)
+                {
+                    var methods = curType.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+                    foreach (var m in methods)
+                    {
+                        if (m.Name == "AddItem" && m.GetParameters().Length == 1)
+                        {
+                            addItemMethod = m;
+                            goto FoundAdd;
+                        }
+                    }
+                    curType = curType.BaseType;
+                }
+            FoundAdd:
+                if (addItemMethod != null) addItemMethod.Invoke(ringMgr, new object[] { newRing });
+                else Debug.LogError("[CreateRing] AddItem 失败");
+
+                // ==========================================================
+
+                if (!isRestoring)
+                {
+                    SaveItem(new SavedItemData { Type = "Ring", BaseInfo = baseInfo, Effects = effectStr, ExtraInfo = extraInfo, GeneratedID = itemId });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"[CreateRing] 失败: {ex}");
+            }
+        }
+
         // ====================================================================
         // 辅助逻辑函数
         // ====================================================================
@@ -849,7 +1043,7 @@ namespace MOD_kqAfiU
                 newEffect.id = effectId;
 
                 // --- 核心修改：气运和装备使用类型 1，丹药使用类型 101 ---
-                if (creationType == "Luck" || creationType == "Equip")
+                if (creationType == "Luck" || creationType == "Equip" || creationType == "Ring")
                 {
                     newEffect.effectType = 1;
                 }
