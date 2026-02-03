@@ -644,7 +644,9 @@ namespace MOD_kqAfiU
                 // 1. ID与效果
                 int itemId = (isRestoring && fixedId != 0) ? fixedId : GetRandomID(9000000, 9499999, id => g.conf.itemProps.GetItem(id) != null);
                 string effectIds = ParseAndRegisterEffects(effectStr, "Consumer");
-                int iconId = GetIconId(baseInfo.IconCategory);
+                int refItemId = GetIconId(baseInfo.IconCategory); // 获取参考物品ID
+                var refItem = g.conf.itemProps.GetItem(refItemId); // 查表获取配置
+                string realIcon = (refItem != null) ? refItem.icon : refItemId.ToString(); // 提取真正的图标文件名
 
                 // 2. 注册 ItemProps (外壳)
                 var newProp = new ConfItemPropsItem();
@@ -656,7 +658,7 @@ namespace MOD_kqAfiU
                 newProp.level = baseInfo.Grade;
                 newProp.worth = extraInfo.Worth;
                 newProp.sale = extraInfo.Worth / 2;
-                newProp.icon = iconId.ToString();
+                newProp.icon = realIcon;
                 newProp.drop = 1;
                 newProp.isOverlay = 1;
 
@@ -742,7 +744,9 @@ namespace MOD_kqAfiU
                 string effectIds = ParseAndRegisterEffects(effectStr, "Equip");
 
                 // 2. 选取图标 (默认使用剑)
-                int iconId = GetIconId(baseInfo.IconCategory);
+                int refItemId = GetIconId(baseInfo.IconCategory); // 获取参考物品ID
+                var refItem = g.conf.itemProps.GetItem(refItemId); // 查表获取配置
+                string realIcon = (refItem != null) ? refItem.icon : refItemId.ToString(); // 提取真正的图标文件名
 
                 // 3. 注册 ItemProps (外壳)
                 var newProp = new ConfItemPropsItem();
@@ -754,7 +758,7 @@ namespace MOD_kqAfiU
                 newProp.level = baseInfo.Grade;
                 newProp.worth = extraInfo.Worth;
                 newProp.sale = extraInfo.Worth / 2;
-                newProp.icon = iconId.ToString();
+                newProp.icon = realIcon;
                 newProp.drop = 1;
                 newProp.isOverlay = 0; // 装备不可堆叠
 
