@@ -217,6 +217,13 @@ namespace MOD_kqAfiU
                 {
                     UITipItem.AddTip("造物推演失败：连接中断", 3f);
                     Debug.LogError($"[CreationSystem] LLM响应错误: {response}");
+
+                    // 失败解锁
+                    RunOnMainThread(() => {
+                        // 【新增】反射强行清空Tools缓存，防止死循环
+                        typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
+                        ModMain.isCreatingItems = false;
+                    });
                     return;
                 }
 
@@ -228,16 +235,14 @@ namespace MOD_kqAfiU
 
                     List<AICreationResponse> dataList = new List<AICreationResponse>();
 
-                    // 2. 智能解析 (兼容 对象{} 和 数组[])
+                    // 2. 智能解析
                     if (jsonStr.StartsWith("["))
                     {
-                        // 如果是数组，反序列化为 List
                         var list = JsonConvert.DeserializeObject<List<AICreationResponse>>(jsonStr);
                         if (list != null) dataList = list;
                     }
                     else
                     {
-                        // 如果是单个对象，反序列化单个并加入 List
                         var single = JsonConvert.DeserializeObject<AICreationResponse>(jsonStr);
                         if (single != null) dataList.Add(single);
                     }
@@ -245,20 +250,40 @@ namespace MOD_kqAfiU
                     if (dataList.Count == 0)
                     {
                         Debug.LogError("[CreationSystem] 反序列化后数据为空");
+                        // 解析为空也要解锁
+                        RunOnMainThread(() => {
+                            // 【新增】反射清空缓存
+                            typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
+                            ModMain.isCreatingItems = false;
+                        });
                         return;
                     }
 
-                    // 3. 遍历分发 (支持一次性生成多个)
+                    // 3. 遍历分发
                     foreach (var item in dataList)
                     {
-                        // 稍微延迟一点点分发，或者直接全部扔进主线程队列
                         RunOnMainThread(() => { DispatchCreation(item); });
                     }
+
+                    // 成功解锁：确保在物品分发之后执行
+                    RunOnMainThread(() => {
+                        // 【新增】反射清空缓存，确保下一帧Tools能读到新注册的物品
+                        typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
+                        ModMain.isCreatingItems = false;
+                        UITipItem.AddTip("天道推演完成，机缘已至！", 2f);
+                    });
                 }
                 catch (Exception ex)
                 {
                     Debug.LogError($"[CreationSystem] 解析或分发异常: {ex}");
                     UITipItem.AddTip("造物法则崩坏（解析失败）", 3f);
+
+                    // 【修改点3】异常解锁
+                    RunOnMainThread(() => {
+                        // 【新增】反射清空缓存
+                        typeof(Tools).GetField("_validItemAndLuckNamesCache", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, null);
+                        ModMain.isCreatingItems = false;
+                    });
                 }
             });
         }
@@ -622,10 +647,6 @@ namespace MOD_kqAfiU
                         ExtraInfo = extraInfo,
                         GeneratedID = destinyId
                     });
-
-                    GMCmd gMCmd = new GMCmd();
-                    gMCmd.CMDCall($"tianjiaqiyun_player_{destinyId}");
-                    UITipItem.AddTip($"获得气运：{baseInfo.Name}", 3f);
                 }
             }
             catch (Exception ex)
@@ -718,12 +739,6 @@ namespace MOD_kqAfiU
                         ExtraInfo = extraInfo,
                         GeneratedID = itemId
                     });
-
-                    // 发放
-                    var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
-                    rewardList.Add(DataProps.PropsData.NewProps(itemId, 1));
-                    g.world.playerUnit.data.RewardPropItem(rewardList, true);
-                    UITipItem.AddTip($"获得造物：{baseInfo.Name}", 3f);
                 }
             }
             catch (Exception ex)
@@ -801,12 +816,6 @@ namespace MOD_kqAfiU
                         ExtraInfo = extraInfo,
                         GeneratedID = itemId
                     });
-
-                    // 发放物品
-                    var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
-                    rewardList.Add(DataProps.PropsData.NewProps(itemId, 1));
-                    g.world.playerUnit.data.RewardPropItem(rewardList, true);
-                    UITipItem.AddTip($"获得神器：{baseInfo.Name}", 3f);
                 }
             }
             catch (Exception ex)
@@ -1153,12 +1162,6 @@ namespace MOD_kqAfiU
 
                         g.conf.itemPill._allConfList.Add(newPill);
                         ForceRegisterItem(g.conf.itemPill, newPill, newPill.id);
-
-                        // 发放丹药
-                        var rewardList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
-                        rewardList.Add(DataProps.PropsData.NewProps(pillId, 5));
-                        g.world.playerUnit.data.RewardPropItem(rewardList, true);
-                        UITipItem.AddTip($"生成全能丹 (含{validCount}种属性)", 3f);
                     }
                 }
 
@@ -1214,8 +1217,6 @@ namespace MOD_kqAfiU
 
                         var horseList = new Il2CppSystem.Collections.Generic.List<DataProps.PropsData>();
                         horseList.Add(DataProps.PropsData.NewProps(mountId, 1));
-                        g.world.playerUnit.data.RewardPropItem(horseList, true);
-                        UITipItem.AddTip("获得：万神飞剑 (全效果聚合)", 3f);
                     }
 
 
@@ -1240,14 +1241,6 @@ namespace MOD_kqAfiU
 
                         g.conf.roleCreateFeature._allConfList.Add(newFeature);
                         ForceRegisterItem(g.conf.roleCreateFeature, newFeature, newFeature.id);
-
-                        try
-                        {
-                            GMCmd gMCmd = new GMCmd();
-                            gMCmd.CMDCall("tianjiaqiyun_player_8888001");
-                            UITipItem.AddTip("获得气运：AI创世之力", 3f);
-                        }
-                        catch { }
                     }
                 }
 

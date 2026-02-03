@@ -152,7 +152,7 @@ namespace MOD_kqAfiU
 
         public static bool isInBattle = false;
         public static bool autoColoringEnabled = true;
-
+        public static bool isCreatingItems = false;
 
 
         private GameObject _currentUIInstance = null;
@@ -553,21 +553,6 @@ namespace MOD_kqAfiU
 
         public void OnPlayerMove(ETypeData data)
         {
-            UITipItem.AddTip(">>> 启动AI造物逻辑测试...", 3f);
-
-            // 1. 捏造一个“假”的对话历史
-            // 作用：给造物AI提供上下文，让它知道这个物品是干嘛的
-            List<MessageItem> mockHistory = new List<MessageItem>
-        {
-            new MessageItem("user", "前辈，我急需一件能提升脚力的飞行法宝，最好能加点攻击力。"),
-            new MessageItem("assistant", "看你我有缘，这把练气境界的红色品质的【风雷穿云剑】便赠予你。它不仅快如闪电，更蕴含风雷杀伐之力。另外，这几颗丹药给你，帮助你提升风雷资质。")
-        };
-
-            // 2. 明确指定要造的物品名称
-            List<string> testRewardName = new List<string> { "风雷穿云剑", "风雷丹" ,"风雷奇遇"};
-
-            // 3. 直接调用造物接口
-            CreationSystem.StartCreationProcess(testRewardName, mockHistory);
 
             if (Time.time - lastMoveTime < 1f)
             {
@@ -607,7 +592,7 @@ namespace MOD_kqAfiU
                 return;
             }
 
-            if (waitingForLLMResponse || inOngoingDialog)
+            if (waitingForLLMResponse || inOngoingDialog || isCreatingItems)
             {
                 return;
             }
@@ -1435,6 +1420,8 @@ namespace MOD_kqAfiU
 
                 // 使用工具方法生成选项列表
                 var optionsList = Tools.GenerateOptionsFromResponse(formattedResponse, continueRequest);
+
+                if (isCreatingItems) return;
 
                 var (options, callbacks) = GenerateDialogueOptions(optionsList);
                 WorldUnitBase rightUnit = dialogueNpcs.Count > 0 ? dialogueNpcs[0] : null;

@@ -627,199 +627,131 @@ namespace MOD_kqAfiU
 
             if (formattedResponse != null)
             {
-                // 添加LLM提供的第一个选项
+                // >>> 合并检测逻辑：一次性扫出所有未知物品触发造物 <<<
+                var allRewards = new HashSet<string>();
+                if (!string.IsNullOrEmpty(formattedResponse.reward1))
+                    foreach (var r in formattedResponse.reward1.Split(',')) allRewards.Add(r.Trim());
+                if (!string.IsNullOrEmpty(formattedResponse.reward2))
+                    foreach (var r in formattedResponse.reward2.Split(',')) allRewards.Add(r.Trim());
+
+                var unknown = allRewards
+                    .Where(r => !string.IsNullOrEmpty(r))
+                    .Where(r => !ModMain.givenRewardsInCurrentAdventure.Contains(r))
+                    .Where(r => !RewardExists(r)) // 只要不存在就是未知
+                    .ToList();
+
+                if (unknown.Count > 0 && !ModMain.isCreatingItems)
+                {
+                    ModMain.isCreatingItems = true;
+                    var msgs = continueRequest != null ? continueRequest.Messages : new List<MessageItem>();
+                    CreationSystem.StartCreationProcess(unknown, msgs);
+                }
+                // >>>>>>>>>> logic end <<<<<<<<<<
+
+                // 处理选项1
                 if (!string.IsNullOrEmpty(formattedResponse.option1))
                 {
                     var option1Request = new LLMDialogueRequest();
-                    if (continueRequest != null)
-                    {
-                        foreach (var msg in continueRequest.Messages)
-                        {
-                            option1Request.Messages.Add(new MessageItem(msg.Role, msg.Content));
-                        }
-                    }
-
+                    if (continueRequest != null) option1Request.Messages.AddRange(continueRequest.Messages); // 简化写法
                     option1Request.RemoveLatestMessageByRole("system");
                     option1Request.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
                     option1Request.AddUserMessage($"{formattedResponse.option1}\n（必须返回格式化结果！）");
 
-                    // 获取react1值
                     string react1 = !string.IsNullOrEmpty(formattedResponse.react1) ? formattedResponse.react1 : "0";
+                    if (react1 == "8" && ModMain.hasTriggeredDiscussionInCurrentAdventure) react1 = "0";
 
-                    // 论道互动判断：如果是论道(ID=8)且已经触发过，则改为普通对话
-                    if (react1 == "8" && ModMain.hasTriggeredDiscussionInCurrentAdventure)
-                    {
-                        react1 = "0";
-                    }
-
-                    // 获取reward1值并处理重复奖励和不存在的奖励
                     string reward1 = !string.IsNullOrEmpty(formattedResponse.reward1) ? formattedResponse.reward1 : "";
                     if (!string.IsNullOrEmpty(reward1))
                     {
-                        // 过滤已发放的奖励和不存在的奖励
-                        var rewardItems = reward1.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                        // 仅保留【已存在】的物品用于显示
+                        var validItems = reward1.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                             .Select(r => r.Trim())
                             .Where(r => !ModMain.givenRewardsInCurrentAdventure.Contains(r))
-                            .Where(r => RewardExists(r)) // 过滤不存在的奖励
+                            .Where(r => RewardExists(r))
                             .ToList();
 
-                        if (rewardItems.Count == 0)
+                        if (validItems.Count == 0)
                         {
-                            // 如果所有奖励都已发放或不存在，清空奖励并改为普通对话
                             reward1 = "";
-                            if (react1 == "17")
-                            {
-                                react1 = "0";
-                            }
+                            if (react1 == "17") react1 = "0";
                         }
                         else
                         {
-                            reward1 = string.Join(",", rewardItems);
+                            reward1 = string.Join(",", validItems);
                         }
                     }
 
-                    // 根据react1决定选项类型
-                    int optionType;
-                    if (!string.IsNullOrEmpty(reward1)) // 有奖励就使用交互类型5，无论react1是什么
-                    {
-                        optionType = 5;
+                    int optionType = !string.IsNullOrEmpty(reward1) ? 5 : (react1 == "14" ? 5 : (react1 == "15" && ModMain.hasTriggeredBattleInCurrentAdventure ? 2 : (react1 != "0" ? 5 : 2)));
+                    // 构造参数数组...
+                    if (optionType == 5 && !string.IsNullOrEmpty(reward1))
                         optionsList.Add(new object[] { formattedResponse.option1, optionType, option1Request, react1, reward1 });
-                    }
-                    else if (react1 == "14") // 结束交互
-                    {
-                        optionType = 5;
+                    else if (optionType == 5)
                         optionsList.Add(new object[] { formattedResponse.option1, optionType, option1Request, react1 });
-                    }
-                    else if (react1 == "15" && ModMain.hasTriggeredBattleInCurrentAdventure)
-                    {
-                        optionType = 2;
-                        optionsList.Add(new object[] { formattedResponse.option1, optionType, option1Request });
-                    }
-                    else if (react1 != "0") // 其他互动（排除奖励互动）
-                    {
-                        optionType = 5;
-                        optionsList.Add(new object[] { formattedResponse.option1, optionType, option1Request, react1 });
-                    }
                     else
-                    {
-                        optionType = 2;
                         optionsList.Add(new object[] { formattedResponse.option1, optionType, option1Request });
-                    }
                 }
 
-                // 添加LLM提供的第二个选项 - 类似处理
+                // 处理选项2 (逻辑同上，仅变量名不同)
                 if (!string.IsNullOrEmpty(formattedResponse.option2))
                 {
                     var option2Request = new LLMDialogueRequest();
-                    if (continueRequest != null)
-                    {
-                        foreach (var msg in continueRequest.Messages)
-                        {
-                            option2Request.Messages.Add(new MessageItem(msg.Role, msg.Content));
-                        }
-                    }
-
+                    if (continueRequest != null) option2Request.Messages.AddRange(continueRequest.Messages);
                     option2Request.RemoveLatestMessageByRole("system");
                     option2Request.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
                     option2Request.AddUserMessage($"{formattedResponse.option2}\n（必须返回格式化结果！）");
 
-                    // 获取react2值
                     string react2 = !string.IsNullOrEmpty(formattedResponse.react2) ? formattedResponse.react2 : "0";
+                    if (react2 == "8" && ModMain.hasTriggeredDiscussionInCurrentAdventure) react2 = "0";
 
-                    // 论道互动判断：如果是论道(ID=8)且已经触发过，则改为普通对话
-                    if (react2 == "8" && ModMain.hasTriggeredDiscussionInCurrentAdventure)
-                    {
-                        react2 = "0";
-                    }
-
-                    // 获取reward2值并处理重复奖励和不存在的奖励
                     string reward2 = !string.IsNullOrEmpty(formattedResponse.reward2) ? formattedResponse.reward2 : "";
                     if (!string.IsNullOrEmpty(reward2))
                     {
-                        // 过滤已发放的奖励和不存在的奖励
-                        var rewardItems = reward2.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                        var validItems = reward2.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                             .Select(r => r.Trim())
                             .Where(r => !ModMain.givenRewardsInCurrentAdventure.Contains(r))
-                            .Where(r => RewardExists(r)) // 过滤不存在的奖励
+                            .Where(r => RewardExists(r))
                             .ToList();
 
-                        if (rewardItems.Count == 0)
+                        if (validItems.Count == 0)
                         {
-                            // 如果所有奖励都已发放或不存在，清空奖励并改为普通对话
                             reward2 = "";
-                            if (react2 == "17")
-                            {
-                                react2 = "0";
-                            }
+                            if (react2 == "17") react2 = "0";
                         }
                         else
                         {
-                            reward2 = string.Join(",", rewardItems);
+                            reward2 = string.Join(",", validItems);
                         }
                     }
 
-                    // 决定选项类型
-                    int optionType;
-                    if (!string.IsNullOrEmpty(reward2)) // 有奖励就使用交互类型5，无论react2是什么
-                    {
-                        optionType = 5;
+                    int optionType = !string.IsNullOrEmpty(reward2) ? 5 : (react2 == "14" ? 5 : (react2 == "15" && ModMain.hasTriggeredBattleInCurrentAdventure ? 2 : (react2 != "0" ? 5 : 2)));
+
+                    if (optionType == 5 && !string.IsNullOrEmpty(reward2))
                         optionsList.Add(new object[] { formattedResponse.option2, optionType, option2Request, react2, reward2 });
-                    }
-                    else if (react2 == "14") // 结束交互
-                    {
-                        optionType = 5;
+                    else if (optionType == 5)
                         optionsList.Add(new object[] { formattedResponse.option2, optionType, option2Request, react2 });
-                    }
-                    else if (react2 == "15" && ModMain.hasTriggeredBattleInCurrentAdventure)
-                    {
-                        optionType = 2;
-                        optionsList.Add(new object[] { formattedResponse.option2, optionType, option2Request });
-                    }
-                    else if (react2 != "0") // 其他互动（排除奖励互动）
-                    {
-                        optionType = 5;
-                        optionsList.Add(new object[] { formattedResponse.option2, optionType, option2Request, react2 });
-                    }
                     else
-                    {
-                        optionType = 2;
                         optionsList.Add(new object[] { formattedResponse.option2, optionType, option2Request });
-                    }
                 }
 
                 optionsList.Add(new object[] { "点击输入自定义回答", 3 });
             }
             else
             {
-                // 解析失败情况保持不变...
+                // 保持原有错误处理逻辑
                 optionsList.Add(new object[] { "点击输入自定义回答", 3 });
                 if (continueRequest != null)
                 {
-                    var newRequest = new LLMDialogueRequest();
-                    foreach (var msg in continueRequest.Messages)
-                    {
-                        newRequest.Messages.Add(new MessageItem(msg.Role, msg.Content));
-                    }
-
+                    var newRequest = new LLMDialogueRequest(); // ... (复制逻辑)
+                    newRequest.Messages.AddRange(continueRequest.Messages);
                     newRequest.RemoveLatestMessageByRole("system");
                     newRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
                     newRequest.AddUserMessage("继续剧情\n（必须返回格式化结果！）");
-
                     optionsList.Add(new object[] { "继续剧情", 2, newRequest });
                 }
             }
 
-            // 只有在没有结束对话选项时才添加默认离开选项
-            bool hasEndingOption = false;
-            if (formattedResponse != null)
-            {
-                hasEndingOption = formattedResponse.react1 == "14" || formattedResponse.react2 == "14";
-            }
-
-            if (!hasEndingOption)
-            {
-                optionsList.Add(new object[] { "离开", 1 });
-            }
+            bool hasEndingOption = formattedResponse != null && (formattedResponse.react1 == "14" || formattedResponse.react2 == "14");
+            if (!hasEndingOption) optionsList.Add(new object[] { "离开", 1 });
 
             return optionsList;
         }
@@ -1914,6 +1846,7 @@ namespace MOD_kqAfiU
     - type: 对话类型，1表示普通对话，2表示旁白
 
     关于奖励物品：
+    - 你可以自由创造物品或气运的名称，系统会自动识别并将其具现化。可以不局限于已知物品。
     - 奖励必须动态调整：
       1) 当{playerName}在对话选项中明确表示给予NPC某物品（或NPC获得物品）或拒绝收下NPC给予的某物品时，该物品不应该被奖励
       2) 当{playerName}提到想要获取某些其他物品时，应该允许玩家合理获得这些物品，尽管不在初始奖励中
@@ -2063,12 +1996,15 @@ namespace MOD_kqAfiU
 
 
             // 构建奖励信息字符串
-            string rewardsString = "【剧情中的奖励】\n";
+            string rewardsString = "【兜底奖励池（仅供参考）】\n";
             foreach (var item in rewardInfo)
             {
                 rewardsString += $"- {item.Key}: {item.Value}个\n";
             }
-            rewardsString += "\n请将奖励自然地设计和融入剧情，数量描述不要太精确，而是让玩家在奇遇体验中感受获得奖励的过程，已经提过的奖励不允许再次提到。禁止过早地给出奖励（禁止在前两轮就发放奖励）";
+            rewardsString += "\n奖励说明：\n" +
+                "建议你根据剧情发展、NPC身份和环境氛围，发挥想象力来设计当前故事的物品、气运或装备。\n" +
+                "当你觉得没有更好的创意，或上述列表的物品已经十分符合，或需要发放基础资源（如灵石）时，可以从上述列表中选择物品。\n" +
+                "请将奖励自然地融入剧情，已经提过的奖励不允许再次提到。禁止过早地给出奖励（禁止在前两轮就发放奖励）。";
 
             string npcInfoString = "";
 
