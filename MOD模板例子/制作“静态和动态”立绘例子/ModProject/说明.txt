@@ -1,0 +1,14 @@
+制作静态/动态立绘，需要使用到Unity。
+
+增加立绘资源后，需要在创角配置表的#RoleDress表，增加立绘配置。
+
+需要注意以下这几个目录的资源名称，88888需要改成其他ID，88888就是例子立绘的ID，具体说明在本模组目录ModExcel/RoleDress.xlsx的子表RoleDress
+Resources/Game/Portrait
+Resources/Game/PortraitDynamic
+立绘资源/PortraitDynamic（动态立绘）
+立绘资源/Portrait（静态立绘）
+
+
+战斗小人也可不制作，不制作小人则读取默认战斗小人模型。
+
+注意：制作小人时需要复制例子中的图片资源（包括.mate文件一起复制），这样就能保留骨骼信息。

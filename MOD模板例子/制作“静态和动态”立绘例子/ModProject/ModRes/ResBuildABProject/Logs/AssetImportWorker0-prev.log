@@ -1,0 +1,2346 @@
+Using pre-set license
+Built from '2020.3/china_unity/release' branch; Version is '2020.3.9f1c1 (ef65345766d1) revision 15689012'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.2251; Version 2009; 64bit' Language: 'zh' Physical Memory: 65427 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.9f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Project/immortal/guigubahuangMOD/mod/新增“静态和动态”立绘例子/ModProject/ModRes/ResBuildABProject
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56521
+Successfully changed project path to: D:/Project/immortal/guigubahuangMOD/mod/新增“静态和动态”立绘例子/ModProject/ModRes/ResBuildABProject
+D:/Project/immortal/guigubahuangMOD/mod/新增“静态和动态”立绘例子/ModProject/ModRes/ResBuildABProject
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 40.75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.9f1c1 (ef65345766d1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Project/immortal/guigubahuangMOD/mod/新增“静态和动态”立绘例子/ModProject/ModRes/ResBuildABProject/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/PlaybackEngines/Switch/UnityEditor.Switch.Extensions.dll
+Registered in 0.002420 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 43.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.856 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000504 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.841 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1766 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.5 MB.
+System memory in use after: 84.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2214.
+Total: 2.169100 ms (FindLiveObjects: 0.235200 ms CreateObjectMapping: 0.058200 ms MarkObjects: 1.798500 ms  DeleteObjects: 0.075800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Resources/Game/PortraitDynamic/Back/88888101.prefab
+  artifactKey: Guid(264b9f656612def499f449e9f4551feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/PortraitDynamic/Back/88888101.prefab using Guid(264b9f656612def499f449e9f4551feb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '445d775091e43f6df0645a5e8e09161d') in 0.092180 seconds
+  Import took 0.095442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Man/Eyes（yanjing）/88888101.png
+  artifactKey: Guid(056c38a403fa6394581fe1524c1e15d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Man/Eyes（yanjing）/88888101.png using Guid(056c38a403fa6394581fe1524c1e15d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c898bd773b85f7d83dc92a0b5e5eaa3') in 0.026414 seconds
+  Import took 0.029094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.496193 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Woman/Eyes（yanjing）/88888101.png
+  artifactKey: Guid(29211390f92ae1f4ab54d21911566537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Woman/Eyes（yanjing）/88888101.png using Guid(29211390f92ae1f4ab54d21911566537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902eb5bcc1edc4592e4d83c1b32acd40') in 0.008588 seconds
+  Import took 0.011350 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.915078 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Woman/Eyebrows（meimao）/88888101.png
+  artifactKey: Guid(5209fea47aeee594291623b5d1a6628d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Woman/Eyebrows（meimao）/88888101.png using Guid(5209fea47aeee594291623b5d1a6628d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '703972cfce452ccf44bb00eb9fc99723') in 0.008722 seconds
+  Import took 0.011973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.499743 seconds.
+  path: Assets/Scripts/EffectUnitNodeCtrl.cs
+  artifactKey: Guid(23d920826e3072149811b4dc6c7ff439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EffectUnitNodeCtrl.cs using Guid(23d920826e3072149811b4dc6c7ff439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca01c2d1913301b9450c338699c36cfd') in 0.005504 seconds
+  Import took 0.008802 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022695 seconds.
+  path: Assets/Scripts/EffectUnitNodeCtrl.cs
+  artifactKey: Guid(23d920826e3072149811b4dc6c7ff439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EffectUnitNodeCtrl.cs using Guid(23d920826e3072149811b4dc6c7ff439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca01c2d1913301b9450c338699c36cfd') in 0.001193 seconds
+  Import took 0.003227 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.951844 seconds.
+  path: Assets/Scripts/PlaySoundsCtrl.cs
+  artifactKey: Guid(21550c00483ec7b4680a50dd70a85aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlaySoundsCtrl.cs using Guid(21550c00483ec7b4680a50dd70a85aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d774409ccf58d5656549bacf5f251e') in 0.001663 seconds
+  Import took 0.004288 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002269 seconds.
+  path: Assets/Scripts/PlaySoundsCtrl.cs
+  artifactKey: Guid(21550c00483ec7b4680a50dd70a85aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlaySoundsCtrl.cs using Guid(21550c00483ec7b4680a50dd70a85aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d774409ccf58d5656549bacf5f251e') in 0.001498 seconds
+  Import took 0.004463 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.940056 seconds.
+  path: Assets/Scripts/Editor
+  artifactKey: Guid(31fa05089ab10844fa1e521890136b2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Editor using Guid(31fa05089ab10844fa1e521890136b2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6130c7a97ba5a0245df31e52ac34d0f') in 0.001590 seconds
+  Import took 0.004118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.456181 seconds.
+  path: Assets/Scripts/Editor/ModifDressIDEditor.cs
+  artifactKey: Guid(50e4428863ea57e4594ba023b7c3971d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Editor/ModifDressIDEditor.cs using Guid(50e4428863ea57e4594ba023b7c3971d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf7cb28f41c7528a7597e4577ba29ec4') in 0.002037 seconds
+  Import took 0.004869 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000703 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.795 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.2 MB.
+System memory in use after: 87.3 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2233.
+Total: 2.662600 ms (FindLiveObjects: 0.392400 ms CreateObjectMapping: 0.050300 ms MarkObjects: 2.199100 ms  DeleteObjects: 0.019900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000760 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.802 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.2 MB.
+System memory in use after: 87.3 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 2.401200 ms (FindLiveObjects: 0.257000 ms CreateObjectMapping: 0.048100 ms MarkObjects: 2.073200 ms  DeleteObjects: 0.022000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000760 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.808 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.2 MB.
+System memory in use after: 87.3 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2241.
+Total: 2.565700 ms (FindLiveObjects: 0.411400 ms CreateObjectMapping: 0.041600 ms MarkObjects: 2.089400 ms  DeleteObjects: 0.022000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000796 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.792 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2245.
+Total: 2.576500 ms (FindLiveObjects: 0.421700 ms CreateObjectMapping: 0.045000 ms MarkObjects: 2.086000 ms  DeleteObjects: 0.022300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000726 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.795 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2249.
+Total: 2.957400 ms (FindLiveObjects: 0.392200 ms CreateObjectMapping: 0.039500 ms MarkObjects: 2.494200 ms  DeleteObjects: 0.030500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1027.549763 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888101/9988101
+  artifactKey: Guid(6addbefd0958aa6468bc93e6b4726b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888101/9988101 using Guid(6addbefd0958aa6468bc93e6b4726b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78da5e606aa3c19cd5977b8e39dd2b5') in 0.006182 seconds
+  Import took 0.009362 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.943749 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888101/88888101
+  artifactKey: Guid(6addbefd0958aa6468bc93e6b4726b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888101/88888101 using Guid(6addbefd0958aa6468bc93e6b4726b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2adab4a7e208e85fee7cdd88529b4d8') in 0.001916 seconds
+  Import took 0.004917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.540624 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888101/88888101
+  artifactKey: Guid(f5549e523a150124b8baaa0d40a3748c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888101/88888101 using Guid(f5549e523a150124b8baaa0d40a3748c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5268f09b37baddb7618daa21a102683c') in 0.001651 seconds
+  Import took 0.004249 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.728141 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888102/9988102
+  artifactKey: Guid(63ae55705543f69468fce361dd54acfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888102/9988102 using Guid(63ae55705543f69468fce361dd54acfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85e61b1951f8e46a9004fa5b28f396f6') in 0.001820 seconds
+  Import took 0.004455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.336427 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888102/88888102
+  artifactKey: Guid(63ae55705543f69468fce361dd54acfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888102/88888102 using Guid(63ae55705543f69468fce361dd54acfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c46e1d1e2d4c99e9a55b8f79a93ac394') in 0.001762 seconds
+  Import took 0.004661 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.852108 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888102/88888102
+  artifactKey: Guid(0fc0da8fb4a582c44a23fbf623918496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888102/88888102 using Guid(0fc0da8fb4a582c44a23fbf623918496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939c0216629f74321372bb0e2da06aae') in 0.001878 seconds
+  Import took 0.004918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.590690 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/9988103
+  artifactKey: Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/9988103 using Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64951154bd8e3b52125ac41fc73773a5') in 0.002230 seconds
+  Import took 0.005513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/9988103
+  artifactKey: Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/9988103 using Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64951154bd8e3b52125ac41fc73773a5') in 0.001764 seconds
+  Import took 0.004553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.395319 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/88888103
+  artifactKey: Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/woman/body（yifu）/88888103/88888103 using Guid(d87e1e364a2ef004bb541872b9c7b1a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453eeb4ee7650e4359d5c9d67e102411') in 0.001778 seconds
+  Import took 0.005002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.174434 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888103/88888103
+  artifactKey: Guid(88083e2abb6291d4ea6cb04c17c2062d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Woman/Body（yifu）/88888103/88888103 using Guid(88083e2abb6291d4ea6cb04c17c2062d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65f07054b2aa6a43ae8e828dab333d0b') in 0.001613 seconds
+  Import took 0.004147 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000816 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.805 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2253.
+Total: 2.315700 ms (FindLiveObjects: 0.267300 ms CreateObjectMapping: 0.040300 ms MarkObjects: 1.980300 ms  DeleteObjects: 0.026700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000975 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.790 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2257.
+Total: 2.548500 ms (FindLiveObjects: 0.380300 ms CreateObjectMapping: 0.056600 ms MarkObjects: 2.086200 ms  DeleteObjects: 0.023800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000770 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.787 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2261.
+Total: 2.259100 ms (FindLiveObjects: 0.249700 ms CreateObjectMapping: 0.039600 ms MarkObjects: 1.944300 ms  DeleteObjects: 0.024500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000861 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.787 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2265.
+Total: 2.662200 ms (FindLiveObjects: 0.250400 ms CreateObjectMapping: 0.039200 ms MarkObjects: 2.345200 ms  DeleteObjects: 0.026700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000762 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.784 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2269.
+Total: 2.400700 ms (FindLiveObjects: 0.260100 ms CreateObjectMapping: 0.038800 ms MarkObjects: 2.074000 ms  DeleteObjects: 0.027100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000708 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.782 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.4 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2273.
+Total: 2.737200 ms (FindLiveObjects: 0.290800 ms CreateObjectMapping: 0.050200 ms MarkObjects: 2.370200 ms  DeleteObjects: 0.024800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000730 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.783 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2277.
+Total: 2.534200 ms (FindLiveObjects: 0.257100 ms CreateObjectMapping: 0.049400 ms MarkObjects: 2.196000 ms  DeleteObjects: 0.030700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000745 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.782 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.3 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2281.
+Total: 2.553700 ms (FindLiveObjects: 0.252800 ms CreateObjectMapping: 0.039100 ms MarkObjects: 2.232100 ms  DeleteObjects: 0.028300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 691.492714 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101
+  artifactKey: Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101 using Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007d7e6f71566fa0a0f821b1ae17b7bd') in 0.006310 seconds
+  Import took 0.009423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001115 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101
+  artifactKey: Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101 using Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '007d7e6f71566fa0a0f821b1ae17b7bd') in 0.001847 seconds
+  Import took 0.005223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.580028 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101
+  artifactKey: Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101 using Guid(4baa31447ad82b54aa061825d4baaa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0181505de3574eabd9b9112f40c676e') in 0.001627 seconds
+  Import took 0.004141 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001123 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.786 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2285.
+Total: 2.923300 ms (FindLiveObjects: 0.270000 ms CreateObjectMapping: 0.041800 ms MarkObjects: 2.585600 ms  DeleteObjects: 0.025100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.391672 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101
+  artifactKey: Guid(233ddeb05128ce942a3049fc3005fbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101 using Guid(233ddeb05128ce942a3049fc3005fbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c529ef7b0b7abbda6aac554411cfc68') in 0.005541 seconds
+  Import took 0.009061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.742804 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101
+  artifactKey: Guid(233ddeb05128ce942a3049fc3005fbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101 using Guid(233ddeb05128ce942a3049fc3005fbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f6a370a0f8a676692d02dfe2ec0436a') in 0.001659 seconds
+  Import took 0.004202 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000718 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.781 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2289.
+Total: 2.780900 ms (FindLiveObjects: 0.376700 ms CreateObjectMapping: 0.051200 ms MarkObjects: 2.329300 ms  DeleteObjects: 0.022800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.270846 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101
+  artifactKey: Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101 using Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aafa7b3a4576ce98cb0a585abe757ba') in 0.005478 seconds
+  Import took 0.009074 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003578 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101
+  artifactKey: Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/77777101 using Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aafa7b3a4576ce98cb0a585abe757ba') in 0.001475 seconds
+  Import took 0.003944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.411575 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101
+  artifactKey: Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101 using Guid(dc8961969b0824d4898260a73ff5ae7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88eb9a08a28835b60449b222e2b817fb') in 0.001592 seconds
+  Import took 0.004080 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000743 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.797 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2293.
+Total: 2.770700 ms (FindLiveObjects: 0.325700 ms CreateObjectMapping: 0.039800 ms MarkObjects: 2.378400 ms  DeleteObjects: 0.025800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 107.686743 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/77777101.png
+  artifactKey: Guid(49747cf19adef8d45b5b4215daae97f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/77777101.png using Guid(49747cf19adef8d45b5b4215daae97f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e36f6fc5039bb39388e9c3262b83d5a7') in 0.062343 seconds
+  Import took 0.065981 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000742 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.794 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2300.
+Total: 2.481200 ms (FindLiveObjects: 0.244000 ms CreateObjectMapping: 0.039500 ms MarkObjects: 2.170600 ms  DeleteObjects: 0.026200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000801 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.807 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2304.
+Total: 2.377700 ms (FindLiveObjects: 0.259800 ms CreateObjectMapping: 0.054600 ms MarkObjects: 2.033200 ms  DeleteObjects: 0.028500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000706 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.776 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2308.
+Total: 3.311600 ms (FindLiveObjects: 0.406900 ms CreateObjectMapping: 0.050900 ms MarkObjects: 2.825800 ms  DeleteObjects: 0.026800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001121 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.772 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2312.
+Total: 2.707000 ms (FindLiveObjects: 0.324700 ms CreateObjectMapping: 0.052900 ms MarkObjects: 2.300500 ms  DeleteObjects: 0.027500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000823 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.786 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2316.
+Total: 2.649400 ms (FindLiveObjects: 0.258700 ms CreateObjectMapping: 0.040300 ms MarkObjects: 2.322900 ms  DeleteObjects: 0.026800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000727 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.791 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2320.
+Total: 2.875200 ms (FindLiveObjects: 0.352300 ms CreateObjectMapping: 0.045300 ms MarkObjects: 2.449900 ms  DeleteObjects: 0.026500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000749 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.772 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.4 MB.
+System memory in use after: 87.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2324.
+Total: 3.054700 ms (FindLiveObjects: 0.353700 ms CreateObjectMapping: 0.049500 ms MarkObjects: 2.619100 ms  DeleteObjects: 0.031200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000698 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.790 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.5 MB.
+System memory in use after: 87.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2328.
+Total: 2.612300 ms (FindLiveObjects: 0.272700 ms CreateObjectMapping: 0.039100 ms MarkObjects: 2.271800 ms  DeleteObjects: 0.027900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000693 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.771 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1757 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.5 MB.
+System memory in use after: 87.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2332.
+Total: 2.745500 ms (FindLiveObjects: 0.252300 ms CreateObjectMapping: 0.056300 ms MarkObjects: 2.406500 ms  DeleteObjects: 0.029500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1039.671643 seconds.
+  path: Assets/Resources/Game/Portrait/Back/88888101.prefab
+  artifactKey: Guid(3aefcb76938594445b307072ffc7f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Back/88888101.prefab using Guid(3aefcb76938594445b307072ffc7f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e26d808937861bc3bf4986dd0d7020b5') in 0.059277 seconds
+  Import took 0.063225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011681 seconds.
+  path: Assets/Resources/Game/Portrait/Back/88888101.prefab
+  artifactKey: Guid(3aefcb76938594445b307072ffc7f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Back/88888101.prefab using Guid(3aefcb76938594445b307072ffc7f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e26d808937861bc3bf4986dd0d7020b5') in 0.009878 seconds
+  Import took 0.013658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.949165 seconds.
+  path: Assets/Resources/Game/Portrait/Back/88888102.prefab
+  artifactKey: Guid(4562a3e1a75354c44b07f95af018365a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Back/88888102.prefab using Guid(4562a3e1a75354c44b07f95af018365a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d5b1028c4510be60846ae7cc545ee7') in 0.013702 seconds
+  Import took 0.017096 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003027 seconds.
+  path: Assets/Resources/Game/Portrait/Back/88888102.prefab
+  artifactKey: Guid(4562a3e1a75354c44b07f95af018365a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Back/88888102.prefab using Guid(4562a3e1a75354c44b07f95af018365a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d5b1028c4510be60846ae7cc545ee7') in 0.010199 seconds
+  Import took 0.013773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.430677 seconds.
+  path: Assets/Resources/Game/Portrait/Back/88888103.prefab
+  artifactKey: Guid(286fb2fbe9c856c45abd061f806315f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Back/88888103.prefab using Guid(286fb2fbe9c856c45abd061f806315f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5052416f8a042cc0d85871a6a7769008') in 0.008690 seconds
+  Import took 0.012271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.352195 seconds.
+  path: Assets/Resources/Game/Portrait/Hat/88888101.prefab
+  artifactKey: Guid(170d9d5b1e4c9be4193f5b8fee13f541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Hat/88888101.prefab using Guid(170d9d5b1e4c9be4193f5b8fee13f541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64eb2219f68e5fdee7344b4f5b9506fe') in 0.008016 seconds
+  Import took 0.011409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.707282 seconds.
+  path: Assets/Resources/Game/Portrait/Hat/88888102.prefab
+  artifactKey: Guid(3173112d97fa37748996782ba3cab6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Hat/88888102.prefab using Guid(3173112d97fa37748996782ba3cab6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158314ccd7a8ce8600174c85bb7f90a2') in 0.009222 seconds
+  Import took 0.012767 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.516396 seconds.
+  path: Assets/Resources/Game/Portrait/Hat/88888103.prefab
+  artifactKey: Guid(4deab24c5c842ae4d9f119400e6a18af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Hat/88888103.prefab using Guid(4deab24c5c842ae4d9f119400e6a18af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d1c3ad2cfe5c808a12ca45dfd26199d') in 0.010236 seconds
+  Import took 0.013261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004685 seconds.
+  path: Assets/Resources/Game/Portrait/Hat/88888103.prefab
+  artifactKey: Guid(4deab24c5c842ae4d9f119400e6a18af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Hat/88888103.prefab using Guid(4deab24c5c842ae4d9f119400e6a18af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d1c3ad2cfe5c808a12ca45dfd26199d') in 0.008398 seconds
+  Import took 0.011702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1271.568069 seconds.
+  path: Assets/AssetBundle/ab
+  artifactKey: Guid(f6c32e9d11cecc245bd1b78f1500d443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab using Guid(f6c32e9d11cecc245bd1b78f1500d443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5aab8a2ef6ef35b622489dafa17499f') in 0.002230 seconds
+  Import took 0.005382 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001232 seconds.
+  path: Assets/AssetBundle/ab
+  artifactKey: Guid(f6c32e9d11cecc245bd1b78f1500d443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab using Guid(f6c32e9d11cecc245bd1b78f1500d443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5aab8a2ef6ef35b622489dafa17499f') in 0.001685 seconds
+  Import took 0.004561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.551850 seconds.
+  path: Assets/AssetBundle/ab/game
+  artifactKey: Guid(62a42eb5c1eb9da4abd2a03386df0c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game using Guid(62a42eb5c1eb9da4abd2a03386df0c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6b73e13e94cd89dafc9f82dc931cec') in 0.002016 seconds
+  Import took 0.005118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000458 seconds.
+  path: Assets/AssetBundle/ab/game
+  artifactKey: Guid(62a42eb5c1eb9da4abd2a03386df0c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game using Guid(62a42eb5c1eb9da4abd2a03386df0c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6b73e13e94cd89dafc9f82dc931cec') in 0.001833 seconds
+  Import took 0.005035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.438533 seconds.
+  path: Assets/AssetBundle/ab/game/portrait
+  artifactKey: Guid(779f18ad5226f644abc421fabcda5dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait using Guid(779f18ad5226f644abc421fabcda5dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402b2097dd91b569cf23e0d75203cbb7') in 0.002520 seconds
+  Import took 0.006205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001163 seconds.
+  path: Assets/AssetBundle/ab/game/portrait
+  artifactKey: Guid(779f18ad5226f644abc421fabcda5dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait using Guid(779f18ad5226f644abc421fabcda5dfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402b2097dd91b569cf23e0d75203cbb7') in 0.001718 seconds
+  Import took 0.004658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.405568 seconds.
+  path: Assets/AssetBundle/ab/game/portrait/back
+  artifactKey: Guid(944b919185808ed45919ca01b8e6ecf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait/back using Guid(944b919185808ed45919ca01b8e6ecf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cccf206bd67637a6bf7c0006e776bf15') in 0.002015 seconds
+  Import took 0.004956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001518 seconds.
+  path: Assets/AssetBundle/ab/game/portrait/back
+  artifactKey: Guid(944b919185808ed45919ca01b8e6ecf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait/back using Guid(944b919185808ed45919ca01b8e6ecf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cccf206bd67637a6bf7c0006e776bf15') in 0.001614 seconds
+  Import took 0.003623 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.859999 seconds.
+  path: Assets/AssetBundle/ab/game/portrait/hat
+  artifactKey: Guid(2973a4f5d8a88b9478c56ebd825ed71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait/hat using Guid(2973a4f5d8a88b9478c56ebd825ed71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c08f2f570e0ca638bb4fa2b0551c7b5') in 0.002024 seconds
+  Import took 0.004952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000816 seconds.
+  path: Assets/AssetBundle/ab/game/portrait/hat
+  artifactKey: Guid(2973a4f5d8a88b9478c56ebd825ed71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait/hat using Guid(2973a4f5d8a88b9478c56ebd825ed71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c08f2f570e0ca638bb4fa2b0551c7b5') in 0.001709 seconds
+  Import took 0.004585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.517937 seconds.
+  path: Assets/AssetBundle/ab/game/portrait/man
+  artifactKey: Guid(1dac00a83dd89284e8bcd9b6923d2f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/ab/game/portrait/man using Guid(1dac00a83dd89284e8bcd9b6923d2f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93b2c6f9737330c3d97020b8d2bd4272') in 0.001806 seconds
+  Import took 0.004499 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.608491 seconds.
+  path: Assets/AssetBundle/assets
+  artifactKey: Guid(a071bd9b3d979694788b90f81d3c44f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets using Guid(a071bd9b3d979694788b90f81d3c44f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4816f18f29113c3ff5d204e54c2a98be') in 0.002311 seconds
+  Import took 0.005783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001054 seconds.
+  path: Assets/AssetBundle/assets
+  artifactKey: Guid(a071bd9b3d979694788b90f81d3c44f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets using Guid(a071bd9b3d979694788b90f81d3c44f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4816f18f29113c3ff5d204e54c2a98be') in 0.001714 seconds
+  Import took 0.004588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.461686 seconds.
+  path: Assets/AssetBundle/assets/立绘资源
+  artifactKey: Guid(b6374e764077f0f4c809a2b8167c57ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源 using Guid(b6374e764077f0f4c809a2b8167c57ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ab3af3aeaed7c9db517174be5d28ff4') in 0.001922 seconds
+  Import took 0.004920 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.430963 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）
+  artifactKey: Guid(b5a46a329af301f43a0534b78ab6d527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘） using Guid(b5a46a329af301f43a0534b78ab6d527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb9b821103a8c3770d3ebfd73443d5e') in 0.002222 seconds
+  Import took 0.005679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.338826 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）
+  artifactKey: Guid(9103b70a0f4a457438ed1f8686c50c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu） using Guid(9103b70a0f4a457438ed1f8686c50c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34951010f90e7d7fd2a0269101003dce') in 0.002173 seconds
+  Import took 0.005413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004110 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）
+  artifactKey: Guid(9103b70a0f4a457438ed1f8686c50c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu） using Guid(9103b70a0f4a457438ed1f8686c50c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34951010f90e7d7fd2a0269101003dce') in 0.001882 seconds
+  Import took 0.005083 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.551126 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim
+  artifactKey: Guid(4ec6f96828c64b74e8d2214687b59f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim using Guid(4ec6f96828c64b74e8d2214687b59f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb8d19459d8949adb3ed5ae5fff39f2') in 0.002380 seconds
+  Import took 0.006199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003774 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim
+  artifactKey: Guid(4ec6f96828c64b74e8d2214687b59f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim using Guid(4ec6f96828c64b74e8d2214687b59f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb8d19459d8949adb3ed5ae5fff39f2') in 0.001610 seconds
+  Import took 0.003948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.563862 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101
+  artifactKey: Guid(204960d250fb8074fabf043c98c6f378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101 using Guid(204960d250fb8074fabf043c98c6f378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3afad2e36b7deda85e4b9cbed6be4c9') in 0.001894 seconds
+  Import took 0.004978 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.447422 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/anim.controller.ab
+  artifactKey: Guid(23df88d9c95946047883f16ed91d2bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/anim.controller.ab using Guid(23df88d9c95946047883f16ed91d2bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3ff0c18ca72f5f2a43cee938a6276d8') in 0.007542 seconds
+  Import took 0.010726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.323227 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/idle.anim.ab
+  artifactKey: Guid(efa7725db6adf754a849034f1d92cac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/idle.anim.ab using Guid(efa7725db6adf754a849034f1d92cac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f10be34d5b013ca724adcc8fc02a55bc') in 0.002850 seconds
+  Import took 0.006269 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000691 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/idle.anim.ab
+  artifactKey: Guid(efa7725db6adf754a849034f1d92cac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888101/idle.anim.ab using Guid(efa7725db6adf754a849034f1d92cac3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f10be34d5b013ca724adcc8fc02a55bc') in 0.001856 seconds
+  Import took 0.004043 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.173876 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102
+  artifactKey: Guid(2127272c8c1400440adab17321d69133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102 using Guid(2127272c8c1400440adab17321d69133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e388cde37dadfe8cc5aad38ee4656e06') in 0.001853 seconds
+  Import took 0.004888 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002359 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102
+  artifactKey: Guid(2127272c8c1400440adab17321d69133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102 using Guid(2127272c8c1400440adab17321d69133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e388cde37dadfe8cc5aad38ee4656e06') in 0.001800 seconds
+  Import took 0.004845 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.161170 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888103
+  artifactKey: Guid(bd979069f570c7146af1e7a977de98c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888103 using Guid(bd979069f570c7146af1e7a977de98c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8149cb33f6d66af8b219c43bab34ae') in 0.001867 seconds
+  Import took 0.004789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001278 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888103
+  artifactKey: Guid(bd979069f570c7146af1e7a977de98c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888103 using Guid(bd979069f570c7146af1e7a977de98c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8149cb33f6d66af8b219c43bab34ae') in 0.001869 seconds
+  Import took 0.004879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.796528 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102/anim.controller.ab
+  artifactKey: Guid(4b78545c69acf8b498b216557cab41d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102/anim.controller.ab using Guid(4b78545c69acf8b498b216557cab41d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa04ddb49fb89f891f85b2f559bfa4c0') in 0.002193 seconds
+  Import took 0.004962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001235 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102/anim.controller.ab
+  artifactKey: Guid(4b78545c69acf8b498b216557cab41d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/back（beibu）/anim/88888102/anim.controller.ab using Guid(4b78545c69acf8b498b216557cab41d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa04ddb49fb89f891f85b2f559bfa4c0') in 0.002564 seconds
+  Import took 0.006117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.516888 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）
+  artifactKey: Guid(626751d52476ad84e84ff1ca3435db3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘） using Guid(626751d52476ad84e84ff1ca3435db3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae0c4c7dc4c8b4fcd4abd93c054b772b') in 0.001996 seconds
+  Import took 0.005058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.419189 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）
+  artifactKey: Guid(ee49b4a0cf5c0a74b8478e67530a65cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu） using Guid(ee49b4a0cf5c0a74b8478e67530a65cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef0a6e169109006336eb342478a654c') in 0.001677 seconds
+  Import took 0.004337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.293598 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888101.png.ab
+  artifactKey: Guid(3cc97507090b9d445abebe562e8e42f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888101.png.ab using Guid(3cc97507090b9d445abebe562e8e42f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '614bf02c19acde623b3204f6f54ebee2') in 0.002726 seconds
+  Import took 0.006207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000750 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888101.png.ab
+  artifactKey: Guid(3cc97507090b9d445abebe562e8e42f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888101.png.ab using Guid(3cc97507090b9d445abebe562e8e42f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '614bf02c19acde623b3204f6f54ebee2') in 0.002206 seconds
+  Import took 0.005283 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.077043 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/hat（maozi）
+  artifactKey: Guid(345fe9b145bdb4f45977c35796837151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/hat（maozi） using Guid(345fe9b145bdb4f45977c35796837151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e666fb08604a20b69def781c6a7bf490') in 0.002279 seconds
+  Import took 0.005644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000848 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/hat（maozi）
+  artifactKey: Guid(345fe9b145bdb4f45977c35796837151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/hat（maozi） using Guid(345fe9b145bdb4f45977c35796837151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e666fb08604a20b69def781c6a7bf490') in 0.002835 seconds
+  Import took 0.006432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.389639 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888103.png.ab
+  artifactKey: Guid(1b53a41463cc4764e85196bdc419c9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888103.png.ab using Guid(1b53a41463cc4764e85196bdc419c9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df0f285116a940f550f6137771f3306') in 0.002251 seconds
+  Import took 0.005018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.168105 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888102.png.ab
+  artifactKey: Guid(d2a9484a1a71ea64c8ed7f5f808ec5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888102.png.ab using Guid(d2a9484a1a71ea64c8ed7f5f808ec5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '622d1f9d5e9df4065375915923c7251e') in 0.002278 seconds
+  Import took 0.005017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000998 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888102.png.ab
+  artifactKey: Guid(d2a9484a1a71ea64c8ed7f5f808ec5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/back（beibu）/88888102.png.ab using Guid(d2a9484a1a71ea64c8ed7f5f808ec5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '622d1f9d5e9df4065375915923c7251e') in 0.002210 seconds
+  Import took 0.005880 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.553568 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）
+  artifactKey: Guid(58205fb147034c946b77e0467619eb5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi） using Guid(58205fb147034c946b77e0467619eb5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bd48a46e05c54537f95eccb785e6ef4') in 0.001890 seconds
+  Import took 0.004986 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.362206 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101
+  artifactKey: Guid(aaaad658461fc614cb79cf2bf0bff92e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101 using Guid(aaaad658461fc614cb79cf2bf0bff92e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '878b7584eff8e5509a72edb0aec6695d') in 0.002203 seconds
+  Import took 0.005837 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000431 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101
+  artifactKey: Guid(aaaad658461fc614cb79cf2bf0bff92e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101 using Guid(aaaad658461fc614cb79cf2bf0bff92e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '878b7584eff8e5509a72edb0aec6695d') in 0.001813 seconds
+  Import took 0.005013 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.545279 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim
+  artifactKey: Guid(c81a58291e286c84f9ed89c4a96f3c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim using Guid(c81a58291e286c84f9ed89c4a96f3c07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37904f2d7965e8417a517b62ee0385d2') in 0.001999 seconds
+  Import took 0.005508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.058456 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/anim.controller.ab
+  artifactKey: Guid(b5bf8da29d4635c438c6e417287c5de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/anim.controller.ab using Guid(b5bf8da29d4635c438c6e417287c5de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bfe3d8b4b2690ac7eebf2a22baa022f') in 0.002220 seconds
+  Import took 0.005078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.459249 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/idle.anim.ab
+  artifactKey: Guid(480f64570d0f21d48b3d35367b5b6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/idle.anim.ab using Guid(480f64570d0f21d48b3d35367b5b6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f909a5f125746658be5621826a9471') in 0.002400 seconds
+  Import took 0.005851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000968 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/idle.anim.ab
+  artifactKey: Guid(480f64570d0f21d48b3d35367b5b6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portraitdynamic（动态立绘）/hat（maozi）/88888101/anim/idle.anim.ab using Guid(480f64570d0f21d48b3d35367b5b6c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f909a5f125746658be5621826a9471') in 0.002251 seconds
+  Import took 0.005684 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.519598 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Anim.controller
+  artifactKey: Guid(2e1c608a474da094ea0fc929ee15b115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Anim.controller using Guid(2e1c608a474da094ea0fc929ee15b115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1af551d33824010cd99cdf7c0d2b418') in 0.007829 seconds
+  Import took 0.010875 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.800461 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Idle.anim
+  artifactKey: Guid(595b8d353a9cfe747a403524776fecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Idle.anim using Guid(595b8d353a9cfe747a403524776fecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7e576763f5e2f0d42d3508408c76d1') in 0.004507 seconds
+  Import took 0.008154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005012 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Idle.anim
+  artifactKey: Guid(595b8d353a9cfe747a403524776fecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Hat（maozi）/88888101/Anim/Idle.anim using Guid(595b8d353a9cfe747a403524776fecd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d7e576763f5e2f0d42d3508408c76d1') in 0.002767 seconds
+  Import took 0.006592 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.592781 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/man
+  artifactKey: Guid(fec14c348ddb4464e83c872bcb4612a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/man using Guid(fec14c348ddb4464e83c872bcb4612a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c51d414f68b90a577a42e9bf3a2172d') in 0.001850 seconds
+  Import took 0.005459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001337 seconds.
+  path: Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/man
+  artifactKey: Guid(fec14c348ddb4464e83c872bcb4612a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AssetBundle/assets/立绘资源/portrait（静态立绘）/man using Guid(fec14c348ddb4464e83c872bcb4612a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c51d414f68b90a577a42e9bf3a2172d') in 0.001682 seconds
+  Import took 0.003766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 146.553718 seconds.
+  path: Assets/Resources/Game/Portrait/Man/Body/88888101.prefab
+  artifactKey: Guid(46de5a8c29bc8b543b349c90d50fb295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Man/Body/88888101.prefab using Guid(46de5a8c29bc8b543b349c90d50fb295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2362adef5c146c511845ebf2781dee78') in 0.016610 seconds
+  Import took 0.019994 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003315 seconds.
+  path: Assets/Resources/Game/Portrait/Man/Body/88888101.prefab
+  artifactKey: Guid(46de5a8c29bc8b543b349c90d50fb295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Man/Body/88888101.prefab using Guid(46de5a8c29bc8b543b349c90d50fb295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2362adef5c146c511845ebf2781dee78') in 0.011464 seconds
+  Import took 0.015533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.374366 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888101.png
+  artifactKey: Guid(1752ec9c981c643498f6ed758d6b98c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888101.png using Guid(1752ec9c981c643498f6ed758d6b98c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0350994fbc6155edbe773fb2e0597f4') in 0.025727 seconds
+  Import took 0.029080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026682 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888101.png
+  artifactKey: Guid(1752ec9c981c643498f6ed758d6b98c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888101.png using Guid(1752ec9c981c643498f6ed758d6b98c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0350994fbc6155edbe773fb2e0597f4') in 0.008268 seconds
+  Import took 0.011646 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.815464 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Anim.controller
+  artifactKey: Guid(bdd89e2a0a832fb4e8948109b723e42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Anim.controller using Guid(bdd89e2a0a832fb4e8948109b723e42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1e1d4116f9a894b1aa1f3b05ec1732') in 0.003550 seconds
+  Import took 0.007069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Anim.controller
+  artifactKey: Guid(bdd89e2a0a832fb4e8948109b723e42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Anim.controller using Guid(bdd89e2a0a832fb4e8948109b723e42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1e1d4116f9a894b1aa1f3b05ec1732') in 0.002032 seconds
+  Import took 0.004036 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.833880 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Idle.anim
+  artifactKey: Guid(1e3fae6a59ca2784f8fb06e48b38a0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888101/Idle.anim using Guid(1e3fae6a59ca2784f8fb06e48b38a0e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '812b18f2fb1fe384304c6a8ba3e53f29') in 0.002773 seconds
+  Import took 0.006428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.436713 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Anim.controller
+  artifactKey: Guid(7dfacb774f1b42f4fa1f7f0748e07b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Anim.controller using Guid(7dfacb774f1b42f4fa1f7f0748e07b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e814089370286fc9a2e3ac9bbcab19e') in 0.002789 seconds
+  Import took 0.006230 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001166 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Anim.controller
+  artifactKey: Guid(7dfacb774f1b42f4fa1f7f0748e07b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Anim.controller using Guid(7dfacb774f1b42f4fa1f7f0748e07b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e814089370286fc9a2e3ac9bbcab19e') in 0.002599 seconds
+  Import took 0.006273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.556416 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Idle.anim
+  artifactKey: Guid(53ea788c2e7ecf644b198c4dd9a08a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888102/Idle.anim using Guid(53ea788c2e7ecf644b198c4dd9a08a38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdd8bc5de4c7053efbdfb64d4043bc6b') in 0.002812 seconds
+  Import took 0.006533 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.422823 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Anim.controller
+  artifactKey: Guid(27355e56ce8865440bd0d40ae3eea911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Anim.controller using Guid(27355e56ce8865440bd0d40ae3eea911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd5bc423bc5068c1343bb254afc3335e') in 0.002726 seconds
+  Import took 0.005871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.727251 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Idle.anim
+  artifactKey: Guid(e66ae0eb0a3b05348afa51344d9f7dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Idle.anim using Guid(e66ae0eb0a3b05348afa51344d9f7dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3547c370e3d8f5c144cde3b28e75760d') in 0.002412 seconds
+  Import took 0.005431 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Idle.anim
+  artifactKey: Guid(e66ae0eb0a3b05348afa51344d9f7dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/PortraitDynamic（动态立绘）/Back（beibu）/Anim/88888103/Idle.anim using Guid(e66ae0eb0a3b05348afa51344d9f7dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3547c370e3d8f5c144cde3b28e75760d') in 0.001732 seconds
+  Import took 0.003653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 528.871289 seconds.
+  path: Assets/Resources/Game/Portrait/Man/Body/88888102.prefab
+  artifactKey: Guid(80325385ac78fd143b2a45b649181a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Man/Body/88888102.prefab using Guid(80325385ac78fd143b2a45b649181a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9afe21f7b5e48dbde9a10b836f3bcb7d') in 0.014197 seconds
+  Import took 0.018163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001787 seconds.
+  path: Assets/Resources/Game/Portrait/Man/Body/88888102.prefab
+  artifactKey: Guid(80325385ac78fd143b2a45b649181a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Game/Portrait/Man/Body/88888102.prefab using Guid(80325385ac78fd143b2a45b649181a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9afe21f7b5e48dbde9a10b836f3bcb7d') in 0.012952 seconds
+  Import took 0.016407 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 131.391093 seconds.
+  path: Assets/Texture
+  artifactKey: Guid(d3708ba7269318f42b102a1bf29d2029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture using Guid(d3708ba7269318f42b102a1bf29d2029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2352988a62e38668ba14e183076d7a20') in 0.002148 seconds
+  Import took 0.005941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.715966 seconds.
+  path: Assets/Texture/Battle
+  artifactKey: Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle using Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a19dbacd47b07755d9d89933b8574ecc') in 0.002029 seconds
+  Import took 0.005816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000492 seconds.
+  path: Assets/Texture/Battle
+  artifactKey: Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle using Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a19dbacd47b07755d9d89933b8574ecc') in 0.001778 seconds
+  Import took 0.004608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.237477 seconds.
+  path: Assets/Texture/Effect
+  artifactKey: Guid(8b575930e7f85d143ad16d2d2d7d6148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Effect using Guid(8b575930e7f85d143ad16d2d2d7d6148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd3787024c736ba37354a0d0fea59b0f') in 0.002390 seconds
+  Import took 0.006202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000492 seconds.
+  path: Assets/Texture/Effect
+  artifactKey: Guid(8b575930e7f85d143ad16d2d2d7d6148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Effect using Guid(8b575930e7f85d143ad16d2d2d7d6148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd3787024c736ba37354a0d0fea59b0f') in 0.001517 seconds
+  Import took 0.003489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.533702 seconds.
+  path: Assets/Texture/Battle/Human
+  artifactKey: Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human using Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953c4dede97dc7f32fce491d29e4daad') in 0.002009 seconds
+  Import took 0.004908 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000704 seconds.
+  path: Assets/Texture/Battle/Human
+  artifactKey: Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human using Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953c4dede97dc7f32fce491d29e4daad') in 0.001298 seconds
+  Import took 0.003108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.423196 seconds.
+  path: Assets/Texture/Battle/Human/AnimMan
+  artifactKey: Guid(281a94fb1a6b5134f9335a18738ac63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/AnimMan using Guid(281a94fb1a6b5134f9335a18738ac63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05bdb7b37794c83f98474f6367bbc041') in 0.002439 seconds
+  Import took 0.005383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000742 seconds.
+  path: Assets/Texture/Battle/Human/AnimMan
+  artifactKey: Guid(281a94fb1a6b5134f9335a18738ac63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/AnimMan using Guid(281a94fb1a6b5134f9335a18738ac63f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05bdb7b37794c83f98474f6367bbc041') in 0.001699 seconds
+  Import took 0.004457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.714087 seconds.
+  path: Assets/Texture/Battle/Human/AnimMan/Anim.controller
+  artifactKey: Guid(ed587fef1d6840b4cb5db77c3b66b8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/AnimMan/Anim.controller using Guid(ed587fef1d6840b4cb5db77c3b66b8ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b627b949ea336cd5ddea4c1c9518723') in 0.036342 seconds
+  Import took 0.041332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.687573 seconds.
+  path: Assets/Texture/Battle/Human/beibuhou
+  artifactKey: Guid(81db44b3c24602f4ab51765f9df95af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/beibuhou using Guid(81db44b3c24602f4ab51765f9df95af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4857162be2c4122952921709066d21') in 0.002001 seconds
+  Import took 0.004960 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.872294 seconds.
+  path: Assets/Texture/Battle/Human/woman
+  artifactKey: Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/woman using Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9049fd75bcea1b9e0e7095124d4f9642') in 0.002106 seconds
+  Import took 0.005616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000541 seconds.
+  path: Assets/Texture/Battle/Human/woman
+  artifactKey: Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/woman using Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9049fd75bcea1b9e0e7095124d4f9642') in 0.001661 seconds
+  Import took 0.004613 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.572415 seconds.
+  path: Assets/Resources/Battle
+  artifactKey: Guid(cd0195eae279e9a44ad18cf7664b4bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle using Guid(cd0195eae279e9a44ad18cf7664b4bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e7db528013abd76863c80bd55dd73a1') in 0.001814 seconds
+  Import took 0.004797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001613 seconds.
+  path: Assets/Resources/Battle
+  artifactKey: Guid(cd0195eae279e9a44ad18cf7664b4bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle using Guid(cd0195eae279e9a44ad18cf7664b4bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e7db528013abd76863c80bd55dd73a1') in 0.001455 seconds
+  Import took 0.003424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.240165 seconds.
+  path: Assets/Resources/Battle/Human
+  artifactKey: Guid(c1c15914e9fbbe64c99dc4fdd3364d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human using Guid(c1c15914e9fbbe64c99dc4fdd3364d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '732e519860b02013b6a5f2e75060b886') in 0.001701 seconds
+  Import took 0.004493 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.558475 seconds.
+  path: Assets/立绘资源/HumanRoot.prefab
+  artifactKey: Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/HumanRoot.prefab using Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff8667f61856114b4f97815a6df7734') in 0.004991 seconds
+  Import took 0.009106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.017689 seconds.
+  path: Assets/立绘资源/HumanRoot.prefab
+  artifactKey: Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/HumanRoot.prefab using Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff8667f61856114b4f97815a6df7734') in 0.003299 seconds
+  Import took 0.006965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.212770 seconds.
+  path: Assets/立绘资源/战斗小人节点.prefab
+  artifactKey: Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/战斗小人节点.prefab using Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e57284f90f42a41a20981ee3bab73a9f') in 0.003835 seconds
+  Import took 0.007735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.503134 seconds.
+  path: Assets/Texture/Battle（战斗小人）
+  artifactKey: Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle（战斗小人） using Guid(04da87cb339eccc48ae804b7e436d827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3414aa59ec612a6027b409310a941fc7') in 0.001999 seconds
+  Import took 0.004804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.900233 seconds.
+  path: Assets/立绘资源/Human（战斗小人）
+  artifactKey: Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人） using Guid(7860957ca8388e641abb45d4538a9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa704ef8880cd3d0757d5d5573a145ac') in 0.001959 seconds
+  Import took 0.005017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.614803 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/man
+  artifactKey: Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/man using Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ca524af86cda39d354353c9a50f2589') in 0.001754 seconds
+  Import took 0.004738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000710 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/man
+  artifactKey: Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/man using Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ca524af86cda39d354353c9a50f2589') in 0.001305 seconds
+  Import took 0.003145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.167464 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/maozi
+  artifactKey: Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/maozi using Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33a0781ce36e99e390c3437c4fca543') in 0.002011 seconds
+  Import took 0.005644 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001579 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/maozi
+  artifactKey: Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/maozi using Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33a0781ce36e99e390c3437c4fca543') in 0.001734 seconds
+  Import took 0.005088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.841234 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）
+  artifactKey: Guid(81db44b3c24602f4ab51765f9df95af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu） using Guid(81db44b3c24602f4ab51765f9df95af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e999d7179b1d345d2d87a23090846fa8') in 0.001708 seconds
+  Import took 0.004490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.664094 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Man
+  artifactKey: Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Man using Guid(8f6f97c87f52d9a4f959ee07c7747f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecbd35fd35d43efc74201e5a89b0f6c0') in 0.002129 seconds
+  Import took 0.005620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.369469 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Woman
+  artifactKey: Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Woman using Guid(d52d9fa9299f1cc418d4a51f619c1eeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6360ea1afbb11ff50ac1d71c3e295a6') in 0.002066 seconds
+  Import took 0.005472 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.174240 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Hat（maozi）
+  artifactKey: Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Hat（maozi） using Guid(d0aa773a4472bf74eb3e7fe18bee3f66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f1148816aa7ed71ce7f1201ad3e785') in 0.001800 seconds
+  Import took 0.004608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.859608 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/102.png
+  artifactKey: Guid(201d10fed6b756e4dbc980eded17b168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/102.png using Guid(201d10fed6b756e4dbc980eded17b168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dee0bb886b83b036d8a4c2704b4f8df') in 0.009034 seconds
+  Import took 0.012433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.626532 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888102.png
+  artifactKey: Guid(201d10fed6b756e4dbc980eded17b168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888102.png using Guid(201d10fed6b756e4dbc980eded17b168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b41dc9dfc5df9fa452e152566c8aa65') in 0.007590 seconds
+  Import took 0.010683 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.988187 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/103.png
+  artifactKey: Guid(759bb38a28b81874d9e7b63eb3e286b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/103.png using Guid(759bb38a28b81874d9e7b63eb3e286b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf0c55d3c57bb77ccd383162b0b3b43b') in 0.009076 seconds
+  Import took 0.012570 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.692848 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888101.png
+  artifactKey: Guid(759bb38a28b81874d9e7b63eb3e286b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888101.png using Guid(759bb38a28b81874d9e7b63eb3e286b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87cc1030c20bd6f9f413fca894ff2ac5') in 0.011616 seconds
+  Import took 0.015107 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.565835 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/105.png
+  artifactKey: Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/105.png using Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842cedcd980951e80861ca021f82133d') in 0.012663 seconds
+  Import took 0.016289 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004412 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/105.png
+  artifactKey: Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/105.png using Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842cedcd980951e80861ca021f82133d') in 0.008389 seconds
+  Import took 0.011682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.160340 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888103.png
+  artifactKey: Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Back（beibu）/88888103.png using Guid(624a4a001cdfa964ead689a15c4fe25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8032ec57481a914f2dd8e8c2e6cf2938') in 0.007736 seconds
+  Import took 0.011014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.324252 seconds.
+  path: Assets/Resources/Battle/Human/BackBack
+  artifactKey: Guid(373e2fa79a4b1a145bb0711b5c0ade04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack using Guid(373e2fa79a4b1a145bb0711b5c0ade04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad5e242ceebadc9d8046c0e820d3bba2') in 0.002248 seconds
+  Import took 0.005723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.267902 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/102.prefab
+  artifactKey: Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/102.prefab using Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b574bd1f79d581a87db133c9ff5afe') in 0.010737 seconds
+  Import took 0.014233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009825 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/102.prefab
+  artifactKey: Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/102.prefab using Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42b574bd1f79d581a87db133c9ff5afe') in 0.007907 seconds
+  Import took 0.011804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.880737 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888102.png
+  artifactKey: Guid(321a764bebc31ad4995230c903c57cf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888102.png using Guid(321a764bebc31ad4995230c903c57cf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ec8bc995ce6f9256ac7dbb028e1826') in 0.012530 seconds
+  Import took 0.016244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000538 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888102.png
+  artifactKey: Guid(321a764bebc31ad4995230c903c57cf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888102.png using Guid(321a764bebc31ad4995230c903c57cf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ec8bc995ce6f9256ac7dbb028e1826') in 0.012267 seconds
+  Import took 0.015764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.451038 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888103.png
+  artifactKey: Guid(41facaf63c6f2cd4aac25309d16b374a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888103.png using Guid(41facaf63c6f2cd4aac25309d16b374a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4614ead6055e57fdc0cb55aac28fa108') in 0.012234 seconds
+  Import took 0.015951 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001089 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888103.png
+  artifactKey: Guid(41facaf63c6f2cd4aac25309d16b374a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Back（beibu）/88888103.png using Guid(41facaf63c6f2cd4aac25309d16b374a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4614ead6055e57fdc0cb55aac28fa108') in 0.009381 seconds
+  Import took 0.012745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.273263 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/103.prefab
+  artifactKey: Guid(7e015e49341441048b6c06442e504367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/103.prefab using Guid(7e015e49341441048b6c06442e504367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e49c725d7439764cd4686ce534846d') in 0.008588 seconds
+  Import took 0.012089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.878272 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/88888101.prefab
+  artifactKey: Guid(7e015e49341441048b6c06442e504367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/88888101.prefab using Guid(7e015e49341441048b6c06442e504367) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad3ce1f07ab34b445db92917c66d107e') in 0.008210 seconds
+  Import took 0.011899 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.573508 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/105.prefab
+  artifactKey: Guid(60882586ab161ac4d80912b5dcd0db5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/105.prefab using Guid(60882586ab161ac4d80912b5dcd0db5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04c925a5a175364b9f365c43ed7a2435') in 0.007966 seconds
+  Import took 0.011605 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.928378 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/8888802.prefab
+  artifactKey: Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/8888802.prefab using Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6675319e179826efbfe7e938c89b421') in 0.008840 seconds
+  Import took 0.012594 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.683854 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/88888103.prefab
+  artifactKey: Guid(60882586ab161ac4d80912b5dcd0db5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/88888103.prefab using Guid(60882586ab161ac4d80912b5dcd0db5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbca37099c3c7cc7a19f885cd7e01df0') in 0.008529 seconds
+  Import took 0.012129 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.006762 seconds.
+  path: Assets/Resources/Battle/Human/BackBack/88888102.prefab
+  artifactKey: Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/BackBack/88888102.prefab using Guid(304f9be34c5a85342a71c9bbf26d8c74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfd2686275825d6b3e6ccf454dbeaccc') in 0.008264 seconds
+  Import took 0.012057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.301682 seconds.
+  path: Assets/Resources/Battle/Human/Hat
+  artifactKey: Guid(068700e306ec8be4e9c04c16d17b36c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat using Guid(068700e306ec8be4e9c04c16d17b36c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf832b7991233d7733ab8c51379328c') in 0.001832 seconds
+  Import took 0.004763 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001119 seconds.
+  path: Assets/Resources/Battle/Human/Hat
+  artifactKey: Guid(068700e306ec8be4e9c04c16d17b36c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat using Guid(068700e306ec8be4e9c04c16d17b36c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf832b7991233d7733ab8c51379328c') in 0.001891 seconds
+  Import took 0.005921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.691765 seconds.
+  path: Assets/Resources/Battle/Human/Hat/3311.prefab
+  artifactKey: Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/3311.prefab using Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2390d91f5fb8964b5986b53114d90af5') in 0.010882 seconds
+  Import took 0.014182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.302348 seconds.
+  path: Assets/Resources/Battle/Human/Hat/4101.prefab
+  artifactKey: Guid(ef22325cfd2686b418e503a38afbd400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/4101.prefab using Guid(ef22325cfd2686b418e503a38afbd400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b25ad74c6a3967ab279f9598fe70724') in 0.003997 seconds
+  Import took 0.007783 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.294900 seconds.
+  path: Assets/Resources/Battle/Human/Hat/4102.prefab
+  artifactKey: Guid(e4165d7746142f347b00dc24cb3dfee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/4102.prefab using Guid(e4165d7746142f347b00dc24cb3dfee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b26304d7a9dbd832fce4957ce40915b') in 0.003671 seconds
+  Import took 0.007784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.604548 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888101.png
+  artifactKey: Guid(86f4ef198d9198744b325ba4c4dbe2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888101.png using Guid(86f4ef198d9198744b325ba4c4dbe2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79f20d58a3c575ddc82c39f394d9e96a') in 0.010112 seconds
+  Import took 0.013786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.570006 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888102.png
+  artifactKey: Guid(d88828cad62b50342a56ee96de767997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888102.png using Guid(d88828cad62b50342a56ee96de767997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '862bc987a7223679b57ee29604b035f3') in 0.011764 seconds
+  Import took 0.015374 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002957 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888102.png
+  artifactKey: Guid(d88828cad62b50342a56ee96de767997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888102.png using Guid(d88828cad62b50342a56ee96de767997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '862bc987a7223679b57ee29604b035f3') in 0.008925 seconds
+  Import took 0.012490 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.322210 seconds.
+  path: Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888103.png
+  artifactKey: Guid(04c94c031672c26489e0e9de2567ca2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Portrait（静态立绘）/Hat（maozi）/88888103.png using Guid(04c94c031672c26489e0e9de2567ca2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bfa169e8c75bbbda8e6055f4d15d6a5') in 0.010453 seconds
+  Import took 0.014280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.913406 seconds.
+  path: Assets/Resources/Battle/Human/Hat/888881033.prefab
+  artifactKey: Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/888881033.prefab using Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7614be0f07143e70eca599de1a23bd09') in 0.009202 seconds
+  Import took 0.012860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.509717 seconds.
+  path: Assets/Resources/Battle/Human/Hat/88888101.prefab
+  artifactKey: Guid(ef22325cfd2686b418e503a38afbd400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/88888101.prefab using Guid(ef22325cfd2686b418e503a38afbd400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d54e2d36fa8fcd1425bf8dc0c643c9') in 0.003520 seconds
+  Import took 0.006618 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.279795 seconds.
+  path: Assets/Resources/Battle/Human/Hat/88888102.prefab
+  artifactKey: Guid(e4165d7746142f347b00dc24cb3dfee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/88888102.prefab using Guid(e4165d7746142f347b00dc24cb3dfee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65d616023d45d78878cd3faf26dbc478') in 0.003138 seconds
+  Import took 0.006451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.111392 seconds.
+  path: Assets/Resources/Battle/Human/Hat/88888103.prefab
+  artifactKey: Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Hat/88888103.prefab using Guid(62ed5e4cd5ab04346b3c5b541820b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62bd29314cf49c6f8104fb0ea175a5cb') in 0.008419 seconds
+  Import took 0.012194 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.780858 seconds.
+  path: Assets/Resources/Battle/Human/Man
+  artifactKey: Guid(0803ad96011ddf34783009289612d7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man using Guid(0803ad96011ddf34783009289612d7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc867316806c46214529ed337111ac4') in 0.001706 seconds
+  Import took 0.004442 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001735 seconds.
+  path: Assets/Resources/Battle/Human/Man
+  artifactKey: Guid(0803ad96011ddf34783009289612d7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man using Guid(0803ad96011ddf34783009289612d7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc867316806c46214529ed337111ac4') in 0.001236 seconds
+  Import took 0.003090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.398923 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body
+  artifactKey: Guid(24bc247fa6ef432499661aa54a7c40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body using Guid(24bc247fa6ef432499661aa54a7c40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd3baeb7ab701ac3c00a7e0b0cce3398') in 0.002372 seconds
+  Import took 0.006069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000371 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body
+  artifactKey: Guid(24bc247fa6ef432499661aa54a7c40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body using Guid(24bc247fa6ef432499661aa54a7c40e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd3baeb7ab701ac3c00a7e0b0cce3398') in 0.001663 seconds
+  Import took 0.004330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.625613 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/101
+  artifactKey: Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/101 using Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06be1f7cd73c32c7aeff920dea34769') in 0.002109 seconds
+  Import took 0.005635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001100 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/101
+  artifactKey: Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/101 using Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06be1f7cd73c32c7aeff920dea34769') in 0.001724 seconds
+  Import took 0.004736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.085462 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/88888101
+  artifactKey: Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/88888101 using Guid(4943c613b5dd53d48979a4a1e93419a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34466c2828a45ed37ab9944d98dfaf7f') in 0.001787 seconds
+  Import took 0.004811 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.720041 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/102
+  artifactKey: Guid(77ae10004febe174b8c3b0c330f85706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/102 using Guid(77ae10004febe174b8c3b0c330f85706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06a7986ab45d78cd9bb9c7a79eb746a5') in 0.002031 seconds
+  Import took 0.005537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.543961 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/88888102
+  artifactKey: Guid(77ae10004febe174b8c3b0c330f85706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/88888102 using Guid(77ae10004febe174b8c3b0c330f85706) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b0dce3fcc77534bf5a495553cd8c723') in 0.001994 seconds
+  Import took 0.005536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.645387 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/103
+  artifactKey: Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/103 using Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbae340da33f21e297daa0236285d9b7') in 0.001849 seconds
+  Import took 0.004722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001037 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/103
+  artifactKey: Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/103 using Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbae340da33f21e297daa0236285d9b7') in 0.001598 seconds
+  Import took 0.004393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.919701 seconds.
+  path: Assets/Resources/Battle/Human/Man/Body/88888103
+  artifactKey: Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Body/88888103 using Guid(313161a04423f3f469ae340f9ac4555e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f62278d3901767b4a6c1adc1b9fab42f') in 0.001713 seconds
+  Import took 0.004602 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.984732 seconds.
+  path: Assets/Resources/Battle/Human/Woman
+  artifactKey: Guid(d51da8516770ed8468a89e773c427e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman using Guid(d51da8516770ed8468a89e773c427e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2fed2b7b847820fe7afd5fa2331b005') in 0.002102 seconds
+  Import took 0.005583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000734 seconds.
+  path: Assets/Resources/Battle/Human/Woman
+  artifactKey: Guid(d51da8516770ed8468a89e773c427e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman using Guid(d51da8516770ed8468a89e773c427e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2fed2b7b847820fe7afd5fa2331b005') in 0.001477 seconds
+  Import took 0.003782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.317895 seconds.
+  path: Assets/Resources/Battle/Human/Man/Hair
+  artifactKey: Guid(3e9db26a9c698364f864eca76343ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Hair using Guid(3e9db26a9c698364f864eca76343ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '693b62ddb780100159885135ee1aa6a8') in 0.002246 seconds
+  Import took 0.005809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001530 seconds.
+  path: Assets/Resources/Battle/Human/Man/Hair
+  artifactKey: Guid(3e9db26a9c698364f864eca76343ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Hair using Guid(3e9db26a9c698364f864eca76343ba42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '693b62ddb780100159885135ee1aa6a8') in 0.001725 seconds
+  Import took 0.004871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.676777 seconds.
+  path: Assets/Resources/Battle/Human/Man/Hair/101.prefab
+  artifactKey: Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Hair/101.prefab using Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3420d60cf602e46ed0fa79417dd6c32') in 0.015543 seconds
+  Import took 0.019379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004293 seconds.
+  path: Assets/Resources/Battle/Human/Man/Hair/101.prefab
+  artifactKey: Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Hair/101.prefab using Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3420d60cf602e46ed0fa79417dd6c32') in 0.008630 seconds
+  Import took 0.012441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.830966 seconds.
+  path: Assets/Resources/Battle/Human/Man/Hair/88888101.prefab
+  artifactKey: Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Hair/88888101.prefab using Guid(def74ecb97c0a6d45923228dd74402fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b91747b1c53cf9759afda0a1ee5e4739') in 0.008603 seconds
+  Import took 0.012256 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.955929 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body
+  artifactKey: Guid(7ad3f347886fa0b459adb4b60fc16b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body using Guid(7ad3f347886fa0b459adb4b60fc16b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a2635efcf22acea7b0f43b5f0dafeab') in 0.001791 seconds
+  Import took 0.004654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000828 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body
+  artifactKey: Guid(7ad3f347886fa0b459adb4b60fc16b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body using Guid(7ad3f347886fa0b459adb4b60fc16b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a2635efcf22acea7b0f43b5f0dafeab') in 0.001335 seconds
+  Import took 0.003225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.322600 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/101
+  artifactKey: Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/101 using Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e106b4394b74c6be686fd97322b64e6') in 0.002105 seconds
+  Import took 0.005547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000747 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/101
+  artifactKey: Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/101 using Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e106b4394b74c6be686fd97322b64e6') in 0.001741 seconds
+  Import took 0.004904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.663661 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/88888101
+  artifactKey: Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/88888101 using Guid(64dd7f2a14996854ba9c418265d2165b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c6483c2842cebc09ea1c012025f98b2') in 0.001813 seconds
+  Import took 0.004736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.611766 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/102
+  artifactKey: Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/102 using Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0133d8b83de7618b2589276e153f78c5') in 0.001999 seconds
+  Import took 0.005615 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000815 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/102
+  artifactKey: Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/102 using Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0133d8b83de7618b2589276e153f78c5') in 0.001406 seconds
+  Import took 0.003632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.687122 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/88888102
+  artifactKey: Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/88888102 using Guid(550072aa7d45096409f64e301f990e5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eeccbeac5130b19f21e287c027a22bd') in 0.002087 seconds
+  Import took 0.005529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.629441 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/103
+  artifactKey: Guid(7db33c96502d8694d824fd96c631d6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/103 using Guid(7db33c96502d8694d824fd96c631d6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7383245ac0f8822e888c404345e880c') in 0.001613 seconds
+  Import took 0.004380 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.374487 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/88888103
+  artifactKey: Guid(7db33c96502d8694d824fd96c631d6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/88888103 using Guid(7db33c96502d8694d824fd96c631d6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2020670dfd9e2ae9195dfbe7b792c22') in 0.001812 seconds
+  Import took 0.004788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.510720 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Hair
+  artifactKey: Guid(3b74fc142ecd5af4eb352ce0c4593cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Hair using Guid(3b74fc142ecd5af4eb352ce0c4593cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a393bd3bff6be748a14a983da1b5486') in 0.001676 seconds
+  Import took 0.004384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.684792 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Hair/101.prefab
+  artifactKey: Guid(39b665d108f81d64b87e71b9ba3416c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Hair/101.prefab using Guid(39b665d108f81d64b87e71b9ba3416c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca996186af797109030e64e3b0af318') in 0.008439 seconds
+  Import took 0.012018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.398289 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Hair/88888101.prefab
+  artifactKey: Guid(39b665d108f81d64b87e71b9ba3416c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Hair/88888101.prefab using Guid(39b665d108f81d64b87e71b9ba3416c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a570979de9601d87bea94457581ee9a1') in 0.007782 seconds
+  Import took 0.011444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 449.069769 seconds.
+  path: Assets/Resources/Battle/Human/Woman/Body/88888101/yifu.prefab
+  artifactKey: Guid(51c03ddc7666fc44194939852d32c397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Woman/Body/88888101/yifu.prefab using Guid(51c03ddc7666fc44194939852d32c397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db08719e0df034195055b8d8c65442aa') in 0.011034 seconds
+  Import took 0.014800 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 84.414215 seconds.
+  path: Assets/Resources/Battle/Human/Man/Head
+  artifactKey: Guid(37ca610562c531c4b9bddb016ec6ab0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Head using Guid(37ca610562c531c4b9bddb016ec6ab0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a869fff7353d0999ae8bdf304bd19c4') in 0.001746 seconds
+  Import took 0.004653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.083213 seconds.
+  path: Assets/Resources/Battle/Human/Man/Head/101.prefab
+  artifactKey: Guid(afde73298861d51448f87bfb1a3c15ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Human/Man/Head/101.prefab using Guid(afde73298861d51448f87bfb1a3c15ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad41393159c8c812877b0619397a1cc0') in 0.008051 seconds
+  Import took 0.011595 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.468552 seconds.
+  path: Assets/Texture/Battle
+  artifactKey: Guid(2077f3c17e18bb24cb67264df25b5f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle using Guid(2077f3c17e18bb24cb67264df25b5f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05bbc211930e954865610e8254a91acd') in 0.001723 seconds
+  Import took 0.004483 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.412428 seconds.
+  path: Assets/Texture/Battle/Human
+  artifactKey: Guid(12bee33feabd60b4ba9871b9a352b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human using Guid(12bee33feabd60b4ba9871b9a352b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f330d9ac3884daad431f65ad0d5c747') in 0.001627 seconds
+  Import took 0.004270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001667 seconds.
+  path: Assets/Texture/Battle/Human
+  artifactKey: Guid(12bee33feabd60b4ba9871b9a352b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human using Guid(12bee33feabd60b4ba9871b9a352b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f330d9ac3884daad431f65ad0d5c747') in 0.001759 seconds
+  Import took 0.005272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.462615 seconds.
+  path: Assets/Texture/Battle/Human/man
+  artifactKey: Guid(f7a762dae66efec44a61db88d5eefb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/man using Guid(f7a762dae66efec44a61db88d5eefb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd73793a8761069fbf88d33d4aad6268') in 0.001716 seconds
+  Import took 0.004353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001584 seconds.
+  path: Assets/Texture/Battle/Human/man
+  artifactKey: Guid(f7a762dae66efec44a61db88d5eefb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/man using Guid(f7a762dae66efec44a61db88d5eefb33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd73793a8761069fbf88d33d4aad6268') in 0.001724 seconds
+  Import took 0.004742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.583662 seconds.
+  path: Assets/Texture/Battle/Human/man/lian
+  artifactKey: Guid(95644dae4f6d1f4409b8abddbe6fba87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/man/lian using Guid(95644dae4f6d1f4409b8abddbe6fba87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57fcc9ad6f6eb838944a1e602cac758a') in 0.002028 seconds
+  Import took 0.005434 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000608 seconds.
+  path: Assets/Texture/Battle/Human/man/lian
+  artifactKey: Guid(95644dae4f6d1f4409b8abddbe6fba87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/Battle/Human/man/lian using Guid(95644dae4f6d1f4409b8abddbe6fba87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57fcc9ad6f6eb838944a1e602cac758a') in 0.001772 seconds
+  Import took 0.004668 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.037301 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/AnimMan/Run1.anim
+  artifactKey: Guid(e037bb05c96d4f8438adcb2b3d922885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/AnimMan/Run1.anim using Guid(e037bb05c96d4f8438adcb2b3d922885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94a7d9a5db3e20b8ed7ccf28a42760b3') in 0.005269 seconds
+  Import took 0.008635 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.439642 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/lian/101.png
+  artifactKey: Guid(44fea146eefd66a4a9751efec2446441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/lian/101.png using Guid(44fea146eefd66a4a9751efec2446441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9261b90bc3f6292ec5c389fe6bf0d5fa') in 0.008047 seconds
+  Import took 0.011452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.967341 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/lian/lian.png
+  artifactKey: Guid(44fea146eefd66a4a9751efec2446441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/lian/lian.png using Guid(44fea146eefd66a4a9751efec2446441) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bd8059717089c5d033e2172e0e80117') in 0.008942 seconds
+  Import took 0.012537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.941227 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/lian/lian.prefab
+  artifactKey: Guid(afde73298861d51448f87bfb1a3c15ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/lian/lian.prefab using Guid(afde73298861d51448f87bfb1a3c15ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9671dd45ddeaeb7ad2aba983a67855b') in 0.008835 seconds
+  Import took 0.012476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.494252 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Man/toufa
+  artifactKey: Guid(bddb02e8284412942a7790055a263292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Man/toufa using Guid(bddb02e8284412942a7790055a263292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1948d49fe6acc543cf88d4ca040f3ecf') in 0.002130 seconds
+  Import took 0.005262 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000418 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Man/toufa
+  artifactKey: Guid(bddb02e8284412942a7790055a263292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Man/toufa using Guid(bddb02e8284412942a7790055a263292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1948d49fe6acc543cf88d4ca040f3ecf') in 0.001636 seconds
+  Import took 0.004558 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.736080 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Man/yifu
+  artifactKey: Guid(79f007f6f37ebd6468427f7c063c8a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Man/yifu using Guid(79f007f6f37ebd6468427f7c063c8a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7f81a9686eb52fbab8869b30cb8dffb') in 0.001833 seconds
+  Import took 0.004871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000783 seconds.
+  path: Assets/立绘资源/Human（战斗小人）/Man/yifu
+  artifactKey: Guid(79f007f6f37ebd6468427f7c063c8a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/Human（战斗小人）/Man/yifu using Guid(79f007f6f37ebd6468427f7c063c8a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7f81a9686eb52fbab8869b30cb8dffb') in 0.001426 seconds
+  Import took 0.003348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 66.054127 seconds.
+  path: Assets/立绘资源/立绘预览节点名
+  artifactKey: Guid(4ab3e032637ae944d89e855ec3a0c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/立绘预览节点名 using Guid(4ab3e032637ae944d89e855ec3a0c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '802fd5bd6e95b324c42c0a416abd3084') in 0.002068 seconds
+  Import took 0.004804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.214518 seconds.
+  path: Assets/立绘资源/立绘预览节点
+  artifactKey: Guid(4ab3e032637ae944d89e855ec3a0c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/立绘预览节点 using Guid(4ab3e032637ae944d89e855ec3a0c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6aacf9992cb0f323114e3889f5009c8') in 0.002243 seconds
+  Import took 0.005816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.436259 seconds.
+  path: Assets/立绘资源/HumanRootMan.prefab
+  artifactKey: Guid(824b13dae266e81478e42823f0e97ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/HumanRootMan.prefab using Guid(824b13dae266e81478e42823f0e97ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '312ed780052a8b68e60326bdbe1794dc') in 0.016500 seconds
+  Import took 0.020672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.200939 seconds.
+  path: Assets/立绘资源/立绘预览节点/战斗小人节点.prefab
+  artifactKey: Guid(3bf17bfd560c2144c8da0a9b05f3a537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/立绘预览节点/战斗小人节点.prefab using Guid(3bf17bfd560c2144c8da0a9b05f3a537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d4731311a4651cc8fb9ca1f68e65687') in 0.003423 seconds
+  Import took 0.006721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000951 seconds.
+  path: Assets/立绘资源/立绘预览节点/战斗小人节点.prefab
+  artifactKey: Guid(3bf17bfd560c2144c8da0a9b05f3a537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/立绘预览节点/战斗小人节点.prefab using Guid(3bf17bfd560c2144c8da0a9b05f3a537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d4731311a4651cc8fb9ca1f68e65687') in 0.003221 seconds
+  Import took 0.007285 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.998956 seconds.
+  path: Assets/立绘资源/动态立绘节点.prefab
+  artifactKey: Guid(ea39ffa6509ad9e409a7667d37457383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/动态立绘节点.prefab using Guid(ea39ffa6509ad9e409a7667d37457383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '615d2b00923655e1d4a919879e0462bd') in 0.003907 seconds
+  Import took 0.007625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.875673 seconds.
+  path: Assets/立绘资源/战斗小人节点.prefab
+  artifactKey: Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/立绘资源/战斗小人节点.prefab using Guid(16b78c4ae379759498292921439fa2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19dcfd32fd1b0757ff7bb8fd4909f339') in 0.003176 seconds
+  Import took 0.007036 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

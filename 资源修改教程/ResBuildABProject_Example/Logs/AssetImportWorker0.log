@@ -1,0 +1,86 @@
+Using pre-set license
+Built from '2020.3/china_unity/release' branch; Version is '2020.3.9f1c1 (ef65345766d1) revision 15689012'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19044.2486; Version 2009; 64bit' Language: 'zh' Physical Memory: 98195 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.9f1c1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Project/immortal/trunk/immortal_code/GameClient/Mod/modFQA/资源修改教程/ResBuildABProject_Example
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52334
+Successfully changed project path to: D:/Project/immortal/trunk/immortal_code/GameClient/Mod/modFQA/资源修改教程/ResBuildABProject_Example
+D:/Project/immortal/trunk/immortal_code/GameClient/Mod/modFQA/资源修改教程/ResBuildABProject_Example
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 36.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.9f1c1 (ef65345766d1)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Project/immortal/trunk/immortal_code/GameClient/Mod/modFQA/资源修改教程/ResBuildABProject_Example/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   
+    VRAM:     5992 MB
+    Driver:   31.0.15.1694
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1c1/Editor/Data/PlaybackEngines/Switch/UnityEditor.Switch.Extensions.dll
+Registered in 0.002869 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 39.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.875 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000943 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.856 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1812 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.5 MB.
+System memory in use after: 85.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 2.624400 ms (FindLiveObjects: 0.391100 ms CreateObjectMapping: 0.048800 ms MarkObjects: 2.113600 ms  DeleteObjects: 0.069600 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/beijing.png
+  artifactKey: Guid(a7516f876edd8fc419e0cf897a08e070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/beijing.png using Guid(a7516f876edd8fc419e0cf897a08e070) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '884c9979cde46d5856a1c7fe43492c7b') in 0.107941 seconds
+  Import took 0.111333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.758219 seconds.
+  path: Assets/Resources/Battle/Monst/jian.prefab
+  artifactKey: Guid(81829b1d7e373e84fb4a58b66f6483ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Battle/Monst/jian.prefab using Guid(81829b1d7e373e84fb4a58b66f6483ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2beb2e2220678e61b21a4dc3db42864') in 0.078167 seconds
+  Import took 0.081621 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

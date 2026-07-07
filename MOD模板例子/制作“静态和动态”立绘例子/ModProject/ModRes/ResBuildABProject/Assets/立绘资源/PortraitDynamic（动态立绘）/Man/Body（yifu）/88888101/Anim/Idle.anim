@@ -1,0 +1,2176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Idle
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 107.059}
+        inSlope: {x: 0, y: 0, z: -0.38400948}
+        outSlope: {x: 0, y: 0, z: -0.38400948}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.16246474}
+      - serializedVersion: 3
+        time: 1.6166667
+        value: {x: 0, y: 0, z: 107.83113}
+        inSlope: {x: 0, y: 0, z: 0.32268924}
+        outSlope: {x: 0, y: 0, z: 0.32268924}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.35273406}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 0, y: 0, z: 107.83113}
+        inSlope: {x: 0, y: 0, z: -0.47153434}
+        outSlope: {x: 0, y: 0, z: -0.47153434}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.36251947}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: 107.059}
+        inSlope: {x: 0, y: 0, z: -0.57613355}
+        outSlope: {x: 0, y: 0, z: -0.57613355}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.4675297}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -99.429}
+        inSlope: {x: 0, y: 0, z: -0.35640052}
+        outSlope: {x: 0, y: 0, z: -0.35640052}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.18157822}
+      - serializedVersion: 3
+        time: 1.6166667
+        value: {x: 0, y: 0, z: -100.68989}
+        inSlope: {x: 0, y: 0, z: -0.52906716}
+        outSlope: {x: 0, y: 0, z: -0.52906716}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.3455479}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 0, y: 0, z: -100.68989}
+        inSlope: {x: 0, y: 0, z: 0.662364}
+        outSlope: {x: 0, y: 0, z: 0.662364}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.4320448}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: -99.429}
+        inSlope: {x: 0, y: 0, z: -0.392521}
+        outSlope: {x: 0, y: 0, z: -0.392521}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.42890447}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -117.575}
+        inSlope: {x: 0, y: 0, z: 2.888629}
+        outSlope: {x: 0, y: 0, z: 2.888629}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.11430955}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.09819122}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0, y: 0, z: -116.17698}
+        inSlope: {x: 0, y: 0, z: -0.13911459}
+        outSlope: {x: 0, y: 0, z: -0.13911459}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.13293827}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: -117.575}
+        inSlope: {x: 0, y: 0, z: 2.888629}
+        outSlope: {x: 0, y: 0, z: 2.888629}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.11430955}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.09819122}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -6.709}
+        inSlope: {x: 0, y: 0, z: 1.8260163}
+        outSlope: {x: 0, y: 0, z: 1.8260163}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.06604544}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.07751938}
+      - serializedVersion: 3
+        time: 1.3333334
+        value: {x: 0, y: 0, z: -5.412521}
+        inSlope: {x: 0, y: 0, z: -0.3578373}
+        outSlope: {x: 0, y: 0, z: -0.3578373}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.08552059}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.07535998}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: -6.709}
+        inSlope: {x: 0, y: 0, z: 1.8260163}
+        outSlope: {x: 0, y: 0, z: 1.8260163}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.06604544}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.07751938}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -2.317}
+        inSlope: {x: 0, y: 0, z: -6.444293}
+        outSlope: {x: 0, y: 0, z: -6.444293}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.07219547}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 0, y: 0, z: 1.8438687}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: -2.317}
+        inSlope: {x: 0, y: 0, z: -6.444293}
+        outSlope: {x: 0, y: 0, z: -6.444293}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.07219547}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 107.948}
+        inSlope: {x: 0, y: 0, z: -3.3707056}
+        outSlope: {x: 0, y: 0, z: -3.3707056}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.1007752}
+      - serializedVersion: 3
+        time: 1
+        value: {x: 0, y: 0, z: 106.20195}
+        inSlope: {x: 0, y: 0, z: 0.47782493}
+        outSlope: {x: 0, y: 0, z: 0.47782493}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.113462985}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.09302331}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 0, y: 0, z: 109.060524}
+        inSlope: {x: 0, y: 0, z: 0.013230544}
+        outSlope: {x: 0, y: 0, z: 0.013230544}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.1807798}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: 107.948}
+        inSlope: {x: 0, y: 0, z: -3.3707056}
+        outSlope: {x: 0, y: 0, z: -3.3707056}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.1007752}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 5.875}
+        inSlope: {x: 0, y: 0, z: -2.191481}
+        outSlope: {x: 0, y: 0, z: -2.191481}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.09144618}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.101882614}
+      - serializedVersion: 3
+        time: 1.1666666
+        value: {x: 0, y: 0, z: 5.02786}
+        inSlope: {x: 0, y: 0, z: 0.42838442}
+        outSlope: {x: 0, y: 0, z: 0.42838442}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.09858452}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.05780937}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: 5.875}
+        inSlope: {x: 0, y: 0, z: -2.191481}
+        outSlope: {x: 0, y: 0, z: -2.191481}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.09144618}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.101882614}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 2.784}
+        inSlope: {x: 0, y: 0, z: 4.590904}
+        outSlope: {x: 0, y: 0, z: 4.590904}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.08268738}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 0, y: 0, z: 0.5178962}
+        inSlope: {x: 0, y: 0, z: -0.28476697}
+        outSlope: {x: 0, y: 0, z: -0.28476697}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.118863106}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0, z: 2.784}
+        inSlope: {x: 0, y: 0, z: 4.590904}
+        outSlope: {x: 0, y: 0, z: 4.590904}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.08268738}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.005997162, y: -0.4309671, z: 0}
+        inSlope: {x: 0, y: -0.03720461, z: 0}
+        outSlope: {x: 0, y: -0.03720461, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.09021364, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 0.005997162, y: -0.36661005, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0.005997162, y: -0.4309671, z: 0}
+        inSlope: {x: 0, y: -0.040072832, z: 0}
+        outSlope: {x: 0, y: -0.040072832, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.2900233, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.9333544, y: -0.68647283, z: 0}
+        inSlope: {x: -0.12743638, y: 0, z: 0}
+        outSlope: {x: -0.12743638, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.10668898, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6166667
+        value: {x: 2.008322, y: -0.686, z: 0}
+        inSlope: {x: 0.07724792, y: 0, z: 0}
+        outSlope: {x: 0.07724792, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 2.0246682, y: -0.686, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 2.010434, y: -0.686, z: 0}
+        inSlope: {x: -0.079272985, y: 0, z: 0}
+        outSlope: {x: -0.079272985, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 1.9333544, y: -0.68647283, z: 0}
+        inSlope: {x: -0.12743638, y: 0, z: 0}
+        outSlope: {x: -0.12743638, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.10668898, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_5
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1.9333544, y: 0.6017228, z: 0}
+        inSlope: {x: -0.12769228, y: 0, z: 0}
+        outSlope: {x: -0.12769228, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.1168499, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.6166667
+        value: {x: 2.008307, y: 0.602, z: 0}
+        inSlope: {x: 0.077317774, y: 0, z: 0}
+        outSlope: {x: 0.077317774, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 2.0246682, y: 0.602, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.3333333
+        value: {x: 2.010453, y: 0.602, z: 0}
+        inSlope: {x: -0.07918763, y: 0, z: 0}
+        outSlope: {x: -0.07918763, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 1.9333544, y: 0.6017228, z: 0}
+        inSlope: {x: -0.12769228, y: 0, z: 0}
+        outSlope: {x: -0.12769228, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.1168499, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_8
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.1949242, y: 0.71189743, z: 0}
+        inSlope: {x: -0.059722144, y: 0, z: 0}
+        outSlope: {x: -0.059722144, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.07926192, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.16820723, y: 0.71189743, z: 0}
+        inSlope: {x: 0.0044937404, y: 0, z: 0}
+        outSlope: {x: 0.0044937404, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.13178313, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: -0.1949242, y: 0.71189743, z: 0}
+        inSlope: {x: -0.05951423, y: 0, z: 0}
+        outSlope: {x: -0.05951423, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.070946455, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.22034954, y: -0.81359756, z: 0}
+        inSlope: {x: -0.060135037, y: 0, z: 0}
+        outSlope: {x: -0.060135037, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.07016629, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.0833333
+        value: {x: -0.19304624, y: -0.81359756, z: 0}
+        inSlope: {x: 0.00044040158, y: 0, z: 0}
+        outSlope: {x: 0.00044040158, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.13742091, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: -0.22034954, y: -0.81359756, z: 0}
+        inSlope: {x: -0.06102073, y: 0, z: 0}
+        outSlope: {x: -0.06102073, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.07354522, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0.023300648, z: -0.3}
+        inSlope: {x: 0, y: -0.03548526, z: 0}
+        outSlope: {x: 0, y: -0.03548526, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.15669273, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1666667
+        value: {x: 0, y: 0.08943739, z: -0.3}
+        inSlope: {x: 0, y: -0.016670002, z: 0}
+        outSlope: {x: 0, y: -0.016670002, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.40358424, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0.023300648, z: -0.3}
+        inSlope: {x: 0, y: -0.029073032, z: 0}
+        outSlope: {x: 0, y: -0.029073032, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.5245211, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root_head
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0.033186913, z: 0.38}
+        inSlope: {x: 0, y: -0.034409, z: 0}
+        outSlope: {x: 0, y: -0.034409, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.16590995, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1666667
+        value: {x: 0, y: 0.0993238, z: 0.38}
+        inSlope: {x: 0, y: -0.004244317, z: 0}
+        outSlope: {x: 0, y: -0.004244317, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.40358424, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 0, y: 0.033186913, z: 0.38}
+        inSlope: {x: 0, y: -0.036936983, z: 0}
+        outSlope: {x: 0, y: -0.036936983, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.420674, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root_back
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: -0.06158832, y: 0, z: 0}
+        outSlope: {x: -0.06158832, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.1468706, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.8333334
+        value: {x: 1.062903, y: 1.0711958, z: 1}
+        inSlope: {x: 0.03411259, y: 0, z: 0}
+        outSlope: {x: 0.03411259, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 1.066997, y: 1.067252, z: 1}
+        inSlope: {x: 0.014221527, y: -0.044834934, z: 0}
+        outSlope: {x: 0.014221527, y: -0.044834934, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1
+        value: {x: 1.0677224, y: 1.0617373, z: 1}
+        inSlope: {x: 0, y: -0.06456195, z: 0}
+        outSlope: {x: 0, y: -0.06456195, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: -0.06158832, y: 0, z: 0}
+        outSlope: {x: -0.06158832, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.1468706, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_8
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: -0.06206062, y: 0, z: 0}
+        outSlope: {x: -0.06206062, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.16903989, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.8333334
+        value: {x: 1.0628891, y: 1.0711958, z: 1}
+        inSlope: {x: 0.03420969, y: 0, z: 0}
+        outSlope: {x: 0.03420969, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2
+        value: {x: 1.0669949, y: 1.067252, z: 1}
+        inSlope: {x: 0.014263101, y: -0.044834934, z: 0}
+        outSlope: {x: 0.014263101, y: -0.044834934, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 2.1
+        value: {x: 1.0677224, y: 1.0617373, z: 1}
+        inSlope: {x: 0, y: -0.06456195, z: 0}
+        outSlope: {x: 0, y: -0.06456195, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: -0.06206062, y: 0, z: 0}
+        outSlope: {x: -0.06206062, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.16903989, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: root/xiabai/xiabai_1/xiabai_5
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 1225115039
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 143226835
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1983384430
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3051309771
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3268967005
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3761131435
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 705918976
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4033273379
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 11422207
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1995890586
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 247273645
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 217711629
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3538503952
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2038688872
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4216301149
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1983384430
+      attribute: 3
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 143226835
+      attribute: 3
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 3
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.005997162
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 0.005997162
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root/xiabai/xiabai_1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.4309671
+        inSlope: -0.03720461
+        outSlope: -0.03720461
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.09021364
+      - serializedVersion: 3
+        time: 2
+        value: -0.36661005
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: -0.4309671
+        inSlope: -0.040072832
+        outSlope: -0.040072832
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.2900233
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root/xiabai/xiabai_1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.9333544
+        inSlope: -0.12743638
+        outSlope: -0.12743638
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10668898
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 2.0246682
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1.9333544
+        inSlope: -0.12743638
+        outSlope: -0.12743638
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.10668898
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root/xiabai/xiabai_1/xiabai_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.68647283
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6166667
+        value: -0.686
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3333333
+        value: -0.686
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: -0.68647283
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root/xiabai/xiabai_1/xiabai_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.9333544
+        inSlope: -0.12769228
+        outSlope: -0.12769228
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1168499
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 2.0246682
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1.9333544
+        inSlope: -0.12769228
+        outSlope: -0.12769228
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1168499
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root/xiabai/xiabai_1/xiabai_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.6017228
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.6166667
+        value: 0.602
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3333333
+        value: 0.602
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 0.6017228
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root/xiabai/xiabai_1/xiabai_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.1949242
+        inSlope: -0.059722144
+        outSlope: -0.059722144
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07926192
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.16820723
+        inSlope: 0.0044937404
+        outSlope: 0.0044937404
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.13178313
+      - serializedVersion: 3
+        time: 3
+        value: -0.1949242
+        inSlope: -0.05951423
+        outSlope: -0.05951423
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.070946455
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.71189743
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 0.71189743
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.22034954
+        inSlope: -0.060135037
+        outSlope: -0.060135037
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07016629
+      - serializedVersion: 3
+        time: 2.0833333
+        value: -0.19304624
+        inSlope: 0.00044040158
+        outSlope: 0.00044040158
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.13742091
+      - serializedVersion: 3
+        time: 3
+        value: -0.22034954
+        inSlope: -0.06102073
+        outSlope: -0.06102073
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.07354522
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.81359756
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: -0.81359756
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 107.059
+        inSlope: -0.38400948
+        outSlope: -0.38400948
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.16246474
+      - serializedVersion: 3
+        time: 1.6166667
+        value: 107.83113
+        inSlope: 0.32268924
+        outSlope: 0.32268924
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.35273406
+      - serializedVersion: 3
+        time: 2.3333333
+        value: 107.83113
+        inSlope: -0.47153434
+        outSlope: -0.47153434
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.36251947
+      - serializedVersion: 3
+        time: 3
+        value: 107.059
+        inSlope: -0.57613355
+        outSlope: -0.57613355
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.4675297
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -99.429
+        inSlope: -0.35640052
+        outSlope: -0.35640052
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.18157822
+      - serializedVersion: 3
+        time: 1.6166667
+        value: -100.68989
+        inSlope: -0.52906716
+        outSlope: -0.52906716
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.3455479
+      - serializedVersion: 3
+        time: 2.3333333
+        value: -100.68989
+        inSlope: 0.662364
+        outSlope: 0.662364
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.4320448
+      - serializedVersion: 3
+        time: 3
+        value: -99.429
+        inSlope: -0.392521
+        outSlope: -0.392521
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.42890447
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -117.575
+        inSlope: 2.888629
+        outSlope: 2.888629
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.11430955
+        outWeight: 0.09819122
+      - serializedVersion: 3
+        time: 1
+        value: -116.17698
+        inSlope: -0.13911459
+        outSlope: -0.13911459
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.13293827
+      - serializedVersion: 3
+        time: 3
+        value: -117.575
+        inSlope: 2.888629
+        outSlope: 2.888629
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.11430955
+        outWeight: 0.09819122
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -6.709
+        inSlope: 1.8260163
+        outSlope: 1.8260163
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06604544
+        outWeight: 0.07751938
+      - serializedVersion: 3
+        time: 1.3333334
+        value: -5.412521
+        inSlope: -0.3578373
+        outSlope: -0.3578373
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08552059
+        outWeight: 0.07535998
+      - serializedVersion: 3
+        time: 3
+        value: -6.709
+        inSlope: 1.8260163
+        outSlope: 1.8260163
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.06604544
+        outWeight: 0.07751938
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.317
+        inSlope: -6.444293
+        outSlope: -6.444293
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.07219547
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3333333
+        value: 1.8438687
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: -2.317
+        inSlope: -6.444293
+        outSlope: -6.444293
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.07219547
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 107.948
+        inSlope: -3.3707056
+        outSlope: -3.3707056
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.1007752
+      - serializedVersion: 3
+        time: 1
+        value: 106.20195
+        inSlope: 0.47782493
+        outSlope: 0.47782493
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.113462985
+        outWeight: 0.09302331
+      - serializedVersion: 3
+        time: 2.3333333
+        value: 109.060524
+        inSlope: 0.013230544
+        outSlope: 0.013230544
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.1807798
+      - serializedVersion: 3
+        time: 3
+        value: 107.948
+        inSlope: -3.3707056
+        outSlope: -3.3707056
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.1007752
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5.875
+        inSlope: -2.191481
+        outSlope: -2.191481
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09144618
+        outWeight: 0.101882614
+      - serializedVersion: 3
+        time: 1.1666666
+        value: 5.02786
+        inSlope: 0.42838442
+        outSlope: 0.42838442
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09858452
+        outWeight: 0.05780937
+      - serializedVersion: 3
+        time: 3
+        value: 5.875
+        inSlope: -2.191481
+        outSlope: -2.191481
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.09144618
+        outWeight: 0.101882614
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.784
+        inSlope: 4.590904
+        outSlope: 4.590904
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08268738
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 0.5178962
+        inSlope: -0.28476697
+        outSlope: -0.28476697
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.118863106
+      - serializedVersion: 3
+        time: 3
+        value: 2.784
+        inSlope: 4.590904
+        outSlope: 4.590904
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.08268738
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.023300648
+        inSlope: -0.03548526
+        outSlope: -0.03548526
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.15669273
+      - serializedVersion: 3
+        time: 2.1666667
+        value: 0.08943739
+        inSlope: -0.016670002
+        outSlope: -0.016670002
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.40358424
+      - serializedVersion: 3
+        time: 3
+        value: 0.023300648
+        inSlope: -0.029073032
+        outSlope: -0.029073032
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.5245211
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root_head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: root_head
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.033186913
+        inSlope: -0.034409
+        outSlope: -0.034409
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.16590995
+      - serializedVersion: 3
+        time: 2.1666667
+        value: 0.0993238
+        inSlope: -0.004244317
+        outSlope: -0.004244317
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.40358424
+      - serializedVersion: 3
+        time: 3
+        value: 0.033186913
+        inSlope: -0.036936983
+        outSlope: -0.036936983
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.420674
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: root_back
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.38
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1666667
+        value: 0.38
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 0.38
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: root_back
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -0.06158832
+        outSlope: -0.06158832
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1468706
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1
+        value: 1.0677224
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: -0.06158832
+        outSlope: -0.06158832
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1468706
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: root/xiabai/xiabai_1/xiabai_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.8333334
+        value: 1.0711958
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: root/xiabai/xiabai_1/xiabai_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: root/xiabai/xiabai_1/xiabai_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -0.06206062
+        outSlope: -0.06206062
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.16903989
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.1
+        value: 1.0677224
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: -0.06206062
+        outSlope: -0.06206062
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.16903989
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.x
+    path: root/xiabai/xiabai_1/xiabai_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.8333334
+        value: 1.0711958
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.y
+    path: root/xiabai/xiabai_1/xiabai_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalScale.z
+    path: root/xiabai/xiabai_1/xiabai_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: root_head
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5/shoubi_6
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8/shoubi_9
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_3/shoubi1/shoubi1_1/shoubi1_2/shoubi_3/shoubi_7/shoubi_8
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: root/xiabai/xiabai_1/xiabai_7/xiabai_2/shoubi2/shoubi2_1/shoubi2_2/shoubi_2/shoubi_4/shoubi_5
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

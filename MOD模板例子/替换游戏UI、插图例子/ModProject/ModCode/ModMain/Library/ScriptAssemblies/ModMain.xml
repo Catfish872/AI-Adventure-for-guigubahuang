@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MOD_BCtMGR</name>
+    </assembly>
+    <members>
+        <member name="T:MOD_BCtMGR.Example">
+            <summary>
+            部分常用API接口，和简单的例子
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestTimer">
+            <summary>
+            g.timer：延迟控制，游戏中大部分类都是不继承MonoBehaviour，且IL2CPP下不能动态载入Mono，在普通类想做延迟调用，或者每帧调用则可以利用g.timer
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestEvents">
+            <summary>
+            g.events：事件，游戏中所有的广播都是通过这个广播的。
+            EGameType：游戏通用广播
+            EMapType：在大地图时的广播
+            EBattleType：在战斗场景时的广播
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.OnUnitHitDynIntHandler(ETypeData)">
+            <summary>
+            广播的参数只需要一个：ETypeData e
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestWorld">
+            <summary>
+            g.world：管理游戏中世界实例，例如，宗门，城镇，事件，NPC，等等等等
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.Battle">
+            <summary>
+            当你在战斗中的时候，可以通过SceneType.battle访问管理器入口
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestRes">
+            <summary>
+            g.res：加载资源，可以加载Resources的资源，也能加载自定义AB资源
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestSounds">
+            <summary>
+            g.sounds：播放声音，可以播放Resources/Sounds下的声音
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestConf">
+            <summary>
+            g.conf：游戏中所有的配置都存放在这里
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestData">
+            <summary>
+            g.data：游戏中存放存档的数据
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestUI">
+            <summary>
+            g.ui：游戏中控制UI的打开关闭
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.Example.TestTool">
+            <summary>
+            游戏中常用工具类
+            </summary>
+        </member>
+        <member name="T:MOD_BCtMGR.ModMain">
+            <summary>
+            此类是模组的主类
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.ModMain.Init">
+            <summary>
+            MOD初始化，进入游戏时会调用此函数
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.ModMain.Destroy">
+            <summary>
+            MOD销毁，回到主界面，会调用此函数并重新初始化MOD
+            </summary>
+        </member>
+        <member name="M:MOD_BCtMGR.ModMain.OnUpdate">
+            <summary>
+            每帧调用的函数
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.EncryptTexture.Encrypt">
+            <summary>
+            加密图片
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.ExportAll">
+            <summary>
+            导出游戏中所有图集文件
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.ExportAllAtlas">
+            <summary>
+            导出图集
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.ExportAllBG">
+            <summary>
+            导出大图
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.UpdateExport">
+            <summary>
+            导出所有的图片
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.DuplicateTexture(UnityEngine.Sprite)">
+            <summary>
+            使贴图变为可读取的
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ExportSpriteAtlas.DuplicateTexture(UnityEngine.Texture2D)">
+            <summary>
+            使贴图变为可读取的
+            </summary>
+        </member>
+        <member name="T:ReplaceSprite.ReplaceSprite.Patch_SpriteAtlas_GetSprite">
+            <summary>
+            重载获取精灵脚本，返回替换的资源
+            </summary>
+        </member>
+        <member name="T:ReplaceSprite.ReplaceSprite.Patch_SpriteTool_GetSpriteBigTex">
+            <summary>
+            重载获取大图脚本，返回替换的资源
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ReplaceSprite.UpdateAtlasSprite">
+            <summary>
+            刷新图集
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ReplaceSprite.InitAtlasSprite">
+            <summary>
+            初始所有图集精灵
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ReplaceSprite.GetSprite(System.String,System.String)">
+            <summary>
+            获取精灵图片
+            </summary>
+        </member>
+        <member name="T:ReplaceSprite.ReplaceSpriteMain.Patch_SceneLogin_Init">
+            <summary>
+            游戏初始化时，初始化替换UI代码
+            </summary>
+        </member>
+        <member name="M:ReplaceSprite.ReplaceSpriteMain.OnUpdate">
+            <summary>
+            每帧调用的函数
+            </summary>
+        </member>
+    </members>
+</doc>
