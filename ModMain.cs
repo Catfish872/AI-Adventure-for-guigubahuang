@@ -120,6 +120,7 @@ namespace MOD_kqAfiU
         private bool inOngoingDialog = false;
         public static List<WorldUnitBase> dialogueNpcs = new List<WorldUnitBase>();
         private static Dictionary<string, string> pendingCachedEffects = new Dictionary<string, string>();
+        public static bool hasCreatedThisAdventure = false;
 
         // LLM相关参数和状态
         private LLMConnector llmConnector;
@@ -147,6 +148,7 @@ namespace MOD_kqAfiU
 
         public static float encounterProbability = 0.015f; // 默认值为0.015
         public static float shortEventProbability = 0.015f;
+        public static bool hasCreatedItemsThisAdventure = false;
 
         public static float llmRequestStartTime = 0f;
 
@@ -154,11 +156,12 @@ namespace MOD_kqAfiU
         public static bool autoColoringEnabled = true;
         public static bool isCreatingItems = false;
 
-
         private GameObject _currentUIInstance = null;
         private WorldUnitBase _currentNpcForInput = null;
         private bool _inputUIOpened = false;
         private Action<ETypeData> battleStartCall;
+        private Action<ETypeData> battleEndFrontCall;
+        private Action<ETypeData> battleEndCall;
 
 
         [Serializable]
@@ -184,7 +187,25 @@ namespace MOD_kqAfiU
                 harmony.UnpatchSelf();
                 harmony = null;
             }
-
+            g.timer.Frame(new Action(() => {
+                try
+                {
+                    // 检查配置是否已加载
+                    if (g.conf != null && g.conf.itemProps != null)
+                    {
+                        CreationSystem.Init();
+                        Debug.Log("[ModMain] CreationSystem 延迟初始化完成");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[ModMain] 配置未就绪，跳过 CreationSystem 初始化");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[ModMain] CreationSystem 初始化异常: {ex}");
+                }
+            }), 30, false); // 延迟30帧后执行（约0.5秒）
 
             harmony = new HarmonyLib.Harmony("MOD_kqAfiU");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
@@ -214,13 +235,14 @@ namespace MOD_kqAfiU
                 ModMain.autoColoringEnabled = config.AutoColoringEnabled;
             }
 
-            CreationSystem.Init();
+            //CreationSystem.Init();
             Tools.Initialize(apiUrl, apiKey, modelName);
             UIRewardAndShortConfig.isGenerating = false;
             //DramaPolish.Initialize();
 
             hasTriggeredDiscussionInCurrentAdventure = false;
             givenRewardsInCurrentAdventure.Clear();
+            hasCreatedItemsThisAdventure = false;
             g.data.dataObj.data.SetString("LLMcontent", "");
             g.data.dataObj.data.SetString("ShortEventContent", "");
             dialogueNpcs.Clear();
@@ -233,7 +255,14 @@ namespace MOD_kqAfiU
             g.events.On(EGameType.OneUnitCreateOneActionBack(g.world.playerUnit, moveAction.GetIl2CppType()), (Il2CppSystem.Action<ETypeData>)OnPlayerMove);
             this.battleStartCall = new Action<ETypeData>(this.OnBattleStart);
             g.events.On(EBattleType.BattleStart, this.battleStartCall, 0, false);
+            this.battleEndFrontCall = new Action<ETypeData>(this.OnBattleEndFront);
+            this.battleEndCall = new Action<ETypeData>(this.OnBattleEnd);
+            g.events.On(EBattleType.BattleEndFront, this.battleEndFrontCall, 0, false);
+            g.events.On(EBattleType.BattleEnd, this.battleEndCall, 0, false);
+
             
+            TaskSystem.InitTest();
+
             corUpdate = g.timer.Frame(new Action(OnUpdate), 60, true);
         }
 
@@ -242,10 +271,22 @@ namespace MOD_kqAfiU
             isInBattle = true;
         }
 
+        public void OnBattleEndFront(ETypeData e)
+        {
+            TaskSystem.OnDungeonBattleEndEvent("EBattleType.BattleEndFront", e);
+        }
+
+        public void OnBattleEnd(ETypeData e)
+        {
+            isInBattle = false;
+            TaskSystem.OnDungeonBattleEndEvent("EBattleType.BattleEnd", e);
+        }
+
         public void CloseUIEnd(ETypeData e)
         {
             // 销毁按钮
             CloseUIEnd closeUIEnd = e.Cast<CloseUIEnd>();
+            TaskSystem.OnDungeonUiEvent("CloseUIEnd", closeUIEnd);
             if (closeUIEnd.uiType.uiName == UIType.NPCInfo.uiName)
             {
                 if (configButton1 != null)
@@ -266,6 +307,7 @@ namespace MOD_kqAfiU
         public void OpenUIEnd(ETypeData e)
         {
             OpenUIEnd openUIEnd = e.Cast<OpenUIEnd>();
+            TaskSystem.OnDungeonUiEvent("OpenUIEnd", openUIEnd);
             /*
             if (openUIEnd.uiType.uiName == UIType.DramaDialogue.uiName)
             {
@@ -555,6 +597,8 @@ namespace MOD_kqAfiU
         public void OnPlayerMove(ETypeData data)
         {
 
+            TaskSystem.OnPlayerMoved();
+
             if (Time.time - lastMoveTime < 1f)
             {
                 return; // 静默忽略，不显示提示以避免频繁弹窗
@@ -700,6 +744,9 @@ namespace MOD_kqAfiU
             var moveAction = new UnitActionMovePlayer(Vector2Int.right);
             g.events.Off(EGameType.OneUnitCreateOneActionBack(g.world.playerUnit, moveAction.GetIl2CppType()),
                 (Il2CppSystem.Action<ETypeData>)OnPlayerMove);
+            if (this.battleStartCall != null) g.events.Off(EBattleType.BattleStart, this.battleStartCall);
+            if (this.battleEndFrontCall != null) g.events.Off(EBattleType.BattleEndFront, this.battleEndFrontCall);
+            if (this.battleEndCall != null) g.events.Off(EBattleType.BattleEnd, this.battleEndCall);
 
             if (corUpdate != null)
             {
@@ -823,6 +870,7 @@ namespace MOD_kqAfiU
 
                                 hasTriggeredDiscussionInCurrentAdventure = false;
                                 givenRewardsInCurrentAdventure.Clear();
+                                hasCreatedItemsThisAdventure = false;
                                 hasTriggeredBattleInCurrentAdventure = false;
                                 currentRequest = null;
                                 dialogueNpcs.Clear();
@@ -963,6 +1011,7 @@ namespace MOD_kqAfiU
                                 {
                                     hasTriggeredDiscussionInCurrentAdventure = false;
                                     givenRewardsInCurrentAdventure.Clear();
+                                    hasCreatedItemsThisAdventure = false;
                                     currentRequest = null;
                                     dialogueNpcs.Clear();
                                     inOngoingDialog = false;
@@ -1345,7 +1394,10 @@ namespace MOD_kqAfiU
             {
                 llmRequestStartTime = 0f;
 
-                if (isCreatingItems) return;
+                if (isCreatingItems)
+                {
+                    return;
+                }
 
                 if (pendingShortEventResponse.StartsWith("错误："))
                 {
@@ -1374,7 +1426,7 @@ namespace MOD_kqAfiU
                                     foreach (var item in items)
                                     {
                                         string r = item.Trim();
-                                        if (!Tools.RewardExists(r))
+                                        if (!Tools.RewardExists(r) && !Tools.IsRewardInList(r, ShortEvent.rewardItems))
                                         {
                                             unknownRewards.Add(r);
                                         }
@@ -1384,7 +1436,7 @@ namespace MOD_kqAfiU
                         }
                     }
 
-                    if (unknownRewards.Count > 0)
+                    if (unknownRewards.Count > 0 && !ModMain.hasCreatedItemsThisAdventure)
                     {
                         //UITipItem.AddTip($"发现 {unknownRewards.Count} 个未知机缘，天道正在推演...", 3f);
                         isCreatingItems = true;
@@ -1406,7 +1458,10 @@ namespace MOD_kqAfiU
             {
                 llmRequestStartTime = 0f;
 
-                if (isCreatingItems) return;
+                if (isCreatingItems)
+                {
+                    return;
+                }
 
                 string dialogText;
                 FormattedResponse formattedResponse = null;
@@ -1430,6 +1485,7 @@ namespace MOD_kqAfiU
                     return;
                 }
 
+                // ========== 1. 先创建临时请求 ==========
                 var continueRequest = new LLMDialogueRequest();
                 if (currentRequest != null)
                 {
@@ -1446,17 +1502,18 @@ namespace MOD_kqAfiU
                 else
                 {
                     continueRequest.AddSystemMessage(Tools.GenerateRandomSystemPrompt());
-                    currentRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
+                    continueRequest.AddSystemMessage($"{Tools.GenerateformatSystemPrompt()}");
                     string processedJsonResponse;
                     Tools.ParseLLMResponse(pendingLLMResponse, out _);
                     processedJsonResponse = Tools.GetProcessedJsonString(pendingLLMResponse);
                     continueRequest.AddAssistantMessage(processedJsonResponse);
                 }
 
-                currentRequest = continueRequest;
                 var optionsList = Tools.GenerateOptionsFromResponse(formattedResponse, continueRequest);
 
                 if (isCreatingItems) return;
+
+                currentRequest = continueRequest;
 
                 var (options, callbacks) = GenerateDialogueOptions(optionsList);
                 WorldUnitBase rightUnit = dialogueNpcs.Count > 0 ? dialogueNpcs[0] : null;
