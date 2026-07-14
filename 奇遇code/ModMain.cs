@@ -212,7 +212,7 @@ namespace MOD_kqAfiU
 
             g.events.On(EGameType.IntoWorld, (Il2CppSystem.Action<ETypeData>)OnIntoWorld);
             g.events.On(EGameType.OpenUIEnd, (Il2CppSystem.Action<ETypeData>)OpenUIEnd);
-            //g.events.On(EGameType.CloseUIEnd, (Il2CppSystem.Action<ETypeData>)CloseUIEnd);
+            g.events.On(EGameType.CloseUIEnd, (Il2CppSystem.Action<ETypeData>)CloseUIEnd);
         }
 
         public void OnIntoWorld(ETypeData data)

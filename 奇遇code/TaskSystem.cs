@@ -33,8 +33,13 @@ namespace MOD_kqAfiU
         public Func<bool> CompleteCondition;
         public Action OnComplete;
         public bool TriggerDungeonOnMapEvent = false; // 命中地图事件时进入副本；副本胜利后才完成任务。
-        public int DungeonId = 0;                     // 0=按玩家当前境界配置自动推导。
-        public int DungeonLevel = 0;                  // 0=按玩家当前境界配置自动推导。
+        public DungeonBattleType DungeonBattleType = DungeonBattleType.Random;
+        public string DungeonEntryPrompt = "";        // 空值使用统一的副本入口确认正文。
+        public string DungeonEntryConfirmText = "";   // 空值使用统一的确认进入选项。
+        public string DungeonEntryCancelText = "";    // 空值使用统一的暂缓进入选项。
+        public string CustomBossName = "";            // 非空时覆盖本任务 BOSS 名称；空值保留复制来源原名。
+        public int DungeonId = 0;                     // 0=首次进入时生成并注册自定义副本。
+        public int DungeonLevel = 0;                  // 运行时写入玩家当前副本战斗等级。
         public bool DungeonTriggered = false;
         public bool DungeonCompleted = false;
         public bool OneShot = true;        // 本次运行内完成后不再自动触发。
@@ -75,12 +80,19 @@ namespace MOD_kqAfiU
         private const int TaskAnchorEventTemplateId = 6;
         public const int DefaultTaskAnchorEventId = 900901139;
         private const string DefaultTaskAnchorEventIcon = "gudingdianqiyuwenhao";
+        private const int DungeonEntryConfirmOptionId = 900901141;
+        private const int DungeonEntryCancelOptionId = 900901142;
+        private const string DefaultDungeonEntryPrompt = "前方的空间泛起阵阵涟漪，一道通往未知秘境的入口已经开启。秘境之中凶险难测，是否已经准备妥当？";
+        private const string DefaultDungeonEntryConfirmText = "准备完毕，进入秘境";
+        private const string DefaultDungeonEntryCancelText = "准备不足，暂不进入";
         private const int MaxMapEventAnchorCreateAttempts = 25;
 
         private static readonly Dictionary<int, ModTask> defs = new Dictionary<int, ModTask>();
         private static readonly HashSet<int> adding = new HashSet<int>();
         private static readonly HashSet<int> completed = new HashSet<int>();
         private static int activeDungeonTaskId = 0;
+        private static int pendingDungeonEntryTaskId = 0;
+        private static bool debugLogInitialized = false;
         private class MapEventAnchorState { public int TaskId; public int EventId; public int MapPositionId; public Vector2Int Point; public object CreatedEvent; public int RuntimeId; }
         private static readonly Dictionary<int, MapEventAnchorState> mapEventAnchors = new Dictionary<int, MapEventAnchorState>();
 
@@ -102,9 +114,9 @@ namespace MOD_kqAfiU
                 MapEventAnchorEventId = DefaultTaskAnchorEventId,
                 MapEventAnchorSearchRadius = 8,
                 TriggerDungeonOnMapEvent = true,
-                // 13 已验证是天雷/生存型境界副本；这里改用教程示例里的竹林副本模板，优先验证打怪型副本链路。
-                // DungeonLevel 保持 0：进入前按玩家当前境界解析为同境界副本等级，避免固定低级副本。
-                DungeonId = 1011,
+                DungeonBattleType = DungeonBattleType.Random,
+                CustomBossName = "AI奇遇·测试首领",
+                DungeonId = 0,
                 DungeonLevel = 0,
                 TriggerCondition = delegate { return !completed.Contains(DemoTaskId); }
             };
@@ -245,7 +257,7 @@ namespace MOD_kqAfiU
                     ModTask def;
                     if (defs.TryGetValue(hitTaskId, out def) && def != null && def.TriggerDungeonOnMapEvent)
                     {
-                        TriggerTaskDungeon(def);
+                        ShowDungeonEntryConfirmation(def);
                     }
                     else
                     {
@@ -274,6 +286,63 @@ namespace MOD_kqAfiU
             if (mapEvent == null) return false;
             try { point = mapEvent.GetPoint(); return true; }
             catch { return false; }
+        }
+
+        private static void ShowDungeonEntryConfirmation(ModTask def)
+        {
+            if (def == null || def.DungeonCompleted || completed.Contains(def.Id) || !HasTask(def.Id)) return;
+            if (pendingDungeonEntryTaskId != 0) return;
+
+            pendingDungeonEntryTaskId = def.Id;
+            string prompt = string.IsNullOrEmpty(def.DungeonEntryPrompt) ? DefaultDungeonEntryPrompt : def.DungeonEntryPrompt;
+            string confirmText = string.IsNullOrEmpty(def.DungeonEntryConfirmText) ? DefaultDungeonEntryConfirmText : def.DungeonEntryConfirmText;
+            string cancelText = string.IsNullOrEmpty(def.DungeonEntryCancelText) ? DefaultDungeonEntryCancelText : def.DungeonEntryCancelText;
+
+            Dictionary<int, string> options = new Dictionary<int, string>
+            {
+                { DungeonEntryConfirmOptionId, confirmText },
+                { DungeonEntryCancelOptionId, cancelText }
+            };
+            Dictionary<int, Action> callbacks = new Dictionary<int, Action>
+            {
+                { DungeonEntryConfirmOptionId, delegate { ConfirmDungeonEntry(def.Id); } },
+                { DungeonEntryCancelOptionId, delegate { CancelDungeonEntry(def.Id); } }
+            };
+
+            try
+            {
+                Tools.CreateDialogue(ModMain.playerTalk, prompt, g.world.playerUnit, null, options, callbacks);
+                AppendDebugLog(new List<string> { "[TaskSystem] 已请求打开副本入口确认 taskId=" + def.Id + " dialogueId=" + ModMain.playerTalk });
+            }
+            catch (Exception ex)
+            {
+                pendingDungeonEntryTaskId = 0;
+                AppendDebugLog(new List<string> { "[TaskSystem] 副本入口确认打开失败 taskId=" + def.Id, ex.Message });
+                UITipItem.AddTip("未能打开秘境入口确认。", 2f);
+            }
+        }
+
+        private static void ConfirmDungeonEntry(int taskId)
+        {
+            if (pendingDungeonEntryTaskId != taskId) return;
+            pendingDungeonEntryTaskId = 0;
+
+            ModTask def;
+            if (!defs.TryGetValue(taskId, out def) || def == null || def.DungeonCompleted || completed.Contains(taskId) || !HasTask(taskId))
+            {
+                AppendDebugLog(new List<string> { "[TaskSystem] 副本入口确认已失效 taskId=" + taskId });
+                return;
+            }
+
+            AppendDebugLog(new List<string> { "[TaskSystem] 玩家确认进入副本 taskId=" + taskId });
+            TriggerTaskDungeon(def);
+        }
+
+        private static void CancelDungeonEntry(int taskId)
+        {
+            if (pendingDungeonEntryTaskId != taskId) return;
+            pendingDungeonEntryTaskId = 0;
+            AppendDebugLog(new List<string> { "[TaskSystem] 玩家暂缓进入副本 taskId=" + taskId + "，地图入口保留。" });
         }
 
         private static void TriggerTaskDungeon(ModTask def)
@@ -311,42 +380,25 @@ namespace MOD_kqAfiU
         {
             dungeonId = def != null ? def.DungeonId : 0;
             dungeonLevel = def != null ? def.DungeonLevel : 0;
+            if (def == null) return false;
             if (dungeonId > 0 && dungeonLevel > 0) return true;
 
-            // 直取：g.world.playerUnit、gradeID、GetGrade、g.conf.roleGrade 全是公开成员（项目内多处已直接调用）。
-            WorldUnitBase player = g.world.playerUnit;
-            if (player == null) return false;
+            int playerLevel = Tools.GetPlayerLevel();
+            if (playerLevel <= 0) return false;
 
-            int gradeId = player.data.unitData.propertyData.gradeID;
-            int dynGrade = player.data.dynUnitData.GetGrade();
+            if (def.DungeonBattleType == DungeonBattleType.Random)
+                def.DungeonBattleType = CustomDungeonFactory.RollBattleType();
 
-            // 用强类型 ConfRoleGradeItem 取境界副本配置，避免反射（GetGradeItem 返回强类型）。
-            ConfRoleGradeItem gradeItem = null;
-            int[] gradeCandidates = UniquePositiveInts(dynGrade, gradeId, Math.Max(1, (gradeId + 2) / 3));
-            int[] phaseCandidates = new int[] { 1, 2, 3, 4, 5 };
-            for (int i = 0; i < gradeCandidates.Length && gradeItem == null; i++)
-            {
-                for (int j = 0; j < phaseCandidates.Length && gradeItem == null; j++)
-                {
-                    try
-                    {
-                        ConfRoleGradeItem item = g.conf.roleGrade.GetGradeItem(gradeCandidates[i], phaseCandidates[j]);
-                        if (item != null && item.dungeonID > 0 && item.dungeonLevel > 0) gradeItem = item;
-                    }
-                    catch { }
-                }
-            }
+            CustomDungeonDefinition definition = CustomDungeonFactory.Roll(def.Id, def.DungeonBattleType, playerLevel, def.CustomBossName);
+            if (definition == null) return false;
 
-            if (gradeItem != null)
-            {
-                if (dungeonId <= 0) dungeonId = gradeItem.dungeonID;
-                if (dungeonLevel <= 0) dungeonLevel = gradeItem.dungeonLevel;
-            }
+            dungeonId = CustomDungeonConfigRegistry.EnsureRegistered(definition);
+            if (dungeonId <= 0) return false;
 
-            // 兜底：roleGrade 未命中时，用教程示例副本 ID，等级按当前境界推导，避免固定低级副本。
-            if (dungeonId <= 0) dungeonId = 1011;
-            if (dungeonLevel <= 0) dungeonLevel = Math.Max(5, (dynGrade > 0 ? dynGrade : Math.Max(1, (gradeId + 2) / 3)) * 5);
-            return dungeonId > 0 && dungeonLevel > 0;
+            dungeonLevel = playerLevel;
+            def.DungeonId = dungeonId;
+            def.DungeonLevel = dungeonLevel;
+            return true;
         }
 
         public static void OnDungeonBattleEndEvent(string eventName, ETypeData eventData)
@@ -380,8 +432,25 @@ namespace MOD_kqAfiU
 
         public static void OnDungeonUiEvent(string phase, object eventData)
         {
-            // UI 只保留窄口入口，默认不写日志、不做反射探查。
-            // 后续需要探测 UI 接口时，只读取已知安全字段（例如 uiType.uiName），不要对 UI/Unity 对象做 DescribeObject 或深度遍历。
+            if (pendingDungeonEntryTaskId == 0 || eventData == null) return;
+            try
+            {
+                object uiType = GetMember(eventData, "uiType");
+                object uiName = GetMember(uiType, "uiName");
+                if (uiName == null || uiName.ToString() != UIType.DramaDialogue.uiName) return;
+
+                if (phase == "OpenUIEnd")
+                {
+                    AppendDebugLog(new List<string> { "[TaskSystem] 副本入口确认已真实显示 taskId=" + pendingDungeonEntryTaskId + " dialogueId=" + ModMain.playerTalk });
+                    return;
+                }
+
+                if (phase != "CloseUIEnd") return;
+                int taskId = pendingDungeonEntryTaskId;
+                pendingDungeonEntryTaskId = 0;
+                AppendDebugLog(new List<string> { "[TaskSystem] 副本入口确认被外部关闭 taskId=" + taskId + "，地图入口保留。" });
+            }
+            catch { }
         }
 
         private static bool? TryGetLastBattleIsWin()
@@ -416,6 +485,7 @@ namespace MOD_kqAfiU
 
         public static bool CompleteTask(int taskId)
         {
+            if (pendingDungeonEntryTaskId == taskId) pendingDungeonEntryTaskId = 0;
             bool ok = InvokeTaskMethod(taskId, "TaskComplete");
             if (ok)
             {
@@ -430,6 +500,7 @@ namespace MOD_kqAfiU
 
         public static bool RemoveTask(int taskId)
         {
+            if (pendingDungeonEntryTaskId == taskId) pendingDungeonEntryTaskId = 0;
             RemoveMapEventAnchor(taskId);
             ModTask def;
             if (defs.TryGetValue(taskId, out def) && def != null) def.MapEventAnchorMaterialized = false;
@@ -456,7 +527,27 @@ namespace MOD_kqAfiU
             catch { return false; }
         }
 
-        public static void ClearRuntimeState() { CleanupAllMapEventAnchors(); defs.Clear(); adding.Clear(); completed.Clear(); activeDungeonTaskId = 0; }
+        public static void ClearRuntimeState()
+        {
+            CleanupAllMapEventAnchors();
+            defs.Clear();
+            adding.Clear();
+            completed.Clear();
+            activeDungeonTaskId = 0;
+            pendingDungeonEntryTaskId = 0;
+            CustomDungeonFactory.ClearRuntimeState();
+            CustomDungeonConfigRegistry.ClearRuntimeState();
+            if (!debugLogInitialized)
+            {
+                DeleteLegacyDebugLogs();
+                WriteDebugLog(new List<string> { "[TaskSystem] 新游戏运行期，自定义副本调试日志已重置。" });
+                debugLogInitialized = true;
+            }
+            else
+            {
+                AppendDebugLog(new List<string> { "[TaskSystem] 任务运行状态已重置。" });
+            }
+        }
 
         public static bool TryGetPlayerPoint(out Vector2Int point)
         {
@@ -966,45 +1057,100 @@ namespace MOD_kqAfiU
             return null;
         }
 
-        // 任务系统统一桌面日志接口：后续不要另建第二套桌面日志函数。
-        // 临时探测游戏接口时使用：WritePositionDebugLog 用于一次新会话/进存档时覆盖清空，AppendPositionDebugLog 用于同一流程内追加。
-        // 探测完成后应清除调用点，只保留这组接口；探测策略需要自动化多层拆包，不要只看一层使得需要挤牙膏多次编译才能得知需要的形态，避免反射遍历 UI/Unity 对象或大型集合导致游戏崩溃。
-        public static void WritePositionDebugLog(List<string> lines)
+        // 统一桌面日志入口。测试完成后删除调用点，保留接口供后续定点探测复用。
+        private static void DeleteLegacyDebugLogs()
         {
             try
             {
                 string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                string path = Path.Combine(desktop, "TaskSystem_PositionDebug.txt");
-                File.WriteAllLines(path, lines.ToArray());
+                string[] legacyNames = { "TaskSystem_PositionDebug.txt", "TaskSystem_DungeonDebug.txt" };
+                for (int i = 0; i < legacyNames.Length; i++)
+                {
+                    string path = Path.Combine(desktop, legacyNames[i]);
+                    if (File.Exists(path)) File.Delete(path);
+                }
             }
-            catch (Exception ex) { Debug.Log("[TaskSystem] 写入位置调试日志失败: " + ex.Message); }
+            catch (Exception ex) { Debug.Log("[TaskSystem] 删除旧调试日志失败: " + ex.Message); }
         }
 
-        public static void AppendPositionDebugLog(List<string> lines)
+        public static void WriteDebugLog(List<string> lines)
         {
             try
             {
                 string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-                string path = Path.Combine(desktop, "TaskSystem_PositionDebug.txt");
+                string path = Path.Combine(desktop, "TaskSystem_Debug.txt");
+                File.WriteAllLines(path, (lines ?? new List<string>()).ToArray());
+            }
+            catch (Exception ex) { Debug.Log("[TaskSystem] 写入调试日志失败: " + ex.Message); }
+        }
+
+        public static void AppendDebugLog(List<string> lines)
+        {
+            try
+            {
+                string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                string path = Path.Combine(desktop, "TaskSystem_Debug.txt");
                 List<string> output = new List<string>();
                 output.Add("");
+                output.Add(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 output.AddRange(lines ?? new List<string>());
                 File.AppendAllLines(path, output.ToArray());
             }
-            catch (Exception ex) { Debug.Log("[TaskSystem] 追加位置调试日志失败: " + ex.Message); }
+            catch (Exception ex) { Debug.Log("[TaskSystem] 追加调试日志失败: " + ex.Message); }
         }
 
-        private static int[] UniquePositiveInts(params int[] values)
+        public static object GetConfigManager(string managerName)
         {
-            List<int> list = new List<int>();
-            if (values == null) return list.ToArray();
-            for (int i = 0; i < values.Length; i++)
+            try { return g.conf == null ? null : GetMember(g.conf, managerName); }
+            catch { return null; }
+        }
+
+        public static object GetConfigItem(string managerName, int id)
+        {
+            return GetItem(GetConfigManager(managerName), id);
+        }
+
+        public static object GetFirstConfigItem(object manager)
+        {
+            if (manager == null) return null;
+            object list = GetMember(manager, "_allConfList") ?? GetMember(manager, "allConfList");
+            foreach (object item in Each(list, 1)) return item;
+            object dictionary = GetMember(manager, "allConfDic") ?? GetMember(manager, "_allConfDic");
+            foreach (object entry in Each(dictionary, 1))
             {
-                int v = values[i];
-                if (v <= 0 || list.Contains(v)) continue;
-                list.Add(v);
+                object value = GetMember(entry, "Value");
+                if (value != null) return value;
             }
-            return list.ToArray();
+            return null;
+        }
+
+        public static object CloneConfigItem(object source)
+        {
+            object clone = CloneByConstructor(source, delegate (string name, object oldValue) { return oldValue; });
+            if (clone != null) CopyWritableMembers(source, clone);
+            return clone;
+        }
+
+        public static bool SetConfigMember(object item, string memberName, object value)
+        {
+            return SetMember(item, memberName, value);
+        }
+
+        public static bool RegisterConfigItem(string managerName, object item, int id)
+        {
+            object manager = GetConfigManager(managerName);
+            if (manager == null || item == null) return false;
+            if (!ForceRegisterConfItem(manager, item, id)) return false;
+            return GetItem(manager, id) != null;
+        }
+
+        public static bool ConfigListContainsInt(object manager, string memberName, int value)
+        {
+            if (manager == null) return false;
+            object list = GetMember(manager, "_allConfList") ?? GetMember(manager, "allConfList");
+            foreach (object item in Each(list, 300000))
+                if (GetInt(item, memberName, int.MinValue) == value) return true;
+            return false;
         }
 
         // ---- 基础反射原语 ----
